@@ -1,0 +1,7 @@
+---
+title: "Labs"
+author: "Tim Bollé"
+editor: visual
+---
+
+C'est ici que vous trouverez les labs pour chaque semaine.

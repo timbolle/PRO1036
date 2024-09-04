@@ -1,0 +1,134 @@
+---
+title: "Lab 01 - Hello World"
+author: "Tim Bollé"
+editor: visual
+---
+
+# Getting started
+
+## Github
+
+TODO: faire les consignes pour Git
+
+## Packages
+
+Nous allons travaillé avec deux packages: **datasauRus** qui contient le jeu de données que nous allons utiliser et **tidyverse** qui est une collection de packages pour l'analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l'image ci-dessous:
+
+```{r clone-repo-link, fig.margin = TRUE, echo = FALSE, fig.width=3}
+knitr::include_graphics("figs/install_packages.png")
+```
+
+Pour charger les packages dans l'espace de travail, nous devons l'indiquer:
+
+```{r message=FALSE}
+library(tidyverse) 
+library(datasauRus)
+```
+
+Ces deux lignes se retrouvent également dans votre fichier Rmarkdown.
+
+## Données
+
+Nous allons travailler avec le jeu de données appelé `datasaurus_dozen`, faisant partie du package `datasaurus`. Ce jeu de données contient en réalité 13[^1] jeux de données, dont le but est de nous montrer l'importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.
+
+[^1]: Si vous vous demandez pourquoi il y a 13 jeux de données dans cette "douzaine de datasaurus": [Baker's dozen](https://en.wikipedia.org/wiki/Dozen#Baker's_dozen)
+
+Pour en savoir plus sur le jeu de données, vous pouvez taper `?datasaurus` dans la console. En ajoutant un `?` devant le nom d'un objet vous affichera l'aide associée à cet objet.
+
+# Exercises
+
+## Exercice 1
+En utilisant l'aide, combien de lignes et de colonnes possède le `datasaurus_dozen` ? Quelles sont les variables présentes dans le tableau ? Vous pouvez ajouter vos réponse dans votre fichier .Rmd.
+
+La colonne `dataset` permet d'indiquer le jeu de données. Nous pouvons compter le nombre d'éléments pour chaque jeu de données:
+
+```{r}
+datasaurus_dozen %>%
+  count(dataset)
+```
+
+Le dataset Datasaurus original (`dino`) a été créé par Aberto Cairo. Les autres datasets ont été générés par Matejka et Fitzmaurice @matejkaSameStatsDifferent2017. Dans cet article, ils présentent des données très différentes qui ont les mêmes descriptions statistiques.
+
+🧶 ✅ ⬆️ 
+*Knit, commit, and push ! Envoyez vos résutlats sur Github en indiquant un message du type "Ajout des réponses à l'exercice 1".*
+
+## Exercice 2
+
+Représentez `y` en fonction de `x` pour le `dino` dataset. Calculez ensuite le coefficient de correlation. Vous ne comprenez pas tout ? Pas grave !
+
+Ci-dessous se trouve le code dont vous aurez besoin pour compléter l'exercice. Prenez seulement ce dont vous avez besoin, knittez et observez le résultat !
+
+Nous allons commencer par prendre le `datasaurus_dozen` et le *piper* dans la fonction `filter` pour filtrer selon `dataset == "dino"`. Le résutlat est stocké dans un nouveau tableau appelé `dino_data`.
+
+```{r}
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
+```
+
+Décomposons un peu tout cela !
+
+Pour commencer, l'opérateur *pipe*: `%>%`, prend ce qui vient avant (à gauche) et l'envoie comme premier argument de ce qui vient après (à droite ou en dessous). Concrètement, nous pouvons lire `filter` le `datasaurus_dozen` pour ne garder seulement les lignes où `dataset == "dino"`.
+
+Ensuite, l'opérateur d'assignation `<-` permet de définir le nom `dino_data` et d'y stocker le résultat de l'opération de filtration.
+
+Nous devons ensuite visualiser les données. Pour cela nous allons utiliser la fonction `ggplot`. Le première chose à indiquer sont les données à visualiser. Ensuite nous allons définir un l'`aes`thétisme du graphique. Par exemple, nous allons envoyer la variable `x` du tableau sur l'axe x du graphe, et la variable `y` du tableau sur l'axe x. Nous allons ensuite définir la `geom`étrie du graphe. Dans ce cas, nous voulons que chaque point soit représenté par un point, d'où le `geom_point`.
+
+```{r fig.fullwidth=TRUE}
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+Ne vous inquiétez pas si cela parait encore compliqué, nous verrons tout cela plus en détail plus tard.
+
+Pour la deuxième partie de l'exercice, nous voulons calculer quelques statistiques sur notre jeu de données. Le coéfficient de corrélation, souvent appelé $r$ en statistique, mesure la relation linéaire entre deux variables. Vous verrez que certaines paires de variables n'ont pas de relation linéaire. C'est pour cela qu'il est important de les visualiser. Il n'est pas toujours nécessaire de calculer le $r$ dans ces cas là. Dans notre cas, la relation n'est clairement pas linéaire, mais plutôt *dinosaire*.
+
+Faisons le quand même pour le plaisir !
+
+But, for illustrative purposes, let's calculate the correlation coefficient between `x` and `y`.
+
+```{r}
+dino_data %>%
+  summarize(r = cor(x, y))
+```
+
+🧶 ✅ ⬆️ 
+*Knit, commit, and push ! Vous pouvez mettre un message indiquant que vous avez ajouté les réponses à l'exercice 2.*
+
+## Exercice 3
+
+Représentez `y` en fonction de `x` pour le `star` dataset. Pour cela, réutilisez le code de l'exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour le `dino` dataset.
+
+🧶 ✅ ⬆️ 
+*Knit, commit, and push !*
+
+## Exercice 4
+
+Représentez `y` en fonction de `x` pour le `circle` dataset. Pour cela, réutilisez le code de l'exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour les `dino` et `star` dataset.
+
+🧶 ✅ ⬆️ 
+*Knit, commit, and push !*
+
+## Exercice 5
+
+Nous allons maintenant représenter tous les jeux de données d'un coup ! Pour cela, nous allons utilisé quelque chose appelé le *faceting*
+
+```{r all-viz, eval=FALSE, fig.fullwidth=TRUE}
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+Nous pouvons également utiliser la fonction `group_by`pour calculer des statistiques directement sur chaque jeu de données.
+
+```{r all-r, eval=FALSE}
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
+
+Nous en avons fini avec notre première analyse de données !
+
+🧶 ✅ ⬆️ 
+*Bien joué! knit, commit and push ! Vous pouvez dire que vous avez terminer le lab 01 dans votre message ! Vous pouvez allez voir sur Github si tout est en ordre.*

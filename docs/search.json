@@ -1,0 +1,171 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PRO1036",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Home",
+      "PRO1036"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "TODO: faire les consignes pour Git\n\n\n\nNous allons travaillé avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#github",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#github",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "TODO: faire les consignes pour Git",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#packages",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#packages",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons travaillé avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#données",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#données",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-1",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-1",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 1",
+    "text": "Exercice 1\nEn utilisant l’aide, combien de lignes et de colonnes possède le datasaurus_dozen ? Quelles sont les variables présentes dans le tableau ? Vous pouvez ajouter vos réponse dans votre fichier .Rmd.\nLa colonne dataset permet d’indiquer le jeu de données. Nous pouvons compter le nombre d’éléments pour chaque jeu de données:\n\ndatasaurus_dozen %&gt;%\n  count(dataset)\n\n# A tibble: 13 × 2\n   dataset        n\n   &lt;chr&gt;      &lt;int&gt;\n 1 away         142\n 2 bullseye     142\n 3 circle       142\n 4 dino         142\n 5 dots         142\n 6 h_lines      142\n 7 high_lines   142\n 8 slant_down   142\n 9 slant_up     142\n10 star         142\n11 v_lines      142\n12 wide_lines   142\n13 x_shape      142\n\n\nLe dataset Datasaurus original (dino) a été créé par Aberto Cairo. Les autres datasets ont été générés par Matejka et Fitzmaurice Matejka and Fitzmaurice (2017). Dans cet article, ils présentent des données très différentes qui ont les mêmes descriptions statistiques.\n🧶 ✅ ⬆️ Knit, commit, and push ! Envoyez vos résutlats sur Github en indiquant un message du type “Ajout des réponses à l’exercice 1”.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-2",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-2",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 2",
+    "text": "Exercice 2\nReprésentez y en fonction de x pour le dino dataset. Calculez ensuite le coefficient de correlation. Vous ne comprenez pas tout ? Pas grave !\nCi-dessous se trouve le code dont vous aurez besoin pour compléter l’exercice. Prenez seulement ce dont vous avez besoin, knittez et observez le résultat !\nNous allons commencer par prendre le datasaurus_dozen et le piper dans la fonction filter pour filtrer selon dataset == \"dino\". Le résutlat est stocké dans un nouveau tableau appelé dino_data.\n\ndino_data &lt;- datasaurus_dozen %&gt;%\n  filter(dataset == \"dino\")\n\nDécomposons un peu tout cela !\nPour commencer, l’opérateur pipe: %&gt;%, prend ce qui vient avant (à gauche) et l’envoie comme premier argument de ce qui vient après (à droite ou en dessous). Concrètement, nous pouvons lire filter le datasaurus_dozen pour ne garder seulement les lignes où dataset == \"dino\".\nEnsuite, l’opérateur d’assignation &lt;- permet de définir le nom dino_data et d’y stocker le résultat de l’opération de filtration.\nNous devons ensuite visualiser les données. Pour cela nous allons utiliser la fonction ggplot. Le première chose à indiquer sont les données à visualiser. Ensuite nous allons définir un l’aesthétisme du graphique. Par exemple, nous allons envoyer la variable x du tableau sur l’axe x du graphe, et la variable y du tableau sur l’axe x. Nous allons ensuite définir la geométrie du graphe. Dans ce cas, nous voulons que chaque point soit représenté par un point, d’où le geom_point.\n\nggplot(data = dino_data, mapping = aes(x = x, y = y)) +\n  geom_point()\n\n\n\n\n\n\n\n\nNe vous inquiétez pas si cela parait encore compliqué, nous verrons tout cela plus en détail plus tard.\nPour la deuxième partie de l’exercice, nous voulons calculer quelques statistiques sur notre jeu de données. Le coéfficient de corrélation, souvent appelé \\(r\\) en statistique, mesure la relation linéaire entre deux variables. Vous verrez que certaines paires de variables n’ont pas de relation linéaire. C’est pour cela qu’il est important de les visualiser. Il n’est pas toujours nécessaire de calculer le \\(r\\) dans ces cas là. Dans notre cas, la relation n’est clairement pas linéaire, mais plutôt dinosaire.\nFaisons le quand même pour le plaisir !\nBut, for illustrative purposes, let’s calculate the correlation coefficient between x and y.\n\ndino_data %&gt;%\n  summarize(r = cor(x, y))\n\n# A tibble: 1 × 1\n        r\n    &lt;dbl&gt;\n1 -0.0645\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! Vous pouvez mettre un message indiquant que vous avez ajouté les réponses à l’exercice 2.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-3",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-3",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 3",
+    "text": "Exercice 3\nReprésentez y en fonction de x pour le star dataset. Pour cela, réutilisez le code de l’exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour le dino dataset.\n🧶 ✅ ⬆️ Knit, commit, and push !",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-4",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-4",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 4",
+    "text": "Exercice 4\nReprésentez y en fonction de x pour le circle dataset. Pour cela, réutilisez le code de l’exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour les dino et star dataset.\n🧶 ✅ ⬆️ Knit, commit, and push !",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-5",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-5",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 5",
+    "text": "Exercice 5\nNous allons maintenant représenter tous les jeux de données d’un coup ! Pour cela, nous allons utilisé quelque chose appelé le faceting\n\nggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+\n  geom_point()+\n  facet_wrap(~ dataset, ncol = 3) +\n  theme(legend.position = \"none\")\n\nNous pouvons également utiliser la fonction group_bypour calculer des statistiques directement sur chaque jeu de données.\n\ndatasaurus_dozen %&gt;%\n  group_by(dataset) %&gt;%\n  summarize(r = cor(x, y)) %&gt;%\n  print(13)\n\nNous en avons fini avec notre première analyse de données !\n🧶 ✅ ⬆️ Bien joué! knit, commit and push ! Vous pouvez dire que vous avez terminer le lab 01 dans votre message ! Vous pouvez allez voir sur Github si tout est en ordre.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#footnotes",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#footnotes",
+    "title": "Lab 01 - Hello World",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSi vous vous demandez pourquoi il y a 13 jeux de données dans cette “douzaine de datasaurus”: Baker’s dozen↩︎",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "lab/lab01-hello-world/lab01-hello-world.html",
+    "href": "lab/lab01-hello-world/lab01-hello-world.html",
+    "title": "Lab 01 - Hello worRld",
+    "section": "",
+    "text": "library(tidyverse) \nlibrary(datasauRus)"
+  },
+  {
+    "objectID": "lab/lab01-hello-world/lab01-hello-world.html#load-packages-and-data",
+    "href": "lab/lab01-hello-world/lab01-hello-world.html#load-packages-and-data",
+    "title": "Lab 01 - Hello worRld",
+    "section": "",
+    "text": "library(tidyverse) \nlibrary(datasauRus)"
+  },
+  {
+    "objectID": "lab/lab01-hello-world/lab01-hello-world.html#exercises",
+    "href": "lab/lab01-hello-world/lab01-hello-world.html#exercises",
+    "title": "Lab 01 - Hello worRld",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1\nRemove this text, and add your answer for Exercise 1 here.\n\n\nExercise 2\nThe answers for this Exercise are given for you below. But you should clean up some of the narrative so that it only includes what you want to turn in.\nFirst let’s plot the data in the dino dataset:\n\ndino_data &lt;- datasaurus_dozen %&gt;%\n  filter(dataset == \"dino\")\n\nggplot(data = dino_data, mapping = aes(x = x, y = y)) +\n  geom_point()\n\n\n\n\n\n\n\n\nAnd next calculate the correlation between x and y in this dataset:\n\ndino_data %&gt;%\n  summarize(r = cor(x, y))\n\n# A tibble: 1 × 1\n        r\n    &lt;dbl&gt;\n1 -0.0645\n\n\n\n\nExercise 3\nAdd code and narrative as needed. Note that the R chunks are labelled with plot-star and cor-star to provide spaces to place the code for plotting and calculating the correlation coefficient. To finish, clean up the narrative by removing these instructions.\nBlah blah blah…\nI’m some text, you should replace me with more meaningful text…\n\n\nExercise 4\nAdd code and narrative as needed. Note that two R chunks are given but they are not labeled. Use the convention from above to name them appropriately.\n\n\nExercise 5\nAdd code and narrative as needed. To add R chunks either type out the backticks, curly braces, and the letter r or use the Insert chunk button above, green C+."
+  },
+  {
+    "objectID": "website/labs/labs.html",
+    "href": "website/labs/labs.html",
+    "title": "Labs",
+    "section": "",
+    "text": "C’est ici que vous trouverez les labs pour chaque semaine.",
+    "crumbs": [
+      "Labs"
+    ]
+  }
+]

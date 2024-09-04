@@ -1,13 +1,32 @@
 project:
   type: website
+  output-dir: docs # For github
 
 website:
   title: "PRO1036"
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "Home"
+      - href: about.qmd
+        text: "À propos"
+      - href: website/labs/labs.qmd
+        text: "Labs"
+
+  sidebar:
+    - title: "Home"
+      contents:
+        - index.qmd
+  
+  
+    - title: "Labs"
+      contents:
+        - website/labs/labs.qmd
+        - section: "Semaine 1"
+          contents:
+            - website/labs/lab01-hello-world/lab01-hello-world.qmd
+      
+
 
 format:
   html:
@@ -16,4 +35,5 @@ format:
     toc: true
 
 
-
+bibliography: website/references.bib
+csl: website/apa-fr.csl
