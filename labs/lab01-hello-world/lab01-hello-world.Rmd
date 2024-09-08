@@ -1,0 +1,83 @@
+---
+title: "Lab 01 - Hello worRld"
+author: "Votre nom"
+date: "La date"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load packages and data
+
+```{r load-packages, message=FALSE}
+library(tidyverse) 
+library(datasauRus)
+```
+
+## Exercices
+
+### Exercice 1
+
+Enlevez ce texte et indiquez votre réponse à l'exercice 1.
+
+### Exercise 2
+
+Les réponses sont présentes ci-dessous mais assurez-vous de bien comprendre les éléments présentés d'ajouter vos réponses aux questions.
+
+
+Commençons par représenter le `dino` dataset:
+
+```{r plot-dino, fig.height=3, fig.width=6}
+dino_data <- datasaurus_dozen %>%
+  filter(dataset == "dino")
+
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+Nous pouvons ensuite calculer la correlation entre `x` et `y` :
+
+```{r cor-dino}
+dino_data %>%
+  summarize(r = cor(x, y))
+```
+
+### Exercise 3
+
+Vous pouvez ajouter votre code et vos explications.
+Vous pouvez écrire votre code dans les chunk de code nommés `plot-star` et `cor-star`, pour représenter le dataset et calculer la corrélation.
+Vous pouvez finir par enlever les instrusctions pour n'avoir que vos explications.
+
+Blah blah blah...
+
+```{r plot-star}
+
+```
+
+Du texte, remplace moi par des explications...
+
+```{r cor-star}
+
+```
+
+### Exercise 4
+
+Ajoutez votre code et vos explications.
+Notez que les chunk de code ne possèdent pas de nom cette fois. Ce n'est pas indispensable mais ça aide à la lecture. Nommez les en suivant la convention utilisée précédemment.
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+### Exercise 5
+
+Ajoutez votre code et vos explications.
+Pour ajouter les chunk de code, utulisez trois backticks avec une accolades et la lettre `r`, ou bien utilisez le bouton vert avec le C+, "Insert a new code chunk here" ci-dessus.
+
+
