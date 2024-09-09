@@ -128,6 +128,26 @@ Comment feriez vous pour analyser des données ?
 ![[@wickhamDataScience2023]](figs/data-science-process.png)
 
 
+# À vous de jouer ! ![](figs/un-logo.png){width="20%"}
+
+## Votre première analyse de données
+
+[UN Votes](../demo/unvotes/unvotes.qmd){style="text-align=center"}
+
+::: fragment
+Pour le faire chez vous:
+
+- Ouvrez RStudio
+- [Nouveau Projet > Version Control > Git]{.gray-mono}
+- Entrez l'url: ...
+- Choisissez un dossier sur l'ordinateur
+- Ouvrez le fichier `unvotes.rmd`
+- Validez l'installation des packages.
+- Cliquez sur `knit`
+:::
+
+
+
 ## Référence
 
 ::: columns

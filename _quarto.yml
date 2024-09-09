@@ -8,8 +8,8 @@ website:
     left:
       - href: index.qmd
         text: "Home"
-      - href: about.qmd
-        text: "À propos"
+      - href: website/cours/cours.qmd
+        text: "Cours"
       - href: website/labs/labs.qmd
         text: "Labs"
       - href: website/exercices/exos.qmd

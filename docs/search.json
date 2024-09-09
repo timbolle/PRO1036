@@ -2,12 +2,12 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "PRO1036",
+    "title": "Bienvenue !",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "text": "Bienvenu au cours PRO1036 - Analyse de données scientifiques en R !\nL’ensemble des ressources pour les cours se trouvent sur ce site web.",
     "crumbs": [
       "Home",
-      "PRO1036"
+      "Bienvenue !"
     ]
   },
   {
@@ -22,7 +22,7 @@
     "href": "website/labs/lab01-hello-world/lab01-hello-world.html",
     "title": "Lab 01 - Hello World",
     "section": "",
-    "text": "TODO: faire les consignes pour Git\n\n\n\nNous allons travaillé avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "text": "TODO: faire les consignes pour Git\n\n\n\nNous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
     "crumbs": [
       "Labs",
       "Semaine 1",
@@ -46,7 +46,7 @@
     "href": "website/labs/lab01-hello-world/lab01-hello-world.html#packages",
     "title": "Lab 01 - Hello World",
     "section": "",
-    "text": "Nous allons travaillé avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.",
+    "text": "Nous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.",
     "crumbs": [
       "Labs",
       "Semaine 1",
@@ -491,76 +491,294 @@
     "href": "slides/00 - Intro/00 - intro.html#référence",
     "title": "00 - intro",
     "section": "Référence",
-    "text": "Référence\n\n\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc. https://r4ds.hadley.nz/\n\n\n\n\n\n\n\nPRO1036 - 00 | Tim Bollé"
+    "text": "Référence\n\n\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc.\n\n\n\n\n\n\n\nPRO1036 - 00 | Tim Bollé"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#les-outils-1",
     "href": "slides/01 - R basics/01 - r-basics.html#les-outils-1",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "Les outils",
     "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#objectif-du-cours",
     "href": "slides/01 - R basics/01 - r-basics.html#objectif-du-cours",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "Objectif du cours",
     "text": "Objectif du cours\nÀ la fin de ce cours, vous pourrez:\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#répétabilité",
     "href": "slides/01 - R basics/01 - r-basics.html#répétabilité",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "Répétabilité",
     "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#les-outils-de-la-répérabilité",
     "href": "slides/01 - R basics/01 - r-basics.html#les-outils-de-la-répérabilité",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "Les outils de la répérabilité",
     "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#r-et-rstudio",
     "href": "slides/01 - R basics/01 - r-basics.html#r-et-rstudio",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "R et RStudio",
     "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs et de la visualisation statisiques\nDe nombreuses autres applications sont disponibles grâce à des *packages*\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#r-packages",
     "href": "slides/01 - R basics/01 - r-basics.html#r-packages",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "R packages",
     "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#rstudio-tour",
     "href": "slides/01 - R basics/01 - r-basics.html#rstudio-tour",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "RStudio tour",
     "text": "RStudio tour"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#r-101",
     "href": "slides/01 - R basics/01 - r-basics.html#r-101",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "R 101",
     "text": "R 101\n\nLes fonction sont souvent des verbes, suivi de parenthèses, contenant des arguments:\n\nfait_ca(avec_ca)\nfait_ca(avec_ca, et_ca, et_encore_ca)\n\n\n\nLes packages peuvent être installés avec install.package et chargés avec library:\n\ninstall.packages(\"package_name\")\nlibrary(package_name)\n\n\n\n$ permet d’accéder aux colonnes des tableaux\n\ndataframe$var_name\n\n\n\n? permet d’accéder à l’aide sur les fonctions\n\n?mean"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#références",
     "href": "slides/01 - R basics/01 - r-basics.html#références",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "Références",
     "text": "Références\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\n\n\n\n\nPRO1036 - 01 | Tim Bollé"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#tidyverse",
     "href": "slides/01 - R basics/01 - r-basics.html#tidyverse",
-    "title": "01 - R basics",
+    "title": "01 - Boite à outils",
     "section": "Tidyverse",
     "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
+  },
+  {
+    "objectID": "demo/Bechdel/Bechdel.html",
+    "href": "demo/Bechdel/Bechdel.html",
+    "title": "Bechdel",
+    "section": "",
+    "text": "In this mini analysis we work with the data used in the FiveThirtyEight story titled “The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women”. Your task is to fill in the blanks denoted by ___."
+  },
+  {
+    "objectID": "demo/Bechdel/Bechdel.html#data-and-packages",
+    "href": "demo/Bechdel/Bechdel.html#data-and-packages",
+    "title": "Bechdel",
+    "section": "Data and packages",
+    "text": "Data and packages\nWe start with loading the packages we’ll use.\n\nlibrary(fivethirtyeight)\nlibrary(tidyverse)\n\nThe dataset contains information on 1794 movies released between 1970 and 2013. However we’ll focus our analysis on movies released between 1990 and 2013.\n\nbechdel90_13 &lt;- bechdel %&gt;% \n  filter(between(year, 1990, 2013))\n\nThere are ___ such movies.\nThe financial variables we’ll focus on are the following:\n\nbudget_2013: Budget in 2013 inflation adjusted dollars\ndomgross_2013: Domestic gross (US) in 2013 inflation adjusted dollars\nintgross_2013: Total International (i.e., worldwide) gross in 2013 inflation adjusted dollars\n\nAnd we’ll also use the binary and clean_test variables for grouping."
+  },
+  {
+    "objectID": "demo/Bechdel/Bechdel.html#analysis",
+    "href": "demo/Bechdel/Bechdel.html#analysis",
+    "title": "Bechdel",
+    "section": "Analysis",
+    "text": "Analysis\nLet’s take a look at how median budget and gross vary by whether the movie passed the Bechdel test, which is stored in the binary variable.\n\nbechdel90_13 %&gt;%\n  group_by(binary) %&gt;%\n  summarise(\n    med_budget = median(budget_2013),\n    med_domgross = median(domgross_2013, na.rm = TRUE),\n    med_intgross = median(intgross_2013, na.rm = TRUE)\n    )\n\n# A tibble: 2 × 4\n  binary med_budget med_domgross med_intgross\n  &lt;chr&gt;       &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 FAIL    48385984.    57318606.    104475669\n2 PASS    31070724     45330446.     80124349\n\n\nNext, let’s take a look at how median budget and gross vary by a more detailed indicator of the Bechdel test result. This information is stored in the clean_test variable, which takes on the following values:\n\nok = passes test\ndubious\nmen = women only talk about men\nnotalk = women don’t talk to each other\nnowomen = fewer than two women\n\n\nbechdel90_13 %&gt;%\n  #group_by(___) %&gt;%\n  summarise(\n    med_budget = median(budget_2013),\n    med_domgross = median(domgross_2013, na.rm = TRUE),\n    med_intgross = median(intgross_2013, na.rm = TRUE)\n    )\n\n# A tibble: 1 × 3\n  med_budget med_domgross med_intgross\n       &lt;int&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1   37878971     52270207     93523336\n\n\nIn order to evaluate how return on investment varies among movies that pass and fail the Bechdel test, we’ll first create a new variable called roi as the ratio of the gross to budget.\n\nbechdel90_13 &lt;- bechdel90_13 %&gt;%\n  mutate(roi = (intgross_2013 + domgross_2013) / budget_2013)\n\nLet’s see which movies have the highest return on investment.\n\nbechdel90_13 %&gt;%\n  arrange(desc(roi)) %&gt;% \n  select(title, roi, year)\n\n# A tibble: 1,615 × 3\n   title                     roi  year\n   &lt;chr&gt;                   &lt;dbl&gt; &lt;int&gt;\n 1 Paranormal Activity      671.  2007\n 2 The Blair Witch Project  648.  1999\n 3 El Mariachi              583.  1992\n 4 Clerks.                  258.  1994\n 5 In the Company of Men    231.  1997\n 6 Napoleon Dynamite        227.  2004\n 7 Once                     190.  2006\n 8 The Devil Inside         155.  2012\n 9 Primer                   142.  2004\n10 Fireproof                134.  2008\n# ℹ 1,605 more rows\n\n\nBelow is a visualization of the return on investment by test result, however it’s difficult to see the distributions due to a few extreme observations.\n\nggplot(data = bechdel90_13, \n       mapping = aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    x = \"Detailed Bechdel result\",\n    y = \"___\",\n    color = \"Binary Bechdel result\"\n    )\n\n\n\n\n\n\n\n\nWhat are those movies with very high returns on investment?\n\nbechdel90_13 %&gt;%\n  filter(roi &gt; 400) %&gt;%\n  select(title, budget_2013, domgross_2013, year)\n\n# A tibble: 3 × 4\n  title                   budget_2013 domgross_2013  year\n  &lt;chr&gt;                         &lt;int&gt;         &lt;dbl&gt; &lt;int&gt;\n1 Paranormal Activity          505595     121251476  2007\n2 The Blair Witch Project      839077     196538593  1999\n3 El Mariachi                   11622       3388636  1992\n\n\nZooming in on the movies with roi &lt; ___ provides a better view of how the medians across the categories compare:\n\nggplot(data = bechdel90_13, mapping = aes(x = clean_test, y = roi, color = binary)) +\n  geom_boxplot() +\n  labs(\n    title = \"Return on investment vs. Bechdel test result\",\n    subtitle = \"___\", # Something about zooming in to a certain level\n    x = \"Detailed Bechdel result\",\n    y = \"Return on investment\",\n    color = \"Binary Bechdel result\"\n    ) +\n  coord_cartesian(ylim = c(0, 15))"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#r-markdown",
+    "href": "slides/01 - R basics/01 - r-basics.html#r-markdown",
+    "title": "01 - Boite à outils",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#r-markdown-1",
+    "href": "slides/01 - R basics/01 - r-basics.html#r-markdown-1",
+    "title": "01 - Boite à outils",
+    "section": "R Markdown",
+    "text": "R Markdown"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#r-markdown---aide",
+    "href": "slides/01 - R basics/01 - r-basics.html#r-markdown---aide",
+    "title": "01 - Boite à outils",
+    "section": "R Markdown - Aide",
+    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#les-outils",
+    "href": "slides/01 - R basics/01 - r-basics.html#les-outils",
+    "title": "01 - Boite à outils",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#git-et-github",
+    "href": "slides/01 - R basics/01 - r-basics.html#git-et-github",
+    "title": "01 - Boite à outils",
+    "section": "Git et GitHub",
+    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#pourquoi-la-gestion-de-version",
+    "href": "slides/01 - R basics/01 - r-basics.html#pourquoi-la-gestion-de-version",
+    "title": "01 - Boite à outils",
+    "section": "Pourquoi la gestion de version ?",
+    "text": "Pourquoi la gestion de version ?\n\nPhD Comics"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#fonctionnement",
+    "href": "slides/01 - R basics/01 - r-basics.html#fonctionnement",
+    "title": "01 - Boite à outils",
+    "section": "Fonctionnement",
+    "text": "Fonctionnement"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#mise-en-place",
+    "href": "slides/01 - R basics/01 - r-basics.html#mise-en-place",
+    "title": "01 - Boite à outils",
+    "section": "Mise en place",
+    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html",
+    "href": "demo/unvotes/unvotes.html",
+    "title": "UN Votes",
+    "section": "",
+    "text": "Comment les différents pays votent-ils à l’Assemblée Générale des Nations Unies, comment leurs votent ont-ils évolué à travers le temps, et quels sont leurs différences d’opinion sur les différents sujet ? Cette analyse vise à proposer des pistes de réponses.\n\n\nNous allons utiliser les packages tidyverse, lubridate, et scales pour la manipulation de données et la visualisation, le package DT pour l’interactivité des tableaux et le package unvotes pour les données.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\n\n\n\n\nLes donnnées que nous utilisons proviennent du package unvotes. Dans le block suivant, nous transformons les données pour joindre différents tableaux fournis avec le package et ainsi faciliter l’analyse.\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nWarning in inner_join(., un_roll_call_issues, by = \"rcid\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 382 of `x` matches multiple rows in `y`.\nℹ Row 3009 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning."
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html#introduction",
+    "href": "demo/unvotes/unvotes.html#introduction",
+    "title": "UN Votes",
+    "section": "",
+    "text": "Comment les différents pays votent-ils à l’Assemblée Générale des Nations Unies, comment leurs votent ont-ils évolué à travers le temps, et quels sont leurs différences d’opinion sur les différents sujet ? Cette analyse vise à proposer des pistes de réponses.\n\n\nNous allons utiliser les packages tidyverse, lubridate, et scales pour la manipulation de données et la visualisation, le package DT pour l’interactivité des tableaux et le package unvotes pour les données.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\n\n\n\n\nLes donnnées que nous utilisons proviennent du package unvotes. Dans le block suivant, nous transformons les données pour joindre différents tableaux fournis avec le package et ainsi faciliter l’analyse.\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nWarning in inner_join(., un_roll_call_issues, by = \"rcid\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 382 of `x` matches multiple rows in `y`.\nℹ Row 3009 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning."
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html#un-voting-patterns",
+    "href": "demo/unvotes/unvotes.html#un-voting-patterns",
+    "title": "UN Votes",
+    "section": "UN voting patterns",
+    "text": "UN voting patterns\nLet’s create a data visualisation that displays how the voting record of the UK & NI changed over time on a variety of issues, and compares it to two other countries: US and Turkey.\nWe can easily change which countries are being plotted by changing which countries the code above filters for. Note that the country name should be spelled and capitalized exactly the same way as it appears in the data. See the Appendix for a list of the countries in the data.\n\nunvotes %&gt;%\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) %&gt;%\n  mutate(year = year(date)) %&gt;%\n  group_by(country, year, issue) %&gt;%\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html#references",
+    "href": "demo/unvotes/unvotes.html#references",
+    "title": "UN Votes",
+    "section": "References",
+    "text": "References\n\nDavid Robinson (2017). unvotes: United Nations General Assembly Voting Data. R package version 0.2.0.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html#appendix",
+    "href": "demo/unvotes/unvotes.html#appendix",
+    "title": "UN Votes",
+    "section": "Appendix",
+    "text": "Appendix\nLa liste des pays dans le jeu de données est présenté ci-dessous:"
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html",
+    "href": "website/demo/unvotes/unvotes.html",
+    "title": "UN Votes",
+    "section": "",
+    "text": "Comment les différents pays votent-ils à l’Assemblée Générale des Nations Unies, comment leurs votent ont-ils évolué à travers le temps, et quels sont leurs différences d’opinion sur les différents sujet ? Cette analyse vise à proposer des pistes de réponses.\n\n\nNous allons utiliser les packages tidyverse, lubridate, et scales pour la manipulation de données et la visualisation, le package DT pour l’interactivité des tableaux et le package unvotes pour les données.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\n\n\n\n\nLes donnnées que nous utilisons proviennent du package unvotes. Dans le block suivant, nous transformons les données pour joindre différents tableaux fournis avec le package et ainsi faciliter l’analyse.\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nWarning in inner_join(., un_roll_call_issues, by = \"rcid\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 382 of `x` matches multiple rows in `y`.\nℹ Row 3009 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning."
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#introduction",
+    "href": "website/demo/unvotes/unvotes.html#introduction",
+    "title": "UN Votes",
+    "section": "",
+    "text": "Comment les différents pays votent-ils à l’Assemblée Générale des Nations Unies, comment leurs votent ont-ils évolué à travers le temps, et quels sont leurs différences d’opinion sur les différents sujet ? Cette analyse vise à proposer des pistes de réponses.\n\n\nNous allons utiliser les packages tidyverse, lubridate, et scales pour la manipulation de données et la visualisation, le package DT pour l’interactivité des tableaux et le package unvotes pour les données.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\n\n\n\n\nLes donnnées que nous utilisons proviennent du package unvotes. Dans le block suivant, nous transformons les données pour joindre différents tableaux fournis avec le package et ainsi faciliter l’analyse.\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nWarning in inner_join(., un_roll_call_issues, by = \"rcid\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 382 of `x` matches multiple rows in `y`.\nℹ Row 3009 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning."
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#les-patterns-de-vote-aux-nations-unies",
+    "href": "website/demo/unvotes/unvotes.html#les-patterns-de-vote-aux-nations-unies",
+    "title": "UN Votes",
+    "section": "Les patterns de vote aux Nations Unies",
+    "text": "Les patterns de vote aux Nations Unies\nNous allons créer une visualisation qui affiche l’évolution des votes pour différents pays sur une certaine période.\nNous pouvons facilement changer les pays qui sont affichés en changeant les noms passés dans la fonction filter. Notez que le nom du pays dont commencer par une majuscule et avoir exactement la même orthographe que dans les données. La liste complète est présentée en Annexe.\n\nunvotes %&gt;%\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) %&gt;%\n  mutate(year = year(date)) %&gt;%\n  group_by(country, year, issue) %&gt;%\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#références",
+    "href": "website/demo/unvotes/unvotes.html#références",
+    "title": "UN Votes",
+    "section": "Références",
+    "text": "Références\n\nDavid Robinson (2017). unvotes: United Nations General Assembly Voting Data. R package version 0.2.0.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#appendix",
+    "href": "website/demo/unvotes/unvotes.html#appendix",
+    "title": "UN Votes",
+    "section": "Appendix",
+    "text": "Appendix\nLa liste des pays dans le jeu de données est présenté ci-dessous:"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html",
+    "href": "slides/00 - Intro/00 - intro.html",
+    "title": "00 - intro",
+    "section": "",
+    "text": "Originaire de France\n\nEn 2011:\n\nDépart pour Lausanne\nÉcole des Science criminelle\n\n\n\nBachelor en science forensique\n\n\nMaster en science forensiqie\n\nSpécialisé en traces numérique\n\n\n\n\n\n\nLausanne\n\n\n\n\n\n\n\n\nDoctorat en science forensique:\n\nDétection et analyse de liens non-évidents dans les fraudes en ligne\n\n\n\nÉcole des Sciences Criminelles:\n\nEnseignement dans le domaine du numérique\nExpertises\nFormation professionnelle\n\n\n\nDepuis 2022: Professeur à l’UQTR"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Bienvenue !",
+    "section": "License",
+    "text": "License\nL’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International.",
+    "crumbs": [
+      "Home",
+      "Bienvenue !"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledements",
+    "href": "index.html#acknowledements",
+    "title": "Bienvenue !",
+    "section": "Acknowledements",
+    "text": "Acknowledements\nUne partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto.",
+    "crumbs": [
+      "Home",
+      "Bienvenue !"
+    ]
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html#les-patterns-de-vote-aux-nations-unies",
+    "href": "demo/unvotes/unvotes.html#les-patterns-de-vote-aux-nations-unies",
+    "title": "UN Votes",
+    "section": "Les patterns de vote aux Nations Unies",
+    "text": "Les patterns de vote aux Nations Unies\nNous allons créer une visualisation qui affiche l’évolution des votes pour différents pays sur une certaine période.\nNous pouvons facilement changer les pays qui sont affichés en changeant les noms passés dans la fonction filter. Notez que le nom du pays dont commencer par une majuscule et avoir exactement la même orthographe que dans les données. La liste complète est présentée en Annexe.\n\nunvotes %&gt;%\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) %&gt;%\n  mutate(year = year(date)) %&gt;%\n  group_by(country, year, issue) %&gt;%\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
+  },
+  {
+    "objectID": "demo/unvotes/unvotes.html#références",
+    "href": "demo/unvotes/unvotes.html#références",
+    "title": "UN Votes",
+    "section": "Références",
+    "text": "Références\n\nDavid Robinson (2017). unvotes: United Nations General Assembly Voting Data. R package version 0.2.0.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "",
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#votre-première-analyse-de-données",
+    "href": "slides/00 - Intro/00 - intro.html#votre-première-analyse-de-données",
+    "title": "00 - intro",
+    "section": "Votre première analyse de données",
+    "text": "Votre première analyse de données\nUN Votes\n\nPour le faire chez vous:\n\nOuvrez RStudio\nNouveau Projet &gt; Version Control &gt; Git\nEntrez l’url: …\nChoisissez un dossier sur l’ordinateur\nOuvrez le fichier unvotes.rmd\nValidez l’installation des packages.\nCliquez sur knit"
+  },
+  {
+    "objectID": "website/cours/cours.html#r-basics",
+    "href": "website/cours/cours.html#r-basics",
+    "title": "Cours",
+    "section": "01 - R basics",
+    "text": "01 - R basics\nSlide: Web PDF Demo: UN Votes Labs: Labo01 - Hello WoRld Exercices: Exo01 - Pet names"
   }
 ]

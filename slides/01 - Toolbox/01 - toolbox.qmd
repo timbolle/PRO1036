@@ -1,5 +1,5 @@
 ---
-title: "01 - R basics"
+title: "01 - Boite à outils"
 subtitle: "PRO1036 - Analyse de données scientifiques en R"
 author: "Tim Bollé"
 date: "2024-09-09"
@@ -21,7 +21,7 @@ format:
     #smaller: true
 ---
 
-# Les outils
+# Boîte à outils
 
 ## Les outils
 
@@ -154,7 +154,7 @@ dataframe$var_name
 :::
 
 ::: {.column width="40%"}
-[[tidyverse.org](https://www.tidyverse.org/)]{.light-red style="font-size: 1.5em;"}
+[[tidyverse.org](https://www.tidyverse.org/){style="color:#f08181;"}]{style="font-size: 1.5em;"}
 
 Le `Tidyverse` est une collection de packages développés pour faire de la data science
 
@@ -168,11 +168,12 @@ Il y a une philophie et une grammaire commune à tous ces packages, que nous all
 ::: columns
 ::: {.column width="60%"}
 
-[[rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/)]{.light-red style="font-size: 1.5em;"}
+[[rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/){style="color:#f08181;"}]{style="font-size: 1.5em;"}
 
 `R Markdown` permet d'écrire des documents avec du code intégré (extension en `.Rmd`).
 
 Va permettre de documenter et de communiquer directement nos analyses de données !
+
 ::: incremental
 - Reproductible: À chaque fois qu'on génère le document, tout est exécuté depuis le début
 - Syntaxe simple pour avoir des documents de qualité
@@ -181,10 +182,89 @@ Va permettre de documenter et de communiquer directement nos analyses de donnée
 :::
 
 ::: {.column width="40%"}
-![](figs/R-Markdown_logo.png){width="20%"}
+![](figs/R-Markdown_logo.png){width="80%"}
 :::
 :::
 
+## R Markdown
+![](figs/R-Markdown_example.png){width="80%"}
+
+## R Markdown - Aide
+
+::: columns
+::: {.column width="40%"}
+Cheatsheet<br/>[Help > Cheatsheet]{.gray-mono}
+
+![](figs/rmd-cheatsheet.png){width="80%"}
+:::
+
+::: {.column width="60%"}
+Markdown Quick Reference<br/>[Help > Markdown Quick Reference]{.gray-mono}
+
+![](figs/md-cheatsheet.jpg){width="60%"}
+:::
+:::
+
+# Boîte à outils
+
+## Les outils
+
+:::{.gray}
+Développement:
+
+- R
+- RStudio
+- tidyverse
+- R Markdown
+:::
+:::{.light-red}
+Gestion et collaboration:
+
+- Git
+- GitHub
+:::
+
+## Git et GitHub
+
+
+::: columns
+:::{.column width="50%"}
+![](figs/git-logo.png){width="30%" fig-align="center"}
+
+- Git est un outil de `gestion de version`
+  - Comme le *track changes* sur Word
+- Très populaire dans le monde de la programmation
+
+:::
+
+:::{.column width="50%"}
+![](figs/github-logo.png){width="30%" fig-align="center"}
+
+- GitHub est un plateforme de stockage de `repo` Git
+  - Comme un Onedrive/Dropbox pour Git
+- Nous allons essayer de l'utiliser pour... tout !
+:::
+:::
+
+## Pourquoi la gestion de version ?
+
+![[PhD Comics](https://phdcomics.com/comics.php?f=1531)](figs/phd_comics_vc.gif)
+
+## Fonctionnement
+
+![](figs/vc-process.png)
+
+## Mise en place
+
+Git peut être utilisé depuis le terminal de commande
+
+- Utilisation plus avancée
+- Nous pouvons normalement tout faire depuis R Studio
+
+Github:
+
+- Créez un compte avec votre adresse UQTR
+- Vérifiez votre adresse courriel
 
 ## Références
 :::{#refs}

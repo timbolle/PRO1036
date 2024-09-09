@@ -1,0 +1,15 @@
+---
+title: "Cours"
+editor: visual
+---
+
+## 00 - Introduction
+
+Slide: [Web](../../slides/00 - Intro/00 - intro.qmd) [PDF](00 - intro.pdf)
+
+## 01 - R basics
+
+Slide: [Web](../../slides/01 - Toolbox/00 - toolbox.qmd) [PDF](01 - toolbox.pdf)
+<br/>Demo: [UN Votes](../demo/unvotes/unvotes.qmd)
+<br/>Labs: [Labo01 - Hello WoRld](../labs/lab01-hello-world/lab01-hello-world.qmd)
+<br/>Exercices: [Exo01 - Pet names](../exercices/exo01-pet-names/exo01-pet-names.qmd)

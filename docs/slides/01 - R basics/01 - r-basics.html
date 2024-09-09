@@ -12,7 +12,7 @@
 
   <meta name="author" content="Tim Bollé">
   <meta name="dcterms.date" content="2024-09-09">
-  <title>PRO1036 – 01 - R basics</title>
+  <title>PRO1036 – 01 - Boite à outils</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -412,7 +412,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">01 - R basics</h1>
+  <h1 class="title">01 - Boite à outils</h1>
   <p class="subtitle">PRO1036 - Analyse de données scientifiques en R</p>
 
 <div class="quarto-title-authors">
@@ -426,11 +426,11 @@ Tim Bollé
   <p class="date">September 9, 2024</p>
 </section>
 <section>
-<section id="les-outils" class="title-slide slide level1 center">
-<h1>Les outils</h1>
+<section id="boîte-à-outils" class="title-slide slide level1 center">
+<h1>Boîte à outils</h1>
 
 </section>
-<section id="les-outils-1" class="slide level2">
+<section id="les-outils" class="slide level2">
 <h2>Les outils</h2>
 <div class="light-red">
 <p>Développement:</p>
@@ -552,10 +552,119 @@ Tim Bollé
 <div class="column" style="width:60%;">
 <p><img data-src="figs/tidyverse.png" style="width:80.0%"></p>
 </div><div class="column" style="width:40%;">
-<p><span class="light-red" style="font-size: 1.5em;">tidyverse.org</span></p>
+<p><span style="font-size: 1.5em;"><a href="https://www.tidyverse.org/" style="color:#f08181;">tidyverse.org</a></span></p>
 <p>Le <code>Tidyverse</code> est une collection de packages développés pour faire de la data science</p>
 <p>Il y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre.</p>
 </div></div>
+</section>
+<section id="r-markdown" class="slide level2">
+<h2>R Markdown</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><span style="font-size: 1.5em;"><a href="https://rmarkdown.rstudio.com/" style="color:#f08181;">rmarkdown.rstudio.com</a></span></p>
+<p><code>R Markdown</code> permet d’écrire des documents avec du code intégré (extension en <code>.Rmd</code>).</p>
+<p>Va permettre de documenter et de communiquer directement nos analyses de données !</p>
+<div>
+<ul>
+<li class="fragment">Reproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début</li>
+<li class="fragment">Syntaxe simple pour avoir des documents de qualité</li>
+<li class="fragment">Le document se découpe en zones de texte et blocks de code</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figs/R-Markdown_logo.png" style="width:80.0%"></p>
+</div></div>
+</section>
+<section id="r-markdown-1" class="slide level2">
+<h2>R Markdown</h2>
+
+<img data-src="figs/R-Markdown_example.png" style="width:80.0%" class="r-stretch"></section>
+<section id="r-markdown---aide" class="slide level2">
+<h2>R Markdown - Aide</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Cheatsheet<br><span class="gray-mono">Help &gt; Cheatsheet</span></p>
+<p><img data-src="figs/rmd-cheatsheet.png" style="width:80.0%"></p>
+</div><div class="column" style="width:60%;">
+<p>Markdown Quick Reference<br><span class="gray-mono">Help &gt; Markdown Quick Reference</span></p>
+<p><img data-src="figs/md-cheatsheet.jpg" style="width:60.0%"></p>
+</div></div>
+</section></section>
+<section>
+<section id="boîte-à-outils-1" class="title-slide slide level1 center">
+<h1>Boîte à outils</h1>
+
+</section>
+<section id="les-outils-1" class="slide level2">
+<h2>Les outils</h2>
+<div class="gray">
+<p>Développement:</p>
+<ul>
+<li>R</li>
+<li>RStudio</li>
+<li>tidyverse</li>
+<li>R Markdown</li>
+</ul>
+</div>
+<div class="light-red">
+<p>Gestion et collaboration:</p>
+<ul>
+<li>Git</li>
+<li>GitHub</li>
+</ul>
+</div>
+</section>
+<section id="git-et-github" class="slide level2">
+<h2>Git et GitHub</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/git-logo.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Git est un outil de <code>gestion de version</code>
+<ul>
+<li>Comme le <em>track changes</em> sur Word</li>
+</ul></li>
+<li>Très populaire dans le monde de la programmation</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figs/github-logo.png" class="quarto-figure quarto-figure-center" style="width:30.0%"></p>
+</figure>
+</div>
+<ul>
+<li>GitHub est un plateforme de stockage de <code>repo</code> Git
+<ul>
+<li>Comme un Onedrive/Dropbox pour Git</li>
+</ul></li>
+<li>Nous allons essayer de l’utiliser pour… tout !</li>
+</ul>
+</div></div>
+</section>
+<section id="pourquoi-la-gestion-de-version" class="slide level2">
+<h2>Pourquoi la gestion de version ?</h2>
+
+<img data-src="figs/phd_comics_vc.gif" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://phdcomics.com/comics.php?f=1531">PhD Comics</a></p></section>
+<section id="fonctionnement" class="slide level2">
+<h2>Fonctionnement</h2>
+
+<img data-src="figs/vc-process.png" class="r-stretch"></section>
+<section id="mise-en-place" class="slide level2">
+<h2>Mise en place</h2>
+<p>Git peut être utilisé depuis le terminal de commande</p>
+<ul>
+<li>Utilisation plus avancée</li>
+<li>Nous pouvons normalement tout faire depuis R Studio</li>
+</ul>
+<p>Github:</p>
+<ul>
+<li>Créez un compte avec votre adresse UQTR</li>
+<li>Vérifiez votre adresse courriel</li>
+</ul>
 </section>
 <section id="références" class="slide level2 smaller scrollable">
 <h2>Références</h2>

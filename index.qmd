@@ -1,11 +1,19 @@
 ---
-title: "PRO1036"
+title: "Bienvenue !"
 ---
 
-This is a Quarto website.
+Bienvenu au cours PRO1036 - Analyse de données scientifiques en R !
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+L'ensemble des ressources pour les cours se trouvent sur ce site web.
 
-```{r}
-1 + 1
-```
+## License
+
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />L'ensemble de ce site est sous license a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>.
+
+
+## Acknowledements {.unnumbered}
+
+Une partie du cours proposé ici est adapté du matériel proposé par [Data Science in a Box](https://datasciencebox.org/).
+
+
+This website is built with [Quarto](https://quarto.org).
