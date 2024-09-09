@@ -12,7 +12,7 @@ TODO: faire les consignes pour Git
 
 ## Packages
 
-Nous allons travaillé avec deux packages: **datasauRus** qui contient le jeu de données que nous allons utiliser et **tidyverse** qui est une collection de packages pour l'analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l'image ci-dessous:
+Nous allons travailler avec deux packages: **datasauRus** qui contient le jeu de données que nous allons utiliser et **tidyverse** qui est une collection de packages pour l'analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l'image ci-dessous:
 
 ```{r clone-repo-link, fig.margin = TRUE, echo = FALSE, fig.width=3}
 knitr::include_graphics("figs/install_packages.png")

@@ -154,11 +154,34 @@ dataframe$var_name
 :::
 
 ::: {.column width="40%"}
-[tidyverse.org]{.light-red style="font-size: 1.5em;"}
+[[tidyverse.org](https://www.tidyverse.org/)]{.light-red style="font-size: 1.5em;"}
 
 Le `Tidyverse` est une collection de packages développés pour faire de la data science
 
 Il y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre.
+:::
+:::
+
+
+## R Markdown
+
+::: columns
+::: {.column width="60%"}
+
+[[rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/)]{.light-red style="font-size: 1.5em;"}
+
+`R Markdown` permet d'écrire des documents avec du code intégré (extension en `.Rmd`).
+
+Va permettre de documenter et de communiquer directement nos analyses de données !
+::: incremental
+- Reproductible: À chaque fois qu'on génère le document, tout est exécuté depuis le début
+- Syntaxe simple pour avoir des documents de qualité
+- Le document se découpe en zones de texte et blocks de code
+:::
+:::
+
+::: {.column width="40%"}
+![](figs/R-Markdown_logo.png){width="20%"}
 :::
 :::
 
