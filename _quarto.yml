@@ -12,6 +12,8 @@ website:
         text: "À propos"
       - href: website/labs/labs.qmd
         text: "Labs"
+      - href: website/exercices/exos.qmd
+        text: "Exercices"
 
   sidebar:
     - title: "Home"
@@ -26,6 +28,12 @@ website:
           contents:
             - website/labs/lab01-hello-world/lab01-hello-world.qmd
       
+    - title: "Exercices"
+      contents:
+        - website/exercices/exos.qmd
+        - section: "Semaine 1"
+          contents:
+            - website/exercices/exo01-pet-names/exo01-pet-names.qmd
 
 
 format:

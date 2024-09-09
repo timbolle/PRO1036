@@ -173,77 +173,132 @@
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html",
     "title": "Exercice 01 - Pet names",
     "section": "",
-    "text": "Photo by Atsuko Sato\nLe but de cet exercice est de pratiquer les premiers éléments vus concernant R et Git/Github."
+    "text": "Photo by Atsuko Sato\nLe but de cet exercice est de pratiquer les premiers éléments vus concernant R et Git/Github.",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#terminologie",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#terminologie",
     "title": "Exercice 01 - Pet names",
     "section": "Terminologie",
-    "text": "Terminologie\nNous en avons déjà parler mais répéter ne fait pas de mal:\n\nR: Le language de prorgammation qui sera utilisé dans ce cours.\nRStudio: Un environnement de développement intégré (IDE) pour R. En d’autres termes, une interface pour travailler efficacement avec R.\nGit: Un logiciel de gestion de versions\nGitHub: Une plateforme web pour accueillir des fichiers versionnés et faciliter la collaboration entre utilisateurs.\nRepository: Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions."
+    "text": "Terminologie\nNous en avons déjà parler mais répéter ne fait pas de mal:\n\nR: Le language de prorgammation qui sera utilisé dans ce cours.\nRStudio: Un environnement de développement intégré (IDE) pour R. En d’autres termes, une interface pour travailler efficacement avec R.\nGit: Un logiciel de gestion de versions\nGitHub: Une plateforme web pour accueillir des fichiers versionnés et faciliter la collaboration entre utilisateurs.\nRepository: Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions.",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#étape-1-mise-à-jour-du-yaml",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#étape-1-mise-à-jour-du-yaml",
     "title": "Exercice 01 - Pet names",
     "section": "Étape 1: Mise à jour du YAML",
-    "text": "Étape 1: Mise à jour du YAML\nOuvrez le fichier R Markdown (Rmd) dans le projet que vous avez cloné. Changez l’auteur, la date et knittez le document.\nOpen the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document."
+    "text": "Étape 1: Mise à jour du YAML\nOuvrez le fichier R Markdown (Rmd) dans le projet que vous avez cloné. Changez l’auteur, la date et knittez le document.\nOpen the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document.",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#étape-2-commit",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#étape-2-commit",
     "title": "Exercice 01 - Pet names",
     "section": "Étape 2: Commit",
-    "text": "Étape 2: Commit\nOuvrez le panneau Git en haut à droite.\nVous devriez voir votre fichier Rmd et son output listés comme recemment modifiés.\nEn cliquant sur diff, vous verrez les différence entre le dernier commit et l’état actuel du document. Si cela vous convient, vous pouvez sélectionner les fichiers à commit, ajouter un message dans le Commit message, par exemple “Mise à jour de l’auteur et de la date”. Cliquez ensuite sur Commit.\nIl n’est pas nécessaire de faire un commit après chaque changement. Faites le plutôt après avoir ajouté une fonctionnalité à votre code. Faite le quand cela vous semble pertinent, afin de pouvoir vérifier, comparer ou restorer."
+    "text": "Étape 2: Commit\nOuvrez le panneau Git en haut à droite.\nVous devriez voir votre fichier Rmd et son output listés comme recemment modifiés.\nEn cliquant sur diff, vous verrez les différence entre le dernier commit et l’état actuel du document. Si cela vous convient, vous pouvez sélectionner les fichiers à commit, ajouter un message dans le Commit message, par exemple “Mise à jour de l’auteur et de la date”. Cliquez ensuite sur Commit.\nIl n’est pas nécessaire de faire un commit après chaque changement. Faites le plutôt après avoir ajouté une fonctionnalité à votre code. Faite le quand cela vous semble pertinent, afin de pouvoir vérifier, comparer ou restorer.",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#étape-3-push",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#étape-3-push",
     "title": "Exercice 01 - Pet names",
     "section": "Étape 3: Push",
-    "text": "Étape 3: Push\nMaintenant que vous avez fait vos modifications, vous allez pusher vos changements sur le web, c’est-à-dire sur votre repo sur Github. Cela permettra aux autres (les profs) de voir vos changements. Appuyez simplement sur Push.\nCela devrait faire apparaitre une fenêtre. Entrez vos informations de connexion pour Github.\nGrosse question: Laquelle des étapes précédentes (changement du YAML, committing, et pushing) a besoin de communiquer avec Github?1"
+    "text": "Étape 3: Push\nMaintenant que vous avez fait vos modifications, vous allez pusher vos changements sur le web, c’est-à-dire sur votre repo sur Github. Cela permettra aux autres (les profs) de voir vos changements. Appuyez simplement sur Push.\nCela devrait faire apparaitre une fenêtre. Entrez vos informations de connexion pour Github.\nGrosse question: Laquelle des étapes précédentes (changement du YAML, committing, et pushing) a besoin de communiquer avec Github?1",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#exerice-1",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exerice-1",
     "title": "Exercice 01 - Pet names",
     "section": "Exerice 1",
-    "text": "Exerice 1\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 1. Knit, commit avec un message et pushez !"
+    "text": "Exerice 1\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 1. Knit, commit avec un message et pushez !",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-2",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-2",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 2",
-    "text": "Exercice 2\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !"
+    "text": "Exercice 2\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-3",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-3",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 3",
-    "text": "Exercice 3\nQuels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.\n\n\n\n\n\n\nTip\n\n\n\nLe code suivant peut être lu comme “Prend le dataset seattlepets, puis compte le nombre de ligne avec le même animal_name, et affiche le résultat en ordre décroissant”. le puis dans la phrase précédente correspond à l’opérateur de pipe %&gt;%, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.\n\n\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit, commit avec un message et pushez !"
+    "text": "Exercice 3\nQuels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.\n\n\n\n\n\n\nTip\n\n\n\nLe code suivant peut être lu comme “Prend le dataset seattlepets, puis compte le nombre de ligne avec le même animal_name, et affiche le résultat en ordre décroissant”. le puis dans la phrase précédente correspond à l’opérateur de pipe %&gt;%, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.\n\n\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit, commit avec un message et pushez !",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-4",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-4",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 4",
-    "text": "Exercice 4\nNous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord group_by() par l’species, puis faire le count.\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 16,823 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Dog     Lucy          337\n 3 Dog     Charlie       306\n 4 Dog     Bella         249\n 5 Dog     Luna          244\n 6 Dog     Daisy         221\n 7 Dog     Cooper        189\n 8 Dog     Lola          187\n 9 Dog     Max           186\n10 Dog     Molly         186\n# ℹ 16,813 more rows\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn observe beaucoup de NA pour les chats… pauvres chatons sans noms…\n\n\nCet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.\n\nseattlepets %&gt;%\n  count(species, sort = TRUE)\n\n# A tibble: 4 × 2\n  species     n\n  &lt;chr&gt;   &lt;int&gt;\n1 Dog     35181\n2 Cat     17294\n3 Goat       38\n4 Pig         6\n\n\nCherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction slice_max(). Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas n. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas n=5. Ici, les deux arguments mentionnent un n. Dans le premier cas, il y a un variable appelé n dans le dataframe résultant du count, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans slice_max().\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE) %&gt;% \n  slice_max(n, n = 5)\n\n# A tibble: 53 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Cat     Luna          111\n 3 Cat     Lucy          102\n 4 Cat     Lily           86\n 5 Cat     Max            83\n 6 Dog     Lucy          337\n 7 Dog     Charlie       306\n 8 Dog     Bella         249\n 9 Dog     Luna          244\n10 Dog     Daisy         221\n# ℹ 43 more rows\n\n\nÀ partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon n (la fréquence) et non par rapport à l’species. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par n. Pour cela, vous pouvez vous servir de la fonction arrange. Vous pourrez indiquer ce par quoi vous voulez tier: arrange(variable 1, variable 2). À vous d’essayer et de voir quel résultat est le bon !\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit, commit avec un message et pushez !"
+    "text": "Exercice 4\nNous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord group_by() par l’species, puis faire le count.\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 16,823 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Dog     Lucy          337\n 3 Dog     Charlie       306\n 4 Dog     Bella         249\n 5 Dog     Luna          244\n 6 Dog     Daisy         221\n 7 Dog     Cooper        189\n 8 Dog     Lola          187\n 9 Dog     Max           186\n10 Dog     Molly         186\n# ℹ 16,813 more rows\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn observe beaucoup de NA pour les chats… pauvres chatons sans noms…\n\n\nCet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.\n\nseattlepets %&gt;%\n  count(species, sort = TRUE)\n\n# A tibble: 4 × 2\n  species     n\n  &lt;chr&gt;   &lt;int&gt;\n1 Dog     35181\n2 Cat     17294\n3 Goat       38\n4 Pig         6\n\n\nCherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction slice_max(). Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas n. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas n=5. Ici, les deux arguments mentionnent un n. Dans le premier cas, il y a un variable appelé n dans le dataframe résultant du count, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans slice_max().\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE) %&gt;% \n  slice_max(n, n = 5)\n\n# A tibble: 53 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Cat     Luna          111\n 3 Cat     Lucy          102\n 4 Cat     Lily           86\n 5 Cat     Max            83\n 6 Dog     Lucy          337\n 7 Dog     Charlie       306\n 8 Dog     Bella         249\n 9 Dog     Luna          244\n10 Dog     Daisy         221\n# ℹ 43 more rows\n\n\nÀ partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon n (la fréquence) et non par rapport à l’species. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par n. Pour cela, vous pouvez vous servir de la fonction arrange. Vous pourrez indiquer ce par quoi vous voulez tier: arrange(variable 1, variable 2). À vous d’essayer et de voir quel résultat est le bon !\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit, commit avec un message et pushez !",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-5",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-5",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 5",
-    "text": "Exercice 5\nLa visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne \\(x = y\\); si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nQuels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?\nEst ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?\n\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message et pushez !"
+    "text": "Exercice 5\nLa visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne \\(x = y\\); si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nQuels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?\nEst ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?\n\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message et pushez !",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#footnotes",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#footnotes",
     "title": "Exercice 01 - Pet names",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nSeulement l’étape du push à besoin de communiquer avec Gihub, c’est pour cela que vos informations sont demandées.↩︎"
+    "text": "Footnotes\n\n\nSeulement l’étape du push à besoin de communiquer avec Gihub, c’est pour cela que vos informations sont demandées.↩︎",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
   },
   {
     "objectID": "labs/lab01-hello-world/lab01-hello-world.html",
@@ -307,5 +362,205 @@
     "title": "HW 01 - Pet names",
     "section": "Exercises",
     "text": "Exercises\n\nExercise 1\nThere are ___ pets in the dataset.\n\n\nExercise 2\nRemove this text, and add your answer for Exercise 2 here.\n\n\nExercise 3\nRemove this text, and add your answer for Exercise 3 here.\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 13,930 × 2\n   animal_name     n\n   &lt;chr&gt;       &lt;int&gt;\n 1 &lt;NA&gt;          483\n 2 Lucy          439\n 3 Charlie       387\n 4 Luna          355\n 5 Bella         331\n 6 Max           270\n 7 Daisy         261\n 8 Molly         240\n 9 Jack          232\n10 Lily          232\n# ℹ 13,920 more rows\n\n\n\n\nExercise 4\nRemove this text, and add your answer for Exercise 4 here.\n\n# remove this comment and add the code for Exercise 4 here\n\n\n\nExercise 5\nRemove this text, and add your answer for Exercise 5 here.\n\n\nExercise 6\nRemove this text, and add your answer for Exercise 6 here."
+  },
+  {
+    "objectID": "website/exercices/exos.html",
+    "href": "website/exercices/exos.html",
+    "title": "Labs",
+    "section": "",
+    "text": "C’est ici que vous trouverez les exercices pour chaque semaine.",
+    "crumbs": [
+      "Exercices",
+      "Labs"
+    ]
+  },
+  {
+    "objectID": "exercises/exo01-pet-names/exo01-pet-names.html#exercices",
+    "href": "exercises/exo01-pet-names/exo01-pet-names.html#exercices",
+    "title": "HW 01 - Pet names",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nIl y a ___ animaux dans le dataset.\n\n\nExercice 2\nRemplacez ce texte par votre réponse.\n\n\nExercice 3\nRemplacez ce texte par votre réponse.\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 13,930 × 2\n   animal_name     n\n   &lt;chr&gt;       &lt;int&gt;\n 1 &lt;NA&gt;          483\n 2 Lucy          439\n 3 Charlie       387\n 4 Luna          355\n 5 Bella         331\n 6 Max           270\n 7 Daisy         261\n 8 Molly         240\n 9 Jack          232\n10 Lily          232\n# ℹ 13,920 more rows\n\n\n\n\nExercice 4\nRemplacez ce texte par votre réponse.\n\n# Enlevez ce commentaire et mettez votre code ici.\n\n\n\nExercice 5\nRemplacez ce texte par votre réponse.\n\n\nExercice 6\nRemplacez ce texte par votre réponse."
+  },
+  {
+    "objectID": "slides/00 - intro.html#getting-up",
+    "href": "slides/00 - intro.html#getting-up",
+    "title": "00 - intro",
+    "section": "Getting up",
+    "text": "Getting up\n\nTurn off alarm\nGet out of bed"
+  },
+  {
+    "objectID": "slides/00 - intro.html#breakfast",
+    "href": "slides/00 - intro.html#breakfast",
+    "title": "00 - intro",
+    "section": "Breakfast",
+    "text": "Breakfast\n\nEat eggs\nDrink coffee"
+  },
+  {
+    "objectID": "slides/00 - intro.html#dinner",
+    "href": "slides/00 - intro.html#dinner",
+    "title": "00 - intro",
+    "section": "Dinner",
+    "text": "Dinner\n\nEat spaghetti\nDrink wine"
+  },
+  {
+    "objectID": "slides/00 - intro.html#going-to-sleep",
+    "href": "slides/00 - intro.html#going-to-sleep",
+    "title": "00 - intro",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep\n\n\n\n\n\nMy global footer"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#timothy-bollé",
+    "href": "slides/00 - Intro/00 - intro.html#timothy-bollé",
+    "title": "00 - intro",
+    "section": "Timothy Bollé",
+    "text": "Timothy Bollé\n\n\nOriginaire de France\n\nEn 2011:\n\nDépart pour Lausanne\nÉcole des Science criminelle\n\n\n\nBachelor en science forensique\n\n\nMaster en science forensiqie\n\nSpécialisé en traces numérique\n\n\n\n\n\n\nLausanne"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#timothy-bollé-1",
+    "href": "slides/00 - Intro/00 - intro.html#timothy-bollé-1",
+    "title": "00 - intro",
+    "section": "Timothy Bollé",
+    "text": "Timothy Bollé\n\nDoctorat en science forensique:\n\nDétection et analyse de liens non-évidents dans les fraudes en ligne\n\n\n\nÉcole des Sciences Criminelles:\n\nEnseignement dans le domaine du numérique\nExpertises\nFormation professionnelle\n\n\n\nDepuis 2022: Professeur à l’UQTR"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#dinner",
+    "href": "slides/00 - Intro/00 - intro.html#dinner",
+    "title": "00 - intro",
+    "section": "Dinner",
+    "text": "Dinner\n\nEat spaghetti\nDrink wine"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#going-to-sleep",
+    "href": "slides/00 - Intro/00 - intro.html#going-to-sleep",
+    "title": "00 - intro",
+    "section": "Going to sleep",
+    "text": "Going to sleep\n\nGet in bed\nCount sheep\n\n\n\n\n\nPRO1036 - 00 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#et-vous",
+    "href": "slides/00 - Intro/00 - intro.html#et-vous",
+    "title": "00 - intro",
+    "section": "Et vous ?",
+    "text": "Et vous ?"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#science-des-données",
+    "href": "slides/00 - Intro/00 - intro.html#science-des-données",
+    "title": "00 - intro",
+    "section": "Science des données",
+    "text": "Science des données\nDomaine qui vise à transformer des données brutes en connaissances ou en décisions\nLe faire de manière scientifique\nCe cours vise à vous donner une méthode pour exploiter des données !"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#comment",
+    "href": "slides/00 - Intro/00 - intro.html#comment",
+    "title": "00 - intro",
+    "section": "Comment",
+    "text": "Comment\nComment feriez vous pour analyser des données ?\n\n\n\n\nExcel"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#faq",
+    "href": "slides/00 - Intro/00 - intro.html#faq",
+    "title": "00 - intro",
+    "section": "FAQ",
+    "text": "FAQ\n\n\nQ - Quelles connaissances préalables ?\n\nA - Aucunes - on part de la base !\n\n\n\nQ - Est-ce que c’est un cours de statistique ?\n\nA - Non mais nous allons beaucoup les utiliser.\n\n\n\nQ - Est-ce que c’est un cours de programmation ?\n\nA - Non… mais nous allons en faire beaucoup !"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#comment-1",
+    "href": "slides/00 - Intro/00 - intro.html#comment-1",
+    "title": "00 - intro",
+    "section": "Comment",
+    "text": "Comment\n\nRStudio"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#méthode",
+    "href": "slides/00 - Intro/00 - intro.html#méthode",
+    "title": "00 - intro",
+    "section": "Méthode",
+    "text": "Méthode\n\n(Wickham et al., 2023)"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#références",
+    "href": "slides/00 - Intro/00 - intro.html#références",
+    "title": "00 - intro",
+    "section": "Références",
+    "text": "Références\n\n\n\n\nPRO1036 - 00 | Tim Bollé\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. & Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc. https://r4ds.hadley.nz/"
+  },
+  {
+    "objectID": "slides/00 - Intro/00 - intro.html#référence",
+    "href": "slides/00 - Intro/00 - intro.html#référence",
+    "title": "00 - intro",
+    "section": "Référence",
+    "text": "Référence\n\n\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc. https://r4ds.hadley.nz/\n\n\n\n\n\n\n\nPRO1036 - 00 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#les-outils-1",
+    "href": "slides/01 - R basics/01 - r-basics.html#les-outils-1",
+    "title": "01 - R basics",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#objectif-du-cours",
+    "href": "slides/01 - R basics/01 - r-basics.html#objectif-du-cours",
+    "title": "01 - R basics",
+    "section": "Objectif du cours",
+    "text": "Objectif du cours\nÀ la fin de ce cours, vous pourrez:\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#répétabilité",
+    "href": "slides/01 - R basics/01 - r-basics.html#répétabilité",
+    "title": "01 - R basics",
+    "section": "Répétabilité",
+    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#les-outils-de-la-répérabilité",
+    "href": "slides/01 - R basics/01 - r-basics.html#les-outils-de-la-répérabilité",
+    "title": "01 - R basics",
+    "section": "Les outils de la répérabilité",
+    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#r-et-rstudio",
+    "href": "slides/01 - R basics/01 - r-basics.html#r-et-rstudio",
+    "title": "01 - R basics",
+    "section": "R et RStudio",
+    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs et de la visualisation statisiques\nDe nombreuses autres applications sont disponibles grâce à des *packages*\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#r-packages",
+    "href": "slides/01 - R basics/01 - r-basics.html#r-packages",
+    "title": "01 - R basics",
+    "section": "R packages",
+    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#rstudio-tour",
+    "href": "slides/01 - R basics/01 - r-basics.html#rstudio-tour",
+    "title": "01 - R basics",
+    "section": "RStudio tour",
+    "text": "RStudio tour"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#r-101",
+    "href": "slides/01 - R basics/01 - r-basics.html#r-101",
+    "title": "01 - R basics",
+    "section": "R 101",
+    "text": "R 101\n\nLes fonction sont souvent des verbes, suivi de parenthèses, contenant des arguments:\n\nfait_ca(avec_ca)\nfait_ca(avec_ca, et_ca, et_encore_ca)\n\n\n\nLes packages peuvent être installés avec install.package et chargés avec library:\n\ninstall.packages(\"package_name\")\nlibrary(package_name)\n\n\n\n$ permet d’accéder aux colonnes des tableaux\n\ndataframe$var_name\n\n\n\n? permet d’accéder à l’aide sur les fonctions\n\n?mean"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#références",
+    "href": "slides/01 - R basics/01 - r-basics.html#références",
+    "title": "01 - R basics",
+    "section": "Références",
+    "text": "Références\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\n\n\n\n\nPRO1036 - 01 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/01 - R basics/01 - r-basics.html#tidyverse",
+    "href": "slides/01 - R basics/01 - r-basics.html#tidyverse",
+    "title": "01 - R basics",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
   }
 ]

@@ -1,0 +1,7 @@
+---
+title: "Exerices"
+author: "Tim Bollé"
+editor: visual
+---
+
+C'est ici que vous trouverez les exercices pour chaque semaine.

@@ -1,0 +1,66 @@
+/*-- scss:defaults --*/
+
+// colors
+$body-bg: #3F3F3F !default;
+
+
+/*-- scss:rules --*/
+
+.orange {
+  color: #FF9900;
+  font-weight: 900;
+}
+
+.light-red {
+  color: #f08181;
+}
+
+.gray {
+  color: #787878;
+}
+
+.reveal .slide ul {
+  margin-bottom: 0em !important;
+}
+
+.reveal .slide ul li {
+  margin-bottom: 0em !important;
+  margin-top: 0em !important;
+}
+
+.reveal p {
+  margin-top: 1.2em;
+  margin-bottom: 0em;
+}
+
+.no-spacing p {
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+
+
+
+.question, .your-turn, .code {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+  color: white;
+}
+
+.question{
+  border-left: solid 5px #6a67c2;
+  background-color: #363469;
+}
+
+.code {
+  border-left: solid 5px #7d7a61;
+  background-color: #d6d096;
+}
+
+.your-turn {
+  border-left: solid 5px #835fb0;
+}

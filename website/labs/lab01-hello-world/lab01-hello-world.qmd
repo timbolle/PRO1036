@@ -38,6 +38,7 @@ Pour en savoir plus sur le jeu de données, vous pouvez taper `?datasaurus` dans
 # Exercises
 
 ## Exercice 1
+
 En utilisant l'aide, combien de lignes et de colonnes possède le `datasaurus_dozen` ? Quelles sont les variables présentes dans le tableau ? Vous pouvez ajouter vos réponse dans votre fichier .Rmd.
 
 La colonne `dataset` permet d'indiquer le jeu de données. Nous pouvons compter le nombre d'éléments pour chaque jeu de données:
@@ -49,8 +50,7 @@ datasaurus_dozen %>%
 
 Le dataset Datasaurus original (`dino`) a été créé par Aberto Cairo. Les autres datasets ont été générés par Matejka et Fitzmaurice @matejkaSameStatsDifferent2017. Dans cet article, ils présentent des données très différentes qui ont les mêmes descriptions statistiques.
 
-🧶 ✅ ⬆️ 
-*Knit, commit, and push ! Envoyez vos résutlats sur Github en indiquant un message du type "Ajout des réponses à l'exercice 1".*
+🧶 ✅ ⬆️ *Knit, commit, and push ! Envoyez vos résutlats sur Github en indiquant un message du type "Ajout des réponses à l'exercice 1".*
 
 ## Exercice 2
 
@@ -91,22 +91,19 @@ dino_data %>%
   summarize(r = cor(x, y))
 ```
 
-🧶 ✅ ⬆️ 
-*Knit, commit, and push ! Vous pouvez mettre un message indiquant que vous avez ajouté les réponses à l'exercice 2.*
+🧶 ✅ ⬆️ *Knit, commit, and push ! Vous pouvez mettre un message indiquant que vous avez ajouté les réponses à l'exercice 2.*
 
 ## Exercice 3
 
 Représentez `y` en fonction de `x` pour le `star` dataset. Pour cela, réutilisez le code de l'exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour le `dino` dataset.
 
-🧶 ✅ ⬆️ 
-*Knit, commit, and push !*
+🧶 ✅ ⬆️ *Knit, commit, and push !*
 
 ## Exercice 4
 
 Représentez `y` en fonction de `x` pour le `circle` dataset. Pour cela, réutilisez le code de l'exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour les `dino` et `star` dataset.
 
-🧶 ✅ ⬆️ 
-*Knit, commit, and push !*
+🧶 ✅ ⬆️ *Knit, commit, and push !*
 
 ## Exercice 5
 
@@ -130,5 +127,4 @@ datasaurus_dozen %>%
 
 Nous en avons fini avec notre première analyse de données !
 
-🧶 ✅ ⬆️ 
-*Bien joué! knit, commit and push ! Vous pouvez dire que vous avez terminer le lab 01 dans votre message ! Vous pouvez allez voir sur Github si tout est en ordre.*
+🧶 ✅ ⬆️ *Bien joué! knit, commit and push ! Vous pouvez dire que vous avez terminer le lab 01 dans votre message ! Vous pouvez allez voir sur Github si tout est en ordre.*
