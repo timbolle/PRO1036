@@ -87,8 +87,8 @@ Gestion et collaboration $\rightarrow$ Git/GitHub
 ![](figs/R_logo.png){width="30%"}
 
 - R est un language de programmation `open-source`
-- R est un environnement pour faire des `calculs` et de la `visualisation statisiques`
-- De nombreuses autres applications sont disponibles grâce à des `*packages*`
+- R est un environnement pour faire des `calculs statistiques` et de la `visualisation`
+- De nombreuses autres applications sont disponibles grâce à des *`packages`*
 :::
 
 :::{.column width="50%"}
@@ -114,7 +114,7 @@ Nous allons en utiliser quelques une mais vous verrez que c'est tout une philoso
 ## R 101
 
 ::: fragment
-Les `fonction` sont souvent des verbes, suivi de parenthèses, contenant des arguments:
+Les `fonctions` sont souvent des verbes, suivi de parenthèses, contenant des arguments:
 
 ```{r, echo=TRUE, eval=FALSE}
 fait_ca(avec_ca)

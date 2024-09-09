@@ -31,7 +31,7 @@ Originaire de France
 En 2011:
 
 -   Départ pour Lausanne
--   École des Science criminelle
+-   École des Sciences criminelles
 :::
 
 ::: fragment
@@ -139,7 +139,7 @@ Pour le faire chez vous:
 
 - Ouvrez RStudio
 - [Nouveau Projet > Version Control > Git]{.gray-mono}
-- Entrez l'url: ...
+- Entrez l'url: [https://github.com/PRO1036/unvotes](https://github.com/PRO1036/unvotes)
 - Choisissez un dossier sur l'ordinateur
 - Ouvrez le fichier `unvotes.rmd`
 - Validez l'installation des packages.

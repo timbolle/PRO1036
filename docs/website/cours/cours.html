@@ -149,10 +149,11 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">00 - Introduction</h2>
+<p>Slide: <a href="../../slides/00 - Intro/00 - intro.html">Web</a> <a href="00 - intro.pdf">PDF</a></p>
 </section>
 <section id="r-basics" class="level2">
 <h2 class="anchored" data-anchor-id="r-basics">01 - R basics</h2>
-<p>Slide: <a href="../../slides/00 - Intro/00 - intro.html">Web</a> <a href="00 - intro.pdf">PDF</a> <br>Demo: <a href="../../website/demo/unvotes/unvotes.html">UN Votes</a> <br>Labs: <a href="../../website/labs/lab01-hello-world/lab01-hello-world.html">Labo01 - Hello WoRld</a> <br>Exercices: <a href="../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exo01 - Pet names</a></p>
+<p>Slide: <a href="../../slides/01 - Toolbox/01 - toolbox.html">Web</a> <a href="01 - toolbox.pdf">PDF</a> <br>Demo: <a href="../../website/demo/unvotes/unvotes.html">UN Votes</a> <br>Labs: <a href="../../website/labs/lab01-hello-world/lab01-hello-world.html">Labo01 - Hello WoRld</a> <br>Exercices: <a href="../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exo01 - Pet names</a></p>
 
 
 </section>
@@ -264,6 +265,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
