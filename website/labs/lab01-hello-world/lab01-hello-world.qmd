@@ -8,7 +8,7 @@ editor: visual
 
 ## Github
 
-TODO: faire les consignes pour Git
+Lien vers le fichier Rmd : \[<https://github.com/PRO1036/lab01.git>\](<https://github.com/PRO1036/lab01.git>)
 
 ## Packages
 

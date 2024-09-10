@@ -413,15 +413,15 @@
     "objectID": "slides/00 - Intro/00 - intro.html#timothy-bollé",
     "href": "slides/00 - Intro/00 - intro.html#timothy-bollé",
     "title": "00 - intro",
-    "section": "",
-    "text": "Originaire de France\n\nEn 2011:\n\nDépart pour Lausanne\nÉcole des Sciences criminelles\n\n\n\nBachelor en science forensique\n\n\nMaster en science forensiqie\n\nSpécialisé en traces numérique\n\n\n\n\n\n\nLausanne"
+    "section": "Timothy Bollé",
+    "text": "Timothy Bollé\n\n\nOriginaire de France\n\nEn 2011:\n\nDépart pour Lausanne\nÉcole des Sciences criminelles\n\n\n\nBachelor en science forensique\n\n\nMaster en science forensiqie\n\nSpécialisé en traces numérique\n\n\n\n\n\n\nLausanne"
   },
   {
     "objectID": "slides/00 - Intro/00 - intro.html#timothy-bollé-1",
     "href": "slides/00 - Intro/00 - intro.html#timothy-bollé-1",
     "title": "00 - intro",
-    "section": "",
-    "text": "Doctorat en science forensique:\n\nDétection et analyse de liens non-évidents dans les fraudes en ligne\n\n\n\nÉcole des Sciences Criminelles:\n\nEnseignement dans le domaine du numérique\nExpertises\nFormation professionnelle\n\n\n\nDepuis 2022: Professeur à l’UQTR"
+    "section": "Timothy Bollé",
+    "text": "Timothy Bollé\n\nDoctorat en science forensique:\n\nDétection et analyse de liens non-évidents dans les fraudes en ligne\n\n\n\nÉcole des Sciences Criminelles:\n\nEnseignement dans le domaine du numérique\nExpertises\nFormation professionnelle\n\n\n\nDepuis 2022: Professeur à l’UQTR"
   },
   {
     "objectID": "slides/00 - Intro/00 - intro.html#dinner",
@@ -470,14 +470,14 @@
     "href": "slides/00 - Intro/00 - intro.html#comment-1",
     "title": "00 - intro",
     "section": "Comment",
-    "text": "Comment\n\n\n\nRStudio"
+    "text": "Comment\n\nRStudio"
   },
   {
     "objectID": "slides/00 - Intro/00 - intro.html#méthode",
     "href": "slides/00 - Intro/00 - intro.html#méthode",
     "title": "00 - intro",
     "section": "Méthode",
-    "text": "Méthode\n\n\n\n(Wickham et al., 2023)"
+    "text": "Méthode\n\n(Wickham et al., 2023)"
   },
   {
     "objectID": "slides/00 - Intro/00 - intro.html#références",
@@ -491,7 +491,7 @@
     "href": "slides/00 - Intro/00 - intro.html#référence",
     "title": "00 - intro",
     "section": "Référence",
-    "text": "Référence\n\n\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc."
+    "text": "Référence\n\n\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc.\n\n\n\n\n\n\n\nPRO1036 - 00 | Tim Bollé"
   },
   {
     "objectID": "slides/01 - R basics/01 - r-basics.html#les-outils-1",
@@ -835,7 +835,7 @@
     "href": "slides/01 - Toolbox/01 - toolbox.html#r-et-rstudio",
     "title": "01 - Boite à outils",
     "section": "R et RStudio",
-    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs et de la visualisation statisiques\nDe nombreuses autres applications sont disponibles grâce à des *packages*\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
   },
   {
     "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-packages",
@@ -856,7 +856,7 @@
     "href": "slides/01 - Toolbox/01 - toolbox.html#r-101",
     "title": "01 - Boite à outils",
     "section": "R 101",
-    "text": "R 101\n\nLes fonction sont souvent des verbes, suivi de parenthèses, contenant des arguments:\n\nfait_ca(avec_ca)\nfait_ca(avec_ca, et_ca, et_encore_ca)\n\n\n\nLes packages peuvent être installés avec install.package et chargés avec library:\n\ninstall.packages(\"package_name\")\nlibrary(package_name)\n\n\n\n$ permet d’accéder aux colonnes des tableaux\n\ndataframe$var_name\n\n\n\n? permet d’accéder à l’aide sur les fonctions\n\n?mean"
+    "text": "R 101\n\nLes fonctions sont souvent des verbes, suivi de parenthèses, contenant des arguments:\n\nfait_ca(avec_ca)\nfait_ca(avec_ca, et_ca, et_encore_ca)\n\n\n\nLes packages peuvent être installés avec install.package et chargés avec library:\n\ninstall.packages(\"package_name\")\nlibrary(package_name)\n\n\n\n$ permet d’accéder aux colonnes des tableaux\n\ndataframe$var_name\n\n\n\n? permet d’accéder à l’aide sur les fonctions\n\n?mean"
   },
   {
     "objectID": "slides/01 - Toolbox/01 - toolbox.html#tidyverse",

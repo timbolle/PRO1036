@@ -496,8 +496,8 @@ Tim Bollé
 <p><img data-src="figs/R_logo.png" style="width:30.0%"></p>
 <ul>
 <li>R est un language de programmation <code>open-source</code></li>
-<li>R est un environnement pour faire des <code>calculs</code> et de la <code>visualisation statisiques</code></li>
-<li>De nombreuses autres applications sont disponibles grâce à des <code>*packages*</code></li>
+<li>R est un environnement pour faire des <code>calculs statistiques</code> et de la <code>visualisation</code></li>
+<li>De nombreuses autres applications sont disponibles grâce à des <em><code>packages</code></em></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figs/Rstudio_logo.png" style="width:60.0%"></p>
@@ -520,7 +520,7 @@ Tim Bollé
 <section id="r-101" class="slide level2">
 <h2>R 101</h2>
 <div class="fragment">
-<p>Les <code>fonction</code> sont souvent des verbes, suivi de parenthèses, contenant des arguments:</p>
+<p>Les <code>fonctions</code> sont souvent des verbes, suivi de parenthèses, contenant des arguments:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">fait_ca</span>(avec_ca)</span>
 <span id="cb1-2"><a></a><span class="fu">fait_ca</span>(avec_ca, et_ca, et_encore_ca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -891,6 +891,82 @@ Wickham, H. and Bryan, J. (2023). <em>R <span>Packages</span>: <span>Organize</s
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
