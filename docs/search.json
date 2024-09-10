@@ -22,7 +22,7 @@
     "href": "website/labs/lab01-hello-world/lab01-hello-world.html",
     "title": "Lab 01 - Hello World",
     "section": "",
-    "text": "TODO: faire les consignes pour Git\n\n\n\nNous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "text": "Lien vers le fichier Rmd : https://github.com/PRO1036/lab01.git\n\n\n\nNous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
     "crumbs": [
       "Labs",
       "Semaine 1",
@@ -34,7 +34,7 @@
     "href": "website/labs/lab01-hello-world/lab01-hello-world.html#github",
     "title": "Lab 01 - Hello World",
     "section": "",
-    "text": "TODO: faire les consignes pour Git",
+    "text": "Lien vers le fichier Rmd : https://github.com/PRO1036/lab01.git",
     "crumbs": [
       "Labs",
       "Semaine 1",
@@ -962,5 +962,26 @@
     "title": "UN Votes",
     "section": "Appendix",
     "text": "Appendix\nLa liste des pays dans le jeu de données est présenté ci-dessous:"
+  },
+  {
+    "objectID": "classroom/lab01/lab01-hello-world.html",
+    "href": "classroom/lab01/lab01-hello-world.html",
+    "title": "Lab 01 - Hello worRld",
+    "section": "",
+    "text": "library(tidyverse) \nlibrary(datasauRus)"
+  },
+  {
+    "objectID": "classroom/lab01/lab01-hello-world.html#load-packages-and-data",
+    "href": "classroom/lab01/lab01-hello-world.html#load-packages-and-data",
+    "title": "Lab 01 - Hello worRld",
+    "section": "",
+    "text": "library(tidyverse) \nlibrary(datasauRus)"
+  },
+  {
+    "objectID": "classroom/lab01/lab01-hello-world.html#exercices",
+    "href": "classroom/lab01/lab01-hello-world.html#exercices",
+    "title": "Lab 01 - Hello worRld",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nEnlevez ce texte et indiquez votre réponse à l’exercice 1.\n\n\nExercise 2\nLes réponses sont présentes ci-dessous mais assurez-vous de bien comprendre les éléments présentés d’ajouter vos réponses aux questions.\nCommençons par représenter le dino dataset:\n\ndino_data &lt;- datasaurus_dozen %&gt;%\n  filter(dataset == \"dino\")\n\nggplot(data = dino_data, mapping = aes(x = x, y = y)) +\n  geom_point()\n\n\n\n\n\n\n\n\nNous pouvons ensuite calculer la correlation entre x et y :\n\ndino_data %&gt;%\n  summarize(r = cor(x, y))\n\n# A tibble: 1 × 1\n        r\n    &lt;dbl&gt;\n1 -0.0645\n\n\n\n\nExercise 3\nVous pouvez ajouter votre code et vos explications. Vous pouvez écrire votre code dans les chunk de code nommés plot-star et cor-star, pour représenter le dataset et calculer la corrélation. Vous pouvez finir par enlever les instrusctions pour n’avoir que vos explications.\nBlah blah blah…\nDu texte, remplace moi par des explications…\n\n\nExercise 4\nAjoutez votre code et vos explications. Notez que les chunk de code ne possèdent pas de nom cette fois. Ce n’est pas indispensable mais ça aide à la lecture. Nommez les en suivant la convention utilisée précédemment.\n\n\nExercise 5\nAjoutez votre code et vos explications. Pour ajouter les chunk de code, utulisez trois backticks avec une accolades et la lettre r, ou bien utilisez le bouton vert avec le C+, “Insert a new code chunk here” ci-dessus."
   }
 ]

@@ -8,7 +8,7 @@ editor: visual
 
 ## Github
 
-Lien vers le fichier Rmd : \[<https://github.com/PRO1036/lab01.git>\](<https://github.com/PRO1036/lab01.git>)
+Lien vers le fichier Rmd : [https://github.com/PRO1036/lab01.git](https://github.com/PRO1036/lab01.git)
 
 ## Packages
 
