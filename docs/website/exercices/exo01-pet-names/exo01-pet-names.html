@@ -227,6 +227,7 @@ window.Quarto = {
   <li><a href="#préparation" id="toc-préparation" class="nav-link active" data-scroll-target="#préparation">Préparation</a>
   <ul class="collapse">
   <li><a href="#terminologie" id="toc-terminologie" class="nav-link" data-scroll-target="#terminologie">Terminologie</a></li>
+  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
   </ul></li>
   <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
   <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm up</a>
@@ -300,6 +301,47 @@ window.Quarto = {
 <li><p><strong>Repository:</strong> Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions.</p></li>
 </ul>
 </section>
+<section id="github" class="level2">
+<h2 class="anchored" data-anchor-id="github">Github</h2>
+<p>Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non</p>
+<section id="git-est-correctement-installé" class="level4">
+<h4 class="anchored" data-anchor-id="git-est-correctement-installé">Git est correctement installé</h4>
+<p>Dans RStudio:</p>
+<ul>
+<li>Fichier &gt; Nouveau Projet</li>
+<li>Version Control &gt; Git</li>
+<li>Dans <em>Repository URL</em> : indiquez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names.git" class="uri">https://github.com/PRO1036/exo1-pet-names.git</a></li>
+<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
+<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
+</ul>
+<p>Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à <a href="#suite">l’étape suivante</a></p>
+</section>
+<section id="git-nest-pas-installé" class="level4">
+<h4 class="anchored" data-anchor-id="git-nest-pas-installé">Git n’est pas installé</h4>
+<p>Dans Rstudio:</p>
+<ul>
+<li>Fichier &gt; Nouveau Projet</li>
+<li>New Directory &gt; New Project</li>
+<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
+<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
+</ul>
+<p>Nous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:</p>
+<ul>
+<li>Visitez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names" class="uri">https://github.com/PRO1036/exo1-pet-names</a></li>
+<li>Cliquez sur le bouton vert: <img src="figs/github-bouton.png" class="inline-image img-fluid"></li>
+<li>Cliquez ensuite sur <em>Download ZIP</em></li>
+<li>Ouvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R</li>
+</ul>
+<p>⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé <code>lab01-master</code>). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.</p>
+</section>
+<section id="suite" class="level4">
+<h4 class="anchored" data-anchor-id="suite">Dans les deux cas</h4>
+<p>Dans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:</p>
+<p><img src="figs/rstudio-files.png" class="img-fluid"></p>
+<p>Si vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.</p>
+<p>Veuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.</p>
+</section>
+</section>
 </section>
 <section id="rstudio" class="level1">
 <h1>RStudio</h1>
@@ -323,7 +365,7 @@ window.Quarto = {
 </section>
 <section id="warm-up" class="level1">
 <h1>Warm up</h1>
-<p>Before we introduce the data, let’s warm up with some simple exercises.</p>
+<p>Un peu d’échaffement:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -390,12 +432,12 @@ YAML
 <section id="exerice-1" class="level2">
 <h2 class="anchored" data-anchor-id="exerice-1">Exerice 1</h2>
 <p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ ⬆️ <em>Ecrivez votre réponse dans le document, sous Exercice 1. Knit, commit avec un message et pushez !</em></p>
+<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 1. Knit, et commit avec un message !</em></p>
 </section>
 <section id="exercice-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-2">Exercice 2</h2>
 <p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ ⬆️ <em>Ecrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !</em></p>
+<p>🧶 ✅ <em>Écrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !</em></p>
 </section>
 <section id="exercice-3" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-3">Exercice 3</h2>
@@ -417,7 +459,7 @@ Tip
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>🧶 ✅ ⬆️ <em>Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit, commit avec un message et pushez !</em></p>
+<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit et commit avec un message !</em></p>
 </section>
 <section id="exercice-4" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-4">Exercice 4</h2>
@@ -496,7 +538,7 @@ Note
 </div>
 </div>
 <p>À partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon <code>n</code> (la fréquence) et non par rapport à l’<code>species</code>. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par <code>n</code>. Pour cela, vous pouvez vous servir de la fonction <code>arrange</code>. Vous pourrez indiquer ce par quoi vous voulez tier: <code>arrange(variable 1, variable 2)</code>. À vous d’essayer et de voir quel résultat est le bon !</p>
-<p>🧶 ✅ ⬆️ <em>Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit, commit avec un message et pushez !</em></p>
+<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit et commit avec un message !</em></p>
 </section>
 <section id="exercice-5" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-5">Exercice 5</h2>
@@ -518,7 +560,7 @@ Note
 <li>Quels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?</li>
 <li>Est ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?</li>
 </ul>
-<p>🧶 ✅ ⬆️ <em>Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message et pushez !</em></p>
+<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message !</em></p>
 
 
 </section>

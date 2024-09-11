@@ -2,7 +2,7 @@
 title: "Bienvenue !"
 ---
 
-Bienvenu au cours PRO1036 - Analyse de données scientifiques en R !
+Bienvenue au cours PRO1036 - Analyse de données scientifiques en R !
 
 L'ensemble des ressources pour les cours se trouvent sur ce site web.
 

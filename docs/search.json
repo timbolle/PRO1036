@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Bienvenue !",
     "section": "",
-    "text": "Bienvenu au cours PRO1036 - Analyse de données scientifiques en R !\nL’ensemble des ressources pour les cours se trouvent sur ce site web.",
+    "text": "Bienvenue au cours PRO1036 - Analyse de données scientifiques en R !\nL’ensemble des ressources pour les cours se trouvent sur ce site web.",
     "crumbs": [
       "Home",
       "Bienvenue !"
@@ -233,7 +233,7 @@
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exerice-1",
     "title": "Exercice 01 - Pet names",
     "section": "Exerice 1",
-    "text": "Exerice 1\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 1. Knit, commit avec un message et pushez !",
+    "text": "Exerice 1\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ Ecrivez votre réponse dans le document, sous Exercice 1. Knit, et commit avec un message !",
     "crumbs": [
       "Exercices",
       "Semaine 1",
@@ -245,7 +245,7 @@
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-2",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 2",
-    "text": "Exercice 2\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !",
+    "text": "Exercice 2\nSelon l’aide, combien d’animaux sont présents dans le dataset ?\n🧶 ✅ Écrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !",
     "crumbs": [
       "Exercices",
       "Semaine 1",
@@ -257,7 +257,7 @@
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-3",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 3",
-    "text": "Exercice 3\nQuels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.\n\n\n\n\n\n\nTip\n\n\n\nLe code suivant peut être lu comme “Prend le dataset seattlepets, puis compte le nombre de ligne avec le même animal_name, et affiche le résultat en ordre décroissant”. le puis dans la phrase précédente correspond à l’opérateur de pipe %&gt;%, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.\n\n\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit, commit avec un message et pushez !",
+    "text": "Exercice 3\nQuels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.\n\n\n\n\n\n\nTip\n\n\n\nLe code suivant peut être lu comme “Prend le dataset seattlepets, puis compte le nombre de ligne avec le même animal_name, et affiche le résultat en ordre décroissant”. le puis dans la phrase précédente correspond à l’opérateur de pipe %&gt;%, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.\n\n\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n🧶 ✅ Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit et commit avec un message !",
     "crumbs": [
       "Exercices",
       "Semaine 1",
@@ -269,7 +269,7 @@
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-4",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 4",
-    "text": "Exercice 4\nNous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord group_by() par l’species, puis faire le count.\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 16,823 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Dog     Lucy          337\n 3 Dog     Charlie       306\n 4 Dog     Bella         249\n 5 Dog     Luna          244\n 6 Dog     Daisy         221\n 7 Dog     Cooper        189\n 8 Dog     Lola          187\n 9 Dog     Max           186\n10 Dog     Molly         186\n# ℹ 16,813 more rows\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn observe beaucoup de NA pour les chats… pauvres chatons sans noms…\n\n\nCet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.\n\nseattlepets %&gt;%\n  count(species, sort = TRUE)\n\n# A tibble: 4 × 2\n  species     n\n  &lt;chr&gt;   &lt;int&gt;\n1 Dog     35181\n2 Cat     17294\n3 Goat       38\n4 Pig         6\n\n\nCherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction slice_max(). Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas n. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas n=5. Ici, les deux arguments mentionnent un n. Dans le premier cas, il y a un variable appelé n dans le dataframe résultant du count, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans slice_max().\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE) %&gt;% \n  slice_max(n, n = 5)\n\n# A tibble: 53 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Cat     Luna          111\n 3 Cat     Lucy          102\n 4 Cat     Lily           86\n 5 Cat     Max            83\n 6 Dog     Lucy          337\n 7 Dog     Charlie       306\n 8 Dog     Bella         249\n 9 Dog     Luna          244\n10 Dog     Daisy         221\n# ℹ 43 more rows\n\n\nÀ partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon n (la fréquence) et non par rapport à l’species. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par n. Pour cela, vous pouvez vous servir de la fonction arrange. Vous pourrez indiquer ce par quoi vous voulez tier: arrange(variable 1, variable 2). À vous d’essayer et de voir quel résultat est le bon !\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit, commit avec un message et pushez !",
+    "text": "Exercice 4\nNous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord group_by() par l’species, puis faire le count.\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 16,823 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Dog     Lucy          337\n 3 Dog     Charlie       306\n 4 Dog     Bella         249\n 5 Dog     Luna          244\n 6 Dog     Daisy         221\n 7 Dog     Cooper        189\n 8 Dog     Lola          187\n 9 Dog     Max           186\n10 Dog     Molly         186\n# ℹ 16,813 more rows\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn observe beaucoup de NA pour les chats… pauvres chatons sans noms…\n\n\nCet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.\n\nseattlepets %&gt;%\n  count(species, sort = TRUE)\n\n# A tibble: 4 × 2\n  species     n\n  &lt;chr&gt;   &lt;int&gt;\n1 Dog     35181\n2 Cat     17294\n3 Goat       38\n4 Pig         6\n\n\nCherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction slice_max(). Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas n. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas n=5. Ici, les deux arguments mentionnent un n. Dans le premier cas, il y a un variable appelé n dans le dataframe résultant du count, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans slice_max().\n\nseattlepets %&gt;% \n  group_by(species) %&gt;%\n  count(animal_name, sort = TRUE) %&gt;% \n  slice_max(n, n = 5)\n\n# A tibble: 53 × 3\n# Groups:   species [4]\n   species animal_name     n\n   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;\n 1 Cat     &lt;NA&gt;          406\n 2 Cat     Luna          111\n 3 Cat     Lucy          102\n 4 Cat     Lily           86\n 5 Cat     Max            83\n 6 Dog     Lucy          337\n 7 Dog     Charlie       306\n 8 Dog     Bella         249\n 9 Dog     Luna          244\n10 Dog     Daisy         221\n# ℹ 43 more rows\n\n\nÀ partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon n (la fréquence) et non par rapport à l’species. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par n. Pour cela, vous pouvez vous servir de la fonction arrange. Vous pourrez indiquer ce par quoi vous voulez tier: arrange(variable 1, variable 2). À vous d’essayer et de voir quel résultat est le bon !\n🧶 ✅ Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit et commit avec un message !",
     "crumbs": [
       "Exercices",
       "Semaine 1",
@@ -281,7 +281,7 @@
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#exercice-5",
     "title": "Exercice 01 - Pet names",
     "section": "Exercice 5",
-    "text": "Exercice 5\nLa visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne \\(x = y\\); si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nQuels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?\nEst ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?\n\n🧶 ✅ ⬆️ Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message et pushez !",
+    "text": "Exercice 5\nLa visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne \\(x = y\\); si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\nQuels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?\nEst ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?\n\n🧶 ✅ Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message !",
     "crumbs": [
       "Exercices",
       "Semaine 1",
@@ -983,5 +983,45 @@
     "title": "Lab 01 - Hello worRld",
     "section": "Exercices",
     "text": "Exercices\n\nExercice 1\nEnlevez ce texte et indiquez votre réponse à l’exercice 1.\n\n\nExercise 2\nLes réponses sont présentes ci-dessous mais assurez-vous de bien comprendre les éléments présentés d’ajouter vos réponses aux questions.\nCommençons par représenter le dino dataset:\n\ndino_data &lt;- datasaurus_dozen %&gt;%\n  filter(dataset == \"dino\")\n\nggplot(data = dino_data, mapping = aes(x = x, y = y)) +\n  geom_point()\n\n\n\n\n\n\n\n\nNous pouvons ensuite calculer la correlation entre x et y :\n\ndino_data %&gt;%\n  summarize(r = cor(x, y))\n\n# A tibble: 1 × 1\n        r\n    &lt;dbl&gt;\n1 -0.0645\n\n\n\n\nExercise 3\nVous pouvez ajouter votre code et vos explications. Vous pouvez écrire votre code dans les chunk de code nommés plot-star et cor-star, pour représenter le dataset et calculer la corrélation. Vous pouvez finir par enlever les instrusctions pour n’avoir que vos explications.\nBlah blah blah…\nDu texte, remplace moi par des explications…\n\n\nExercise 4\nAjoutez votre code et vos explications. Notez que les chunk de code ne possèdent pas de nom cette fois. Ce n’est pas indispensable mais ça aide à la lecture. Nommez les en suivant la convention utilisée précédemment.\n\n\nExercise 5\nAjoutez votre code et vos explications. Pour ajouter les chunk de code, utulisez trois backticks avec une accolades et la lettre r, ou bien utilisez le bouton vert avec le C+, “Insert a new code chunk here” ci-dessus."
+  },
+  {
+    "objectID": "website/cours/cours.html#visualisation-de-données",
+    "href": "website/cours/cours.html#visualisation-de-données",
+    "title": "Cours",
+    "section": "02 - Visualisation de données",
+    "text": "02 - Visualisation de données"
+  },
+  {
+    "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#github",
+    "href": "website/exercices/exo01-pet-names/exo01-pet-names.html#github",
+    "title": "Exercice 01 - Pet names",
+    "section": "Github",
+    "text": "Github\nNous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non\n\nGit est correctement installé\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse: https://github.com/PRO1036/exo1-pet-names.git\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à l’étape suivante\n\n\nGit n’est pas installé\nDans Rstudio:\n\nFichier &gt; Nouveau Projet\nNew Directory &gt; New Project\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nNous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:\n\nVisitez l’adresse: https://github.com/PRO1036/exo1-pet-names\nCliquez sur le bouton vert: \nCliquez ensuite sur Download ZIP\nOuvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R\n\n⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé lab01-master). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.\n\n\nDans les deux cas\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:\n\nSi vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.",
+    "crumbs": [
+      "Exercices",
+      "Semaine 1",
+      "Exercice 01 - Pet names"
+    ]
+  },
+  {
+    "objectID": "classroom/exo01/exo01-pet-names.html",
+    "href": "classroom/exo01/exo01-pet-names.html",
+    "title": "HW 01 - Pet names",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "classroom/exo01/exo01-pet-names.html#load-packages-and-data",
+    "href": "classroom/exo01/exo01-pet-names.html#load-packages-and-data",
+    "title": "HW 01 - Pet names",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(openintro)"
+  },
+  {
+    "objectID": "classroom/exo01/exo01-pet-names.html#exercices",
+    "href": "classroom/exo01/exo01-pet-names.html#exercices",
+    "title": "HW 01 - Pet names",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nIl y a ___ animaux dans le dataset.\n\n\nExercice 2\nRemplacez ce texte par votre réponse.\n\n\nExercice 3\nRemplacez ce texte par votre réponse.\n\nseattlepets %&gt;%\n  count(animal_name, sort = TRUE)\n\n# A tibble: 13,930 × 2\n   animal_name     n\n   &lt;chr&gt;       &lt;int&gt;\n 1 &lt;NA&gt;          483\n 2 Lucy          439\n 3 Charlie       387\n 4 Luna          355\n 5 Bella         331\n 6 Max           270\n 7 Daisy         261\n 8 Molly         240\n 9 Jack          232\n10 Lily          232\n# ℹ 13,920 more rows\n\n\n\n\nExercice 4\nRemplacez ce texte par votre réponse.\n\n# Enlevez ce commentaire et mettez votre code ici.\n\n\n\nExercice 5\nRemplacez ce texte par votre réponse.\n\n\nExercice 6\nRemplacez ce texte par votre réponse."
   }
 ]

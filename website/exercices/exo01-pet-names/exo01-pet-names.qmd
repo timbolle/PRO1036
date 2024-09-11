@@ -38,6 +38,50 @@ Nous en avons déjà parler mais répéter ne fait pas de mal:
 
 -   **Repository:** Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions.
 
+## Github
+
+Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non
+
+#### Git est correctement installé
+Dans RStudio:
+
+  - Fichier > Nouveau Projet
+  - Version Control > Git
+  - Dans _Repository URL_ : indiquez l'adresse: <https://github.com/PRO1036/exo1-pet-names.git>
+  - Choisissez un nom pour le dossier qui sera créé, par exemple "Lab01"
+  - Choisissez où vous voulez créer le projet dans votre ordinateur.
+
+Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à [l'étape suivante](#suite)
+
+
+#### Git n'est pas installé
+Dans Rstudio:
+
+  - Fichier > Nouveau Projet
+  - New Directory > New Project
+  - Choisissez un nom pour le dossier qui sera créé, par exemple "Lab01"
+  - Choisissez où vous voulez créer le projet dans votre ordinateur.
+
+Nous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub.
+Sur GitHub:
+
+  - Visitez l'adresse: <https://github.com/PRO1036/exo1-pet-names>
+  - Cliquez sur le bouton vert: ![](figs/github-bouton.png){.inline-image}
+  - Cliquez ensuite sur *Download ZIP*
+  - Ouvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R
+
+⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé `lab01-master`). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.
+
+#### Dans les deux cas {#suite}
+Dans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:
+
+![](figs/rstudio-files.png)
+
+Si vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l'éditer et le "Render/Knit" pour voir le résultat final.
+
+Veuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s'agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.
+
+
 
 # RStudio
 
@@ -55,9 +99,9 @@ knitr::include_graphics("figs/rstudio-anatomy.png")
 
 # Warm up
 
-Before we introduce the data, let's warm up with some simple exercises.
+Un peu d'échaffement:
 
-::: {.callout-tip}
+::: callout-tip
 ## YAML
 
 La partie du haut de votre fichier R Markdown, entre les lignes traitillées, est appelée **YAML**, accronyme pour "YAML Ain't Markup Language". C'est une manière human friendly de fournir des informations sur des documents et des code, et qui peut être comprise par de nombreux langages de programmation.
@@ -89,7 +133,6 @@ Cela devrait faire apparaitre une fenêtre. Entrez vos informations de connexion
 
 [^1]: Seulement l'étape du push à besoin de communiquer avec Gihub, c'est pour cela que vos informations sont demandées.
 
-
 # Packages
 
 R est un langage open-source, et les développeurs ajoutent des fonctionnalité à travers des packages. Nous allons utiliser les packages suivants:
@@ -102,7 +145,6 @@ Nous utilisons la fonction `library()` pour charger les packages. Dans votre doc
 Avant de pouvoir faire ça, il faudra peut-être installer les packages. Cela vous sera proposé en haut de votre éditeur.
 
 Quand vous knittez le document, les lignes dans les blocs de code R sont également exécutées. Les packages seront donc chargés.
-
 
 # Données
 
@@ -126,23 +168,20 @@ Vous pouvez en apprendre plus sur le jeu de données en appelant la fonction d'a
 
 Selon l'aide, combien d'animaux sont présents dans le dataset ?
 
-🧶 ✅ ⬆️ 
-*Ecrivez votre réponse dans le document, sous Exercice 1. Knit, commit avec un message et pushez !*
+🧶 ✅ *Ecrivez votre réponse dans le document, sous Exercice 1. Knit, et commit avec un message !*
 
 ## Exercice 2
 
 Selon l'aide, combien d'animaux sont présents dans le dataset ?
 
-🧶 ✅ ⬆️ 
-*Ecrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !*
-
+🧶 ✅ 
+*Écrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !*
 
 ## Exercice 3
 
-Quels sont les trois nom d'animaux les plus commun à Seattle ?
-Pour répondre à cette question, you devez compter la fréquence d'apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.
+Quels sont les trois nom d'animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d'apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.
 
-::: {.callout-tip}
+::: callout-tip
 Le code suivant peut être lu comme "Prend le dataset `seattlepets`, puis compte le nombre de ligne avec le même `animal_name`, et affiche le résultat en ordre décroissant". le *puis* dans la phrase précédente correspond à l'opérateur de pipe `%>%`, qui prend ce qui se trouve avant et l'envoi comme premier argumet de ce qui vient après.
 :::
 
@@ -151,12 +190,12 @@ seattlepets %>%
   count(animal_name, sort = TRUE)
 ```
 
-🧶 ✅ ⬆️ 
-*Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit, commit avec un message et pushez !*
+🧶 ✅ 
+*Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit et commit avec un message !*
 
 ## Exercice 4
-Nous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d'abord `group_by()` par l'`species`, puis faire le count.
 
+Nous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d'abord `group_by()` par l'`species`, puis faire le count.
 
 ```{r species-names, eval=TRUE}
 seattlepets %>% 
@@ -164,7 +203,7 @@ seattlepets %>%
   count(animal_name, sort = TRUE)
 ```
 
-:::{.callout-note}
+::: callout-note
 On observe beaucoup de NA pour les chats... pauvres chatons sans noms...
 :::
 
@@ -186,8 +225,7 @@ seattlepets %>%
 
 À partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon `n` (la fréquence) et non par rapport à l'`species`. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l'espèce d'abord, puis par `n`. Pour cela, vous pouvez vous servir de la fonction `arrange`. Vous pourrez indiquer ce par quoi vous voulez tier: `arrange(variable 1, variable 2)`. À vous d'essayer et de voir quel résultat est le bon !
 
-🧶 ✅ ⬆️ 
-*Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit, commit avec un message et pushez !*
+🧶 ✅ *Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit et commit avec un message !*
 
 ## Exercice 5
 
@@ -236,8 +274,7 @@ ggplot(comb_name_props, aes(x = cat_prop, y = dog_prop)) +
 
 ```
 
-- Quels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?
-- Est ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?
+-   Quels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?
+-   Est ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?
 
-🧶 ✅ ⬆️ 
-*Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C'est le dernier donc assurez que tout soit propre ! Knit, commit avec un message et pushez !*
+🧶 ✅ *Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C'est le dernier donc assurez que tout soit propre ! Knit, commit avec un message !*
