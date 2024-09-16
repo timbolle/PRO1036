@@ -1,0 +1,468 @@
+---
+title: "02 - Visualisation de données - Partie 2"
+subtitle: "PRO1036 - Analyse de données scientifiques en R"
+author: "Tim Bollé"
+date: "2024-09-09"
+date-format: long
+footer: "PRO1036 - 02 | Tim Bollé"
+license: "CC BY-SA"
+bibliography: ../template/references.bib
+csl: ../template/apa-fr.csl
+execute: 
+  eval: true
+  echo: true
+  output: true
+  warning: false
+format: 
+  revealjs:
+    theme: [dark, ../template/uqtr.scss]
+    logo: ../template/h-UQTR-r.png
+    slide-number: true
+    width: 1350
+    height: 900
+---
+
+# Visualisation des données
+
+## Terminologie
+
+Analyse :
+
+  - `Univariée` - distribution d'une unique variable
+  - `Bivariée` - Relation entre deux variables
+  - `Multivariée` - Relation entre plusieurs variables, souvent en se concentrant sur la relation entre deux, tout en les conditionnant selon les autres.
+
+## Terminologie
+
+Types de variables :
+
+![](figs/data-type.png){width="60%" fig-align="center"}
+
+# Données
+
+## Lending Club
+
+Plateforme pour faire des prêts entre particuliers.
+
+Le jeu de données contient les prêts effectués.
+
+```{r eval=TRUE, echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+::: {.small-code}
+
+```{r}
+library(openintro)
+glimpse(loans_full_schema)
+```
+:::
+
+## Sélection de variables
+
+```{r}
+loans <- loans_full_schema %>%
+  select(loan_amount, interest_rate, term, grade, 
+         state, annual_income, homeownership, debt_to_income)
+glimpse(loans)
+```
+
+
+## Variables sélectionnées
+
+Variable        | Description
+----------------|-------------
+`loan_amount`   |	Montant du prêt reçu en US Dollards
+`interest_rate` |	Intérêt sur le prêt, en pourcentage annuel
+`term`	        | Durée du prêt en mois
+`grade`	        | Note du prêt, de A à G, qui représente la qualité du prêt et les changes qu'ils soit remboursé
+`state`         |	État américain dans lequel le prêt a été accordé
+`annual_income` |	Revenu annuel dudébiteur, en US Dollards
+`homeownership`	| Indique si la personne est propriétaire, est propriétaire avec un emprunt ou bien loue sa résidence
+`debt_to_income`| Ratio Dette/Revenu
+
+: {tbl-colwidths="[25,75]"}
+
+## Types des variables
+
+variable        | type
+----------------|-------------
+`loan_amount`   |	Quantitatif, Ratio
+`interest_rate` |	Quantitatif, Ratio
+`term`	        | Quantitatif, Ratio
+`grade`	        | Qualitatif, Ordinal
+`state`         |	Qualitatif, Nominal
+`annual_income` |	Quantitatif, Ratio
+`homeownership`	| Qualitatif, Nominal
+`debt_to_income` | Quantitatif, Ratio
+
+
+# Données quantitatives
+
+# Histogramme
+
+## Histogramme
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_histogram()
+```
+
+## 
+
+::: {.panel-tabset}
+
+### binwidth = 1000
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_histogram(binwidth = 1000)
+```
+
+
+### binwidth = 5000
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_histogram(binwidth = 5000)
+```
+
+### binwidth = 20000
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_histogram(binwidth = 20000)
+```
+
+:::
+
+## Combinaison avec des variables qualitatives
+
+::: {.panel-tabset}
+
+### Plot
+
+```{r hist-cat, echo=FALSE, eval=TRUE}
+#| code-line-numbers: "2,4"
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount, 
+                  fill = homeownership)) +
+  geom_histogram(binwidth = 5000,
+                 alpha = 0.5) +
+  labs(
+    x = "Loan amount ($)",
+    y = "Frequency",
+    title = "Amounts of Lending Club loans"
+  )
+
+```
+
+### Code
+
+```{r ref.label="hist-cat", echo=TRUE, eval=FALSE}
+
+```
+
+:::
+
+## Avec des facettes
+
+::: {.panel-tabset}
+
+### Plot
+
+```{r hist-fac, echo=FALSE, eval=TRUE}
+#| code-line-numbers: "8"
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount, fill = homeownership)) + 
+  geom_histogram(binwidth = 5000) +
+  labs(
+    x = "Loan amount ($)",
+    y = "Frequency",
+    title = "Amounts of Lending Club loans"
+  ) +
+  facet_wrap(~ homeownership, nrow = 3)
+
+```
+
+### Code
+
+```{r ref.label="hist-fac", echo=TRUE, eval=FALSE}
+
+```
+
+:::
+
+# Graphe de densité
+
+## Density plot
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_density()
+```
+
+## Ajustement de la précision
+
+::: {.panel-tabset}
+
+### adjust = 0.5
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_density(adjust = 0.5)
+```
+
+
+### adjust = 1
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_density(adjust = 1)
+```
+
+### adjust = 2
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount)) +
+  geom_density(adjust = 2)
+```
+
+:::
+
+## Combinaison avec des variables qualitatives
+
+::: {.panel-tabset}
+
+### Plot
+
+```{r dens-cat, echo=FALSE, eval=TRUE}
+#| code-line-numbers: "2,4,9"
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = loan_amount, 
+                  fill = homeownership)) +
+  geom_density(adjust = 2, 
+               alpha = 0.5) +
+  labs(
+    x = "Loan amount ($)",
+    y = "Density",
+    title = "Amounts of Lending Club loans", 
+    fill = "Homeownership"
+  )
+
+```
+
+### Code
+
+```{r ref.label="dens-cat", echo=TRUE, eval=FALSE}
+
+```
+
+:::
+
+# Box plot
+
+## Boîte à moustache
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = interest_rate)) +
+  geom_boxplot()
+```
+
+## Box plot et outliers
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = annual_income)) +
+  geom_boxplot()
+```
+
+## Combinaison avec des variables qualitatives
+
+::: {.panel-tabset}
+
+### Plot
+
+```{r boxplot, echo=FALSE, eval=TRUE}
+#| code-line-numbers: "2,8"
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = interest_rate,
+                  y = grade)) +
+  geom_boxplot() +
+  labs(
+    x = "Interest rate (%)",
+    y = "Grade",
+    title = "Interest rates of Lending Club loans",
+    subtitle = "by grade of loan"
+  )
+
+```
+
+### Code
+
+```{r ref.label="boxplot", echo=TRUE, eval=FALSE}
+
+```
+
+:::
+
+
+# Données qualitatives
+
+# Graphes en bar
+
+## Histogramme vs bar charts
+
+![[Source](https://www.storytellingwithdata.com/blog/2021/1/28/histograms-and-bar-charts)](figs/hist-vs-bar.jpg)
+
+
+## Bar chart 
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = homeownership)) +
+  geom_bar()
+```
+
+## Bar chart segmenté
+
+```{r bar-s1}
+#| code-line-numbers: "2"
+#| fig-width: 12
+#| fig-height: 8
+#| fig-align: 'center'
+ggplot(loans, aes(x = homeownership, 
+                  fill = grade)) +
+  geom_bar()
+```
+
+## Bar chart segmenté
+
+```{r bar-s2}
+#| code-line-numbers: "2"
+#| fig-width: 12
+#| fig-height: 8
+#| fig-align: 'center'
+ggplot(loans, aes(x = homeownership, fill = grade)) +
+  geom_bar(position = "fill")
+```
+
+##
+
+::: {.question}
+Lequel des deux graphes est plus adapté pour montrer la relation entre le fait d'être propriétaire et les notes de prêt ?
+:::
+
+::: columns
+::: column
+
+```{r ref.label="bar-s1", echo=FALSE, eval=TRUE}
+
+```
+
+:::
+::: column
+
+```{r ref.label="bar-s2", echo=FALSE, eval=TRUE}
+
+```
+
+:::
+:::
+
+## Bar plot horizontal
+
+::: {.panel-tabset}
+
+### Plot
+
+```{r barh, echo=FALSE, eval=TRUE}
+#| code-line-numbers: "2,8"
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(y = homeownership,
+                  fill = grade)) +
+  geom_bar(position = "fill") +
+  labs(
+    x = "Proportion",
+    y = "Homeownership",
+    fill = "Grade",
+    title = "Grades of Lending Club loans",
+    subtitle = "and homeownership of lendee"
+  )
+
+```
+
+### Code
+
+```{r ref.label="barh", echo=TRUE, eval=FALSE}
+
+```
+
+:::
+
+# Qualitative vs Quantitative
+
+## Violin plots
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+ggplot(loans, aes(x = homeownership, y = loan_amount)) +
+  geom_violin()
+```
+
+
+## Ridge plots
+
+```{r}
+#| fig-width: 12
+#| fig-height: 6
+#| fig-align: 'center'
+library(ggridges)
+ggplot(loans, aes(x = loan_amount, y = grade, fill = grade, color = grade)) + 
+  geom_density_ridges(alpha = 0.5)
+```
+
+

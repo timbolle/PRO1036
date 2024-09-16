@@ -27,6 +27,12 @@ Slide: [Web](../../slides/01 - Toolbox/01 - toolbox.qmd){target="_blank"} [PDF](
 
 ## 02 - Visualisation de données
 
+Slide Part-1: [Web](../../slides/02 - Dataviz/02 - dataviz.qmd){target="_blank"}
+
+Slide Part-2: [Web](../../slides/02 - Dataviz/02 - dataviz - 02.qmd){target="_blank"}
+
+Labs: Completez l'exercice disposible sur GitHub - [https://github.com/PRO1036/star-wars](https://github.com/PRO1036/star-wars)
+
 # Références
 
 :::{#refs}

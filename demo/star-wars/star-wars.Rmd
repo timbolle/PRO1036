@@ -1,0 +1,92 @@
+---
+title: "Visualizing Starwars characters"
+author: "Tim Bollé"
+format: html
+editor: visual
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+
+library(tidyverse)
+```
+
+1.  Coup d'oeil au jeu de données
+
+```{r}
+#| label: glimpse-starwars
+
+glimpse(starwars)
+```
+
+2.  Modifiez le block de code suivant pour cahnger la couleur les points en rose (`pink`)
+
+```{r}
+#| label: scatterplot
+
+ggplot(starwars, 
+       aes(x = height, y = mass, color = gender, size = birth_year)) +
+  geom_point()
+```
+
+3.  Ajoutez des titres au graphe, aux axes et à la légende. En levez le commentaire pour commencer.
+
+```{r}
+#| label: scatterplot-labels
+
+ggplot(starwars, 
+       aes(x = height, y = mass, color = gender, size = birth_year)) +
+  geom_point(color = "#30509C") +
+  labs(
+    #title = "___",
+    )
+```
+
+4.  Choisissez une variable quantitative et faites un histogramme à partir de celle-ci. Sélectionnez une _binwidth_ adaptée.
+
+(Vous trouverez ci-dessous un début de code pour vous aider. Pour l'instant, le block n'est pas évaluer quand vous compilez le document (`eval: false`) car cela produirait une erreur et empêcherait le document de s'afficher. Quand votre code sera prêt, changez pour `eval: true` ou bien enlevez cette ligne pour faire afficher le résultat.
+
+```{r}
+#| label: histogram
+#| eval: false
+
+ggplot(starwars, aes(___)) +
+  geom___
+```
+
+5.  Choisissez une variable quantitative et une qualitative. Faite un graphe (vous choisissez le type de graphe) pour représenter la relation entre les deux variables. En plus de votre graphe, proposez une interprétation de la visualisation.
+
+```{r}
+#| label: num-cat
+
+```
+
+Votre interprétation...
+
+6.  Choisissez une variable qualitative et faites un bar plot.
+
+```{r}
+#| label: barplot
+
+```
+
+7.  Choisissez deux variables qualitatives et représentez la relation entre celles-ci. Proposez une interprétation de ce que vous obtenez
+
+```{r}
+#| label: cat-cat
+
+```
+
+Votre interprétation...
+
+8.  Choisissez deux variables quantitatives et deux variables qualitatives et imaganibez une visualisation qui en tient compte
+
+(This time no starter code is provided, you're on your own!)
+
+```{r}
+#| label: multi
+
+```
+
+Votre interprétation...
