@@ -22,7 +22,7 @@
     "href": "website/labs/lab01-hello-world/lab01-hello-world.html",
     "title": "Lab 01 - Hello World",
     "section": "",
-    "text": "Lien vers le fichier Rmd : https://github.com/PRO1036/lab01.git\n\n\n\nNous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "text": "Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non\n\n\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse: https://github.com/PRO1036/lab01.git\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à l’étape suivante\n\n\n\nDans Rstudio:\n\nFichier &gt; Nouveau Projet\nNew Directory &gt; New Project\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nNous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:\n\nVisitez l’adresse: https://github.com/PRO1036/lab01\nCliquez sur le bouton vert: \nCliquez ensuite sur Download ZIP\nOuvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R\n\n⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé lab01-master). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.\n\n\n\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:\n\nSi vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.\n\n\n\n\nNous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown. Si vous voulez utiliser la console, il faudra également les taper.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
     "crumbs": [
       "Labs",
       "Semaine 1",
@@ -34,7 +34,7 @@
     "href": "website/labs/lab01-hello-world/lab01-hello-world.html#github",
     "title": "Lab 01 - Hello World",
     "section": "",
-    "text": "Lien vers le fichier Rmd : https://github.com/PRO1036/lab01.git",
+    "text": "Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non\n\n\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse: https://github.com/PRO1036/lab01.git\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à l’étape suivante\n\n\n\nDans Rstudio:\n\nFichier &gt; Nouveau Projet\nNew Directory &gt; New Project\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nNous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:\n\nVisitez l’adresse: https://github.com/PRO1036/lab01\nCliquez sur le bouton vert: \nCliquez ensuite sur Download ZIP\nOuvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R\n\n⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé lab01-master). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.\n\n\n\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:\n\nSi vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.",
     "crumbs": [
       "Labs",
       "Semaine 1",
@@ -989,7 +989,7 @@
     "href": "website/cours/cours.html#visualisation-de-données",
     "title": "Cours",
     "section": "02 - Visualisation de données",
-    "text": "02 - Visualisation de données\nSlide Part-1: Web\nSlide Part-2: Web\nLabs: Completez l’exercice disposible sur GitHub - https://github.com/PRO1036/star-wars"
+    "text": "02 - Visualisation de données\nSlide Part-1: Web PDF\nSlide Part-2: Web PDF\nDemo: Completez l’exercice disposible sur GitHub - https://github.com/PRO1036/star-wars\nLabs: Labo02 - Plastic waster"
   },
   {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html#github",
@@ -1681,5 +1681,144 @@
     "title": "Visualizing Starwars characters",
     "section": "",
     "text": "Coup d’oeil au jeu de données\n\n\nglimpse(starwars)\n\nRows: 87\nColumns: 14\n$ name       &lt;chr&gt; \"Luke Skywalker\", \"C-3PO\", \"R2-D2\", \"Darth Vader\", \"Leia Or…\n$ height     &lt;int&gt; 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…\n$ mass       &lt;dbl&gt; 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…\n$ hair_color &lt;chr&gt; \"blond\", NA, NA, \"none\", \"brown\", \"brown, grey\", \"brown\", N…\n$ skin_color &lt;chr&gt; \"fair\", \"gold\", \"white, blue\", \"white\", \"light\", \"light\", \"…\n$ eye_color  &lt;chr&gt; \"blue\", \"yellow\", \"red\", \"yellow\", \"brown\", \"blue\", \"blue\",…\n$ birth_year &lt;dbl&gt; 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …\n$ sex        &lt;chr&gt; \"male\", \"none\", \"none\", \"male\", \"female\", \"male\", \"female\",…\n$ gender     &lt;chr&gt; \"masculine\", \"masculine\", \"masculine\", \"masculine\", \"femini…\n$ homeworld  &lt;chr&gt; \"Tatooine\", \"Tatooine\", \"Naboo\", \"Tatooine\", \"Alderaan\", \"T…\n$ species    &lt;chr&gt; \"Human\", \"Droid\", \"Droid\", \"Human\", \"Human\", \"Human\", \"Huma…\n$ films      &lt;list&gt; &lt;\"A New Hope\", \"The Empire Strikes Back\", \"Return of the J…\n$ vehicles   &lt;list&gt; &lt;\"Snowspeeder\", \"Imperial Speeder Bike\"&gt;, &lt;&gt;, &lt;&gt;, &lt;&gt;, \"Imp…\n$ starships  &lt;list&gt; &lt;\"X-wing\", \"Imperial shuttle\"&gt;, &lt;&gt;, &lt;&gt;, \"TIE Advanced x1\",…\n\n\n\nModifiez le block de code suivant pour cahnger la couleur les points en rose (pink)\n\n\nggplot(starwars, \n       aes(x = height, y = mass, color = gender, size = birth_year)) +\n  geom_point()\n\nWarning: Removed 51 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\nAjoutez des titres au graphe, aux axes et à la légende. En levez le commentaire pour commencer.\n\n\nggplot(starwars, \n       aes(x = height, y = mass, color = gender, size = birth_year)) +\n  geom_point(color = \"#30509C\") +\n  labs(\n    #title = \"___\",\n    )\n\nWarning: Removed 51 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\n\nChoisissez une variable quantitative et faites un histogramme à partir de celle-ci. Sélectionnez une binwidth adaptée.\n\n(Vous trouverez ci-dessous un début de code pour vous aider. Pour l’instant, le block n’est pas évaluer quand vous compilez le document (eval: false) car cela produirait une erreur et empêcherait le document de s’afficher. Quand votre code sera prêt, changez pour eval: true ou bien enlevez cette ligne pour faire afficher le résultat.\n\nggplot(starwars, aes(___)) +\n  geom___\n\n\nChoisissez une variable quantitative et une qualitative. Faite un graphe (vous choisissez le type de graphe) pour représenter la relation entre les deux variables. En plus de votre graphe, proposez une interprétation de la visualisation.\n\nVotre interprétation…\n\nChoisissez une variable qualitative et faites un bar plot.\n\n\nChoisissez deux variables qualitatives et représentez la relation entre celles-ci. Proposez une interprétation de ce que vous obtenez\n\nVotre interprétation…\n\nChoisissez deux variables quantitatives et deux variables qualitatives et imaganibez une visualisation qui en tient compte\n\n(This time no starter code is provided, you’re on your own!)\nVotre interprétation…"
+  },
+  {
+    "objectID": "website/labs/lab02-plastic-waste/lab-02-plastic-waste.html",
+    "href": "website/labs/lab02-plastic-waste/lab-02-plastic-waste.html",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "",
+    "text": "La pollution plastique est un problème majeur, avec des impacts négatifs sur les océans et ses habitants Our World in Data possède de nombreux jeux de données à différents niveaux (globaux, par pays et sur le temps). Pour ce laboratoire, nous allons travailler avec les données de 2010.\nNational Geographic a lancé un concours de communication par visualisation de données sur le thème des déchets plastiques : lien."
+  },
+  {
+    "objectID": "website/labs/lab02-plastic-waste/lab-02-plastic-waste.html#packages",
+    "href": "website/labs/lab02-plastic-waste/lab-02-plastic-waste.html#packages",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "Packages",
+    "text": "Packages\nComme d’habitude, nous allons utiliser le tidyverse pour cette analyse.\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "website/labs/lab02-plastic-waste/lab-02-plastic-waste.html#données",
+    "href": "website/labs/lab02-plastic-waste/lab-02-plastic-waste.html#données",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "Données",
+    "text": "Données\nLe jeu de données pour ce lab peut être trouvé dans le dossier data présent dans le repo. Nous reparlerons du chargement de données locales plus tard mais pour l’instant il suffit de lancer cette ligne:\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")\n\nLes variables présentes dans le jeu de données sont:\n\ncode: 3 lettres pour le code pays\nentity: nom du pays\ncontinent: nom du continent\nyear: année\ngdp_per_cap: PID par habitant en $ (2011)\nplastic_waste_per_cap: quantité de déchets plastiques par habitant en kg/jour\nmismanaged_plastic_waste_per_cap: quantité de déchets plastiques non gérés par habitant en kg/jour\nmismanaged_plastic_waste: quantité de déchets plastiques non gérés en tonnes\ncoastal_pop: Nombres de personnes vivant sur des côtes\ntotal_pop: Population totale selon Gapminder"
+  },
+  {
+    "objectID": "labs/lab02-plastic-waste/lab-02.html",
+    "href": "labs/lab02-plastic-waste/lab-02.html",
+    "title": "Lab 02 - Plastic waste",
+    "section": "",
+    "text": "library(tidyverse) \n\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")"
+  },
+  {
+    "objectID": "labs/lab02-plastic-waste/lab-02.html#load-packages-and-data",
+    "href": "labs/lab02-plastic-waste/lab-02.html#load-packages-and-data",
+    "title": "Lab 02 - Plastic waste",
+    "section": "",
+    "text": "library(tidyverse) \n\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")"
+  },
+  {
+    "objectID": "labs/lab02-plastic-waste/lab-02.html#exercises",
+    "href": "labs/lab02-plastic-waste/lab-02.html#exercises",
+    "title": "Lab 02 - Plastic waste",
+    "section": "Exercises",
+    "text": "Exercises\n\nExercise 1\nRemove this text, and add your answer for Exercise 1 here.\n\n# insert code here\n\n\n\nExercise 2\n\n# insert code here\n\n\n\nExercise 3\nRemove this text, and add your answer for Exercise 3 here.\n\n\nExercise 4\nRemove this text, and add your answer for Exercise 4 here.\n\n# insert code here\n\n\n\nExercise 5\nRemove this text, and add your answer for Exercise 5 here.\n\n# insert code here\n\n\n\nExercise 6\nRemove this text, and add your answer for Exercise 6 here.\n\n# insert code here\n\n\n\nExercise 7\nRemove this text, and add your answer for Exercise 7 here.\n\n# insert code here\n\n\n# insert code here\n\n\n\nExercise 8\nRemove this text, and add your answer for Exercise 8 here.\n\n# insert code here"
+  },
+  {
+    "objectID": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html",
+    "href": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "",
+    "text": "La pollution plastique est un problème majeur, avec des impacts négatifs sur les océans et ses habitants Our World in Data possède de nombreux jeux de données à différents niveaux (globaux, par pays et sur le temps). Pour ce laboratoire, nous allons travailler avec les données de 2010.\nNational Geographic a lancé un concours de communication par visualisation de données sur le thème des déchets plastiques : lien.",
+    "crumbs": [
+      "Labs",
+      "Semaine 2",
+      "Lab 02 - Déchets plastiques"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#packages",
+    "href": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#packages",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "Packages",
+    "text": "Packages\nComme d’habitude, nous allons utiliser le tidyverse pour cette analyse.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Labs",
+      "Semaine 2",
+      "Lab 02 - Déchets plastiques"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#données",
+    "href": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#données",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "Données",
+    "text": "Données\nLe jeu de données pour ce lab peut être trouvé dans le dossier data présent dans le repo. Nous reparlerons du chargement de données locales plus tard mais pour l’instant il suffit de lancer cette ligne:\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")\n\nLes variables présentes dans le jeu de données sont:\n\ncode: 3 lettres pour le code pays\nentity: nom du pays\ncontinent: nom du continent\nyear: année\ngdp_per_cap: PID par habitant en $ (2011)\nplastic_waste_per_cap: quantité de déchets plastiques par habitant en kg/jour\nmismanaged_plastic_waste_per_cap: quantité de déchets plastiques non gérés par habitant en kg/jour\nmismanaged_plastic_waste: quantité de déchets plastiques non gérés en tonnes\ncoastal_pop: Nombres de personnes vivant sur des côtes\ntotal_pop: Population totale selon Gapminder",
+    "crumbs": [
+      "Labs",
+      "Semaine 2",
+      "Lab 02 - Déchets plastiques"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#installation-des-packages",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#installation-des-packages",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown. Si vous voulez utiliser la console, il faudra également les taper.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
+  },
+  {
+    "objectID": "classroom/lab02-plastic-waste/lab-02.html",
+    "href": "classroom/lab02-plastic-waste/lab-02.html",
+    "title": "Lab 02 - Plastic waste",
+    "section": "",
+    "text": "library(tidyverse) \n\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")"
+  },
+  {
+    "objectID": "classroom/lab02-plastic-waste/lab-02.html#chargement-des-packages-et-des-données",
+    "href": "classroom/lab02-plastic-waste/lab-02.html#chargement-des-packages-et-des-données",
+    "title": "Lab 02 - Plastic waste",
+    "section": "",
+    "text": "library(tidyverse) \n\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")"
+  },
+  {
+    "objectID": "classroom/lab02-plastic-waste/lab-02.html#exercices",
+    "href": "classroom/lab02-plastic-waste/lab-02.html#exercices",
+    "title": "Lab 02 - Plastic waste",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercise 1\n\n# insert code here\n\n\n\nExercise 2\n\n# insert code here\n\nRéponse à la question…\n\n\nExercise 3\nBoxplot:\n\n# insert code here\n\nViolin plot:\n\n# insert code here\n\nRéponse à la question…\n\n\nExercise 4\n\n# insert code here\n\nRéponse à la question…\n\n\nExercise 5\n\n# insert code here\n\n\n# insert code here\n\nRéponse à la question…"
+  },
+  {
+    "objectID": "classroom/lab02-plastic-waste/lab-02.html#conclusion",
+    "href": "classroom/lab02-plastic-waste/lab-02.html#conclusion",
+    "title": "Lab 02 - Plastic waste",
+    "section": "Conclusion",
+    "text": "Conclusion\nRecréez la visualisation:\n\n# insert code here"
+  },
+  {
+    "objectID": "labs/lab02-plastic-waste/lab-02.html#chargement-des-packages-et-des-données",
+    "href": "labs/lab02-plastic-waste/lab-02.html#chargement-des-packages-et-des-données",
+    "title": "Lab 02 - Plastic waste",
+    "section": "",
+    "text": "library(tidyverse) \n\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")"
+  },
+  {
+    "objectID": "labs/lab02-plastic-waste/lab-02.html#exercices",
+    "href": "labs/lab02-plastic-waste/lab-02.html#exercices",
+    "title": "Lab 02 - Plastic waste",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercise 1\n\n# insert code here\n\n\n\nExercise 2\n\n# insert code here\n\nRéponse à la question…\n\n\nExercise 3\nBoxplot:\n\n# insert code here\n\nViolin plot:\n\n# insert code here\n\nRéponse à la question…\n\n\nExercise 4\n\n# insert code here\n\nRéponse à la question…\n\n\nExercise 5\n\n# insert code here\n\n\n# insert code here\n\nRéponse à la question…"
+  },
+  {
+    "objectID": "labs/lab02-plastic-waste/lab-02.html#conclusion",
+    "href": "labs/lab02-plastic-waste/lab-02.html#conclusion",
+    "title": "Lab 02 - Plastic waste",
+    "section": "Conclusion",
+    "text": "Conclusion\nRecréez la visualisation:\n\n# insert code here"
   }
 ]

@@ -27,6 +27,9 @@ website:
         - section: "Semaine 1"
           contents:
             - website/labs/lab01-hello-world/lab01-hello-world.qmd
+        - section: "Semaine 2"
+          contents:
+            - website/labs/lab02-plastic-waste/lab02-plastic-waste.qmd
       
     - title: "Exercices"
       contents:

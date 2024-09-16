@@ -247,7 +247,7 @@ window.Quarto = {
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
   <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#installation-des-packages" id="toc-installation-des-packages" class="nav-link" data-scroll-target="#installation-des-packages">Installation des packages</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
   </ul></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
@@ -293,10 +293,47 @@ window.Quarto = {
 <h1>Getting started</h1>
 <section id="github" class="level2">
 <h2 class="anchored" data-anchor-id="github">Github</h2>
-<p>Lien vers le fichier Rmd : <a href="https://github.com/PRO1036/lab01.git">https://github.com/PRO1036/lab01.git</a></p>
+<p>Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non</p>
+<section id="git-est-correctement-installé" class="level4">
+<h4 class="anchored" data-anchor-id="git-est-correctement-installé">Git est correctement installé</h4>
+<p>Dans RStudio:</p>
+<ul>
+<li>Fichier &gt; Nouveau Projet</li>
+<li>Version Control &gt; Git</li>
+<li>Dans <em>Repository URL</em> : indiquez l’adresse: <a href="https://github.com/PRO1036/lab01.git" class="uri">https://github.com/PRO1036/lab01.git</a></li>
+<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
+<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
+</ul>
+<p>Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à <a href="#suite">l’étape suivante</a></p>
 </section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<section id="git-nest-pas-installé" class="level4">
+<h4 class="anchored" data-anchor-id="git-nest-pas-installé">Git n’est pas installé</h4>
+<p>Dans Rstudio:</p>
+<ul>
+<li>Fichier &gt; Nouveau Projet</li>
+<li>New Directory &gt; New Project</li>
+<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
+<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
+</ul>
+<p>Nous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:</p>
+<ul>
+<li>Visitez l’adresse: <a href="https://github.com/PRO1036/lab01" class="uri">https://github.com/PRO1036/lab01</a></li>
+<li>Cliquez sur le bouton vert: <img src="figs/github-bouton.png" class="inline-image img-fluid"></li>
+<li>Cliquez ensuite sur <em>Download ZIP</em></li>
+<li>Ouvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R</li>
+</ul>
+<p>⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé <code>lab01-master</code>). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.</p>
+</section>
+<section id="suite" class="level4">
+<h4 class="anchored" data-anchor-id="suite">Dans les deux cas</h4>
+<p>Dans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:</p>
+<p><img src="figs/rstudio-files.png" class="img-fluid"></p>
+<p>Si vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.</p>
+<p>Veuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.</p>
+</section>
+</section>
+<section id="installation-des-packages" class="level2">
+<h2 class="anchored" data-anchor-id="installation-des-packages">Installation des packages</h2>
 <p>Nous allons travailler avec deux packages: <strong>datasauRus</strong> qui contient le jeu de données que nous allons utiliser et <strong>tidyverse</strong> qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:</p>
 <div class="cell" data-fig.margin="true">
 <div class="cell-output-display">
@@ -312,7 +349,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ces deux lignes se retrouvent également dans votre fichier Rmarkdown.</p>
+<p>Ces deux lignes se retrouvent également dans votre fichier Rmarkdown. Si vous voulez utiliser la console, il faudra également les taper.</p>
 </section>
 <section id="données" class="level2">
 <h2 class="anchored" data-anchor-id="données">Données</h2>

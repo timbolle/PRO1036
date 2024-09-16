@@ -1,0 +1,78 @@
+---
+title: "Lab 02 - Plastic waste"
+author: "Votre nom"
+date: "La date"
+output: github_document
+---
+
+## Chargement des packages et des données
+
+```{r load-packages, message=FALSE}
+library(tidyverse) 
+```
+
+```{r load-data, message=FALSE}
+plastic_waste <- read_csv("data/plastic-waste.csv")
+```
+
+## Exercices
+
+### Exercise 1
+
+```{r plastic-waste-continent}
+# insert code here
+```
+
+### Exercise 2
+
+```{r plastic-waste-density}
+# insert code here
+```
+
+Réponse à la question...
+
+### Exercise 3
+
+Boxplot:
+
+```{r plastic-waste-boxplot}
+# insert code here
+```
+
+Violin plot:
+
+```{r plastic-waste-violin}
+# insert code here
+```
+
+Réponse à la question...
+
+### Exercise 4
+
+
+```{r plastic-waste-mismanaged}
+# insert code here
+```
+
+Réponse à la question...
+
+### Exercise 5
+
+
+```{r plastic-waste-population-total}
+# insert code here
+```
+
+```{r plastic-waste-population-coastal}
+# insert code here
+```
+
+Réponse à la question...
+
+## Conclusion
+
+Recréez la visualisation:
+
+```{r recreate-viz}
+# insert code here
+```
