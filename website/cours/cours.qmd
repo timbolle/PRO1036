@@ -36,6 +36,17 @@ Demo: Completez l'exercice disposible sur GitHub - [https://github.com/PRO1036/s
 
 Labs: [Labo02 - Plastic waster](../labs/lab02-plastic-waste/lab02-plastic-waste.qmd)
 
+#### À faire pour la semaine prochaine:
+  - [ ] Terminer le lab02
+  - [ ] Envoyer le lab02 sur le repo Github classroom à votre nom
+  - [ ] Lire le Chapitre *[Data Visualisation](https://r4ds.had.co.nz/data-visualisation.html)* [@wickhamDataScience2023]
+  
+Lectures complémentaires:
+
+  - [ ] Chapitre *[Exploring numerical data](https://openintro-ims.netlify.app/explore-numerical)* [@cetinkaya-rundelIntroductionModernStatistics2024]
+  - [ ] Chapitre *[Exploring categorical data](https://openintro-ims.netlify.app/explore-categorical)* [@cetinkaya-rundelIntroductionModernStatistics2024]
+  - [ ] Livre *[ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)* [@wickhamGgplot2ElegantGraphics2024]
+
 # Références
 
 :::{#refs}
