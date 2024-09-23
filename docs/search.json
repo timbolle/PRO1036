@@ -1820,5 +1820,404 @@
     "title": "Lab 02 - Plastic waste",
     "section": "Conclusion",
     "text": "Conclusion\nRecréez la visualisation:\n\n# insert code here"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#tidy-data-1",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#tidy-data-1",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nHappy families are all alike; every unhappy family is unhappy in its own way. – Leo Tolstoy\n\nQu’est ce que des données Tidy ?\n\nChaque variable est une colonne\nChaque observation est une ligne\nChaque valeur est une cellule"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#tidy-data-2",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#tidy-data-2",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Tidy data",
+    "text": "Tidy data\n\n(Wickham et al., 2023, chap. 5)"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#exemple",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#exemple",
+    "title": "02 - Visualisation de données",
+    "section": "Exemple",
+    "text": "Exemple\n\nEn quoi ces données ne sont pas tidy ?\n\n\n\n\nSource: Army Air Forces Statistical Digest, WWII"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#exemples-de-not-tidy",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#exemples-de-not-tidy",
+    "title": "02 - Visualisation de données",
+    "section": "Exemples de not tidy",
+    "text": "Exemples de not tidy"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#pipe",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#pipe",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Pipe",
+    "text": "Pipe\nÉlément très important dans la syntaxe de la manipulation de données\nEn programmation, un pipe permet de passer de l’information d’un processus à un autre.\nImaginons le processus suivant: Trouver les clés, démarrer la voiture, conduire au travail et se garer.\npark(drive(start_car(find(keys)), to = \"work\"))\n\n\n\nkeys %&gt;%\n  find() %&gt;%\n  start_car() %&gt;%\n  drive(to = \"work\") %&gt;%\n  park()"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#select",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#select",
+    "title": "02 - Visualisation de données",
+    "section": "Select",
+    "text": "Select"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#arrange",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#arrange",
+    "title": "02 - Visualisation de données",
+    "section": "Arrange",
+    "text": "Arrange"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#slice",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#slice",
+    "title": "02 - Visualisation de données",
+    "section": "Slice",
+    "text": "Slice"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#filter",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#filter",
+    "title": "02 - Visualisation de données",
+    "section": "filter",
+    "text": "filter"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#distinct-et-count",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#distinct-et-count",
+    "title": "02 - Visualisation de données",
+    "section": "distinct et count",
+    "text": "distinct et count"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#mutate",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#mutate",
+    "title": "02 - Visualisation de données",
+    "section": "mutate",
+    "text": "mutate"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#summarize",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#summarize",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "summarize",
+    "text": "summarize\nPermet de faire des calculs sur des variables\n\n# Moyenne du taux de réservation journalier\nhotels %&gt;%\n  summarise(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102.\n\n\n\nsummarize() change complètement le dataframe, transforme les lignes en une unique statistique et enlève les colonnes inutiles"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#group-by",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#group-by",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "group by",
+    "text": "group by\nPermet de regrouper des lignes selon une variable et de faire des opérations sur chaque groupe\n\nhotels %&gt;%\n  group_by(hotel) %&gt;%\n  summarise(mean_adr = mean(adr))\n\n# A tibble: 2 × 2\n  hotel        mean_adr\n  &lt;chr&gt;           &lt;dbl&gt;\n1 City Hotel      105. \n2 Resort Hotel     95.0"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#pivot-wider",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#pivot-wider",
+    "title": "02 - Visualisation de données",
+    "section": "Pivot wider",
+    "text": "Pivot wider"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#pivot-longer",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#pivot-longer",
+    "title": "02 - Visualisation de données",
+    "section": "Pivot longer",
+    "text": "Pivot longer\n\n\n\n\nPRO1036 - 02 | Tim Bollé\n\n\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc."
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#section",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#section",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "",
+    "text": "En quoi ces données ne sont pas tidy ?\n\n\nSource: Army Air Forces Statistical Digest, WWII"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#section-1",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#section-1",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "",
+    "text": "En quoi ces données ne sont pas tidy ?\n\n\nSource: Gapminder, Estimated HIV prevalence among 15-49 year olds"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#section-2",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#section-2",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "",
+    "text": "En quoi ces données ne sont pas tidy ?\n\n\nSource: US Census Fact Finder, General Economic Characteristics, ACS 2017"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#la-grammaire-de-la-manipulation-de-données",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#la-grammaire-de-la-manipulation-de-données",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "La grammaire de la manipulation de données",
+    "text": "La grammaire de la manipulation de données\nBasé sur des fonctions qui correspondent à des verbes permettant de manipuler des dataframes.\n\n\n\n\n\nselect: Sélectionner une colonne\narrange: Ordonner les lignes\nslice: Sélectionner des lignes (par les index)\nfilter: Sélectionner des lignes selon des critères\ndistinct: Filtrer les lignes uniques\nmutate: Ajout de nouvelles variables\nsummarise: Réduire variables en valeurs\ngroup_by: Regrouper des observations selon une variable\n…"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#data-réservations-dhôtels",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#data-réservations-dhôtels",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Data: Réservations d’hôtels",
+    "text": "Data: Réservations d’hôtels\nDonnées de deux hôtels, un en ville et un en campagne\nChaque ligne représente une réservation\nDataset créé pour prédire les chances qu’une réservation soit annulée (Antonio et al., 2019) \n\nhotels &lt;- read_csv(\"data/hotels.csv\")\n\n\n\nSource: TidyTuesday"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#les-variables",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#les-variables",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Les variables",
+    "text": "Les variables\n\nnames(hotels)\n\n [1] \"hotel\"                          \"is_canceled\"                   \n [3] \"lead_time\"                      \"arrival_date_year\"             \n [5] \"arrival_date_month\"             \"arrival_date_week_number\"      \n [7] \"arrival_date_day_of_month\"      \"stays_in_weekend_nights\"       \n [9] \"stays_in_week_nights\"           \"adults\"                        \n[11] \"children\"                       \"babies\"                        \n[13] \"meal\"                           \"country\"                       \n[15] \"market_segment\"                 \"distribution_channel\"          \n[17] \"is_repeated_guest\"              \"previous_cancellations\"        \n[19] \"previous_bookings_not_canceled\" \"reserved_room_type\"            \n[21] \"assigned_room_type\"             \"booking_changes\"               \n[23] \"deposit_type\"                   \"agent\"                         \n[25] \"company\"                        \"days_in_waiting_list\"          \n[27] \"customer_type\"                  \"adr\"                           \n[29] \"required_car_parking_spaces\"    \"total_of_special_requests\"     \n[31] \"reservation_status\"             \"reservation_status_date\""
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#glimpse",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#glimpse",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Glimpse",
+    "text": "Glimpse\n\nglimpse(hotels)\n\nRows: 119,390\nColumns: 32\n$ hotel                          &lt;chr&gt; \"Resort Hotel\", \"Resort Hotel\", \"Resort…\n$ is_canceled                    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, …\n$ lead_time                      &lt;dbl&gt; 342, 737, 7, 13, 14, 14, 0, 9, 85, 75, …\n$ arrival_date_year              &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 201…\n$ arrival_date_month             &lt;chr&gt; \"July\", \"July\", \"July\", \"July\", \"July\",…\n$ arrival_date_week_number       &lt;dbl&gt; 27, 27, 27, 27, 27, 27, 27, 27, 27, 27,…\n$ arrival_date_day_of_month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ stays_in_weekend_nights        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ stays_in_week_nights           &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 2, 2, 3, 3, 4, 4, 4, …\n$ adults                         &lt;dbl&gt; 2, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, …\n$ children                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ babies                         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ meal                           &lt;chr&gt; \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB\", \"BB…\n$ country                        &lt;chr&gt; \"PRT\", \"PRT\", \"GBR\", \"GBR\", \"GBR\", \"GBR…\n$ market_segment                 &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ distribution_channel           &lt;chr&gt; \"Direct\", \"Direct\", \"Direct\", \"Corporat…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;chr&gt; \"C\", \"C\", \"A\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ assigned_room_type             &lt;chr&gt; \"C\", \"C\", \"C\", \"A\", \"A\", \"A\", \"C\", \"C\",…\n$ booking_changes                &lt;dbl&gt; 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;chr&gt; \"No Deposit\", \"No Deposit\", \"No Deposit…\n$ agent                          &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"304\", \"240\", \"…\n$ company                        &lt;chr&gt; \"NULL\", \"NULL\", \"NULL\", \"NULL\", \"NULL\",…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;chr&gt; \"Transient\", \"Transient\", \"Transient\", …\n$ adr                            &lt;dbl&gt; 0.00, 0.00, 75.00, 75.00, 98.00, 98.00,…\n$ required_car_parking_spaces    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ total_of_special_requests      &lt;dbl&gt; 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 3, …\n$ reservation_status             &lt;chr&gt; \"Check-Out\", \"Check-Out\", \"Check-Out\", …\n$ reservation_status_date        &lt;date&gt; 2015-07-01, 2015-07-01, 2015-07-02, 20…"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-dune-variable",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-dune-variable",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection d’une variable",
+    "text": "Sélection d’une variable\nNous allons sélectionner la variable lead_time, qui représente le temps entre la date de réservation et la date d’arrivée\n\nselect(hotels, lead_time)\n\n# A tibble: 119,390 × 1\n   lead_time\n       &lt;dbl&gt;\n 1       342\n 2       737\n 3         7\n 4        13\n 5        14\n 6        14\n 7         0\n 8         9\n 9        85\n10        75\n# ℹ 119,380 more rows\n\n\nÉquivalent:\n\nhotels %&gt;%\n  select(lead_time)"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-plusieurs-variables",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-plusieurs-variables",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection de plusieurs variables",
+    "text": "Sélection de plusieurs variables\nNous allons maintenant ajouter la variable hotel qui indique s’il s’agit d’un hotel de ville ou un resort\n\nhotels %&gt;%\n  select(hotel, lead_time)\n\n# A tibble: 119,390 × 2\n   hotel        lead_time\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Resort Hotel       342\n 2 Resort Hotel       737\n 3 Resort Hotel         7\n 4 Resort Hotel        13\n 5 Resort Hotel        14\n 6 Resort Hotel        14\n 7 Resort Hotel         0\n 8 Resort Hotel         9\n 9 Resort Hotel        85\n10 Resort Hotel        75\n# ℹ 119,380 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#exclusion-de-variables",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#exclusion-de-variables",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Exclusion de variables",
+    "text": "Exclusion de variables\n\nhotels %&gt;%\n  select(hotel, lead_time, agent) %&gt;%\n  select(-agent)\n\n# A tibble: 119,390 × 2\n   hotel        lead_time\n   &lt;chr&gt;            &lt;dbl&gt;\n 1 Resort Hotel       342\n 2 Resort Hotel       737\n 3 Resort Hotel         7\n 4 Resort Hotel        13\n 5 Resort Hotel        14\n 6 Resort Hotel        14\n 7 Resort Hotel         0\n 8 Resort Hotel         9\n 9 Resort Hotel        85\n10 Resort Hotel        75\n# ℹ 119,380 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-dune-plage-de-variables",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-dune-plage-de-variables",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection d’une plage de variables",
+    "text": "Sélection d’une plage de variables\n\nhotels %&gt;%\n  select(hotel:arrival_date_month)\n\n# A tibble: 119,390 × 5\n   hotel        is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 Resort Hotel           0       342              2015 July              \n 2 Resort Hotel           0       737              2015 July              \n 3 Resort Hotel           0         7              2015 July              \n 4 Resort Hotel           0        13              2015 July              \n 5 Resort Hotel           0        14              2015 July              \n 6 Resort Hotel           0        14              2015 July              \n 7 Resort Hotel           0         0              2015 July              \n 8 Resort Hotel           0         9              2015 July              \n 9 Resort Hotel           1        85              2015 July              \n10 Resort Hotel           1        75              2015 July              \n# ℹ 119,380 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-variables-selon-une-condition",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-variables-selon-une-condition",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection de variables selon une condition",
+    "text": "Sélection de variables selon une condition\n\nhotels %&gt;%\n  select(starts_with(\"arrival\"))\n\n# A tibble: 119,390 × 4\n   arrival_date_year arrival_date_month arrival_date_week_number\n               &lt;dbl&gt; &lt;chr&gt;                                 &lt;dbl&gt;\n 1              2015 July                                     27\n 2              2015 July                                     27\n 3              2015 July                                     27\n 4              2015 July                                     27\n 5              2015 July                                     27\n 6              2015 July                                     27\n 7              2015 July                                     27\n 8              2015 July                                     27\n 9              2015 July                                     27\n10              2015 July                                     27\n# ℹ 119,380 more rows\n# ℹ 1 more variable: arrival_date_day_of_month &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#autres-conditions",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#autres-conditions",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Autres conditions",
+    "text": "Autres conditions\n\nstarts_with(): Commence par un préfix\nends_with(): Termine par un suffix\ncontains(): Contient une certaine chaine de caractères\nnum_range(): Match un certain range de nombres\none_of(): Match les variables font parties d’une liste\neverything(): Match les variable qui contiennet tous les éléments de la liste\nlast_col(): Sélectionne la dernière variable (possibilité d’indiquer un offset)\nmatches(): Match une expression régulière\n\n\n\nPour avoir plus d’information sur ces fonctions, utilisez l’aide ?... !"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#ordonner-les-lignes",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#ordonner-les-lignes",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Ordonner les lignes",
+    "text": "Ordonner les lignes\nPar défaut, les lignes sont arrangées en ordre croissant. Il est possible de préciser l’ordre décroissant avec desc()\n\n\n\nhotels %&gt;%\n  select(adults, children, babies) %&gt;%\n  arrange(babies)\n\n# A tibble: 119,390 × 3\n   adults children babies\n    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;\n 1      2        0      0\n 2      2        0      0\n 3      1        0      0\n 4      1        0      0\n 5      2        0      0\n 6      2        0      0\n 7      2        0      0\n 8      2        0      0\n 9      2        0      0\n10      2        0      0\n# ℹ 119,380 more rows\n\n\n\n\nhotels %&gt;%\n  select(adults, children, babies) %&gt;%\n  arrange(desc(babies))\n\n# A tibble: 119,390 × 3\n   adults children babies\n    &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;\n 1      2        0     10\n 2      1        0      9\n 3      2        0      2\n 4      2        0      2\n 5      2        0      2\n 6      2        0      2\n 7      2        0      2\n 8      2        0      2\n 9      2        0      2\n10      2        0      2\n# ℹ 119,380 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-lignes",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-lignes",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection de lignes",
+    "text": "Sélection de lignes\nLa sélection se base sur le numéro de ligne\n\n# first five\nhotels %&gt;%\n  slice(1:5)\n\n# A tibble: 5 × 32\n  hotel        is_canceled lead_time arrival_date_year arrival_date_month\n  &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n1 Resort Hotel           0       342              2015 July              \n2 Resort Hotel           0       737              2015 July              \n3 Resort Hotel           0         7              2015 July              \n4 Resort Hotel           0        13              2015 July              \n5 Resort Hotel           0        14              2015 July              \n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;,\n#   reserved_room_type &lt;chr&gt;, assigned_room_type &lt;chr&gt;, …"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-lignes-1",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-lignes-1",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection de lignes",
+    "text": "Sélection de lignes\nLa sélection se base sur des conditions\n\nhotels %&gt;%\n  filter(hotel == \"City Hotel\")\n\n# A tibble: 79,330 × 32\n   hotel      is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;chr&gt;            &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 City Hotel           0         6              2015 July              \n 2 City Hotel           1        88              2015 July              \n 3 City Hotel           1        65              2015 July              \n 4 City Hotel           1        92              2015 July              \n 5 City Hotel           1       100              2015 July              \n 6 City Hotel           1        79              2015 July              \n 7 City Hotel           0         3              2015 July              \n 8 City Hotel           1        63              2015 July              \n 9 City Hotel           1        62              2015 July              \n10 City Hotel           1        62              2015 July              \n# ℹ 79,320 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#conditions-multiples",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#conditions-multiples",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Conditions multiples",
+    "text": "Conditions multiples\nOn veut les réservations sans adultes ET plus qu’un enfant.\n\nhotels %&gt;%\n  filter( \n    adults == 0,\n    children &gt;= 1\n    ) %&gt;% \n  select(adults, babies, children)\n\n# A tibble: 223 × 3\n   adults babies children\n    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n 1      0      0        3\n 2      0      0        2\n 3      0      0        2\n 4      0      0        2\n 5      0      0        2\n 6      0      0        3\n 7      0      1        2\n 8      0      0        2\n 9      0      0        2\n10      0      0        2\n# ℹ 213 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#conditions-multiples-1",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#conditions-multiples-1",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Conditions multiples",
+    "text": "Conditions multiples\nOn veut les réservations sans adultes ET, plus qu’un enfant OU plus qu’un bébé.\n\nhotels %&gt;%\n  filter( \n    adults == 0,\n    children &gt;= 1 | babies &gt;= 1 # le | veut dire \"ou\"\n    ) %&gt;% \n  select(adults, babies, children)\n\n# A tibble: 223 × 3\n   adults babies children\n    &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;\n 1      0      0        3\n 2      0      0        2\n 3      0      0        2\n 4      0      0        2\n 5      0      0        2\n 6      0      0        3\n 7      0      1        2\n 8      0      0        2\n 9      0      0        2\n10      0      0        2\n# ℹ 213 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#les-opérations-logiques",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#les-opérations-logiques",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Les opérations logiques",
+    "text": "Les opérations logiques\n\n\n\n\n\n\n\n\n\nOpérateur\nDéfinition\nOpérateur\nDéfinition\n\n\n\n\n&lt;\nplus petit que\nx | y\nx OU y\n\n\n&lt;=\nplus petit ou égal\nis.na(x)\ntest si x est NA\n\n\n&gt;\nplus grand que\n!is.na(x)\ntest si x est différent de NA\n\n\n&gt;=\nplus grand ou égal\nx %in% y\ntest si x est dans y\n\n\n==\négal à\n!(x %in% y)\ntest si x n’est pas dans y\n\n\n!=\ndifférent de\n!x\nnon x\n\n\nx & y\nx ET y"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#ne-garder-que-les-lignes-uniques",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#ne-garder-que-les-lignes-uniques",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Ne garder que les lignes uniques",
+    "text": "Ne garder que les lignes uniques\n\n\n\nhotels %&gt;% \n  distinct(market_segment) %&gt;%\n  arrange(market_segment)\n\n# A tibble: 8 × 1\n  market_segment\n  &lt;chr&gt;         \n1 Aviation      \n2 Complementary \n3 Corporate     \n4 Direct        \n5 Groups        \n6 Offline TA/TO \n7 Online TA     \n8 Undefined     \n\n\n\n\nhotels %&gt;% \n  distinct(hotel, market_segment) %&gt;%\n  arrange(hotel, market_segment)\n\n# A tibble: 14 × 2\n   hotel        market_segment\n   &lt;chr&gt;        &lt;chr&gt;         \n 1 City Hotel   Aviation      \n 2 City Hotel   Complementary \n 3 City Hotel   Corporate     \n 4 City Hotel   Direct        \n 5 City Hotel   Groups        \n 6 City Hotel   Offline TA/TO \n 7 City Hotel   Online TA     \n 8 City Hotel   Undefined     \n 9 Resort Hotel Complementary \n10 Resort Hotel Corporate     \n11 Resort Hotel Direct        \n12 Resort Hotel Groups        \n13 Resort Hotel Offline TA/TO \n14 Resort Hotel Online TA"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#compter-le-nombre-de-lignes",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#compter-le-nombre-de-lignes",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Compter le nombre de lignes",
+    "text": "Compter le nombre de lignes\n\n\nPar défaut, le résultat est trié par ordre alphabétique :\n\nEn triant par fréquence d’apparition :\n\n\n\n\nhotels %&gt;%\n  count(market_segment)\n\n# A tibble: 8 × 2\n  market_segment     n\n  &lt;chr&gt;          &lt;int&gt;\n1 Aviation         237\n2 Complementary    743\n3 Corporate       5295\n4 Direct         12606\n5 Groups         19811\n6 Offline TA/TO  24219\n7 Online TA      56477\n8 Undefined          2\n\n\n\n\nhotels %&gt;%\n  count(market_segment, sort=TRUE)\n\n# A tibble: 8 × 2\n  market_segment     n\n  &lt;chr&gt;          &lt;int&gt;\n1 Online TA      56477\n2 Offline TA/TO  24219\n3 Groups         19811\n4 Direct         12606\n5 Corporate       5295\n6 Complementary    743\n7 Aviation         237\n8 Undefined          2"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#count-puis-arrange",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#count-puis-arrange",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "count puis arrange",
+    "text": "count puis arrange\n\n\n\nhotels %&gt;%\n  count(market_segment) %&gt;%\n  arrange(n)\n\n# A tibble: 8 × 2\n  market_segment     n\n  &lt;chr&gt;          &lt;int&gt;\n1 Undefined          2\n2 Aviation         237\n3 Complementary    743\n4 Corporate       5295\n5 Direct         12606\n6 Groups         19811\n7 Offline TA/TO  24219\n8 Online TA      56477\n\n\n\n\n# Même chose que sort=TRUE\nhotels %&gt;%\n  count(market_segment) %&gt;%\n  arrange(desc(n))\n\n# A tibble: 8 × 2\n  market_segment     n\n  &lt;chr&gt;          &lt;int&gt;\n1 Online TA      56477\n2 Offline TA/TO  24219\n3 Groups         19811\n4 Direct         12606\n5 Corporate       5295\n6 Complementary    743\n7 Aviation         237\n8 Undefined          2"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#compter-sur-plusieurs-variables",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#compter-sur-plusieurs-variables",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Compter sur plusieurs variables",
+    "text": "Compter sur plusieurs variables\nAttention à l’ordre…\n\n\n\nhotels %&gt;%\n  count(hotel, market_segment)\n\n# A tibble: 14 × 3\n   hotel        market_segment     n\n   &lt;chr&gt;        &lt;chr&gt;          &lt;int&gt;\n 1 City Hotel   Aviation         237\n 2 City Hotel   Complementary    542\n 3 City Hotel   Corporate       2986\n 4 City Hotel   Direct          6093\n 5 City Hotel   Groups         13975\n 6 City Hotel   Offline TA/TO  16747\n 7 City Hotel   Online TA      38748\n 8 City Hotel   Undefined          2\n 9 Resort Hotel Complementary    201\n10 Resort Hotel Corporate       2309\n11 Resort Hotel Direct          6513\n12 Resort Hotel Groups          5836\n13 Resort Hotel Offline TA/TO   7472\n14 Resort Hotel Online TA      17729\n\n\n\n\nhotels %&gt;%\n  count(market_segment, hotel)\n\n# A tibble: 14 × 3\n   market_segment hotel            n\n   &lt;chr&gt;          &lt;chr&gt;        &lt;int&gt;\n 1 Aviation       City Hotel     237\n 2 Complementary  City Hotel     542\n 3 Complementary  Resort Hotel   201\n 4 Corporate      City Hotel    2986\n 5 Corporate      Resort Hotel  2309\n 6 Direct         City Hotel    6093\n 7 Direct         Resort Hotel  6513\n 8 Groups         City Hotel   13975\n 9 Groups         Resort Hotel  5836\n10 Offline TA/TO  City Hotel   16747\n11 Offline TA/TO  Resort Hotel  7472\n12 Online TA      City Hotel   38748\n13 Online TA      Resort Hotel 17729\n14 Undefined      City Hotel       2"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#ajout-de-nouvelles-variables",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#ajout-de-nouvelles-variables",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Ajout de nouvelles variables",
+    "text": "Ajout de nouvelles variables\n\nhotels %&gt;%\n  mutate(little_ones = children + babies) %&gt;%\n  select(children, babies, little_ones) %&gt;%\n  arrange(desc(little_ones))\n\n# A tibble: 119,390 × 3\n   children babies little_ones\n      &lt;dbl&gt;  &lt;dbl&gt;       &lt;dbl&gt;\n 1       10      0          10\n 2        0     10          10\n 3        0      9           9\n 4        2      1           3\n 5        2      1           3\n 6        2      1           3\n 7        3      0           3\n 8        2      1           3\n 9        2      1           3\n10        3      0           3\n# ℹ 119,380 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#section-3",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#section-3",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "",
+    "text": "hotels %&gt;%\n  mutate(little_ones = children + babies) %&gt;%\n  count(hotel, little_ones)\n\n# A tibble: 12 × 3\n   hotel        little_ones     n\n   &lt;chr&gt;              &lt;dbl&gt; &lt;int&gt;\n 1 City Hotel             0 73923\n 2 City Hotel             1  3263\n 3 City Hotel             2  2056\n 4 City Hotel             3    82\n 5 City Hotel             9     1\n 6 City Hotel            10     1\n 7 City Hotel            NA     4\n 8 Resort Hotel           0 36131\n 9 Resort Hotel           1  2183\n10 Resort Hotel           2  1716\n11 Resort Hotel           3    29\n12 Resort Hotel          10     1\n\n\n\n\nhotels %&gt;%\n  mutate(little_ones = children + babies) %&gt;%\n  count(hotel, little_ones) %&gt;%\n  mutate(prop = n / sum(n))\n\n# A tibble: 12 × 4\n   hotel        little_ones     n       prop\n   &lt;chr&gt;              &lt;dbl&gt; &lt;int&gt;      &lt;dbl&gt;\n 1 City Hotel             0 73923 0.619     \n 2 City Hotel             1  3263 0.0273    \n 3 City Hotel             2  2056 0.0172    \n 4 City Hotel             3    82 0.000687  \n 5 City Hotel             9     1 0.00000838\n 6 City Hotel            10     1 0.00000838\n 7 City Hotel            NA     4 0.0000335 \n 8 Resort Hotel           0 36131 0.303     \n 9 Resort Hotel           1  2183 0.0183    \n10 Resort Hotel           2  1716 0.0144    \n11 Resort Hotel           3    29 0.000243  \n12 Resort Hotel          10     1 0.00000838"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#attention",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#attention",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Attention",
+    "text": "Attention\nNous pouvons être fainéant et laisser summarize() créer le nom des colonnes mais ce n’est pas très propre.\n\n\n❌\n\nhotels %&gt;%\n  summarise(mean(adr))\n\n# A tibble: 1 × 1\n  `mean(adr)`\n        &lt;dbl&gt;\n1        102.\n\n\n\n✅\n\nhotels %&gt;%\n  summarise(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102."
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#exemple-calcul-de-fréquences",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#exemple-calcul-de-fréquences",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Exemple: calcul de fréquences",
+    "text": "Exemple: calcul de fréquences\nLes deux blocs de code suivants donnent le résultat ! count() est en faite un group_by() suivi d’un summarize(). \n\n\n\nhotels %&gt;%\n  group_by(hotel) %&gt;%\n  summarise(n = n())\n\n# A tibble: 2 × 2\n  hotel            n\n  &lt;chr&gt;        &lt;int&gt;\n1 City Hotel   79330\n2 Resort Hotel 40060\n\n\n\n\nhotels %&gt;%\n  count(hotel)\n\n# A tibble: 2 × 2\n  hotel            n\n  &lt;chr&gt;        &lt;int&gt;\n1 City Hotel   79330\n2 Resort Hotel 40060"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#statistiques-multiples",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#statistiques-multiples",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Statistiques multiples",
+    "text": "Statistiques multiples\nIl est possible de calculer plusieurs statistiques d’un coup. \n\nhotels %&gt;%\n  summarise(\n    min_adr = min(adr),\n    mean_adr = mean(adr),\n    median_adr = median(adr),\n    max_adr = max(adr)\n    )\n\n# A tibble: 1 × 4\n  min_adr mean_adr median_adr max_adr\n    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;\n1   -6.38     102.       94.6    5400"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#ce-quon-a",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#ce-quon-a",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Ce qu’on a…",
+    "text": "Ce qu’on a…\n\n\n# A tibble: 2 × 4\n  customer_id item_1 item_2       item_3\n        &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; \n1           1 bread  milk         banana\n2           2 milk   toilet paper &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#ce-quon-veut",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#ce-quon-veut",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Ce qu’on veut…",
+    "text": "Ce qu’on veut…\n\n\n# A tibble: 6 × 3\n  customer_id item_no item        \n        &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;       \n1           1 item_1  bread       \n2           1 item_2  milk        \n3           1 item_3  banana      \n4           2 item_1  milk        \n5           2 item_2  toilet paper\n6           2 item_3  &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#pour-tidyer-tidyr",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#pour-tidyer-tidyr",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Pour Tidyer: Tidyr",
+    "text": "Pour Tidyer: Tidyr\n\n\n\n\nTidyr permet de transformer les données pour les Tidy :\n\nFaire pivoter les données\nSéparer ou combiner des colonnes\nImbriquer/Désimbriquer des colonnes\nPréciser commenter traiter les NA"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#wide-vs-long",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#wide-vs-long",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Wide vs Long",
+    "text": "Wide vs Long\n\n\nForme large :\n\n\nForme longue :\n\n\n\nSource: (Wickham et al., 2023, chap. 5)"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#wide-vs-long-1",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#wide-vs-long-1",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Wide vs Long",
+    "text": "Wide vs Long\n\n\nWide\nPlus de colonnes\n\n\n# A tibble: 2 × 4\n  customer_id item_1 item_2       item_3\n        &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; \n1           1 bread  milk         banana\n2           2 milk   toilet paper &lt;NA&gt;  \n\n\n\nLong\nPlus de lignes\n\n\n# A tibble: 6 × 3\n  customer_id item_no item        \n        &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;       \n1           1 item_1  bread       \n2           1 item_2  milk        \n3           1 item_3  banana      \n4           2 item_1  milk        \n5           2 item_2  toilet paper\n6           2 item_3  &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#pivot_longer",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#pivot_longer",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "pivot_longer()",
+    "text": "pivot_longer()\n\n\n\ndata : Comme d’habitude\ncols : Colonne à pivoter\nnames_to : Nom de la colonne où les variables vont être envoyées\nvalues_to : Nom de la colonne où les valeurs vont être envoyées\n\n\npivot_longer(\n  data, \n  cols, \n  names_to = \"name\", \n  values_to = \"value\"\n  )"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#customer-rightarrow-purchases",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#customer-rightarrow-purchases",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Customer \\(\\rightarrow\\) purchases",
+    "text": "Customer \\(\\rightarrow\\) purchases\n\npurchases &lt;- customers %&gt;%\n  pivot_longer(\n    cols = item_1:item_3,  # variables item_1 à item_3\n    names_to = \"item_no\",  # Noms des colonnes -&gt; dans une nouvelle colonne item_no\n    values_to = \"item\"     # valeurs pour chaque colonne -&gt; dans une nouvelle colonne item\n    )\n\npurchases\n\n# A tibble: 6 × 3\n  customer_id item_no item        \n        &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;       \n1           1 item_1  bread       \n2           1 item_2  milk        \n3           1 item_3  banana      \n4           2 item_1  milk        \n5           2 item_2  toilet paper\n6           2 item_3  &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#pivot_wider",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#pivot_wider",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "pivot_wider()",
+    "text": "pivot_wider()\n\n\n\ndata : Comme d’habitude\nnames_from : Colonne contenant les noms de colonnes\nvalues_from : Colonne contenant les valeurs\n\n\n\npurchases %&gt;%\n  pivot_wider(\n    names_from = item_no,\n    values_from = item\n  )\n\n# A tibble: 2 × 4\n  customer_id item_1 item_2       item_3\n        &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; \n1           1 bread  milk         banana\n2           2 milk   toilet paper &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#références",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#références",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Références",
+    "text": "Références\n\n\nAntonio, N., de Almeida, A. and Nunes, L. (2019). Hotel booking demand datasets. Data in Brief, 22, 41–49. https://doi.org/10.1016/j.dib.2018.11.126\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc.\n\n\n\n\n\n\nPRO1036 - 03 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-variables-selon-une-condition-1",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#sélection-de-variables-selon-une-condition-1",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Sélection de variables selon une condition",
+    "text": "Sélection de variables selon une condition\n\nhotels %&gt;%\n  select(ends_with(\"type\"))\n\n# A tibble: 119,390 × 4\n   reserved_room_type assigned_room_type deposit_type customer_type\n   &lt;chr&gt;              &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;        \n 1 C                  C                  No Deposit   Transient    \n 2 C                  C                  No Deposit   Transient    \n 3 A                  C                  No Deposit   Transient    \n 4 A                  A                  No Deposit   Transient    \n 5 A                  A                  No Deposit   Transient    \n 6 A                  A                  No Deposit   Transient    \n 7 C                  C                  No Deposit   Transient    \n 8 C                  C                  No Deposit   Transient    \n 9 A                  A                  No Deposit   Transient    \n10 D                  D                  No Deposit   Transient    \n# ℹ 119,380 more rows"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#combinaison-des-verbes",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#combinaison-des-verbes",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Combinaison des verbes",
+    "text": "Combinaison des verbes\n\n\n\nhotels %&gt;%\n  mutate(\n    little_ones = children + babies) %&gt;%\n  count(hotel, little_ones)\n\n# A tibble: 12 × 3\n   hotel        little_ones     n\n   &lt;chr&gt;              &lt;dbl&gt; &lt;int&gt;\n 1 City Hotel             0 73923\n 2 City Hotel             1  3263\n 3 City Hotel             2  2056\n 4 City Hotel             3    82\n 5 City Hotel             9     1\n 6 City Hotel            10     1\n 7 City Hotel            NA     4\n 8 Resort Hotel           0 36131\n 9 Resort Hotel           1  2183\n10 Resort Hotel           2  1716\n11 Resort Hotel           3    29\n12 Resort Hotel          10     1\n\n\n\n\nhotels %&gt;%\n  mutate(\n    little_ones = children + babies) %&gt;%\n  count(hotel, little_ones) %&gt;%\n  mutate(prop = n / sum(n))\n\n# A tibble: 12 × 4\n   hotel        little_ones     n       prop\n   &lt;chr&gt;              &lt;dbl&gt; &lt;int&gt;      &lt;dbl&gt;\n 1 City Hotel             0 73923 0.619     \n 2 City Hotel             1  3263 0.0273    \n 3 City Hotel             2  2056 0.0172    \n 4 City Hotel             3    82 0.000687  \n 5 City Hotel             9     1 0.00000838\n 6 City Hotel            10     1 0.00000838\n 7 City Hotel            NA     4 0.0000335 \n 8 Resort Hotel           0 36131 0.303     \n 9 Resort Hotel           1  2183 0.0183    \n10 Resort Hotel           2  1716 0.0144    \n11 Resort Hotel           3    29 0.000243  \n12 Resort Hotel          10     1 0.00000838"
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#attention-à-la-notation",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#attention-à-la-notation",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "Attention à la notation",
+    "text": "Attention à la notation\nNous pouvons être fainéant et laisser summarize() créer le nom des colonnes mais ce n’est pas très propre.\n\n\n❌\n\nhotels %&gt;%\n  summarise(mean(adr))\n\n# A tibble: 1 × 1\n  `mean(adr)`\n        &lt;dbl&gt;\n1        102.\n\n\n\n✅\n\nhotels %&gt;%\n  summarise(mean_adr = mean(adr))\n\n# A tibble: 1 × 1\n  mean_adr\n     &lt;dbl&gt;\n1     102."
+  },
+  {
+    "objectID": "slides/03 - Tidy-data/03 - tidy-data.html#group_by",
+    "href": "slides/03 - Tidy-data/03 - tidy-data.html#group_by",
+    "title": "03 - Manipulation et données Tidy",
+    "section": "group_by",
+    "text": "group_by\nPermet de regrouper des lignes selon une variable et de faire des opérations sur chaque groupe \n\nhotels %&gt;%\n  group_by(hotel) %&gt;%\n  summarise(mean_adr = mean(adr))\n\n# A tibble: 2 × 2\n  hotel        mean_adr\n  &lt;chr&gt;           &lt;dbl&gt;\n1 City Hotel      105. \n2 Resort Hotel     95.0"
+  },
+  {
+    "objectID": "website/cours/cours.html#manipulation-de-données-et-forme-tidy",
+    "href": "website/cours/cours.html#manipulation-de-données-et-forme-tidy",
+    "title": "Cours",
+    "section": "03 - Manipulation de données et forme Tidy",
+    "text": "03 - Manipulation de données et forme Tidy\nSlides : Web PDF"
   }
 ]

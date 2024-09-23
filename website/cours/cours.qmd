@@ -1,55 +1,54 @@
 ---
 title: "Cours"
-editor: visual
 link-external-newwindow: true
 ---
 
 ## 00 - Introduction
 
-Slide: [Web](../../slides/00 - Intro/00 - intro.qmd){target="_blank"} [PDF](00 - intro.pdf)
+Slide: [Web](../../slides/00%20-%20Intro/00%20-%20intro.qmd){target="_blank"} [PDF](00%20-%20intro.pdf)
 
 ## 01 - R basics
 
-Slide: [Web](../../slides/01 - Toolbox/01 - toolbox.qmd){target="_blank"} [PDF](01 - toolbox.pdf)
-<br/>Demo: [UN Votes](../demo/unvotes/unvotes.qmd)
-<br/>Labs: [Labo01 - Hello WoRld](../labs/lab01-hello-world/lab01-hello-world.qmd)
-<br/>Exercices: [Exo01 - Pet names](../exercices/exo01-pet-names/exo01-pet-names.qmd)
+Slide: [Web](../../slides/01%20-%20Toolbox/01%20-%20toolbox.qmd){target="_blank"} [PDF](01%20-%20toolbox.pdf) <br/>Demo: [UN Votes](../demo/unvotes/unvotes.qmd) <br/>Labs: [Labo01 - Hello WoRld](../labs/lab01-hello-world/lab01-hello-world.qmd) <br/>Exercices: [Exo01 - Pet names](../exercices/exo01-pet-names/exo01-pet-names.qmd)
 
 #### À faire pour la semaine prochaine:
-  - [ ] Installer R ([R project](https://www.r-project.org/))
-  - [ ] Installer [Rstudio](https://posit.co/download/rstudio-desktop/)
-  - [ ] Installer [Git](https://git-scm.com/downloads)
-  - [ ] Créer un compte sur [GitHub](https://github.com/)
-  - [ ] Lire le Chapitre *[Introduction](https://r4ds.hadley.nz/intro)* [@wickhamDataScience2023] 
-  - [ ] Faire le Lab01
-  - [ ] (optionel) Faire l'exercice 01
 
+-   [ ] Installer R ([R project](https://www.r-project.org/))
+-   [ ] Installer [Rstudio](https://posit.co/download/rstudio-desktop/)
+-   [ ] Installer [Git](https://git-scm.com/downloads)
+-   [ ] Créer un compte sur [GitHub](https://github.com/)
+-   [ ] Lire le Chapitre [*Introduction*](https://r4ds.hadley.nz/intro) [@wickhamDataScience2023]
+-   [ ] Faire le Lab01
+-   [ ] (optionel) Faire l'exercice 01
 
 ## 02 - Visualisation de données
 
-Slide Part-1: [Web](../../slides/02 - Dataviz/02 - dataviz.qmd){target="_blank"}  [PDF](02 - dataviz - P1.pdf)
+Slide Part-1: [Web](../../slides/02%20-%20Dataviz/02%20-%20dataviz.qmd){target="_blank"} [PDF](02%20-%20dataviz%20-%20P1.pdf)
 
-Slide Part-2: [Web](../../slides/02 - Dataviz/02 - dataviz - 02.qmd){target="_blank"}  [PDF](02 - dataviz - P2.pdf)
+Slide Part-2: [Web](../../slides/02%20-%20Dataviz/02%20-%20dataviz%20-%2002.qmd){target="_blank"} [PDF](02%20-%20dataviz%20-%20P2.pdf)
 
-
-Demo: Completez l'exercice disposible sur GitHub - [https://github.com/PRO1036/star-wars](https://github.com/PRO1036/star-wars)
+Demo: Completez l'exercice disposible sur GitHub - <https://github.com/PRO1036/star-wars>
 
 Labs: [Labo02 - Plastic waster](../labs/lab02-plastic-waste/lab02-plastic-waste.qmd)
 
 #### À faire pour la semaine prochaine:
-  - [ ] Terminer le lab02
-  - [ ] Envoyer le lab02 sur le repo Github classroom à votre nom
-  - [ ] Lire le Chapitre *[Data Visualisation](https://r4ds.had.co.nz/data-visualisation.html)* [@wickhamDataScience2023]
-  
+
+-   [ ] Terminer le lab02
+-   [ ] Envoyer le lab02 sur le repo Github classroom à votre nom
+-   [ ] Lire le Chapitre [*Data Visualisation*](https://r4ds.had.co.nz/data-visualisation.html) [@wickhamDataScience2023]
+
 Lectures complémentaires:
 
-  - [ ] Chapitre *[Exploring numerical data](https://openintro-ims.netlify.app/explore-numerical)* [@cetinkaya-rundelIntroductionModernStatistics2024]
-  - [ ] Chapitre *[Exploring categorical data](https://openintro-ims.netlify.app/explore-categorical)* [@cetinkaya-rundelIntroductionModernStatistics2024]
-  - [ ] Livre *[ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)* [@wickhamGgplot2ElegantGraphics2024]
+-   [ ] Chapitre [*Exploring numerical data*](https://openintro-ims.netlify.app/explore-numerical) [@cetinkaya-rundelIntroductionModernStatistics2024]
+-   [ ] Chapitre [*Exploring categorical data*](https://openintro-ims.netlify.app/explore-categorical) [@cetinkaya-rundelIntroductionModernStatistics2024]
+-   [ ] Livre [*ggplot2: Elegant Graphics for Data Analysis*](https://ggplot2-book.org/) [@wickhamGgplot2ElegantGraphics2024]
+
+## 03 - Manipulation de données et forme Tidy
+
+Slides : [Web](../../slides/03 - Tidy-data/03 - tidy-data.qmd){target="_blank"} [PDF](03 - tidy-data.pdf)
+
 
 # Références
 
-:::{#refs}
+::: {#refs}
 :::
-
-

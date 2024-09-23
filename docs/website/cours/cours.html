@@ -143,6 +143,7 @@ div.csl-indent {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">00 - Introduction</a></li>
   <li><a href="#r-basics" id="toc-r-basics" class="nav-link" data-scroll-target="#r-basics">01 - R basics</a></li>
   <li><a href="#visualisation-de-données" id="toc-visualisation-de-données" class="nav-link" data-scroll-target="#visualisation-de-données">02 - Visualisation de données</a></li>
+  <li><a href="#manipulation-de-données-et-forme-tidy" id="toc-manipulation-de-données-et-forme-tidy" class="nav-link" data-scroll-target="#manipulation-de-données-et-forme-tidy">03 - Manipulation de données et forme Tidy</a></li>
   <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
   </ul>
 </nav>
@@ -183,7 +184,7 @@ div.csl-indent {
 <li><label><input type="checkbox">Installer <a href="https://posit.co/download/rstudio-desktop/">Rstudio</a></label></li>
 <li><label><input type="checkbox">Installer <a href="https://git-scm.com/downloads">Git</a></label></li>
 <li><label><input type="checkbox">Créer un compte sur <a href="https://github.com/">GitHub</a></label></li>
-<li><label><input type="checkbox">Lire le Chapitre <em><a href="https://r4ds.hadley.nz/intro">Introduction</a></em> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
+<li><label><input type="checkbox">Lire le Chapitre <a href="https://r4ds.hadley.nz/intro"><em>Introduction</em></a> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
 <li><label><input type="checkbox">Faire le Lab01</label></li>
 <li><label><input type="checkbox">(optionel) Faire l’exercice 01</label></li>
 </ul>
@@ -193,22 +194,26 @@ div.csl-indent {
 <h2 class="anchored" data-anchor-id="visualisation-de-données">02 - Visualisation de données</h2>
 <p>Slide Part-1: <a href="../../slides/02 - Dataviz/02 - dataviz.html" target="_blank">Web</a> <a href="02 - dataviz - P1.pdf">PDF</a></p>
 <p>Slide Part-2: <a href="../../slides/02 - Dataviz/02 - dataviz - 02.html" target="_blank">Web</a> <a href="02 - dataviz - P2.pdf">PDF</a></p>
-<p>Demo: Completez l’exercice disposible sur GitHub - <a href="https://github.com/PRO1036/star-wars">https://github.com/PRO1036/star-wars</a></p>
+<p>Demo: Completez l’exercice disposible sur GitHub - <a href="https://github.com/PRO1036/star-wars" class="uri">https://github.com/PRO1036/star-wars</a></p>
 <p>Labs: <a href="../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html">Labo02 - Plastic waster</a></p>
 <section id="à-faire-pour-la-semaine-prochaine-1" class="level4">
 <h4 class="anchored" data-anchor-id="à-faire-pour-la-semaine-prochaine-1">À faire pour la semaine prochaine:</h4>
 <ul class="task-list">
 <li><label><input type="checkbox">Terminer le lab02</label></li>
 <li><label><input type="checkbox">Envoyer le lab02 sur le repo Github classroom à votre nom</label></li>
-<li><label><input type="checkbox">Lire le Chapitre <em><a href="https://r4ds.had.co.nz/data-visualisation.html">Data Visualisation</a></em> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
+<li><label><input type="checkbox">Lire le Chapitre <a href="https://r4ds.had.co.nz/data-visualisation.html"><em>Data Visualisation</em></a> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
 </ul>
 <p>Lectures complémentaires:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">Chapitre <em><a href="https://openintro-ims.netlify.app/explore-numerical">Exploring numerical data</a></em> <span class="citation" data-cites="cetinkaya-rundelIntroductionModernStatistics2024">(<a href="#ref-cetinkaya-rundelIntroductionModernStatistics2024" role="doc-biblioref">Çetinkaya-Rundel and Hardin, 2024</a>)</span></label></li>
-<li><label><input type="checkbox">Chapitre <em><a href="https://openintro-ims.netlify.app/explore-categorical">Exploring categorical data</a></em> <span class="citation" data-cites="cetinkaya-rundelIntroductionModernStatistics2024">(<a href="#ref-cetinkaya-rundelIntroductionModernStatistics2024" role="doc-biblioref">Çetinkaya-Rundel and Hardin, 2024</a>)</span></label></li>
-<li><label><input type="checkbox">Livre <em><a href="https://ggplot2-book.org/">ggplot2: Elegant Graphics for Data Analysis</a></em> <span class="citation" data-cites="wickhamGgplot2ElegantGraphics2024">(<a href="#ref-wickhamGgplot2ElegantGraphics2024" role="doc-biblioref">Wickham et al., 2024</a>)</span></label></li>
+<li><label><input type="checkbox">Chapitre <a href="https://openintro-ims.netlify.app/explore-numerical"><em>Exploring numerical data</em></a> <span class="citation" data-cites="cetinkaya-rundelIntroductionModernStatistics2024">(<a href="#ref-cetinkaya-rundelIntroductionModernStatistics2024" role="doc-biblioref">Çetinkaya-Rundel and Hardin, 2024</a>)</span></label></li>
+<li><label><input type="checkbox">Chapitre <a href="https://openintro-ims.netlify.app/explore-categorical"><em>Exploring categorical data</em></a> <span class="citation" data-cites="cetinkaya-rundelIntroductionModernStatistics2024">(<a href="#ref-cetinkaya-rundelIntroductionModernStatistics2024" role="doc-biblioref">Çetinkaya-Rundel and Hardin, 2024</a>)</span></label></li>
+<li><label><input type="checkbox">Livre <a href="https://ggplot2-book.org/"><em>ggplot2: Elegant Graphics for Data Analysis</em></a> <span class="citation" data-cites="wickhamGgplot2ElegantGraphics2024">(<a href="#ref-wickhamGgplot2ElegantGraphics2024" role="doc-biblioref">Wickham et al., 2024</a>)</span></label></li>
 </ul>
 </section>
+</section>
+<section id="manipulation-de-données-et-forme-tidy" class="level2">
+<h2 class="anchored" data-anchor-id="manipulation-de-données-et-forme-tidy">03 - Manipulation de données et forme Tidy</h2>
+<p>Slides : <a href="../../slides/03 - Tidy-data/03 - tidy-data.html" target="_blank">Web</a> <a href="03 - tidy-data.pdf">PDF</a></p>
 </section>
 <section id="références" class="level1">
 <h1>Références</h1>
