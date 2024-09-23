@@ -30,6 +30,9 @@ website:
         - section: "Semaine 2"
           contents:
             - website/labs/lab02-plastic-waste/lab02-plastic-waste.qmd
+        - section: "Semaine 3"
+          contents:
+            - website/labs/lab03-nobel-laureates/lab03-nobel-laureates.qmd
       
     - title: "Exercices"
       contents:

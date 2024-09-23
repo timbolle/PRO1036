@@ -29,7 +29,7 @@ Slide Part-2: [Web](../../slides/02%20-%20Dataviz/02%20-%20dataviz%20-%2002.qmd)
 
 Demo: Completez l'exercice disposible sur GitHub - <https://github.com/PRO1036/star-wars>
 
-Labs: [Labo02 - Plastic waster](../labs/lab02-plastic-waste/lab02-plastic-waste.qmd)
+Labs: [Lab02 - Plastic waster](../labs/lab02-plastic-waste/lab02-plastic-waste.qmd)
 
 #### À faire pour la semaine prochaine:
 
@@ -48,6 +48,8 @@ Lectures complémentaires:
 Slides : [Web](../../slides/03 - Tidy-data/03 - tidy-data.qmd){target="_blank"} [PDF](03 - tidy-data.pdf)
 
 Demo : [Hotel Bookings](https://github.com/PRO1036/hotel-bookings)
+
+Labs: [Lab03 - Nobel laureates](../labs/lab03-nobel-laureates/lab03-nobel-laureates.qmd)
 
 
 # Références
