@@ -47,6 +47,8 @@ Lectures complémentaires:
 
 Slides : [Web](../../slides/03 - Tidy-data/03 - tidy-data.qmd){target="_blank"} [PDF](03 - tidy-data.pdf)
 
+Demo : [Hotel Bookings](https://github.com/PRO1036/hotel-bookings)
+
 
 # Références
 
