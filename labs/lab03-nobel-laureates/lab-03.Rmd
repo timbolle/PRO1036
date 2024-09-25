@@ -35,19 +35,19 @@ Remplacez ce texte par vos réponses aux questions.
 Ajoutez les blocs de code nécessaires.
 N'oubliez pas d'étiqueter vos blocs de code.
 
-### Exercise 4
+### Exercice 4
 
 ...
 
-### Exercise 5
+### Exercice 5
 
 ...
 
-### Exercise 6
+### Exercice 6
 
 ...
 
-### Exercise 7
+### Exercice 7
 
 ...
 

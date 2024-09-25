@@ -100,9 +100,9 @@ Il y a quelques observations dans ce jeu de données que nous exclurons de notre
 ### Exercice 2
 Créez un nouveau data frame appelé `nobel_living` qui filtre pour
 
--   es lauréats pour lesquels `country` est disponible
--   les lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par `org` dans la variable `gender`)
--   es lauréats qui sont encore en vie (leur `died_date` vaut `NA`)
+- les lauréats pour lesquels `country` est disponible
+- les lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par `org` dans la variable `gender`)
+- les lauréats qui sont encore en vie (leur `died_date` vaut `NA`)
 
 
 ```{r echo=FALSE}

@@ -21,6 +21,10 @@ Slide: [Web](../../slides/01%20-%20Toolbox/01%20-%20toolbox.qmd){target="_blank"
 -   [ ] Faire le Lab01
 -   [ ] (optionel) Faire l'exercice 01
 
+Lectures complémentaires:
+
+-   [ ] Chapitre [*Welcome to the Tidyverse*](../papers/Wickham2019_Welcome-to-the-Tidyverse.pdf) [@wickhamWelcomeTidyverse2019]
+
 ## 02 - Visualisation de données
 
 Slide Part-1: [Web](../../slides/02%20-%20Dataviz/02%20-%20dataviz.qmd){target="_blank"} [PDF](02%20-%20dataviz%20-%20P1.pdf)
@@ -50,6 +54,17 @@ Slides : [Web](../../slides/03 - Tidy-data/03 - tidy-data.qmd){target="_blank"} 
 Demo : [Hotel Bookings](https://github.com/PRO1036/hotel-bookings)
 
 Labs: [Lab03 - Nobel laureates](../labs/lab03-nobel-laureates/lab03-nobel-laureates.qmd)
+
+#### À faire pour la semaine prochaine:
+
+-   [ ] Terminer le lab03
+-   [ ] Envoyer le lab03 sur le repo Github classroom à votre nom
+-   [ ] Lire le Chapitre [*Data Transformation*](https://r4ds.hadley.nz/data-transform) [@wickhamDataScience2023]
+-   [ ] Lire le Chapitre [*Data Tidy*](https://r4ds.hadley.nz/data-tidy) [@wickhamDataScience2023]
+
+Lectures complémentaires:
+
+-   [ ] Article [*Tidy Data*](../papers/Wickham2014_Tidy-Data.pdf) [@wickhamTidyData2014]
 
 
 # Références

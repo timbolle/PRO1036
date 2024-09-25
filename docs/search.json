@@ -779,7 +779,7 @@
     "href": "website/cours/cours.html#r-basics",
     "title": "Cours",
     "section": "01 - R basics",
-    "text": "01 - R basics\nSlide: Web PDF Demo: UN Votes Labs: Labo01 - Hello WoRld Exercices: Exo01 - Pet names\n\nÀ faire pour la semaine prochaine:\n\nInstaller R (R project)\nInstaller Rstudio\nInstaller Git\nCréer un compte sur GitHub\nLire le Chapitre Introduction (Wickham et al., 2023)\nFaire le Lab01\n(optionel) Faire l’exercice 01"
+    "text": "01 - R basics\nSlide: Web PDF Demo: UN Votes Labs: Labo01 - Hello WoRld Exercices: Exo01 - Pet names\n\nÀ faire pour la semaine prochaine:\n\nInstaller R (R project)\nInstaller Rstudio\nInstaller Git\nCréer un compte sur GitHub\nLire le Chapitre Introduction (Wickham et al., 2023)\nFaire le Lab01\n(optionel) Faire l’exercice 01\n\nLectures complémentaires:\n\nChapitre Welcome to the Tidyverse (Wickham et al., 2019)"
   },
   {
     "objectID": "website/cours/cours.html",
@@ -2218,7 +2218,7 @@
     "href": "website/cours/cours.html#manipulation-de-données-et-forme-tidy",
     "title": "Cours",
     "section": "03 - Manipulation de données et forme Tidy",
-    "text": "03 - Manipulation de données et forme Tidy\nSlides : Web PDF\nDemo : Hotel Bookings\nLabs: Lab03 - Nobel laureates"
+    "text": "03 - Manipulation de données et forme Tidy\nSlides : Web PDF\nDemo : Hotel Bookings\nLabs: Lab03 - Nobel laureates\n\nÀ faire pour la semaine prochaine:\n\nTerminer le lab03\nEnvoyer le lab03 sur le repo Github classroom à votre nom\nLire le Chapitre Data Transformation (Wickham et al., 2023)\nLire le Chapitre Data Tidy (Wickham et al., 2023)\n\nLectures complémentaires:\n\nArticle Tidy Data (Wickham, 2014)"
   },
   {
     "objectID": "website/labs/lab03-nobel-laureates/lab-03-nobel-laureates.html",
@@ -2281,14 +2281,14 @@
     "href": "classroom/demo/hotel-bookings/hotel-bookings.html",
     "title": "Hotel bookings",
     "section": "",
-    "text": "On charge les packages\n\nlibrary(tidyverse)\nlibrary(skimr)\n\nOn va télécharger les données:\n\n# From TidyTuesday: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")"
+    "text": "On charge les packages\n\nlibrary(tidyverse)\nlibrary(skimr)\n\n\n\n\n\n\n\nWarning\n\n\n\nIl faudra peut être installer les packages skimr si vous ne les avez pas déjà. Vous pouvez le faire en exécutant install.packages(\"skimr\") dans votre console.\n\n\nOn va télécharger les données:\n\n# From TidyTuesday: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")"
   },
   {
     "objectID": "classroom/demo/hotel-bookings/hotel-bookings.html#set-up",
     "href": "classroom/demo/hotel-bookings/hotel-bookings.html#set-up",
     "title": "Hotel bookings",
     "section": "",
-    "text": "On charge les packages\n\nlibrary(tidyverse)\nlibrary(skimr)\n\nOn va télécharger les données:\n\n# From TidyTuesday: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")"
+    "text": "On charge les packages\n\nlibrary(tidyverse)\nlibrary(skimr)\n\n\n\n\n\n\n\nWarning\n\n\n\nIl faudra peut être installer les packages skimr si vous ne les avez pas déjà. Vous pouvez le faire en exécutant install.packages(\"skimr\") dans votre console.\n\n\nOn va télécharger les données:\n\n# From TidyTuesday: https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md\nhotels &lt;- read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv\")"
   },
   {
     "objectID": "classroom/demo/hotel-bookings/hotel-bookings.html#exercices",
@@ -2455,7 +2455,7 @@
     "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#faites-connaissance-avec-les-données",
     "title": "Lab 03 - Nobel laureates",
     "section": "Faites connaissance avec les données",
-    "text": "Faites connaissance avec les données\n\nExercice 1\nCombien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?\nIl y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.\n\n\nExercice 2\nCréez un nouveau data frame appelé nobel_living qui filtre pour\n\nes lauréats pour lesquels country est disponible\nles lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par org dans la variable gender)\nes lauréats qui sont encore en vie (leur died_date vaut NA)\n\nVérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.",
+    "text": "Faites connaissance avec les données\n\nExercice 1\nCombien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?\nIl y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.\n\n\nExercice 2\nCréez un nouveau data frame appelé nobel_living qui filtre pour\n\nles lauréats pour lesquels country est disponible\nles lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par org dans la variable gender)\nles lauréats qui sont encore en vie (leur died_date vaut NA)\n\nVérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.",
     "crumbs": [
       "Labs",
       "Semaine 3",
@@ -2503,6 +2503,20 @@
     "href": "labs/lab03-nobel-laureates/lab-03.html#exercices",
     "title": "Lab 03 - Nobel laureates",
     "section": "Exercices",
-    "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercise 4\n…\n\n\nExercise 5\n…\n\n\nExercise 6\n…\n\n\nExercise 7\n…"
+    "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 4\n…\n\n\nExercice 5\n…\n\n\nExercice 6\n…\n\n\nExercice 7\n…"
+  },
+  {
+    "objectID": "classroom/lab03-nobel-laureates/lab-03.html",
+    "href": "classroom/lab03-nobel-laureates/lab-03.html",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "",
+    "text": "library(tidyverse) \n\n\nnobel &lt;- read_csv(\"data/nobel.csv\")"
+  },
+  {
+    "objectID": "classroom/lab03-nobel-laureates/lab-03.html#exercices",
+    "href": "classroom/lab03-nobel-laureates/lab-03.html#exercices",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 4\n…\n\n\nExercice 5\n…\n\n\nExercice 6\n…\n\n\nExercice 7\n…"
   }
 ]
