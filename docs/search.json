@@ -3064,5 +3064,12 @@
     "title": "04 - Types de données et transformations",
     "section": "On veut les revenu dans le bon ordre !",
     "text": "On veut les revenu dans le bon ordre !\n\nrel_inc_long &lt;- rel_inc_long %&gt;%\n  mutate(income = fct_relevel(income, \"$100,000 or more\", \"$50,000-$99,999\", \"$30,000-$49,999\", \"Less than $30,000\"))"
+  },
+  {
+    "objectID": "website/cours/cours.html#types-de-données-et-transformation",
+    "href": "website/cours/cours.html#types-de-données-et-transformation",
+    "title": "Cours",
+    "section": "04 - Types de données et transformation",
+    "text": "04 - Types de données et transformation\nSlides : Web PDF"
   }
 ]

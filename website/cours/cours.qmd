@@ -66,6 +66,11 @@ Lectures complémentaires:
 
 -   [ ] Article [*Tidy Data*](../papers/Wickham2014_Tidy-Data.pdf) [@wickhamTidyData2014]
 
+## 04 - Types de données et transformation
+
+Slides : [Web](../../slides/04 - Data types/04 - data-types.qmd){target="_blank"} [PDF](04 - data-types.pdf)
+
+
 
 # Références
 
