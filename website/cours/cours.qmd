@@ -70,6 +70,8 @@ Lectures complémentaires:
 
 Slides : [Web](../../slides/04 - Data types/04 - data-types.qmd){target="_blank"} [PDF](04 - data-types.pdf)
 
+Demo: [Star Wars - Data preparation](https://github.com/PRO1036/star-wars-2)
+
 Labs: [Lab04 - College majors](../labs/lab04-college-majors/lab04-college-majors.qmd)
 
 # Références

@@ -3070,7 +3070,7 @@
     "href": "website/cours/cours.html#types-de-données-et-transformation",
     "title": "Cours",
     "section": "04 - Types de données et transformation",
-    "text": "04 - Types de données et transformation\nSlides : Web PDF\nLabs: Lab04 - College majors"
+    "text": "04 - Types de données et transformation\nSlides : Web PDF\nDemo: Star Wars - Data preparation\nLabs: Lab04 - College majors"
   },
   {
     "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html",
@@ -3289,5 +3289,61 @@
     "title": "Lab 04 - College majors",
     "section": "Exercices",
     "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 4\n…\n\n\nExercice 5\n…\n\n\nExercice 6\n…\n\n\nExercice 7\n…\n\n\nExercice 8\n…\n\n\nExercice 9\n…\n\n\nExercice 10\n…"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html",
+    "title": "Star Wars - Préparation de données",
+    "section": "",
+    "text": "Nous allons utiliser une version brute du jeu de données Star Wars. Pour commencer, nous allons charger les packages et les données\n\nlibrary(tidyverse)\n\n\nsw &lt;- read_csv(\"data/starwars_characters.csv\")"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-1",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-1",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 1",
+    "text": "Exercice 1\nEn jetant un coup d’oeil aux données, déterminer si celles-ci sont Tidy et déterminer les changements à faire."
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-2",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-2",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 2",
+    "text": "Exercice 2\nCorrigez la colonne mass de sorte à obtenir des nombres"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-3",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-3",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 3",
+    "text": "Exercice 3\nContrôlez les valeurs manquantes dans le jeu de données et assurez vous qu’elles soient correctement désignées de la même manière"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-4",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-4",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 4",
+    "text": "Exercice 4\nTransformez la colonne homeworld en facteur et attribuez la valeur Unknown aux valeurs manquantes"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-5",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-5",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 5",
+    "text": "Exercice 5\nModifiez la colonne birth_year pour qu’elle soit de type numérique en enlevant le “BBY”. Pour cela, vous pouvez utiliser la fonction str_replace du package stringr (déjà chargé avec le tidyverse)"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-6",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-6",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 6",
+    "text": "Exercice 6\nCréez un boxplot de la variable height en fonction de la variable species. Difficile à lire…\nRegroupez les espèces qui possèdent moins de 2 individus dans une catégorie Other et refaites le boxplot. C’est mieux…\nOrdonnez les catégories selon la hauteur moyenne des espèces et refaite le boxplot !"
+  },
+  {
+    "objectID": "classroom/demo/star-wars-2/star-wars-2.html#exercice-7",
+    "href": "classroom/demo/star-wars-2/star-wars-2.html#exercice-7",
+    "title": "Star Wars - Préparation de données",
+    "section": "Exercice 7",
+    "text": "Exercice 7\nCréez une nouvelle variable bmi (Body Mass Index) en utilisant les colonnes mass et height. Assurez-vous que les valeurs soient correctes et que les valeurs manquantes soient traitées correctement.\nRefaite le boxplot de la question précédente en utilisant le BMI à la place de la masse."
   }
 ]
