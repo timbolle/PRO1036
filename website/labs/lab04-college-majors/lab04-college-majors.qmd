@@ -1,0 +1,258 @@
+---
+title: "Lab 04 - Quel grade choisir ?"
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+  eval = FALSE,
+  out.width = "80%",
+  fig.asp = 0.618,
+  fig.width = 10,
+  dpi = 300
+)
+```
+
+```{r photo, fig.margin = TRUE, echo = FALSE, fig.width = 3, fig.cap = "Photo by Marleena Garris on Unsplash", eval = TRUE}
+knitr::include_graphics("figs/graduate.jpg")
+```
+
+La première étape du processus de transformation de l’information en connaissance est de résumer et de décrire les informations brutes - les données. Dans cet exercice, nous explorons les données sur les grades universitaires et les revenus, en particulier les données derrière l’article de FiveThirtyEight [“Le guide économique pour choisir une majeure universitaire”](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/).
+
+Les données proviennent initialement de l’American Community Survey (ACS) 2010-2012 Public Use Microdata Series. Bien que cela soit hors du cadre de cet exercice, si vous êtes curieux de savoir comment les données brutes de l’ACS ont été nettoyées et préparées, consultez [le code](https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R) utilisé par les auteurs de FiveThirtyEight.
+
+Nous devons également noter qu’il y a de nombreux facteurs à prendre en compte pour choisir un grade. Le potentiel de revenus et les perspectives d’emploi en sont deux, et ils sont importants, mais ils ne racontent pas toute l’histoire. Gardez cela à l’esprit en analysant les données.
+
+# Mise en place
+
+Go to the course GitHub organization and locate your homework repo, which should be named `hw-04-college-majors-YOUR_GITHUB_USERNAME`.
+Grab the URL of the repo, and clone it in RStudio.
+First, open the R Markdown document `hw-04.Rmd` and Knit it.
+Make sure it compiles without errors.
+The output will be in the file markdown `.md` file with the same name.
+
+Sur le portail de cours, vous trouverez un lien d'invitation pour votre repo sur GitHub Classroom, qui devrait être nommé hw-04-college-majors-VOTRE_NOM_UTILISATEUR_GITHUB. Prenez l’URL du dépôt et clonez-le dans RStudio. Tout d’abord, ouvrez le document R Markdown hw-04.Rmd et Knit-le. Assurez-vous qu’il se compile sans erreurs. Le résultat sera dans le fichier markdown .md du même nom.
+
+## Warm up
+
+Avant de présenter les données, réchauffons-nous avec quelques exercices simples.
+  - Mettez à jour le YAML, en changeant le nom de l’auteur pour votre nom, et **knit** le document.
+  - Faites un commit de vos modifications avec un message de commit.
+  - Poussez vos modifications sur GitHub.
+  - Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd **et** md. Si quelque chose manque, faites un commit et poussez à nouveau.
+  
+
+## Packages
+
+Nous utiliserons le package **tidyverse** pour une grande partie de la manipulation et de la visualisation des données, le package **scales** pour un meilleur formatage des étiquettes sur les visualisations, et le package **fivethirtyeight** pour les données. Installez-les si ce n'est pas déjà fait.
+
+```{r load-packages, message = FALSE, eval = TRUE}
+library(tidyverse)
+library(scales)
+library(fivethirtyeight)
+```
+
+## Données
+
+Les données se trouvent dans le package **fivethirtyeight**, et le dataframe s’appelle `college_recent_grads`. Comme le jeu de données est distribué avec le package, nous n’avons pas besoin de le charger séparément ; il devient disponible lorsque nous chargeons le package. Vous pouvez en savoir plus sur le jeu de données en inspectant sa documentation, `?college_recent_grads`. Vous pouvez également trouver cette information [ici](https://fivethirtyeight-r.netlify.app/reference/college_recent_grads.html).
+
+Vous pouvez également jeter un coup d’œil rapide à votre data frame et voir ses dimensions avec la fonction `glimpse`.
+
+
+```{r glimpse}
+glimpse(college_recent_grads)
+```
+
+Le data frame `college_recent_grads` est une mine d’informations. Réfléchissons à quelques questions auxquelles nous pourrions vouloir répondre avec ces données :
+
+  - Quel grade a le taux de chômage le plus bas ?
+  - Quel grade a le pourcentage de femmes le plus élevé ?
+  - Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?
+  - Les femmes ont-elles tendance à choisir des grades avec des revenus plus bas ou plus élevés ?
+
+Dans la section suivante, nous visons à répondre à ces questions.
+
+# Exercices
+
+## Quel grade a le taux de chômage le plus bas ?
+
+Pour répondre à cette question, tout ce que nous avons à faire est de trier les données. Nous utilisons la fonction `arrange` pour cela, et les trions par la variable `unemployment_rate`. Par défaut, `arrange` trie par ordre croissant, ce qui est ce que nous voulons ici - nous sommes intéressés par le grade avec le taux de chômage le *plus bas*.
+
+
+```{r lowest-unemp}
+college_recent_grads %>%
+  arrange(unemployment_rate)
+```
+
+Cela nous donne ce que nous voulions, mais pas sous une forme idéale. Premièrement, le nom du grade tient à peine sur la page. Deuxièmement, certaines des variables ne sont pas si utiles (par exemple, `major_code`, `major_category`) et certaines importantes ne sont pas facilement visibles (par exemple, `unemployment_rate`).
+
+Nous pouvons utiliser la fonction `select` pour choisir quelles variables afficher, et dans quel ordre :
+
+```{r lowest-unemp-select}
+college_recent_grads %>%
+  arrange(unemployment_rate) %>%
+  select(rank, major, unemployment_rate)
+```
+
+Ok, c’est mieux, mais avons-nous vraiment besoin d’afficher toutes ces décimales dans la variable de chômage ? Pas vraiment !
+
+Nous pouvons utiliser la fonction `percent()` pour nettoyer un peu l’affichage.
+
+```{r}
+college_recent_grads %>%
+  arrange(unemployment_rate) %>%
+  select(rank, major, unemployment_rate) %>%
+  mutate(unemployment_rate = percent(unemployment_rate))
+```
+
+## Quel grade a le pourcentage de femmes le plus élevé ?
+
+### Exercice 1
+
+Pour répondre à une telle question, nous devons organiser les données dans l’ordre décroissant. 
+
+En utilisant ce que vous avez appris jusqu’à présent, organisez les données dans l’ordre décroissant par rapport au pourcentage de femmes dans un grade, et affichez uniquement le grade, le nombre total de personnes avec ce grade, et le pourcentage de femmes. Affichez uniquement les trois premiers grades en ajoutant `top_n(3)` à la fin du pipeline.
+
+## Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?
+
+### Exercice 2
+
+:::{.callout-note}
+Une **percentile** est une mesure utilisée en statistiques indiquant la valeur en dessous de laquelle un pourcentage donné d’observations dans un groupe d’observations se situe. Par exemple, le 20e percentile est la valeur en dessous de laquelle 20 % des observations peuvent être trouvées. (Source : [Wikipedia](https://en.wikipedia.org/wiki/Percentile))
+:::
+
+Il y a trois types de revenus rapportés dans ce data frame : `p25th`, `median`, et `p75th`. Ceux-ci correspondent aux 25e, 50e, et 75e percentiles de la distribution des revenus des individus échantillonnés pour un grade donné.
+
+Pourquoi choisissons-nous souvent le médian, plutôt que la moyenne, pour décrire le revenu typique d’un groupe de personnes ?
+
+### Exercice 3
+
+La question à laquelle nous voulons répondre est "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?". 
+
+Pour cela, nous devons : d’abord, regrouper les données par `major_category`. Ensuite, trouver un moyen de résumer les distributions des revenus médians dans ces groupes. Cette décision dépendra des formes de ces distributions. Donc d’abord, nous devons visualiser les données.
+
+Nous utilisons la fonction `ggplot()` pour cela. Le premier argument est le data frame, et l’argument suivant donne la correspondance des variables des données aux éléments `aes`thétiques du graphique.
+
+Commençons simplement et regardons la distribution de tous les revenus médians, sans considérer les catégories majeures. Utilisez la fonction `geom_histogram()` pour faire un premier graphe tout simple des revenus médians.
+
+
+```{r fig,height=2, echo=FALSE}
+ggplot(data = college_recent_grads, mapping = aes(x = median)) +
+  geom_histogram()
+```
+
+En plus du graphique, vous devriez obtenir un message d’avertissement, si vous n'avez pas indiqué une taille de bin :
+
+    `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+    
+Cela nous indique que nous pourrions vouloir reconsidérer la largeur de la classe que nous avons choisie pour notre histogramme - ou plus précisément, la largeur de la classe que nous n’avons pas spécifiée. C'est une bonne pratique de toujours penser dans le contexte des données et d'essayer quelques largeurs de classe. Vous pourriez vous demander : "Quelle serait une différence significative dans les revenus médians ?" 1 \$ est évidemment trop peu, 10 000 \$ pourrait être trop élevé.
+
+Essayez des largeurs de classe de 1000 \$ et 5000 \$ et choisissez-en une. Expliquez votre choix. Notez que la largeur de la classe est un argument pour la fonction `geom_histogram`.
+
+### Exercice 4
+
+Nous pouvons également calculer des statistiques sommaires pour cette distribution en utilisant la fonction `summarise` :
+
+```{r}
+college_recent_grads %>%
+  summarise(min = min(median), max = max(median),
+            mean = mean(median), med = median(median),
+            sd = sd(median), 
+            q1 = quantile(median, probs = 0.25),
+            q3 = quantile(median, probs = 0.75))
+```
+
+
+En vous basant sur la forme de l’histogramme que vous avez créé dans l’exercice précédent, déterminez laquelle de ces statistiques sommaires est utile pour décrire la distribution. Rédigez votre description (n’oubliez pas la forme, le centre, la dispersion, les observations inhabituelles) et incluez le résultat de la statistique sommaire également.
+
+### Exercice 5
+
+Plottez la distribution du revenu médian en utilisant un histogramme, facetted par `major_category`. Utilisez la `binwidth` que vous avez choisie dans l’exercice précédent.
+
+### Exercice 6
+
+Maintenant que nous avons vu les formes des distributions des revenus médians pour chaque catégorie majeure, nous devrions avoir une meilleure idée de la statistique sommaire à utiliser pour quantifier le revenu médian typique.
+
+
+Quelle catégorie majeure a le revenu médian typique le plus élevé ? Constuisez un bloc de code qui groupe selon la `major_category`, summarize en utulisant la statistique retenue et triant dans la bonne direction (nous cherchons la plus élevée).
+
+
+```{r eval=FALSE, echo=FALSE}
+college_recent_grads %>%
+  group_by(major_category) %>%
+  summarise(___ = ___(median)) %>%
+  arrange(___)
+```
+
+### Exercice 7
+
+Quelle catégorie majeure est la moins populaire dans cet échantillon ? Vous pouvez vous aider de la foncton `count` pour cela.
+
+
+```{r echo=FALSE}
+college_recent_grads %>%
+  count(major_category)
+```
+
+🧶 ✅ ⬆️ 
+*Knit, commit, et push ! Assurez vous de mettre un message à votre commit !*
+
+## Tous les domaines STEM ne sont pas les mêmes
+
+Une des sections de l’[article de FiveThirtyEight](https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/) est "Tous les domaines STEM ne sont pas les mêmes". Voyons si c’est vrai.
+
+Pour commencer, nous devons déterminer quelles catégories majeures sont considérées comme des domaines STEM. Une approche serait de créer un vecteur de catégories majeures qui sont généralement considérées comme des domaines STEM, puis de créer une nouvelle variable dans notre data frame qui indique si une majeure est un domaine STEM ou non.
+
+Pour cela, nous devons d’abord créer un vecteur appelé `stem_categories` qui liste les catégories majeures qui sont considérées comme des domaines STEM.
+
+```{r}
+stem_categories <- c("Biology & Life Science",
+                     "Computers & Mathematics",
+                     "Engineering",
+                     "Physical Sciences")
+```
+
+Ensuite, nous pouvons utiliser ceci pour créer une nouvelle variable dans notre data frame indiquant si une majeure est un domaine STEM ou non. À l'aide la fonction `ifelse` et de l'opérateur `%in%`, créez une nouvelle variable appelée `major_type` qui est `"stem"` si la `major_category` est dans le vecteur `stem_categories`, et `"not stem"` sinon.
+
+
+```{r echo=FALSE}
+college_recent_grads <- college_recent_grads %>%
+  mutate(major_type = ifelse(major_category %in% stem_categories, "stem", "not stem"))
+```
+
+### Exercice 8
+
+Nous pouvons utiliser les opérateurs logiques pour également `filter` nos données pour les majeures STEM dont le revenu médian est inférieur au revenu médian de toutes les majeures, que nous avons trouvé être de 36 000 \$ plus tôt.
+
+
+```{r echo=FALSE}
+college_recent_grads %>%
+  filter(
+    major_type == "stem",
+    median < 36000
+  )
+```
+
+
+
+Quels domaines STEM ont des salaires médians égaux ou inférieurs au salaire médian de toutes les majeures ? Votre sortie ne doit montrer que le nom de la majeure et le revenu médian, le 25e percentile, et le 75e percentile pour cette majeure, et doit être triée de telle sorte que la majeure avec le revenu médian le plus élevé soit en haut.
+
+
+
+🧶 ✅ ⬆️ 
+*Knit, commit, et push ! Assurez vous de mettre un message à votre commit !*
+
+## Quels types de grades les femmes ont-elles tendance à choisir ?
+
+### Exercice 9
+
+Créez un nuage de points du revenu médian par rapport à la proportion de femmes dans cette majeure, coloré par le fait que la majeure est un domaine STEM ou non. Décrivez l’association entre ces trois variables.
+
+## Pour aller plus loin
+
+### Exercice 10
+
+Posez une question qui vous intéresse, et répondez-y en utilisant des statistiques sommaires et/ou des visualisations.
+
+
+🧶 ✅ ⬆️ 
+*Knit, commit, et push ! C'est le dernier commit donc assurez vous que votre rapport soit complet et propre avant de commiter ou pousser !*

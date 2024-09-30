@@ -3071,5 +3071,195 @@
     "title": "Cours",
     "section": "04 - Types de données et transformation",
     "text": "04 - Types de données et transformation\nSlides : Web PDF"
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "",
+    "text": "La première étape du processus de transformation de l’information en connaissance est de résumer et de décrire les informations brutes - les données. Dans cet exercice, nous explorons les données sur les grades universitaires et les revenus, en particulier les données derrière l’article de FiveThirtyEight “Le guide économique pour choisir une majeure universitaire”.\nLes données proviennent initialement de l’American Community Survey (ACS) 2010-2012 Public Use Microdata Series. Bien que cela soit hors du cadre de cet exercice, si vous êtes curieux de savoir comment les données brutes de l’ACS ont été nettoyées et préparées, consultez le code utilisé par les auteurs de FiveThirtyEight.\nNous devons également noter qu’il y a de nombreux facteurs à prendre en compte pour choisir un grade. Le potentiel de revenus et les perspectives d’emploi en sont deux, et ils sont importants, mais ils ne racontent pas toute l’histoire. Gardez cela à l’esprit en analysant les données."
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#warm-up",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#warm-up",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Warm up",
+    "text": "Warm up\nAvant de présenter les données, réchauffons-nous avec quelques exercices simples. - Mettez à jour le YAML, en changeant le nom de l’auteur pour votre nom, et knit le document. - Faites un commit de vos modifications avec un message de commit. - Poussez vos modifications sur GitHub. - Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md. Si quelque chose manque, faites un commit et poussez à nouveau."
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#packages",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#packages",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Packages",
+    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation et de la visualisation des données, le package scales pour un meilleur formatage des étiquettes sur les visualisations, et le package fivethirtyeight pour les données. Installez-les si ce n’est pas déjà fait.\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(fivethirtyeight)"
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#données",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#données",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Données",
+    "text": "Données\nLes données se trouvent dans le package fivethirtyeight, et le dataframe s’appelle college_recent_grads. Comme le jeu de données est distribué avec le package, nous n’avons pas besoin de le charger séparément ; il devient disponible lorsque nous chargeons le package. Vous pouvez en savoir plus sur le jeu de données en inspectant sa documentation, ?college_recent_grads. Vous pouvez également trouver cette information ici.\nVous pouvez également jeter un coup d’œil rapide à votre data frame et voir ses dimensions avec la fonction glimpse.\n\nglimpse(college_recent_grads)\n\nLe data frame college_recent_grads est une mine d’informations. Réfléchissons à quelques questions auxquelles nous pourrions vouloir répondre avec ces données : - Quel grade a le taux de chômage le plus bas ? - Quel grade a le pourcentage de femmes le plus élevé ? - Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ? - Les femmes ont-elles tendance à choisir des grades avec des revenus plus bas ou plus élevés ?\nDans la section suivante, nous visons à répondre à ces questions."
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#quel-grade-a-le-taux-de-chômage-le-plus-bas",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#quel-grade-a-le-taux-de-chômage-le-plus-bas",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quel grade a le taux de chômage le plus bas ?",
+    "text": "Quel grade a le taux de chômage le plus bas ?\nPour répondre à cette question, tout ce que nous avons à faire est de trier les données. Nous utilisons la fonction arrange pour cela, et les trions par la variable unemployment_rate. Par défaut, arrange trie par ordre croissant, ce qui est ce que nous voulons ici - nous sommes intéressés par le grade avec le taux de chômage le plus bas.\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate)\n\nCela nous donne ce que nous voulions, mais pas sous une forme idéale. Premièrement, le nom du grade tient à peine sur la page. Deuxièmement, certaines des variables ne sont pas si utiles (par exemple, major_code, major_category) et certaines importantes ne sont pas facilement visibles (par exemple, unemployment_rate).\nNous pouvons utiliser la fonction select pour choisir quelles variables afficher, et dans quel ordre :\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate) %&gt;%\n  select(rank, major, unemployment_rate)\n\nOk, c’est mieux, mais avons-nous vraiment besoin d’afficher toutes ces décimales dans la variable de chômage ? Pas vraiment !\nNous pouvons utiliser la fonction percent() pour nettoyer un peu l’affichage.\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate) %&gt;%\n  select(rank, major, unemployment_rate) %&gt;%\n  mutate(unemployment_rate = percent(unemployment_rate))"
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quel grade a le pourcentage de femmes le plus élevé ?",
+    "text": "Quel grade a le pourcentage de femmes le plus élevé ?\nPour répondre à une telle question, nous devons organiser les données dans l’ordre décroissant. Par exemple, si nous étions intéressés par le grade avec le taux de chômage le plus élevé, nous utiliserions le code suivant :\n\ncollege_recent_grads %&gt;%\n  arrange(desc(unemployment_rate)) %&gt;%\n  select(rank, major, unemployment_rate)\n\n\nExercice 1\nEn utilisant ce que vous avez appris jusqu’à présent, organisez les données dans l’ordre décroissant par rapport au pourcentage de femmes dans un grade, et affichez uniquement le grade, le nombre total de personnes avec ce grade, et le pourcentage de femmes. Affichez uniquement les trois premiers grades en ajoutant top_n(3) à la fin du pipeline."
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?",
+    "text": "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?\n\nUne percentile est une mesure utilisée en statistiques indiquant la valeur en dessous de laquelle un pourcentage donné d’observations dans un groupe d’observations se situe. Par exemple, le 20e percentile est la valeur en dessous de laquelle 20 % des observations peuvent être trouvées. (Source : Wikipedia)\n\nIl y a trois types de revenus rapportés dans ce data frame : p25th, median, et p75th. Ceux-ci correspondent aux 25e, 50e, et 75e percentiles de la distribution des revenus des individus échantillonnés pour un grade donné.\n\nExercice 2\nPourquoi choisissons-nous souvent le médian, plutôt que la moyenne, pour décrire le revenu typique d’un groupe de personnes ?\nLa question à laquelle nous voulons répondre est “Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?”.\nPour cela, nous devons : d’abord, regrouper les données par major_category. Ensuite, trouver un moyen de résumer les distributions des revenus médians dans ces groupes. Cette décision dépendra des formes de ces distributions. Donc d’abord, nous devons visualiser les données.\nNous utilisons la fonction ggplot() pour cela. Le premier argument est le data frame, et l’argument suivant donne la correspondance des variables des données aux éléments aesthétiques du graphique.\nCommençons simplement et regardons la distribution de tous les revenus médians, sans considérer les catégories majeures.\n\nggplot(data = college_recent_grads, mapping = aes(x = median)) +\n  geom_histogram()\n\nEn plus du graphique, nous obtenons un message :\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\nCela nous indique que nous pourrions vouloir reconsidérer la largeur de la classe que nous avons choisie pour notre histogramme - ou plus précisément, la largeur de la classe que nous n’avons pas spécifiée. C’est une bonne pratique de toujours penser dans le contexte des données et d’essayer quelques largeurs de classe. Vous pourriez vous demander : “Quelle serait une différence significative dans les revenus médians ?” 1 $ est évidemment trop peu, 10 000 $ pourrait être trop élevé.\n\n\nExercice 3\nEssayez des largeurs de classe de 1000 $ et 5000 $ et choisissez-en une. Expliquez votre choix. Notez que la largeur de la classe est un argument pour la fonction geom_histogram. Donc, pour spécifier une largeur de classe de 1000 $, vous utiliseriez geom_histogram(binwidth = 1000).\nNous pouvons également calculer des statistiques sommaires pour cette distribution en utilisant la fonction summarise :\n\ncollege_recent_grads %&gt;%\n  summarise(min = min(median), max = max(median),\n            mean = mean(median), med = median(median),\n            sd = sd(median), \n            q1 = quantile(median, probs = 0.25),\n            q3 = quantile(median, probs = 0.75))\n\n\n\nExercice 4\nEn vous basant sur la forme de l’histogramme que vous avez créé dans l’exercice précédent, déterminez laquelle de ces statistiques sommaires est utile pour décrire la distribution. Rédigez votre description (n’oubliez pas la forme, le centre, la dispersion, les observations inhabituelles) et incluez le résultat de la statistique sommaire également.\n\n\nExercice 5\nPlottez la distribution du revenu médian en utilisant un histogramme, facetted par major_category. Utilisez la binwidth que vous avez choisie dans l’exercice précédent.\nMaintenant que nous avons vu les formes des distributions des revenus médians pour chaque catégorie majeure, nous devrions avoir une meilleure idée de la statistique sommaire à utiliser pour quantifier le revenu médian typique.\n\n\nExercice 6\nQuelle catégorie majeure a le revenu médian typique le plus élevé ? Utilisez le code partiel ci-dessous, en le complétant avec la statistique et la fonction appropriées. Notez également que nous cherchons la statistique la plus élevée, alors assurez-vous de l’arranger dans la bonne direction.\n\ncollege_recent_grads %&gt;%\n  group_by(major_category) %&gt;%\n  summarise(___ = ___(median)) %&gt;%\n  arrange(___)\n\n\n\nExercice 7\nQuelle catégorie majeure est la moins populaire dans cet échantillon ? Pour répondre à cette question, nous utilisons une nouvelle fonction appelée count, qui regroupe d’abord les données et compte le nombre d’observations dans chaque catégorie (voir ci-dessous). Ajoutez au pipeline de manière appropriée pour organiser les résultats de sorte que la majeure avec le moins d’observations soit en haut.\n\ncollege_recent_grads %&gt;%\n  count(major_category)\n\n🧶 ✅ ⬆️ Knit, commit, et push ! Assurez vous de mettre un message à votre commit !"
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#tous-les-domaines-stem-ne-sont-pas-les-mêmes",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#tous-les-domaines-stem-ne-sont-pas-les-mêmes",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Tous les domaines STEM ne sont pas les mêmes",
+    "text": "Tous les domaines STEM ne sont pas les mêmes\nUne des sections de l’article de FiveThirtyEight est “Tous les domaines STEM ne sont pas les mêmes”. Voyons si c’est vrai.\nPour commencer, nous devons déterminer quelles catégories majeures sont considérées comme des domaines STEM. Une approche serait de créer un vecteur de catégories majeures qui sont généralement considérées comme des domaines STEM, puis de créer une nouvelle variable dans notre data frame qui indique si une majeure est un domaine STEM ou non.\nPour cela, nous devons d’abord créer un vecteur appelé stem_categories qui liste les catégories majeures qui sont considérées comme des domaines STEM.\n\nstem_categories &lt;- c(\"Biology & Life Science\",\n                     \"Computers & Mathematics\",\n                     \"Engineering\",\n                     \"Physical Sciences\")\n\nEnsuite, nous pouvons utiliser ceci pour créer une nouvelle variable dans notre data frame indiquant si une majeure est un domaine STEM ou non.\n\ncollege_recent_grads &lt;- college_recent_grads %&gt;%\n  mutate(major_type = ifelse(major_category %in% stem_categories, \"stem\", \"not stem\"))\n\nQue se passe-t-il ici ? mutate crée une nouvelle variable appelée major_type, qui est définie comme \"stem\" si la major_category est dans le vecteur appelé stem_categories que nous avons créé plus tôt, et comme \"not stem\" sinon.\n%in% est un opérateur logique.\nNous pouvons utiliser les opérateurs logiques pour également filter nos données pour les majeures STEM dont le revenu médian est inférieur au revenu médian de toutes les majeures, que nous avons trouvé être de 36 000 $ plus tôt.\n\ncollege_recent_grads %&gt;%\n  filter(\n    major_type == \"stem\",\n    median &lt; 36000\n  )\n\n\nExercice 8\nQuels domaines STEM ont des salaires médians égaux ou inférieurs au salaire médian de toutes les majeures ? Votre sortie ne doit montrer que le nom de la majeure et le revenu médian, le 25e percentile, et le 75e percentile pour cette majeure, et doit être triée de telle sorte que la majeure avec le revenu médian le plus élevé soit en haut.\n🧶 ✅ ⬆️ Knit, commit, et push ! Assurez vous de mettre un message à votre commit !"
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quels types de grades les femmes ont-elles tendance à choisir ?",
+    "text": "Quels types de grades les femmes ont-elles tendance à choisir ?\n\nExercice 9\nCréez un nuage de points du revenu médian par rapport à la proportion de femmes dans cette majeure, coloré par le fait que la majeure est un domaine STEM ou non. Décrivez l’association entre ces trois variables."
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html#pour-aller-plus-loin",
+    "href": "website/labs/lab04-college-majors/hw-04-college-majors.html#pour-aller-plus-loin",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Pour aller plus loin",
+    "text": "Pour aller plus loin\n\nExercice 10\nPosez une question qui vous intéresse, et répondez-y en utilisant des statistiques sommaires et/ou des visualisations.\n🧶 ✅ ⬆️ Knit, commit, et push ! C’est le dernier commit donc assurez vous que votre rapport soit complet et propre avant de commiter ou pousser !"
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "",
+    "text": "Photo by Marleena Garris on Unsplash\nLa première étape du processus de transformation de l’information en connaissance est de résumer et de décrire les informations brutes - les données. Dans cet exercice, nous explorons les données sur les grades universitaires et les revenus, en particulier les données derrière l’article de FiveThirtyEight “Le guide économique pour choisir une majeure universitaire”.\nLes données proviennent initialement de l’American Community Survey (ACS) 2010-2012 Public Use Microdata Series. Bien que cela soit hors du cadre de cet exercice, si vous êtes curieux de savoir comment les données brutes de l’ACS ont été nettoyées et préparées, consultez le code utilisé par les auteurs de FiveThirtyEight.\nNous devons également noter qu’il y a de nombreux facteurs à prendre en compte pour choisir un grade. Le potentiel de revenus et les perspectives d’emploi en sont deux, et ils sont importants, mais ils ne racontent pas toute l’histoire. Gardez cela à l’esprit en analysant les données.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#warm-up",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#warm-up",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Warm up",
+    "text": "Warm up\nAvant de présenter les données, réchauffons-nous avec quelques exercices simples. - Mettez à jour le YAML, en changeant le nom de l’auteur pour votre nom, et knit le document. - Faites un commit de vos modifications avec un message de commit. - Poussez vos modifications sur GitHub. - Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md. Si quelque chose manque, faites un commit et poussez à nouveau.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#packages",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#packages",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Packages",
+    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation et de la visualisation des données, le package scales pour un meilleur formatage des étiquettes sur les visualisations, et le package fivethirtyeight pour les données. Installez-les si ce n’est pas déjà fait.\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(fivethirtyeight)",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#données",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#données",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Données",
+    "text": "Données\nLes données se trouvent dans le package fivethirtyeight, et le dataframe s’appelle college_recent_grads. Comme le jeu de données est distribué avec le package, nous n’avons pas besoin de le charger séparément ; il devient disponible lorsque nous chargeons le package. Vous pouvez en savoir plus sur le jeu de données en inspectant sa documentation, ?college_recent_grads. Vous pouvez également trouver cette information ici.\nVous pouvez également jeter un coup d’œil rapide à votre data frame et voir ses dimensions avec la fonction glimpse.\n\nglimpse(college_recent_grads)\n\nLe data frame college_recent_grads est une mine d’informations. Réfléchissons à quelques questions auxquelles nous pourrions vouloir répondre avec ces données :\n\nQuel grade a le taux de chômage le plus bas ?\nQuel grade a le pourcentage de femmes le plus élevé ?\nComment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?\nLes femmes ont-elles tendance à choisir des grades avec des revenus plus bas ou plus élevés ?\n\nDans la section suivante, nous visons à répondre à ces questions.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-taux-de-chômage-le-plus-bas",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-taux-de-chômage-le-plus-bas",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quel grade a le taux de chômage le plus bas ?",
+    "text": "Quel grade a le taux de chômage le plus bas ?\nPour répondre à cette question, tout ce que nous avons à faire est de trier les données. Nous utilisons la fonction arrange pour cela, et les trions par la variable unemployment_rate. Par défaut, arrange trie par ordre croissant, ce qui est ce que nous voulons ici - nous sommes intéressés par le grade avec le taux de chômage le plus bas.\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate)\n\nCela nous donne ce que nous voulions, mais pas sous une forme idéale. Premièrement, le nom du grade tient à peine sur la page. Deuxièmement, certaines des variables ne sont pas si utiles (par exemple, major_code, major_category) et certaines importantes ne sont pas facilement visibles (par exemple, unemployment_rate).\nNous pouvons utiliser la fonction select pour choisir quelles variables afficher, et dans quel ordre :\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate) %&gt;%\n  select(rank, major, unemployment_rate)\n\nOk, c’est mieux, mais avons-nous vraiment besoin d’afficher toutes ces décimales dans la variable de chômage ? Pas vraiment !\nNous pouvons utiliser la fonction percent() pour nettoyer un peu l’affichage.\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate) %&gt;%\n  select(rank, major, unemployment_rate) %&gt;%\n  mutate(unemployment_rate = percent(unemployment_rate))",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quel grade a le pourcentage de femmes le plus élevé ?",
+    "text": "Quel grade a le pourcentage de femmes le plus élevé ?\n\nExercice 1\nPour répondre à une telle question, nous devons organiser les données dans l’ordre décroissant.\nEn utilisant ce que vous avez appris jusqu’à présent, organisez les données dans l’ordre décroissant par rapport au pourcentage de femmes dans un grade, et affichez uniquement le grade, le nombre total de personnes avec ce grade, et le pourcentage de femmes. Affichez uniquement les trois premiers grades en ajoutant top_n(3) à la fin du pipeline.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?",
+    "text": "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?\n\nExercice 2\n\n\n\n\n\n\nNote\n\n\n\nUne percentile est une mesure utilisée en statistiques indiquant la valeur en dessous de laquelle un pourcentage donné d’observations dans un groupe d’observations se situe. Par exemple, le 20e percentile est la valeur en dessous de laquelle 20 % des observations peuvent être trouvées. (Source : Wikipedia)\n\n\nIl y a trois types de revenus rapportés dans ce data frame : p25th, median, et p75th. Ceux-ci correspondent aux 25e, 50e, et 75e percentiles de la distribution des revenus des individus échantillonnés pour un grade donné.\nPourquoi choisissons-nous souvent le médian, plutôt que la moyenne, pour décrire le revenu typique d’un groupe de personnes ?\n\n\nExercice 3\nLa question à laquelle nous voulons répondre est “Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?”.\nPour cela, nous devons : d’abord, regrouper les données par major_category. Ensuite, trouver un moyen de résumer les distributions des revenus médians dans ces groupes. Cette décision dépendra des formes de ces distributions. Donc d’abord, nous devons visualiser les données.\nNous utilisons la fonction ggplot() pour cela. Le premier argument est le data frame, et l’argument suivant donne la correspondance des variables des données aux éléments aesthétiques du graphique.\nCommençons simplement et regardons la distribution de tous les revenus médians, sans considérer les catégories majeures. Utilisez la fonction geom_histogram() pour faire un premier graphe tout simple des revenus médians.\nEn plus du graphique, vous devriez obtenir un message d’avertissement, si vous n’avez pas indiqué une taille de bin :\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\nCela nous indique que nous pourrions vouloir reconsidérer la largeur de la classe que nous avons choisie pour notre histogramme - ou plus précisément, la largeur de la classe que nous n’avons pas spécifiée. C’est une bonne pratique de toujours penser dans le contexte des données et d’essayer quelques largeurs de classe. Vous pourriez vous demander : “Quelle serait une différence significative dans les revenus médians ?” 1 $ est évidemment trop peu, 10 000 $ pourrait être trop élevé.\nEssayez des largeurs de classe de 1000 $ et 5000 $ et choisissez-en une. Expliquez votre choix. Notez que la largeur de la classe est un argument pour la fonction geom_histogram.\n\n\nExercice 4\nNous pouvons également calculer des statistiques sommaires pour cette distribution en utilisant la fonction summarise :\n\ncollege_recent_grads %&gt;%\n  summarise(min = min(median), max = max(median),\n            mean = mean(median), med = median(median),\n            sd = sd(median), \n            q1 = quantile(median, probs = 0.25),\n            q3 = quantile(median, probs = 0.75))\n\nEn vous basant sur la forme de l’histogramme que vous avez créé dans l’exercice précédent, déterminez laquelle de ces statistiques sommaires est utile pour décrire la distribution. Rédigez votre description (n’oubliez pas la forme, le centre, la dispersion, les observations inhabituelles) et incluez le résultat de la statistique sommaire également.\n\n\nExercice 5\nPlottez la distribution du revenu médian en utilisant un histogramme, facetted par major_category. Utilisez la binwidth que vous avez choisie dans l’exercice précédent.\n\n\nExercice 6\nMaintenant que nous avons vu les formes des distributions des revenus médians pour chaque catégorie majeure, nous devrions avoir une meilleure idée de la statistique sommaire à utiliser pour quantifier le revenu médian typique.\nQuelle catégorie majeure a le revenu médian typique le plus élevé ? Constuisez un bloc de code qui groupe selon la major_category, summarize en utulisant la statistique retenue et triant dans la bonne direction (nous cherchons la plus élevée).\n\n\nExercice 7\nQuelle catégorie majeure est la moins populaire dans cet échantillon ? Vous pouvez vous aider de la foncton count pour cela.\n🧶 ✅ ⬆️ Knit, commit, et push ! Assurez vous de mettre un message à votre commit !",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#tous-les-domaines-stem-ne-sont-pas-les-mêmes",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#tous-les-domaines-stem-ne-sont-pas-les-mêmes",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Tous les domaines STEM ne sont pas les mêmes",
+    "text": "Tous les domaines STEM ne sont pas les mêmes\nUne des sections de l’article de FiveThirtyEight est “Tous les domaines STEM ne sont pas les mêmes”. Voyons si c’est vrai.\nPour commencer, nous devons déterminer quelles catégories majeures sont considérées comme des domaines STEM. Une approche serait de créer un vecteur de catégories majeures qui sont généralement considérées comme des domaines STEM, puis de créer une nouvelle variable dans notre data frame qui indique si une majeure est un domaine STEM ou non.\nPour cela, nous devons d’abord créer un vecteur appelé stem_categories qui liste les catégories majeures qui sont considérées comme des domaines STEM.\n\nstem_categories &lt;- c(\"Biology & Life Science\",\n                     \"Computers & Mathematics\",\n                     \"Engineering\",\n                     \"Physical Sciences\")\n\nEnsuite, nous pouvons utiliser ceci pour créer une nouvelle variable dans notre data frame indiquant si une majeure est un domaine STEM ou non. À l’aide la fonction ifelse et de l’opérateur %in%, créez une nouvelle variable appelée major_type qui est \"stem\" si la major_category est dans le vecteur stem_categories, et \"not stem\" sinon.\n\nExercice 8\nNous pouvons utiliser les opérateurs logiques pour également filter nos données pour les majeures STEM dont le revenu médian est inférieur au revenu médian de toutes les majeures, que nous avons trouvé être de 36 000 $ plus tôt.\nQuels domaines STEM ont des salaires médians égaux ou inférieurs au salaire médian de toutes les majeures ? Votre sortie ne doit montrer que le nom de la majeure et le revenu médian, le 25e percentile, et le 75e percentile pour cette majeure, et doit être triée de telle sorte que la majeure avec le revenu médian le plus élevé soit en haut.\n🧶 ✅ ⬆️ Knit, commit, et push ! Assurez vous de mettre un message à votre commit !",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quels types de grades les femmes ont-elles tendance à choisir ?",
+    "text": "Quels types de grades les femmes ont-elles tendance à choisir ?\n\nExercice 9\nCréez un nuage de points du revenu médian par rapport à la proportion de femmes dans cette majeure, coloré par le fait que la majeure est un domaine STEM ou non. Décrivez l’association entre ces trois variables.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#pour-aller-plus-loin",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#pour-aller-plus-loin",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Pour aller plus loin",
+    "text": "Pour aller plus loin\n\nExercice 10\nPosez une question qui vous intéresse, et répondez-y en utilisant des statistiques sommaires et/ou des visualisations.\n🧶 ✅ ⬆️ Knit, commit, et push ! C’est le dernier commit donc assurez vous que votre rapport soit complet et propre avant de commiter ou pousser !",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
   }
 ]

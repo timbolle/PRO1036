@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 03 - Nobel laureates – PRO1036</title>
+<title>Lab 04 - Quel grade choisir ? – PRO1036</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Semaine 3</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Lab 03 - Nobel laureates</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html">Semaine 4</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html">Lab 04 - Quel grade choisir ?</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 03 - Nobel laureates</span></a>
   </div>
 </li>
@@ -229,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Lab 04 - Quel grade choisir ?</span></a>
   </div>
 </li>
@@ -245,46 +245,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage">Objectifs d’apprentissage</a></li>
-  <li><a href="#préparation" id="toc-préparation" class="nav-link" data-scroll-target="#préparation">Préparation</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <li><a href="#mise-en-place" id="toc-mise-en-place" class="nav-link active" data-scroll-target="#mise-en-place">Mise en place</a>
   <ul class="collapse">
-  <li><a href="#échauffement" id="toc-échauffement" class="nav-link" data-scroll-target="#échauffement">Échauffement</a></li>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm up</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
   </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#faites-connaissance-avec-les-données" id="toc-faites-connaissance-avec-les-données" class="nav-link" data-scroll-target="#faites-connaissance-avec-les-données">Faites connaissance avec les données</a>
+  <li><a href="#quel-grade-a-le-taux-de-chômage-le-plus-bas" id="toc-quel-grade-a-le-taux-de-chômage-le-plus-bas" class="nav-link" data-scroll-target="#quel-grade-a-le-taux-de-chômage-le-plus-bas">Quel grade a le taux de chômage le plus bas ?</a></li>
+  <li><a href="#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé" id="toc-quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé" class="nav-link" data-scroll-target="#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé">Quel grade a le pourcentage de femmes le plus élevé ?</a>
   <ul class="collapse">
   <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
-  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   </ul></li>
-  <li><a href="#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" id="toc-la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="nav-link" data-scroll-target="#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</a>
+  <li><a href="#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades" id="toc-comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades" class="nav-link" data-scroll-target="#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades">Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?</a>
   <ul class="collapse">
+  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
   <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
-  </ul></li>
-  <li><a href="#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" id="toc-mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="nav-link" data-scroll-target="#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</a>
-  <ul class="collapse">
   <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
   <li><a href="#exercice-6" id="toc-exercice-6" class="nav-link" data-scroll-target="#exercice-6">Exercice 6</a></li>
-  </ul></li>
-  <li><a href="#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" id="toc-doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="nav-link" data-scroll-target="#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</a>
-  <ul class="collapse">
   <li><a href="#exercice-7" id="toc-exercice-7" class="nav-link" data-scroll-target="#exercice-7">Exercice 7</a></li>
   </ul></li>
+  <li><a href="#tous-les-domaines-stem-ne-sont-pas-les-mêmes" id="toc-tous-les-domaines-stem-ne-sont-pas-les-mêmes" class="nav-link" data-scroll-target="#tous-les-domaines-stem-ne-sont-pas-les-mêmes">Tous les domaines STEM ne sont pas les mêmes</a>
+  <ul class="collapse">
+  <li><a href="#exercice-8" id="toc-exercice-8" class="nav-link" data-scroll-target="#exercice-8">Exercice 8</a></li>
   </ul></li>
-  <li><a href="#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" id="toc-intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="nav-link" data-scroll-target="#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations">Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</a></li>
+  <li><a href="#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir" id="toc-quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir" class="nav-link" data-scroll-target="#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir">Quels types de grades les femmes ont-elles tendance à choisir ?</a>
+  <ul class="collapse">
+  <li><a href="#exercice-9" id="toc-exercice-9" class="nav-link" data-scroll-target="#exercice-9">Exercice 9</a></li>
+  </ul></li>
+  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a>
+  <ul class="collapse">
+  <li><a href="#exercice-10" id="toc-exercice-10" class="nav-link" data-scroll-target="#exercice-10">Exercice 10</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Semaine 3</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Lab 03 - Nobel laureates</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html">Semaine 4</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html">Lab 04 - Quel grade choisir ?</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lab 03 - Nobel laureates</h1>
+<h1 class="title">Lab 04 - Quel grade choisir ?</h1>
 </div>
 
 
@@ -301,165 +305,181 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>En janvier 2017, Buzzfeed a publié un article sur pourquoi les lauréats du prix Nobel montrent que l’immigration est si importante pour la science américaine.</p>
-<p>Vous pouvez lire l’article <a href="https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science">ici</a>. Dans l’article, ils montrent que bien que la plupart des lauréats vivants du prix Nobel en sciences soient basés aux États-Unis, beaucoup d’entre eux sont nés dans d’autres pays. C’est une des raisons pour lesquelles le monde scientifique dit que l’immigration est vitale pour le progrès. Dans ce lab, nous travaillerons avec les données de cet article pour recréer certaines de leurs visualisations ainsi qu’explorer de nouvelles questions.</p>
-<section id="objectifs-dapprentissage" class="level1">
-<h1>Objectifs d’apprentissage</h1>
-<ul>
-<li>utiliser GitHub et R</li>
-<li>Répliquer des résultats publiés</li>
-<li>Manipulation et visualisation de données</li>
-</ul>
-</section>
-<section id="préparation" class="level1">
-<h1>Préparation</h1>
-<p>Lire l’article de Buzzfeed intitulé <a href="https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science"><em>These Nobel Prize Winners Show Why Immigration Is So Important For American Science</em></a><em>.</em> Nous répliquerons cette analyse lors de l’atelier, il est donc crucial que vous en soyez familier à l’avance.</p>
-</section>
-<section id="getting-started" class="level1">
-<h1>Getting started</h1>
-<p>Sur le portail de cours, vous trouverez le lien d’invitation pour ce lab. Cela vous donnera accès à un répo, qui devrait être nommé <code>lab-03-nobel-laureates-VOTRE_GITHUB_USERNAME</code>. Une fois que vous avez accepté l’invitation, vous aurez accès à un répo privé sur GitHub avec le matériel pour ce lab. Récupérez le lien du repo et clonez le sur RStudio. Vérifiez qu’il compile sans erreur. Dans le <em>YAML</em>, le <code>output</code> est réglé sur <code>"github_document"</code>. Cela permet d’obtenir un format adapté à GitHub. Notamment, votre fichier final sera un fichier Markdown (<code>.md</code>).</p>
-<section id="échauffement" class="level2">
-<h2 class="anchored" data-anchor-id="échauffement">Échauffement</h2>
-<p>Avant d’introduire les données, commençons par quelques exercices simples.</p>
-<ul>
-<li>Mettez à jour le YAML, en changeant le nom de l’auteur par le vôtre, et <strong>knit</strong> le document.</li>
-<li>Committez vos modifications avec un message de commit. Assurez vous que les fichiers .Rmd et .md sont bien ajoutés au commit.</li>
-<li>Pushez vos modifications sur GitHub.</li>
-<li>Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md.</li>
-</ul>
+<div class="cell" data-fig.margin="true">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/graduate.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Photo by Marleena Garris on Unsplash</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La première étape du processus de transformation de l’information en connaissance est de résumer et de décrire les informations brutes - les données. Dans cet exercice, nous explorons les données sur les grades universitaires et les revenus, en particulier les données derrière l’article de FiveThirtyEight <a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">“Le guide économique pour choisir une majeure universitaire”</a>.</p>
+<p>Les données proviennent initialement de l’American Community Survey (ACS) 2010-2012 Public Use Microdata Series. Bien que cela soit hors du cadre de cet exercice, si vous êtes curieux de savoir comment les données brutes de l’ACS ont été nettoyées et préparées, consultez <a href="https://github.com/fivethirtyeight/data/blob/master/college-majors/college-majors-rscript.R">le code</a> utilisé par les auteurs de FiveThirtyEight.</p>
+<p>Nous devons également noter qu’il y a de nombreux facteurs à prendre en compte pour choisir un grade. Le potentiel de revenus et les perspectives d’emploi en sont deux, et ils sont importants, mais ils ne racontent pas toute l’histoire. Gardez cela à l’esprit en analysant les données.</p>
+<section id="mise-en-place" class="level1">
+<h1>Mise en place</h1>
+<p>Go to the course GitHub organization and locate your homework repo, which should be named <code>hw-04-college-majors-YOUR_GITHUB_USERNAME</code>. Grab the URL of the repo, and clone it in RStudio. First, open the R Markdown document <code>hw-04.Rmd</code> and Knit it. Make sure it compiles without errors. The output will be in the file markdown <code>.md</code> file with the same name.</p>
+<p>Sur le portail de cours, vous trouverez un lien d’invitation pour votre repo sur GitHub Classroom, qui devrait être nommé hw-04-college-majors-VOTRE_NOM_UTILISATEUR_GITHUB. Prenez l’URL du dépôt et clonez-le dans RStudio. Tout d’abord, ouvrez le document R Markdown hw-04.Rmd et Knit-le. Assurez-vous qu’il se compile sans erreurs. Le résultat sera dans le fichier markdown .md du même nom.</p>
+<section id="warm-up" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up">Warm up</h2>
+<p>Avant de présenter les données, réchauffons-nous avec quelques exercices simples. - Mettez à jour le YAML, en changeant le nom de l’auteur pour votre nom, et <strong>knit</strong> le document. - Faites un commit de vos modifications avec un message de commit. - Poussez vos modifications sur GitHub. - Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd <strong>et</strong> md. Si quelque chose manque, faites un commit et poussez à nouveau.</p>
 </section>
 <section id="packages" class="level2">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
-<p>Nous utiliserons le package <strong>tidyverse</strong> pour une grande partie de la manipulation des données. Vous pouvez le charger en exécutant ce qui suit dans votre Console :</p>
+<p>Nous utiliserons le package <strong>tidyverse</strong> pour une grande partie de la manipulation et de la visualisation des données, le package <strong>scales</strong> pour un meilleur formatage des étiquettes sur les visualisations, et le package <strong>fivethirtyeight</strong> pour les données. Installez-les si ce n’est pas déjà fait.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fivethirtyeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="données" class="level2">
 <h2 class="anchored" data-anchor-id="données">Données</h2>
-<p>Le jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec :</p>
+<p>Les données se trouvent dans le package <strong>fivethirtyeight</strong>, et le dataframe s’appelle <code>college_recent_grads</code>. Comme le jeu de données est distribué avec le package, nous n’avons pas besoin de le charger séparément ; il devient disponible lorsque nous chargeons le package. Vous pouvez en savoir plus sur le jeu de données en inspectant sa documentation, <code>?college_recent_grads</code>. Vous pouvez également trouver cette information <a href="https://fivethirtyeight-r.netlify.app/reference/college_recent_grads.html">ici</a>.</p>
+<p>Vous pouvez également jeter un coup d’œil rapide à votre data frame et voir ses dimensions avec la fonction <code>glimpse</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nobel <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/nobel.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(college_recent_grads)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Les descriptions des variables sont les suivantes :</p>
+<p>Le data frame <code>college_recent_grads</code> est une mine d’informations. Réfléchissons à quelques questions auxquelles nous pourrions vouloir répondre avec ces données :</p>
 <ul>
-<li><code>id</code>: Numéro d’identification</li>
-<li><code>firstname</code>: Prénom du lauréat</li>
-<li><code>surname</code>: Nom de famille</li>
-<li><code>year</code>: Année de remise du prix</li>
-<li><code>category</code>: Catégorie du prix</li>
-<li><code>affiliation</code>: Affiliation du lauréat</li>
-<li><code>city</code>: Ville du lauréat l’année du prix</li>
-<li><code>country</code>: Pays du lauréat l’année du prix</li>
-<li><code>born_date</code>: Date de naissance du lauréat</li>
-<li><code>died_date</code>: Date de décès du lauréat</li>
-<li><code>gender</code>: Sexe du lauréat</li>
-<li><code>born_city</code>: Ville de naissance du lauréat</li>
-<li><code>born_country</code>: Pays de naissance du lauréat</li>
-<li><code>born_country_code</code>: Code du pays de naissance du lauréat</li>
-<li><code>died_city</code>: Ville de décès du lauréat</li>
-<li><code>died_country</code>: Pays de décès du lauréat</li>
-<li><code>died_country_code</code>: Code du pays de décès du lauréat</li>
-<li><code>overall_motivation</code>: Motivation générale pour la reconnaissance</li>
-<li><code>share</code>: Nombre d’autres lauréats avec lesquels le prix est partagé</li>
-<li><code>motivation</code>: Motivation pour la reconnaissance</li>
+<li>Quel grade a le taux de chômage le plus bas ?</li>
+<li>Quel grade a le pourcentage de femmes le plus élevé ?</li>
+<li>Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?</li>
+<li>Les femmes ont-elles tendance à choisir des grades avec des revenus plus bas ou plus élevés ?</li>
 </ul>
-<p>Dans quelques cas, le nom de la ville/pays a changé après la réception du prix par le lauréat (par exemple, en 1975, la Bosnie-Herzégovine s’appelait la République fédérative socialiste de Yougoslavie). Dans ces cas, les variables ci-dessous reflètent un nom différent de leurs homologues sans le suffixe `_original`.</p>
-<ul>
-<li><code>born_country_original</code></li>
-<li><code>born_city_original</code></li>
-<li><code>died_country_original</code></li>
-<li><code>died_city_original</code></li>
-<li><code>city_original</code></li>
-<li><code>country_original</code></li>
-</ul>
+<p>Dans la section suivante, nous visons à répondre à ces questions.</p>
 </section>
 </section>
 <section id="exercices" class="level1">
 <h1>Exercices</h1>
-<section id="faites-connaissance-avec-les-données" class="level2">
-<h2 class="anchored" data-anchor-id="faites-connaissance-avec-les-données">Faites connaissance avec les données</h2>
+<section id="quel-grade-a-le-taux-de-chômage-le-plus-bas" class="level2">
+<h2 class="anchored" data-anchor-id="quel-grade-a-le-taux-de-chômage-le-plus-bas">Quel grade a le taux de chômage le plus bas ?</h2>
+<p>Pour répondre à cette question, tout ce que nous avons à faire est de trier les données. Nous utilisons la fonction <code>arrange</code> pour cela, et les trions par la variable <code>unemployment_rate</code>. Par défaut, <code>arrange</code> trie par ordre croissant, ce qui est ce que nous voulons ici - nous sommes intéressés par le grade avec le taux de chômage le <em>plus bas</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>college_recent_grads <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(unemployment_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Cela nous donne ce que nous voulions, mais pas sous une forme idéale. Premièrement, le nom du grade tient à peine sur la page. Deuxièmement, certaines des variables ne sont pas si utiles (par exemple, <code>major_code</code>, <code>major_category</code>) et certaines importantes ne sont pas facilement visibles (par exemple, <code>unemployment_rate</code>).</p>
+<p>Nous pouvons utiliser la fonction <code>select</code> pour choisir quelles variables afficher, et dans quel ordre :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>college_recent_grads <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(unemployment_rate) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(rank, major, unemployment_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ok, c’est mieux, mais avons-nous vraiment besoin d’afficher toutes ces décimales dans la variable de chômage ? Pas vraiment !</p>
+<p>Nous pouvons utiliser la fonction <code>percent()</code> pour nettoyer un peu l’affichage.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>college_recent_grads <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(unemployment_rate) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(rank, major, unemployment_rate) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">unemployment_rate =</span> <span class="fu">percent</span>(unemployment_rate))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé" class="level2">
+<h2 class="anchored" data-anchor-id="quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé">Quel grade a le pourcentage de femmes le plus élevé ?</h2>
 <section id="exercice-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
-<p>Combien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?</p>
-<p>Il y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.</p>
+<p>Pour répondre à une telle question, nous devons organiser les données dans l’ordre décroissant.</p>
+<p>En utilisant ce que vous avez appris jusqu’à présent, organisez les données dans l’ordre décroissant par rapport au pourcentage de femmes dans un grade, et affichez uniquement le grade, le nombre total de personnes avec ce grade, et le pourcentage de femmes. Affichez uniquement les trois premiers grades en ajoutant <code>top_n(3)</code> à la fin du pipeline.</p>
 </section>
+</section>
+<section id="comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades" class="level2">
+<h2 class="anchored" data-anchor-id="comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades">Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?</h2>
 <section id="exercice-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-2">Exercice 2</h3>
-<p>Créez un nouveau data frame appelé <code>nobel_living</code> qui filtre pour</p>
-<ul>
-<li>les lauréats pour lesquels <code>country</code> est disponible</li>
-<li>les lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par <code>org</code> dans la variable <code>gender</code>)</li>
-<li>les lauréats qui sont encore en vie (leur <code>died_date</code> vaut <code>NA</code>)</li>
-</ul>
-<p>Vérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.</p>
-<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
-</section>
-</section>
-<section id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="level2">
-<h2 class="anchored" data-anchor-id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</h2>
-<p>… dit l’article de Buzzfeed. Voyons si c’est vrai.</p>
-<p>Tout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction <code>mutate()</code>. Le pipeline suivant modifie le data frame <code>nobel_living</code> en ajoutant une nouvelle variable appelée <code>country_us</code>. Nous utilisons une instruction Si-Sinon pour créer cette variable. Le premier argument dans la fonction <code>if_else()</code> est la condition que nous testons. <em>Si</em> <code>country</code> est égal à <code>"USA"</code>, nous définissons <code>country_us</code> à <code>"USA"</code>. <em>Sinon</em>, nous définissons <code>country_us</code> à <code>"Other"</code></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nobel_living <span class="ot">&lt;-</span> nobel_living <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">country_us =</span> <span class="fu">if_else</span>(country <span class="sc">==</span> <span class="st">"USA"</span>, <span class="st">"USA"</span>, <span class="st">"Other"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>Ensuite, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.</p>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Une <strong>percentile</strong> est une mesure utilisée en statistiques indiquant la valeur en dessous de laquelle un pourcentage donné d’observations dans un groupe d’observations se situe. Par exemple, le 20e percentile est la valeur en dessous de laquelle 20 % des observations peuvent être trouvées. (Source : <a href="https://en.wikipedia.org/wiki/Percentile">Wikipedia</a>)</p>
+</div>
+</div>
+<p>Il y a trois types de revenus rapportés dans ce data frame : <code>p25th</code>, <code>median</code>, et <code>p75th</code>. Ceux-ci correspondent aux 25e, 50e, et 75e percentiles de la distribution des revenus des individus échantillonnés pour un grade donné.</p>
+<p>Pourquoi choisissons-nous souvent le médian, plutôt que la moyenne, pour décrire le revenu typique d’un groupe de personnes ?</p>
+</section>
 <section id="exercice-3" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-3">Exercice 3</h3>
-<p>Créez un nouveau data frame appelé <code>nobel_living_science</code> qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.</p>
-<p>Pour cela, vous pouvez si <code>category</code> est dans le vecteur <code>c("Physics", "Medicine", "Chemistry", "Economics")</code>.</p>
+<p>La question à laquelle nous voulons répondre est “Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?”.</p>
+<p>Pour cela, nous devons : d’abord, regrouper les données par <code>major_category</code>. Ensuite, trouver un moyen de résumer les distributions des revenus médians dans ces groupes. Cette décision dépendra des formes de ces distributions. Donc d’abord, nous devons visualiser les données.</p>
+<p>Nous utilisons la fonction <code>ggplot()</code> pour cela. Le premier argument est le data frame, et l’argument suivant donne la correspondance des variables des données aux éléments <code>aes</code>thétiques du graphique.</p>
+<p>Commençons simplement et regardons la distribution de tous les revenus médians, sans considérer les catégories majeures. Utilisez la fonction <code>geom_histogram()</code> pour faire un premier graphe tout simple des revenus médians.</p>
+<p>En plus du graphique, vous devriez obtenir un message d’avertissement, si vous n’avez pas indiqué une taille de bin :</p>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p>Cela nous indique que nous pourrions vouloir reconsidérer la largeur de la classe que nous avons choisie pour notre histogramme - ou plus précisément, la largeur de la classe que nous n’avons pas spécifiée. C’est une bonne pratique de toujours penser dans le contexte des données et d’essayer quelques largeurs de classe. Vous pourriez vous demander : “Quelle serait une différence significative dans les revenus médians ?” 1 $ est évidemment trop peu, 10 000 $ pourrait être trop élevé.</p>
+<p>Essayez des largeurs de classe de 1000 $ et 5000 $ et choisissez-en une. Expliquez votre choix. Notez que la largeur de la classe est un argument pour la fonction <code>geom_histogram</code>.</p>
 </section>
 <section id="exercice-4" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-4">Exercice 4</h3>
-<p>Pour le prochain exercice, travaillez avec le data frame <code>nobel_living_science</code> que nous avons créé ci-dessus.</p>
-<p>Créez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.</p>
-<p>Interprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.</p>
-<ul>
-<li>Votre visualisation doit être facettée par catégorie.</li>
-<li>Pour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.</li>
-<li>Inversez les coordonnées pour que les barres soient horizontales, pas verticales.</li>
-</ul>
-<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
+<p>Nous pouvons également calculer des statistiques sommaires pour cette distribution en utilisant la fonction <code>summarise</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>college_recent_grads <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">min =</span> <span class="fu">min</span>(median), <span class="at">max =</span> <span class="fu">max</span>(median),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean =</span> <span class="fu">mean</span>(median), <span class="at">med =</span> <span class="fu">median</span>(median),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(median), </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">q1 =</span> <span class="fu">quantile</span>(median, <span class="at">probs =</span> <span class="fl">0.25</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">q3 =</span> <span class="fu">quantile</span>(median, <span class="at">probs =</span> <span class="fl">0.75</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En vous basant sur la forme de l’histogramme que vous avez créé dans l’exercice précédent, déterminez laquelle de ces statistiques sommaires est utile pour décrire la distribution. Rédigez votre description (n’oubliez pas la forme, le centre, la dispersion, les observations inhabituelles) et incluez le résultat de la statistique sommaire également.</p>
 </section>
-</section>
-<section id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="level2">
-<h2 class="anchored" data-anchor-id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</h2>
 <section id="exercice-5" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-5">Exercice 5</h3>
-<p>Créez une nouvelle variable appelée <code>born_country_us</code> qui a la valeur <code>"USA"</code> si le lauréat est né aux États-Unis, et <code>"Other"</code> sinon. Combien de gagnants sont nés aux États-Unis ?</p>
+<p>Plottez la distribution du revenu médian en utilisant un histogramme, facetted par <code>major_category</code>. Utilisez la <code>binwidth</code> que vous avez choisie dans l’exercice précédent.</p>
 </section>
 <section id="exercice-6" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-6">Exercice 6</h3>
-<p>Ajoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.</p>
-<ul>
-<li>Votre visualisation finale doit contenir une facette pour chaque catégorie.</li>
-<li>Dans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.</li>
-<li>Chaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.</li>
-</ul>
-<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
+<p>Maintenant que nous avons vu les formes des distributions des revenus médians pour chaque catégorie majeure, nous devrions avoir une meilleure idée de la statistique sommaire à utiliser pour quantifier le revenu médian typique.</p>
+<p>Quelle catégorie majeure a le revenu médian typique le plus élevé ? Constuisez un bloc de code qui groupe selon la <code>major_category</code>, summarize en utulisant la statistique retenue et triant dans la bonne direction (nous cherchons la plus élevée).</p>
 </section>
-</section>
-<section id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="level2">
-<h2 class="anchored" data-anchor-id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</h2>
-<div class="callout-info">
-<p>Note that your bar plot won’t exactly match the one from the Buzzfeed article. This is likely because the data has been updated since the article was published.</p>
-</div>
 <section id="exercice-7" class="level3">
 <h3 class="anchored" data-anchor-id="exercice-7">Exercice 7</h3>
-<p>Dans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction <code>count()</code>) pour leur pays de naissance (<code>born_country</code>) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?</p>
-<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
-<p>Maintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés.</p>
+<p>Quelle catégorie majeure est la moins populaire dans cet échantillon ? Vous pouvez vous aider de la foncton <code>count</code> pour cela.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, et push ! Assurez vous de mettre un message à votre commit !</em></p>
 </section>
 </section>
+<section id="tous-les-domaines-stem-ne-sont-pas-les-mêmes" class="level2">
+<h2 class="anchored" data-anchor-id="tous-les-domaines-stem-ne-sont-pas-les-mêmes">Tous les domaines STEM ne sont pas les mêmes</h2>
+<p>Une des sections de l’<a href="https://fivethirtyeight.com/features/the-economic-guide-to-picking-a-college-major/">article de FiveThirtyEight</a> est “Tous les domaines STEM ne sont pas les mêmes”. Voyons si c’est vrai.</p>
+<p>Pour commencer, nous devons déterminer quelles catégories majeures sont considérées comme des domaines STEM. Une approche serait de créer un vecteur de catégories majeures qui sont généralement considérées comme des domaines STEM, puis de créer une nouvelle variable dans notre data frame qui indique si une majeure est un domaine STEM ou non.</p>
+<p>Pour cela, nous devons d’abord créer un vecteur appelé <code>stem_categories</code> qui liste les catégories majeures qui sont considérées comme des domaines STEM.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stem_categories <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Biology &amp; Life Science"</span>,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Computers &amp; Mathematics"</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Engineering"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Physical Sciences"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ensuite, nous pouvons utiliser ceci pour créer une nouvelle variable dans notre data frame indiquant si une majeure est un domaine STEM ou non. À l’aide la fonction <code>ifelse</code> et de l’opérateur <code>%in%</code>, créez une nouvelle variable appelée <code>major_type</code> qui est <code>"stem"</code> si la <code>major_category</code> est dans le vecteur <code>stem_categories</code>, et <code>"not stem"</code> sinon.</p>
+<section id="exercice-8" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-8">Exercice 8</h3>
+<p>Nous pouvons utiliser les opérateurs logiques pour également <code>filter</code> nos données pour les majeures STEM dont le revenu médian est inférieur au revenu médian de toutes les majeures, que nous avons trouvé être de 36 000 $ plus tôt.</p>
+<p>Quels domaines STEM ont des salaires médians égaux ou inférieurs au salaire médian de toutes les majeures ? Votre sortie ne doit montrer que le nom de la majeure et le revenu médian, le 25e percentile, et le 75e percentile pour cette majeure, et doit être triée de telle sorte que la majeure avec le revenu médian le plus élevé soit en haut.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, et push ! Assurez vous de mettre un message à votre commit !</em></p>
 </section>
-<section id="intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="level1">
-<h1>Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</h1>
-<p>Les graphiques dans l’article de Buzzfeed sont appelés des graphiques en gaufre (<em>waffle plots</em>). Vous pouvez trouver le code utilisé pour réaliser ces graphiques dans le dépôt GitHub de Buzzfeed (oui, ils en ont un !) <a href="https://buzzfeednews.github.io/2017-01-immigration-and-science/">ici</a>. Vous pouvez essayer de recréer ces graphiques pour le plaisir, mais ce n’est pas une exigence pour ce lab.</p>
+</section>
+<section id="quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir" class="level2">
+<h2 class="anchored" data-anchor-id="quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir">Quels types de grades les femmes ont-elles tendance à choisir ?</h2>
+<section id="exercice-9" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-9">Exercice 9</h3>
+<p>Créez un nuage de points du revenu médian par rapport à la proportion de femmes dans cette majeure, coloré par le fait que la majeure est un domaine STEM ou non. Décrivez l’association entre ces trois variables.</p>
+</section>
+</section>
+<section id="pour-aller-plus-loin" class="level2">
+<h2 class="anchored" data-anchor-id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<section id="exercice-10" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-10">Exercice 10</h3>
+<p>Posez une question qui vous intéresse, et répondez-y en utilisant des statistiques sommaires et/ou des visualisations.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, et push ! C’est le dernier commit donc assurez vous que votre rapport soit complet et propre avant de commiter ou pousser !</em></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,0 +1,64 @@
+---
+title: "Lab 04 - College majors"
+author: "Insert your name here"
+date: "Insert date here"
+output: github_document
+---
+
+### Chargement des packages et des données
+
+```{r load-packages, message=FALSE}
+library(tidyverse) 
+```
+
+```{r load-data, message=FALSE}
+nobel <- read_csv("data/nobel.csv")
+```
+
+## Exercices
+
+### Exercice 1
+
+Remplacez ce texte par vos réponses aux questions.
+Ajoutez les blocs de code nécessaires.
+N'oubliez pas d'étiqueter vos blocs de code.
+
+### Exercice 2
+
+Remplacez ce texte par vos réponses aux questions.
+Ajoutez les blocs de code nécessaires.
+N'oubliez pas d'étiqueter vos blocs de code.
+
+### Exercice 3
+
+Remplacez ce texte par vos réponses aux questions.
+Ajoutez les blocs de code nécessaires.
+N'oubliez pas d'étiqueter vos blocs de code.
+
+### Exercice 4
+
+...
+
+### Exercice 5
+
+...
+
+### Exercice 6
+
+...
+
+### Exercice 7
+
+...
+
+### Exercice 8
+
+...
+
+### Exercice 9
+
+...
+
+### Exercice 10
+
+...

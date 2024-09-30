@@ -33,6 +33,9 @@ website:
         - section: "Semaine 3"
           contents:
             - website/labs/lab03-nobel-laureates/lab03-nobel-laureates.qmd
+        - section: "Semaine 4"
+          contents:
+            - website/labs/lab04-college-majors/lab04-college-majors.qmd
       
     - title: "Exercices"
       contents:
