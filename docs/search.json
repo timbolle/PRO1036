@@ -2518,5 +2518,551 @@
     "title": "Lab 03 - Nobel laureates",
     "section": "Exercices",
     "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 4\n…\n\n\nExercice 5\n…\n\n\nExercice 6\n…\n\n\nExercice 7\n…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-cat-lovers",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-cat-lovers",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple: Cat lovers",
+    "text": "Exemple: Cat lovers\nUn sondage a demandé à des gens leur nom et le nombre de chat qu’ils possèdent. Les instructions indiquaient d’entrer le nombre de chats en chiffres.\n\n\ncat_lovers &lt;- read_csv(\"data/cat-lovers.csv\")\n\n\n\n# A tibble: 60 × 3\n   name           number_of_cats handedness\n   &lt;chr&gt;          &lt;chr&gt;          &lt;chr&gt;     \n 1 Bernice Warren 0              left      \n 2 Woodrow Stone  0              left      \n 3 Willie Bass    1              left      \n 4 Tyrone Estrada 3              left      \n 5 Alex Daniels   3              left      \n 6 Jane Bates     2              left      \n 7 Latoya Simpson 1              left      \n 8 Darin Woods    1              left      \n 9 Agnes Cobb     0              left      \n10 Tabitha Grant  0              left      \n# ℹ 50 more rows"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#statistique-simple",
+    "href": "slides/04 - Data types/04 - data-types.html#statistique-simple",
+    "title": "04 - Types de données et transformations",
+    "section": "Statistique simple…",
+    "text": "Statistique simple…\n\ncat_lovers %&gt;%\n  summarise(mean_cats = mean(number_of_cats))\n\n# A tibble: 1 × 1\n  mean_cats\n      &lt;dbl&gt;\n1        NA\n\n\nCa ne marche pas…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#pourquoi",
+    "href": "slides/04 - Data types/04 - data-types.html#pourquoi",
+    "title": "04 - Types de données et transformations",
+    "section": "Pourquoi ?",
+    "text": "Pourquoi ?\n\n?mean"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#et-maintenant",
+    "href": "slides/04 - Data types/04 - data-types.html#et-maintenant",
+    "title": "04 - Types de données et transformations",
+    "section": "Et maintenant ?",
+    "text": "Et maintenant ?\n\ncat_lovers %&gt;%\n  summarise(mean_cats = mean(number_of_cats, na.rm = TRUE))\n\n# A tibble: 1 × 1\n  mean_cats\n      &lt;dbl&gt;\n1        NA\n\n\nToujours pas…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regardons-les-données",
+    "href": "slides/04 - Data types/04 - data-types.html#regardons-les-données",
+    "title": "04 - Types de données et transformations",
+    "section": "Regardons les données",
+    "text": "Regardons les données\n\nglimpse(cat_lovers)\n\nRows: 60\nColumns: 3\n$ name           &lt;chr&gt; \"Bernice Warren\", \"Woodrow Stone\", \"Willie Bass\", \"Tyro…\n$ number_of_cats &lt;chr&gt; \"0\", \"0\", \"1\", \"3\", \"3\", \"2\", \"1\", \"1\", \"0\", \"0\", \"0\", …\n$ handedness     &lt;chr&gt; \"left\", \"left\", \"left\", \"left\", \"left\", \"left\", \"left\",…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regardons-cela-de-plus-près",
+    "href": "slides/04 - Data types/04 - data-types.html#regardons-cela-de-plus-près",
+    "title": "04 - Types de données et transformations",
+    "section": "Regardons cela de plus près",
+    "text": "Regardons cela de plus près"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#références",
+    "href": "slides/04 - Data types/04 - data-types.html#références",
+    "title": "04 - Types de données et transformations",
+    "section": "Références",
+    "text": "Références\n\n\n\n\n\n\n\nPRO1036 - 04 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#respecter-les-types-de-données",
+    "href": "slides/04 - Data types/04 - data-types.html#respecter-les-types-de-données",
+    "title": "04 - Types de données et transformations",
+    "section": "Respecter les types de données",
+    "text": "Respecter les types de données\n\ncat_lovers %&gt;%\n  mutate(\n    number_of_cats = case_when(\n      name == \"Ginger Clark\" ~ \"2\",\n      name == \"Doug Bass\"    ~ \"3\",\n      TRUE                   ~ number_of_cats\n      ),\n    number_of_cats = as.numeric(number_of_cats)\n    ) %&gt;%\n  summarise(mean_cats = mean(number_of_cats))\n\n# A tibble: 1 × 1\n  mean_cats\n      &lt;dbl&gt;\n1     0.833"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#enregistrer",
+    "href": "slides/04 - Data types/04 - data-types.html#enregistrer",
+    "title": "04 - Types de données et transformations",
+    "section": "Enregistrer",
+    "text": "Enregistrer\n\ncat_lovers &lt;- cat_lovers %&gt;%\n  mutate(\n    number_of_cats = case_when(\n      name == \"Ginger Clark\" ~ \"2\",\n      name == \"Doug Bass\"    ~ \"3\",\n      TRUE                   ~ number_of_cats\n      ),\n    number_of_cats = as.numeric(number_of_cats)\n    )"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#morale",
+    "href": "slides/04 - Data types/04 - data-types.html#morale",
+    "title": "04 - Types de données et transformations",
+    "section": "Morale",
+    "text": "Morale\n\nSi vos données ne se comportent pas comme vous l’attendez, il se peut qu’il s’agisse d’un probplème de type de données.\nExplorez et investiguez vos données, appliquez les modifications, sauvegardez vos données, vivez heureux"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#types-de-données-dans-r",
+    "href": "slides/04 - Data types/04 - data-types.html#types-de-données-dans-r",
+    "title": "04 - Types de données et transformations",
+    "section": "Types de données dans R",
+    "text": "Types de données dans R\n\nlogical\ndouble\ninteger\ncharacter\nIl y a en d’autres mais nous les utiliserons peu"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#logical-et-character",
+    "href": "slides/04 - Data types/04 - data-types.html#logical-et-character",
+    "title": "04 - Types de données et transformations",
+    "section": "Logical et character",
+    "text": "Logical et character\nlogical - Valeurs booléennes TRUE et FALSE\n\ntypeof(TRUE)\n\n[1] \"logical\"\n\n\n\ncharacter - Texte\n\ntypeof(\"Hello\")\n\n[1] \"character\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#double-et-integer",
+    "href": "slides/04 - Data types/04 - data-types.html#double-et-integer",
+    "title": "04 - Types de données et transformations",
+    "section": "Double et integer",
+    "text": "Double et integer\ndouble - Nombres à virgule flottante (type par défaut pour les nombres)\n\ntypeof(1.5)\n\n[1] \"double\"\n\n\n\ntypeof(7)\n\n[1] \"double\"\n\n\n\ninteger - Nombres entiers (indiqué par un L)\n\ntypeof(1L)\n\n[1] \"integer\"\n\n\n\ntypeof(1:3)\n\n[1] \"integer\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#concatenation",
+    "href": "slides/04 - Data types/04 - data-types.html#concatenation",
+    "title": "04 - Types de données et transformations",
+    "section": "Concatenation",
+    "text": "Concatenation\nDes vecteurs peuvent être construits à l’aide de la fonction c()\n\n\nc(1, 2, 3)\n\n[1] 1 2 3\n\nc(\"Hello\", \"World!\")\n\n[1] \"Hello\"  \"World!\"\n\nc(c(\"hi\", \"hello\"), c(\"bye\", \"jello\"))\n\n[1] \"hi\"    \"hello\" \"bye\"   \"jello\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#conversion",
+    "href": "slides/04 - Data types/04 - data-types.html#conversion",
+    "title": "04 - Types de données et transformations",
+    "section": "Conversion",
+    "text": "Conversion\n… intentionnelle\n\n\n\nx &lt;- 1:3\nx\n\n[1] 1 2 3\n\ntypeof(x)\n\n[1] \"integer\"\n\n\n\n\ny &lt;- as.character(x)\ny\n\n[1] \"1\" \"2\" \"3\"\n\ntypeof(y)\n\n[1] \"character\"\n\n\n\n\n\n\n\nx &lt;- c(TRUE, FALSE)\nx\n\n[1]  TRUE FALSE\n\ntypeof(x)\n\n[1] \"logical\"\n\n\n\n\ny &lt;- as.numeric(x)\ny\n\n[1] 1 0\n\ntypeof(y)\n\n[1] \"double\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#conversion-1",
+    "href": "slides/04 - Data types/04 - data-types.html#conversion-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Conversion",
+    "text": "Conversion\n… accidentelle\nR va faire les conversions sans se poser de questions, surtout quand on mets différentes choses dans un même vecteur.\n\n\n\nc(1, \"Hello\")\n\n[1] \"1\"     \"Hello\"\n\nc(FALSE, 3L)\n\n[1] 0 3\n\n\n\n\nc(1.2, 3L)\n\n[1] 1.2 3.0\n\nc(2L, \"two\")\n\n[1] \"2\"   \"two\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#conversion-2",
+    "href": "slides/04 - Data types/04 - data-types.html#conversion-2",
+    "title": "04 - Types de données et transformations",
+    "section": "Conversion",
+    "text": "Conversion\n\nExplicite - Utilisez les fonctions as.*()\n\nas.logical()\nas.numeric()\nas.integer()\nas.character()\nas.double()\n\nImplicite - R va faire les conversions pour vous, soyez vigilant"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#conversion-3",
+    "href": "slides/04 - Data types/04 - data-types.html#conversion-3",
+    "title": "04 - Types de données et transformations",
+    "section": "Conversion",
+    "text": "Conversion\n\nExplicite - Utilisez les fonctions as.*()\n\nas.logical()\nas.numeric()\nas.integer()\nas.character()\nas.double()\n\nImplicite - R va faire les conversions pour vous, soyez vigilant"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#cas-spéciaux-1",
+    "href": "slides/04 - Data types/04 - data-types.html#cas-spéciaux-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Cas spéciaux",
+    "text": "Cas spéciaux\n\nNA - Valeur manquante\nInf - Infini\nNaN - Not a Number\n\n\n\n\n\n# division par zéro -&gt; Inf\n7/0\n\n[1] Inf\n\n\n\n\n-1/0\n\n[1] -Inf\n\n\n\n\n\n\nInf - Inf\n\n[1] NaN"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#na",
+    "href": "slides/04 - Data types/04 - data-types.html#na",
+    "title": "04 - Types de données et transformations",
+    "section": "NA",
+    "text": "NA\n\nx &lt;- c(1, 2, 3, 4, NA)\n\n\nmean(x)\n\n[1] NA\n\nmean(x, na.rm = TRUE)\n\n[1] 2.5\n\nsummary(x)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n   1.00    1.75    2.50    2.50    3.25    4.00       1"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#na-sont-logiques",
+    "href": "slides/04 - Data types/04 - data-types.html#na-sont-logiques",
+    "title": "04 - Types de données et transformations",
+    "section": "NA sont logiques",
+    "text": "NA sont logiques\nLes NAsont utilisés par R pour représenter des valeurs manquantes.\n\n\ntypeof(NA)\n\n[1] \"logical\"\n\n\n\n\n\n\n# TRUE or NA\nTRUE | NA\n\n[1] TRUE\n\n\n\n\n# FALSE or NA\nFALSE | NA\n\n[1] NA"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#classes-de-données",
+    "href": "slides/04 - Data types/04 - data-types.html#classes-de-données",
+    "title": "04 - Types de données et transformations",
+    "section": "Classes de données",
+    "text": "Classes de données\nNous avons parlé des types des données et nous allons maintenant parler des classes des données:\n\nVecteurs sont comme des briques LEGO\nOn les colle ensemble pour construire des structures plus compliquées, notamment des représentations de données\n\nPar exemples:\n\n[factor]\n[date]\n[data frame]"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#factor",
+    "href": "slides/04 - Data types/04 - data-types.html#factor",
+    "title": "04 - Types de données et transformations",
+    "section": "factor",
+    "text": "factor\nLes facteurs sont utilisés pour gérer les variables catégorielles, c’est-à-dire les variables qui ont un ensemble fixe et connu de valeurs possibles.\n\n\nx &lt;- factor(c(\"BS\", \"MS\", \"PhD\", \"MS\"))\nx\n\n[1] BS  MS  PhD MS \nLevels: BS MS PhD\n\n\n\n\n\n\ntypeof(x)\n\n[1] \"integer\"\n\n\n\n\nclass(x)\n\n[1] \"factor\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#factor-1",
+    "href": "slides/04 - Data types/04 - data-types.html#factor-1",
+    "title": "04 - Types de données et transformations",
+    "section": "factor",
+    "text": "factor\nPour chaque facteur on a:\n\nlevels - Les valeurs possibles\nlabels - Les étiquettes associées aux valeurs\n\n\n\nglimpse(x)\n\n Factor w/ 3 levels \"BS\",\"MS\",\"PhD\": 1 2 3 2\n\nas.integer(x)\n\n[1] 1 2 3 2"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#dates",
+    "href": "slides/04 - Data types/04 - data-types.html#dates",
+    "title": "04 - Types de données et transformations",
+    "section": "Dates",
+    "text": "Dates\n\ny &lt;- as.Date(\"2024-01-01\")\ny\n\n[1] \"2024-01-01\"\n\ntypeof(y)\n\n[1] \"double\"\n\nclass(y)\n\n[1] \"Date\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#dates-1",
+    "href": "slides/04 - Data types/04 - data-types.html#dates-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Dates",
+    "text": "Dates\nLes dates sont en réalité un entier (le nombre de jours depuis l’origine, 1 Jan 1970) et un entier (l’origine) collés ensemble\n\nas.integer(y)\n\n[1] 19723\n\nas.integer(y) / 365 \n\n[1] 54.03562"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#data-frames",
+    "href": "slides/04 - Data types/04 - data-types.html#data-frames",
+    "title": "04 - Types de données et transformations",
+    "section": "Data frames",
+    "text": "Data frames\nLes data frames sont des structures de données qui sont comme des vecteurs de différentes classes.\n\ndf &lt;- data.frame(x = 1:2, y = 3:4)\ndf\n\n  x y\n1 1 3\n2 2 4\n\n\n\n\n\ntypeof(df)\n\n[1] \"list\"\n\n\n\n\nclass(df)\n\n[1] \"data.frame\""
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#listes",
+    "href": "slides/04 - Data types/04 - data-types.html#listes",
+    "title": "04 - Types de données et transformations",
+    "section": "Listes",
+    "text": "Listes\nLes listes sont des conteneurs génériques pour des vecteurs de n’importe quel type.\n\nl &lt;- list(\n  x = 1:4,\n  y = c(\"hi\", \"hello\", \"jello\"),\n  z = c(TRUE, FALSE)\n)\nl\n\n$x\n[1] 1 2 3 4\n\n$y\n[1] \"hi\"    \"hello\" \"jello\"\n\n$z\n[1]  TRUE FALSE"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#listes-et-data-frames",
+    "href": "slides/04 - Data types/04 - data-types.html#listes-et-data-frames",
+    "title": "04 - Types de données et transformations",
+    "section": "Listes et data frames",
+    "text": "Listes et data frames\n\nUn data frame est une liste spéciale contenant des vecteurs de longueur égale\nLorsque nous utilisons la fonction pull(), nous extrayons un vecteur du data frame\n\n\ndf\n\n  x y\n1 1 3\n2 2 4\n\ndf %&gt;%\n  pull(y)\n\n[1] 3 4"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-cat-lovers-1",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-cat-lovers-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple: Cat lovers",
+    "text": "Exemple: Cat lovers\nNous commençons avec un data frame avec des caractères\n\nglimpse(cat_lovers)\n\nRows: 60\nColumns: 3\n$ name           &lt;chr&gt; \"Bernice Warren\", \"Woodrow Stone\", \"Willie Bass\", \"Tyro…\n$ number_of_cats &lt;chr&gt; \"0\", \"0\", \"1\", \"3\", \"3\", \"2\", \"1\", \"1\", \"0\", \"0\", \"0\", …\n$ handedness     &lt;chr&gt; \"left\", \"left\", \"left\", \"left\", \"left\", \"left\", \"left\",…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#plotting",
+    "href": "slides/04 - Data types/04 - data-types.html#plotting",
+    "title": "04 - Types de données et transformations",
+    "section": "Plotting",
+    "text": "Plotting\nAu moment de faire un graphique, R va faire une conversion de type\nSi on lui demande de plotter des catégories, il va créer des facteurs\n\nggplot(cat_lovers, mapping = aes(x = handedness)) +\n  geom_bar()\n\n\nLes facteurs sont ordonnées par ordre alphabétique par défaut"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#on-peut-manipuler-les-facteurs-avec-forcats",
+    "href": "slides/04 - Data types/04 - data-types.html#on-peut-manipuler-les-facteurs-avec-forcats",
+    "title": "04 - Types de données et transformations",
+    "section": "On peut manipuler les facteurs avec forcats",
+    "text": "On peut manipuler les facteurs avec forcats\n\ncat_lovers %&gt;%\n  mutate(handedness = fct_infreq(handedness)) %&gt;%\n  ggplot(mapping = aes(x = handedness)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#la-grammaire-de-la-manipulation-de-données",
+    "href": "slides/04 - Data types/04 - data-types.html#la-grammaire-de-la-manipulation-de-données",
+    "title": "04 - Types de données et transformations",
+    "section": "La grammaire de la manipulation de données",
+    "text": "La grammaire de la manipulation de données\nBasé sur des fonctions qui correspondent à des verbes permettant de manipuler des dataframes.\n\n\n\n\n\nLes facteurs sont utiles lorsque vous avez des données catégorielles et que vous voulez remplacer l’ordre des vecteurs de caractères pour améliorer l’affichage\nLe package forcats fournit une suite d’outils utiles qui résolvent des problèmes courants avec les facteurs"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-cat-lovers-2",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-cat-lovers-2",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple: Cat lovers",
+    "text": "Exemple: Cat lovers"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-hotels",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-hotels",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple: Hotels",
+    "text": "Exemple: Hotels"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#dates-2",
+    "href": "slides/04 - Data types/04 - data-types.html#dates-2",
+    "title": "04 - Types de données et transformations",
+    "section": "Dates",
+    "text": "Dates\n\n\n\n\n\nlubridate est un package tidyverse-friendly qui facilite la manipulation des dates\nIl ne fait pas partie du coeur tidyverse, donc il doit être installé avec install.packages(\"tidyverse) mais il n’est pas chargé avec lui, et doit être explicitement chargé avec library(lubridate).\n\n…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-des-hotels",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-des-hotels",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple des hotels",
+    "text": "Exemple des hotels\nNous allons voir les bases mais travailler avec des dates peut s’avérer complexe mais cela peut apporter beaucoup à une analyse.\nCalculer et visualiser le nombre de réservations à une date d’arrivée donnée"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-1---construire-la-date",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-1---construire-la-date",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 1 - Construire la date",
+    "text": "Étape 1 - Construire la date\n\nlibrary(glue) # glue permet de coller des éléments ensemble\n\nhotels %&gt;%\n  mutate(\n    arrival_date = glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\")\n    ) %&gt;% \n  relocate(arrival_date) # pour afficher la nouvelle colonne à gauche\n\n# A tibble: 119,390 × 33\n   arrival_date hotel is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;glue&gt;       &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 2015 July 1  Reso…           0       342              2015 July              \n 2 2015 July 1  Reso…           0       737              2015 July              \n 3 2015 July 1  Reso…           0         7              2015 July              \n 4 2015 July 1  Reso…           0        13              2015 July              \n 5 2015 July 1  Reso…           0        14              2015 July              \n 6 2015 July 1  Reso…           0        14              2015 July              \n 7 2015 July 1  Reso…           0         0              2015 July              \n 8 2015 July 1  Reso…           0         9              2015 July              \n 9 2015 July 1  Reso…           1        85              2015 July              \n10 2015 July 1  Reso…           1        75              2015 July              \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-2---compter-les-réservations-par-dates",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-2---compter-les-réservations-par-dates",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 2 - Compter les réservations par dates",
+    "text": "Étape 2 - Compter les réservations par dates\n\nhotels %&gt;%\n  mutate(arrival_date = glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\")) %&gt;%\n  count(arrival_date)\n\n# A tibble: 793 × 2\n   arrival_date       n\n   &lt;glue&gt;         &lt;int&gt;\n 1 2015 August 1    110\n 2 2015 August 10   207\n 3 2015 August 11   117\n 4 2015 August 12   133\n 5 2015 August 13   107\n 6 2015 August 14   329\n 7 2015 August 15   190\n 8 2015 August 16    98\n 9 2015 August 17   188\n10 2015 August 18    94\n# ℹ 783 more rows"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-4---visualiser",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-4---visualiser",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 4 - Visualiser",
+    "text": "Étape 4 - Visualiser\n\nhotels %&gt;%\n  mutate(arrival_date = glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\")) %&gt;%\n  count(arrival_date) %&gt;%\n  ggplot(aes(x = arrival_date, y = n, group = 1)) +\n  geom_line()\n\n\nQuel est le problème ici ?"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-1---construire-la-date-comme-une-date",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-1---construire-la-date-comme-une-date",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 1 - Construire la date (comme une date)",
+    "text": "Étape 1 - Construire la date (comme une date)\n\nlibrary(lubridate) # pour les dates\n\nhotels %&gt;%\n  mutate(\n    arrival_date = ymd(glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\"))\n    ) %&gt;% \n  relocate(arrival_date)\n\n# A tibble: 119,390 × 33\n   arrival_date hotel is_canceled lead_time arrival_date_year arrival_date_month\n   &lt;date&gt;       &lt;chr&gt;       &lt;dbl&gt;     &lt;dbl&gt;             &lt;dbl&gt; &lt;chr&gt;             \n 1 2015-07-01   Reso…           0       342              2015 July              \n 2 2015-07-01   Reso…           0       737              2015 July              \n 3 2015-07-01   Reso…           0         7              2015 July              \n 4 2015-07-01   Reso…           0        13              2015 July              \n 5 2015-07-01   Reso…           0        14              2015 July              \n 6 2015-07-01   Reso…           0        14              2015 July              \n 7 2015-07-01   Reso…           0         0              2015 July              \n 8 2015-07-01   Reso…           0         9              2015 July              \n 9 2015-07-01   Reso…           1        85              2015 July              \n10 2015-07-01   Reso…           1        75              2015 July              \n# ℹ 119,380 more rows\n# ℹ 27 more variables: arrival_date_week_number &lt;dbl&gt;,\n#   arrival_date_day_of_month &lt;dbl&gt;, stays_in_weekend_nights &lt;dbl&gt;,\n#   stays_in_week_nights &lt;dbl&gt;, adults &lt;dbl&gt;, children &lt;dbl&gt;, babies &lt;dbl&gt;,\n#   meal &lt;chr&gt;, country &lt;chr&gt;, market_segment &lt;chr&gt;,\n#   distribution_channel &lt;chr&gt;, is_repeated_guest &lt;dbl&gt;,\n#   previous_cancellations &lt;dbl&gt;, previous_bookings_not_canceled &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-2---compter-les-réservations-par-dates-1",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-2---compter-les-réservations-par-dates-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 2 - Compter les réservations par dates",
+    "text": "Étape 2 - Compter les réservations par dates\n\nhotels %&gt;%\n  mutate(arrival_date = ymd(glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\"))) %&gt;% \n  count(arrival_date)\n\n# A tibble: 793 × 2\n   arrival_date     n\n   &lt;date&gt;       &lt;int&gt;\n 1 2015-07-01     122\n 2 2015-07-02      93\n 3 2015-07-03      56\n 4 2015-07-04      88\n 5 2015-07-05      53\n 6 2015-07-06      75\n 7 2015-07-07      54\n 8 2015-07-08      69\n 9 2015-07-09      80\n10 2015-07-10      51\n# ℹ 783 more rows"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-3a---visualiser",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-3a---visualiser",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 3a - Visualiser",
+    "text": "Étape 3a - Visualiser\n\nhotels %&gt;%\n  mutate(arrival_date = ymd(glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\"))) %&gt;% \n  count(arrival_date) %&gt;%\n  ggplot(aes(x = arrival_date, y = n, group = 1)) +\n  geom_line()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#étape-3b---visualiser-avec-une-courbe",
+    "href": "slides/04 - Data types/04 - data-types.html#étape-3b---visualiser-avec-une-courbe",
+    "title": "04 - Types de données et transformations",
+    "section": "Étape 3b - Visualiser avec une courbe",
+    "text": "Étape 3b - Visualiser avec une courbe\n\nhotels %&gt;%\n  mutate(arrival_date = ymd(glue(\"{arrival_date_year} {arrival_date_month} {arrival_date_day_of_month}\"))) %&gt;% \n  count(arrival_date) %&gt;%\n  ggplot(aes(x = arrival_date, y = n, group = 1)) +\n  geom_smooth() #&lt;&lt;"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#plot",
+    "href": "slides/04 - Data types/04 - data-types.html#plot",
+    "title": "04 - Types de données et transformations",
+    "section": "Plot",
+    "text": "Plot"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#code",
+    "href": "slides/04 - Data types/04 - data-types.html#code",
+    "title": "04 - Types de données et transformations",
+    "section": "Code",
+    "text": "Code\n\n\nhotels &lt;- readr::read_csv(\"data/hotels.csv\")\n\nhotels %&gt;%\n  mutate(arrival_date_month = fct_relevel(arrival_date_month, month.name)) %&gt;%\n  group_by(hotel, arrival_date_month) %&gt;%   # group by type d'hotel et mois d'arrivée\n  summarise(mean_adr = mean(adr)) %&gt;%       # calcul de l'ADR moyen pour chaque groupe\n  ggplot(aes(\n    x = arrival_date_month,\n    y = mean_adr,                           # mean_adr sur y-axis\n    group = hotel,                          # Groupe les lignes par type\n    color = hotel)                          # couleur par type\n    ) +\n  geom_line() +                             # On veut des lignes\n  scale_y_continuous(labels = label_dollar()) +\n  theme_minimal() +                         # Utilise le minimal theme\n  labs(x = \"Arrival month\",                 # On met à jour les labels\n       y = \"Mean ADR (average daily rate)\",\n       title = \"Comparison of resort and city hotel prices across months\",\n       subtitle = \"Resort hotel prices soar in the summer while city hotel prices remain\\nrelatively constant throughout the year\",\n       color = \"Hotel type\") +\n  scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) # On s'assure que les labels ne se chevauchent pas"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#les-fonctions-de-forcats",
+    "href": "slides/04 - Data types/04 - data-types.html#les-fonctions-de-forcats",
+    "title": "04 - Types de données et transformations",
+    "section": "Les fonctions de forcats",
+    "text": "Les fonctions de forcats\nfocats possède plusieurs fonctions pour manipuler les facteurs:\n\nfct_reorder() - Réordonne les niveaux d’un facteur en fonction d’une autre variable\nfct_relevel() - Réordonne les niveaux d’un facteur\nfct_infreq() - Réordonne les niveaux d’un facteur en fonction de leur fréquence\nfct_lump() - Regroupe les niveaux d’un facteur en “autres”\nfct_explicit_na() - Ajoute un niveau pour les valeurs manquantes"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-starwars",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-starwars",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple: starwars",
+    "text": "Exemple: starwars\n\nstarwars %&gt;%\n  ggplot(aes(y = hair_color)) + \n  geom_bar()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#ordre-selon-la-fréquence",
+    "href": "slides/04 - Data types/04 - data-types.html#ordre-selon-la-fréquence",
+    "title": "04 - Types de données et transformations",
+    "section": "Ordre selon la fréquence",
+    "text": "Ordre selon la fréquence\n\nstarwars %&gt;%\n  ggplot(aes(y = fct_infreq(hair_color))) + \n  geom_bar()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#gestion-des-na",
+    "href": "slides/04 - Data types/04 - data-types.html#gestion-des-na",
+    "title": "04 - Types de données et transformations",
+    "section": "Gestion des NA",
+    "text": "Gestion des NA\n\n\n\nstarwars %&gt;%\n  ggplot(aes(y = fct_infreq(fct_na_value_to_level(hair_color)))) + \n  geom_bar() + \n  labs(y = \"Hair color\")\n\n\n\n\n\n\n\n\n\n\nstarwars %&gt;%\n  ggplot(aes(y = fct_infreq(fct_na_level_to_value(hair_color)))) + \n  geom_bar() + \n  labs(y = \"Hair color\")"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs",
+    "href": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs",
+    "title": "04 - Types de données et transformations",
+    "section": "Regroupement de facteurs",
+    "text": "Regroupement de facteurs\nUtile quand on a beaucoup de niveaux\n\nstarwars %&gt;%\n  count(skin_color, sort = TRUE)\n\n# A tibble: 31 × 2\n   skin_color     n\n   &lt;chr&gt;      &lt;int&gt;\n 1 fair          17\n 2 light         11\n 3 dark           6\n 4 green          6\n 5 grey           6\n 6 pale           5\n 7 brown          4\n 8 blue           2\n 9 blue, grey     2\n10 none           2\n# ℹ 21 more rows\n\n\n… 31 niveaux dans cet exemple !"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs-1",
+    "href": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Regroupement de facteurs",
+    "text": "Regroupement de facteurs\nRegardons maintenant la masse moyenne selon la couleur des yeux:\n\nstarwars %&gt;%\n  mutate(eye_color = fct_lump(eye_color, n = 6)) %&gt;%\n  group_by(eye_color) %&gt;%\n  summarise(mean_mass = mean(mass, na.rm = TRUE)) %&gt;%\n  ggplot(aes(x = eye_color, y = mean_mass)) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs-2",
+    "href": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs-2",
+    "title": "04 - Types de données et transformations",
+    "section": "Regroupement de facteurs",
+    "text": "Regroupement de facteurs\nRegardons maintenant la masse moyenne selon la couleur des yeux:\n\nstarwars %&gt;%\n  mutate(eye_color = fct_lump(eye_color, n = 6)) %&gt;%\n  group_by(eye_color) %&gt;%\n  summarise(mean_mass = mean(mass, na.rm = TRUE)) %&gt;%\n  ggplot(aes(x = eye_color, y = mean_mass)) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regroupement-et-changement-dordre",
+    "href": "slides/04 - Data types/04 - data-types.html#regroupement-et-changement-dordre",
+    "title": "04 - Types de données et transformations",
+    "section": "Regroupement et changement d’ordre !",
+    "text": "Regroupement et changement d’ordre !\nNous allons maintenant regrouper les couleurs des yeux et les ordonner selon la masse moyenne\n\nstarwars %&gt;%\n  mutate(eye_color = fct_lump(eye_color, n = 6)) %&gt;%\n  group_by(eye_color) %&gt;%\n  summarise(mean_mass = mean(mass, na.rm = TRUE)) %&gt;%\n  mutate(eye_color = fct_reorder(eye_color, mean_mass)) %&gt;%\n  ggplot(aes(x = eye_color, y = mean_mass)) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#exemple-hotels-1",
+    "href": "slides/04 - Data types/04 - data-types.html#exemple-hotels-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Exemple: Hotels",
+    "text": "Exemple: Hotels"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#indication-manuelle-des-niveaux",
+    "href": "slides/04 - Data types/04 - data-types.html#indication-manuelle-des-niveaux",
+    "title": "04 - Types de données et transformations",
+    "section": "Indication manuelle des niveaux",
+    "text": "Indication manuelle des niveaux\nLa variable month.name est une variable intégrée dans R qui contient les noms des mois en anglais et dans le bon ordre.\n\n\nhotels &lt;- readr::read_csv(\"data/hotels.csv\")\n\nhotels %&gt;%\n  mutate(arrival_date_month = fct_relevel(arrival_date_month, month.name)) %&gt;% # On réordonne les mois\n  group_by(hotel, arrival_date_month) %&gt;%   # group by type d'hotel et mois d'arrivée\n  summarise(mean_adr = mean(adr)) %&gt;%       # calcul de l'ADR moyen pour chaque groupe\n  ggplot(aes(\n    x = arrival_date_month,\n    y = mean_adr,                           # mean_adr sur y-axis\n    group = hotel,                          # Groupe les lignes par type\n    color = hotel)                          # couleur par type\n    ) +\n  geom_line() +                             # On veut des lignes\n  scale_y_continuous(labels = label_dollar()) +\n  theme_minimal() +                         # Utilise le minimal theme\n  labs(x = \"Arrival month\",                 # On met à jour les labels\n       y = \"Mean ADR (average daily rate)\",\n       title = \"Comparison of resort and city hotel prices across months\",\n       subtitle = \"Resort hotel prices soar in the summer while city hotel prices remain\\nrelatively constant throughout the year\",\n       color = \"Hotel type\") +\n  scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) # On s'assure que les labels ne se chevauchent pas"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#ordre-selon-la-fréquence-fct_infreq",
+    "href": "slides/04 - Data types/04 - data-types.html#ordre-selon-la-fréquence-fct_infreq",
+    "title": "04 - Types de données et transformations",
+    "section": "Ordre selon la fréquence : fct_infreq()",
+    "text": "Ordre selon la fréquence : fct_infreq()\n\nstarwars %&gt;%\n  ggplot(aes(y = fct_infreq(hair_color))) + \n  geom_bar()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs-fct_lump",
+    "href": "slides/04 - Data types/04 - data-types.html#regroupement-de-facteurs-fct_lump",
+    "title": "04 - Types de données et transformations",
+    "section": "Regroupement de facteurs : fct_lump()",
+    "text": "Regroupement de facteurs : fct_lump()\n\nstarwars %&gt;%\n  mutate(skin_color = fct_lump(skin_color, n = 5)) %&gt;%\n  count(skin_color, sort = TRUE)\n\n# A tibble: 6 × 2\n  skin_color     n\n  &lt;fct&gt;      &lt;int&gt;\n1 Other         41\n2 fair          17\n3 light         11\n4 dark           6\n5 green          6\n6 grey           6"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#choix-manuel-de-lordre-fct_relevel",
+    "href": "slides/04 - Data types/04 - data-types.html#choix-manuel-de-lordre-fct_relevel",
+    "title": "04 - Types de données et transformations",
+    "section": "Choix manuel de l’ordre : fct_relevel()",
+    "text": "Choix manuel de l’ordre : fct_relevel()\nLa variable month.name est une variable intégrée dans R qui contient les noms des mois en anglais et dans le bon ordre.\n\n\nhotels &lt;- readr::read_csv(\"data/hotels.csv\")\n\nhotels %&gt;%\n  mutate(arrival_date_month = fct_relevel(arrival_date_month, month.name)) %&gt;% # On réordonne les mois\n  group_by(hotel, arrival_date_month) %&gt;%   # group by type d'hotel et mois d'arrivée\n  summarise(mean_adr = mean(adr)) %&gt;%       # calcul de l'ADR moyen pour chaque groupe\n  ggplot(aes(\n    x = arrival_date_month,\n    y = mean_adr,                           # mean_adr sur y-axis\n    group = hotel,                          # Groupe les lignes par type\n    color = hotel)                          # couleur par type\n    ) +\n  geom_line() +                             # On veut des lignes\n  scale_y_continuous(labels = label_dollar()) +\n  theme_minimal() +                         # Utilise le minimal theme\n  labs(x = \"Arrival month\",                 # On met à jour les labels\n       y = \"Mean ADR (average daily rate)\",\n       title = \"Comparison of resort and city hotel prices across months\",\n       subtitle = \"Resort hotel prices soar in the summer while city hotel prices remain\\nrelatively constant throughout the year\",\n       color = \"Hotel type\") +\n  scale_x_discrete(guide = guide_axis(check.overlap = TRUE)) # On s'assure que les labels ne se chevauchent pas"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#na-1",
+    "href": "slides/04 - Data types/04 - data-types.html#na-1",
+    "title": "04 - Types de données et transformations",
+    "section": "NA",
+    "text": "NA\nLes NA sont utilisés par R pour représenter des valeurs manquantes. Ils sont de type logique.\n\n\ntypeof(NA)\n\n[1] \"logical\"\n\n\n\n\n\n\n# TRUE or NA\nTRUE | NA\n\n[1] TRUE\n\n\n\n\n# FALSE or NA\nFALSE | NA\n\n[1] NA"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#classes-de-données-1",
+    "href": "slides/04 - Data types/04 - data-types.html#classes-de-données-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Classes de données",
+    "text": "Classes de données\nNous avons parlé des types des données et nous allons maintenant parler des classes des données:\n\nVecteurs sont comme des briques LEGO\nOn les colle ensemble pour construire des structures plus compliquées, notamment des représentations de données\n\nPar exemples:\n\nfactor\ndate\ndata frame"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#renommer-les-niveaux-fct_recode",
+    "href": "slides/04 - Data types/04 - data-types.html#renommer-les-niveaux-fct_recode",
+    "title": "04 - Types de données et transformations",
+    "section": "Renommer les niveaux : fct_recode()",
+    "text": "Renommer les niveaux : fct_recode()\nSi on veut simplement renommer les niveaux, on peut utiliser fct_recode()\n\ncat_lovers %&gt;%\n  mutate(handedness = fct_recode(handedness, \"Left\" = \"Gaucher\", \"Right\" = \"Droitier\")) %&gt;%\n  mutate(handedness = fct_infreq(handedness)) %&gt;%\n  ggplot(mapping = aes(x = handedness)) +\n  geom_bar()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#les-données",
+    "href": "slides/04 - Data types/04 - data-types.html#les-données",
+    "title": "04 - Types de données et transformations",
+    "section": "Les données",
+    "text": "Les données\n\nSource: Religious Landscape Study"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#les-données-1",
+    "href": "slides/04 - Data types/04 - data-types.html#les-données-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Les données",
+    "text": "Les données\n\n\nRows: 12\nColumns: 6\n$ `Religious tradition` &lt;chr&gt; \"Buddhist\", \"Catholic\", \"Evangelical Protestant\"…\n$ `Less than $30,000`   &lt;dbl&gt; 0.36, 0.36, 0.35, 0.17, 0.53, 0.48, 0.16, 0.29, …\n$ `$30,000-$49,999`     &lt;dbl&gt; 0.18, 0.19, 0.22, 0.13, 0.22, 0.25, 0.15, 0.20, …\n$ `$50,000-$99,999`     &lt;dbl&gt; 0.32, 0.26, 0.28, 0.34, 0.17, 0.22, 0.24, 0.28, …\n$ `$100,000 or more`    &lt;dbl&gt; 0.13, 0.19, 0.14, 0.36, 0.08, 0.04, 0.44, 0.23, …\n$ `Sample Size`         &lt;dbl&gt; 233, 6137, 7462, 172, 1704, 208, 708, 5208, 594,…"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#noms-des-colonnes",
+    "href": "slides/04 - Data types/04 - data-types.html#noms-des-colonnes",
+    "title": "04 - Types de données et transformations",
+    "section": "Noms des colonnes",
+    "text": "Noms des colonnes\n\nrel_inc %&gt;%\n  rename( \n    religion = `Religious tradition`, \n    n = `Sample Size` \n  ) \n\n# A tibble: 12 × 6\n   religion              `Less than $30,000` `$30,000-$49,999` `$50,000-$99,999`\n   &lt;chr&gt;                               &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;\n 1 \"Buddhist\"                           0.36              0.18              0.32\n 2 \"Catholic\"                           0.36              0.19              0.26\n 3 \"Evangelical Protest…                0.35              0.22              0.28\n 4 \"Hindu\"                              0.17              0.13              0.34\n 5 \"Historically Black …                0.53              0.22              0.17\n 6 \"Jehovah's Witness\"                  0.48              0.25              0.22\n 7 \"Jewish\"                             0.16              0.15              0.24\n 8 \"Mainline Protestant\"                0.29              0.2               0.28\n 9 \"Mormon\"                             0.27              0.2               0.33\n10 \"Muslim\"                             0.34              0.17              0.29\n11 \"Orthodox Christian\"                 0.18              0.17              0.36\n12 \"Unaffiliated (relig…                0.33              0.2               0.26\n# ℹ 2 more variables: `$100,000 or more` &lt;dbl&gt;, n &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#tidy",
+    "href": "slides/04 - Data types/04 - data-types.html#tidy",
+    "title": "04 - Types de données et transformations",
+    "section": "Tidy ?",
+    "text": "Tidy ?\n\n\n# A tibble: 12 × 6\n   religion              `Less than $30,000` `$30,000-$49,999` `$50,000-$99,999`\n   &lt;chr&gt;                               &lt;dbl&gt;             &lt;dbl&gt;             &lt;dbl&gt;\n 1 \"Buddhist\"                           0.36              0.18              0.32\n 2 \"Catholic\"                           0.36              0.19              0.26\n 3 \"Evangelical Protest…                0.35              0.22              0.28\n 4 \"Hindu\"                              0.17              0.13              0.34\n 5 \"Historically Black …                0.53              0.22              0.17\n 6 \"Jehovah's Witness\"                  0.48              0.25              0.22\n 7 \"Jewish\"                             0.16              0.15              0.24\n 8 \"Mainline Protestant\"                0.29              0.2               0.28\n 9 \"Mormon\"                             0.27              0.2               0.33\n10 \"Muslim\"                             0.34              0.17              0.29\n11 \"Orthodox Christian\"                 0.18              0.17              0.36\n12 \"Unaffiliated (relig…                0.33              0.2               0.26\n# ℹ 2 more variables: `$100,000 or more` &lt;dbl&gt;, n &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#pivoter-les-données",
+    "href": "slides/04 - Data types/04 - data-types.html#pivoter-les-données",
+    "title": "04 - Types de données et transformations",
+    "section": "Pivoter les données",
+    "text": "Pivoter les données\n\nrel_inc %&gt;%\n  rename(\n    religion = `Religious tradition`,\n    n = `Sample Size`\n  ) %&gt;%\n  pivot_longer( \n    cols = -c(religion, n),   # Toutes les colonnes sauf religion et n \n    names_to = \"income\",  \n    values_to = \"proportion\" \n  ) %&gt;% \n  print(n = 15)"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#calcul-des-fréquences",
+    "href": "slides/04 - Data types/04 - data-types.html#calcul-des-fréquences",
+    "title": "04 - Types de données et transformations",
+    "section": "Calcul des fréquences",
+    "text": "Calcul des fréquences\n\nrel_inc %&gt;%\n  rename(\n    religion = `Religious tradition`,\n    n = `Sample Size`\n  ) %&gt;%\n  pivot_longer(\n    cols = -c(religion, n), \n    names_to = \"income\", \n    values_to = \"proportion\"\n  ) %&gt;%\n  mutate(frequency = round(proportion * n)) \n\n# A tibble: 48 × 5\n   religion                   n income            proportion frequency\n   &lt;chr&gt;                  &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;     &lt;dbl&gt;\n 1 Buddhist                 233 Less than $30,000       0.36        84\n 2 Buddhist                 233 $30,000-$49,999         0.18        42\n 3 Buddhist                 233 $50,000-$99,999         0.32        75\n 4 Buddhist                 233 $100,000 or more        0.13        30\n 5 Catholic                6137 Less than $30,000       0.36      2209\n 6 Catholic                6137 $30,000-$49,999         0.19      1166\n 7 Catholic                6137 $50,000-$99,999         0.26      1596\n 8 Catholic                6137 $100,000 or more        0.19      1166\n 9 Evangelical Protestant  7462 Less than $30,000       0.35      2612\n10 Evangelical Protestant  7462 $30,000-$49,999         0.22      1642\n# ℹ 38 more rows"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#enregistrer-les-données",
+    "href": "slides/04 - Data types/04 - data-types.html#enregistrer-les-données",
+    "title": "04 - Types de données et transformations",
+    "section": "Enregistrer les données",
+    "text": "Enregistrer les données\n\nrel_inc_long &lt;- rel_inc %&gt;% \n  rename(\n    religion = `Religious tradition`,\n    n = `Sample Size`\n  ) %&gt;%\n  pivot_longer(\n    cols = -c(religion, n), \n    names_to = \"income\", \n    values_to = \"proportion\"\n  ) %&gt;%\n  mutate(frequency = round(proportion * n))"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#visualisation",
+    "href": "slides/04 - Data types/04 - data-types.html#visualisation",
+    "title": "04 - Types de données et transformations",
+    "section": "Visualisation",
+    "text": "Visualisation\n\nrel_inc_long %&gt;%\n  ggplot(aes(y = religion, x = frequency)) +\n  geom_col()"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#recodage-des-religions",
+    "href": "slides/04 - Data types/04 - data-types.html#recodage-des-religions",
+    "title": "04 - Types de données et transformations",
+    "section": "Recodage des religions",
+    "text": "Recodage des religions\n\nrel_inc_long &lt;- rel_inc_long %&gt;%\n  mutate(religion = case_when(\n    religion == \"Evangelical Protestant\"           ~ \"Ev. Protestant\",\n    religion == \"Historically Black Protestant\"    ~ \"Hist. Black Protestant\",\n    religion == 'Unaffiliated (religious \"nones\")' ~ \"Unaffiliated\",\n    TRUE                                           ~ religion\n  ))"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#on-inverse-lordre",
+    "href": "slides/04 - Data types/04 - data-types.html#on-inverse-lordre",
+    "title": "04 - Types de données et transformations",
+    "section": "On inverse l’ordre",
+    "text": "On inverse l’ordre\n\nrel_inc_long &lt;- rel_inc_long %&gt;%\n  mutate(religion = fct_rev(religion))"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#on-nettoie-tout-ça",
+    "href": "slides/04 - Data types/04 - data-types.html#on-nettoie-tout-ça",
+    "title": "04 - Types de données et transformations",
+    "section": "On nettoie tout ça",
+    "text": "On nettoie tout ça\n\nggplot(rel_inc_long, aes(y = religion, x = frequency, fill = income)) + \n  geom_col(position = \"fill\") +                         # On veut des barres pleines pour les proportions\n  scale_fill_viridis_d() +                              # On change les couleurs\n  theme_minimal() +                                     # On change le thème\n  theme(legend.position = \"bottom\") +                   # On met la légende en bas\n  guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + # On met la légende sur 2 lignes\n  labs(                                                 # On met à jour les labels\n    x = \"Proportion\", y = \"\", \n    title = \"Income distribution by religious group\", \n    subtitle = \"Source: Pew Research Center, Religious Landscape Study\", \n    fill = \"Income\" \n    )"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#tada",
+    "href": "slides/04 - Data types/04 - data-types.html#tada",
+    "title": "04 - Types de données et transformations",
+    "section": "TADA ?",
+    "text": "TADA ?"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#tidy-1",
+    "href": "slides/04 - Data types/04 - data-types.html#tidy-1",
+    "title": "04 - Types de données et transformations",
+    "section": "Tidy !",
+    "text": "Tidy !\n\n\n# A tibble: 48 × 4\n   religion                   n income            proportion\n   &lt;chr&gt;                  &lt;dbl&gt; &lt;chr&gt;                  &lt;dbl&gt;\n 1 Buddhist                 233 Less than $30,000       0.36\n 2 Buddhist                 233 $30,000-$49,999         0.18\n 3 Buddhist                 233 $50,000-$99,999         0.32\n 4 Buddhist                 233 $100,000 or more        0.13\n 5 Catholic                6137 Less than $30,000       0.36\n 6 Catholic                6137 $30,000-$49,999         0.19\n 7 Catholic                6137 $50,000-$99,999         0.26\n 8 Catholic                6137 $100,000 or more        0.19\n 9 Evangelical Protestant  7462 Less than $30,000       0.35\n10 Evangelical Protestant  7462 $30,000-$49,999         0.22\n11 Evangelical Protestant  7462 $50,000-$99,999         0.28\n12 Evangelical Protestant  7462 $100,000 or more        0.14\n13 Hindu                    172 Less than $30,000       0.17\n14 Hindu                    172 $30,000-$49,999         0.13\n15 Hindu                    172 $50,000-$99,999         0.34\n# ℹ 33 more rows"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#on-veut-les-tranches-de-revenu-dans-le-bon-ordre",
+    "href": "slides/04 - Data types/04 - data-types.html#on-veut-les-tranches-de-revenu-dans-le-bon-ordre",
+    "title": "04 - Types de données et transformations",
+    "section": "On veut les tranches de revenu dans le bon ordre !",
+    "text": "On veut les tranches de revenu dans le bon ordre !\n\nrel_inc_long &lt;- rel_inc_long %&gt;%\n  mutate(income = fct_relevel(income, \"Less than $30,000\", \"$30,000-$49,999\", \"$50,000-$99,999\", \"$100,000 or more\"))"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#tada-1",
+    "href": "slides/04 - Data types/04 - data-types.html#tada-1",
+    "title": "04 - Types de données et transformations",
+    "section": "TADA !",
+    "text": "TADA !\n\n\nFigure 1"
+  },
+  {
+    "objectID": "slides/04 - Data types/04 - data-types.html#on-veut-les-revenu-dans-le-bon-ordre",
+    "href": "slides/04 - Data types/04 - data-types.html#on-veut-les-revenu-dans-le-bon-ordre",
+    "title": "04 - Types de données et transformations",
+    "section": "On veut les revenu dans le bon ordre !",
+    "text": "On veut les revenu dans le bon ordre !\n\nrel_inc_long &lt;- rel_inc_long %&gt;%\n  mutate(income = fct_relevel(income, \"$100,000 or more\", \"$50,000-$99,999\", \"$30,000-$49,999\", \"Less than $30,000\"))"
   }
 ]
