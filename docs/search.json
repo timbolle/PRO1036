@@ -3070,7 +3070,7 @@
     "href": "website/cours/cours.html#types-de-données-et-transformation",
     "title": "Cours",
     "section": "04 - Types de données et transformation",
-    "text": "04 - Types de données et transformation\nSlides : Web PDF"
+    "text": "04 - Types de données et transformation\nSlides : Web PDF\nLabs: Lab04 - College majors"
   },
   {
     "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html",
@@ -3261,5 +3261,33 @@
       "Semaine 4",
       "Lab 04 - Quel grade choisir ?"
     ]
+  },
+  {
+    "objectID": "classroom/lab04-college-majors/lab-04.html",
+    "href": "classroom/lab04-college-majors/lab-04.html",
+    "title": "Lab 04 - College majors",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(scales)\nlibrary(fivethirtyeight)"
+  },
+  {
+    "objectID": "classroom/lab04-college-majors/lab-04.html#exercices",
+    "href": "classroom/lab04-college-majors/lab-04.html#exercices",
+    "title": "Lab 04 - College majors",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 4\n…\n\n\nExercice 5\n…\n\n\nExercice 6\n…\n\n\nExercice 7\n…\n\n\nExercice 8\n…\n\n\nExercice 9\n…\n\n\nExercice 10\n…"
+  },
+  {
+    "objectID": "labs/lab04-college-majors/lab-04.html",
+    "href": "labs/lab04-college-majors/lab-04.html",
+    "title": "Lab 04 - College majors",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(scales)\nlibrary(fivethirtyeight)"
+  },
+  {
+    "objectID": "labs/lab04-college-majors/lab-04.html#exercices",
+    "href": "labs/lab04-college-majors/lab-04.html#exercices",
+    "title": "Lab 04 - College majors",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 2\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 3\nRemplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.\n\n\nExercice 4\n…\n\n\nExercice 5\n…\n\n\nExercice 6\n…\n\n\nExercice 7\n…\n\n\nExercice 8\n…\n\n\nExercice 9\n…\n\n\nExercice 10\n…"
   }
 ]

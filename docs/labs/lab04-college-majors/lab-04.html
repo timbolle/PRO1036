@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Insert your name here">
 
-<title>Cours – PRO1036</title>
+<title>Lab 04 - College majors – PRO1036</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -113,7 +128,7 @@ div.csl-indent {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../website/cours/cours.html" aria-current="page"> 
+    <a class="nav-link" href="../../website/cours/cours.html"> 
 <span class="menu-text">Cours</span></a>
   </li>  
   <li class="nav-item">
@@ -140,12 +155,20 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">00 - Introduction</a></li>
-  <li><a href="#r-basics" id="toc-r-basics" class="nav-link" data-scroll-target="#r-basics">01 - R basics</a></li>
-  <li><a href="#visualisation-de-données" id="toc-visualisation-de-données" class="nav-link" data-scroll-target="#visualisation-de-données">02 - Visualisation de données</a></li>
-  <li><a href="#manipulation-de-données-et-forme-tidy" id="toc-manipulation-de-données-et-forme-tidy" class="nav-link" data-scroll-target="#manipulation-de-données-et-forme-tidy">03 - Manipulation de données et forme Tidy</a></li>
-  <li><a href="#types-de-données-et-transformation" id="toc-types-de-données-et-transformation" class="nav-link" data-scroll-target="#types-de-données-et-transformation">04 - Types de données et transformation</a></li>
-  <li><a href="#références" id="toc-références" class="nav-link" data-scroll-target="#références">Références</a></li>
+  <li><a href="#chargement-des-packages-et-des-données" id="toc-chargement-des-packages-et-des-données" class="nav-link active" data-scroll-target="#chargement-des-packages-et-des-données">Chargement des packages et des données</a></li>
+  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  <ul class="collapse">
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
+  <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
+  <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
+  <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
+  <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
+  <li><a href="#exercice-6" id="toc-exercice-6" class="nav-link" data-scroll-target="#exercice-6">Exercice 6</a></li>
+  <li><a href="#exercice-7" id="toc-exercice-7" class="nav-link" data-scroll-target="#exercice-7">Exercice 7</a></li>
+  <li><a href="#exercice-8" id="toc-exercice-8" class="nav-link" data-scroll-target="#exercice-8">Exercice 8</a></li>
+  <li><a href="#exercice-9" id="toc-exercice-9" class="nav-link" data-scroll-target="#exercice-9">Exercice 9</a></li>
+  <li><a href="#exercice-10" id="toc-exercice-10" class="nav-link" data-scroll-target="#exercice-10">Exercice 10</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -154,14 +177,26 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cours</h1>
+<h1 class="title">Lab 04 - College majors</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Insert your name here </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Invalid Date</p>
+    </div>
+  </div>
   
     
   </div>
@@ -171,96 +206,58 @@ div.csl-indent {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">00 - Introduction</h2>
-<p>Slide: <a href="../../slides/00 - Intro/00 - intro.html" target="_blank">Web</a> <a href="00 - intro.pdf">PDF</a></p>
-</section>
-<section id="r-basics" class="level2">
-<h2 class="anchored" data-anchor-id="r-basics">01 - R basics</h2>
-<p>Slide: <a href="../../slides/01 - Toolbox/01 - toolbox.html" target="_blank">Web</a> <a href="01 - toolbox.pdf">PDF</a> <br>Demo: <a href="../../website/demo/unvotes/unvotes.html">UN Votes</a> <br>Labs: <a href="../../website/labs/lab01-hello-world/lab01-hello-world.html">Labo01 - Hello WoRld</a> <br>Exercices: <a href="../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exo01 - Pet names</a></p>
-<section id="à-faire-pour-la-semaine-prochaine" class="level4">
-<h4 class="anchored" data-anchor-id="à-faire-pour-la-semaine-prochaine">À faire pour la semaine prochaine:</h4>
-<ul class="task-list">
-<li><label><input type="checkbox">Installer R (<a href="https://www.r-project.org/">R project</a>)</label></li>
-<li><label><input type="checkbox">Installer <a href="https://posit.co/download/rstudio-desktop/">Rstudio</a></label></li>
-<li><label><input type="checkbox">Installer <a href="https://git-scm.com/downloads">Git</a></label></li>
-<li><label><input type="checkbox">Créer un compte sur <a href="https://github.com/">GitHub</a></label></li>
-<li><label><input type="checkbox">Lire le Chapitre <a href="https://r4ds.hadley.nz/intro"><em>Introduction</em></a> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
-<li><label><input type="checkbox">Faire le Lab01</label></li>
-<li><label><input type="checkbox">(optionel) Faire l’exercice 01</label></li>
-</ul>
-<p>Lectures complémentaires:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Chapitre <a href="../papers/Wickham2019_Welcome-to-the-Tidyverse.pdf"><em>Welcome to the Tidyverse</em></a> <span class="citation" data-cites="wickhamWelcomeTidyverse2019">(<a href="#ref-wickhamWelcomeTidyverse2019" role="doc-biblioref">Wickham et al., 2019</a>)</span></label></li>
-</ul>
-</section>
-</section>
-<section id="visualisation-de-données" class="level2">
-<h2 class="anchored" data-anchor-id="visualisation-de-données">02 - Visualisation de données</h2>
-<p>Slide Part-1: <a href="../../slides/02 - Dataviz/02 - dataviz.html" target="_blank">Web</a> <a href="02 - dataviz - P1.pdf">PDF</a></p>
-<p>Slide Part-2: <a href="../../slides/02 - Dataviz/02 - dataviz - 02.html" target="_blank">Web</a> <a href="02 - dataviz - P2.pdf">PDF</a></p>
-<p>Demo: Completez l’exercice disposible sur GitHub - <a href="https://github.com/PRO1036/star-wars" class="uri">https://github.com/PRO1036/star-wars</a></p>
-<p>Labs: <a href="../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html">Lab02 - Plastic waster</a></p>
-<section id="à-faire-pour-la-semaine-prochaine-1" class="level4">
-<h4 class="anchored" data-anchor-id="à-faire-pour-la-semaine-prochaine-1">À faire pour la semaine prochaine:</h4>
-<ul class="task-list">
-<li><label><input type="checkbox">Terminer le lab02</label></li>
-<li><label><input type="checkbox">Envoyer le lab02 sur le repo Github classroom à votre nom</label></li>
-<li><label><input type="checkbox">Lire le Chapitre <a href="https://r4ds.had.co.nz/data-visualisation.html"><em>Data Visualisation</em></a> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
-</ul>
-<p>Lectures complémentaires:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Chapitre <a href="https://openintro-ims.netlify.app/explore-numerical"><em>Exploring numerical data</em></a> <span class="citation" data-cites="cetinkaya-rundelIntroductionModernStatistics2024">(<a href="#ref-cetinkaya-rundelIntroductionModernStatistics2024" role="doc-biblioref">Çetinkaya-Rundel and Hardin, 2024</a>)</span></label></li>
-<li><label><input type="checkbox">Chapitre <a href="https://openintro-ims.netlify.app/explore-categorical"><em>Exploring categorical data</em></a> <span class="citation" data-cites="cetinkaya-rundelIntroductionModernStatistics2024">(<a href="#ref-cetinkaya-rundelIntroductionModernStatistics2024" role="doc-biblioref">Çetinkaya-Rundel and Hardin, 2024</a>)</span></label></li>
-<li><label><input type="checkbox">Livre <a href="https://ggplot2-book.org/"><em>ggplot2: Elegant Graphics for Data Analysis</em></a> <span class="citation" data-cites="wickhamGgplot2ElegantGraphics2024">(<a href="#ref-wickhamGgplot2ElegantGraphics2024" role="doc-biblioref">Wickham et al., 2024</a>)</span></label></li>
-</ul>
-</section>
-</section>
-<section id="manipulation-de-données-et-forme-tidy" class="level2">
-<h2 class="anchored" data-anchor-id="manipulation-de-données-et-forme-tidy">03 - Manipulation de données et forme Tidy</h2>
-<p>Slides : <a href="../../slides/03 - Tidy-data/03 - tidy-data.html" target="_blank">Web</a> <a href="03 - tidy-data.pdf">PDF</a></p>
-<p>Demo : <a href="https://github.com/PRO1036/hotel-bookings">Hotel Bookings</a></p>
-<p>Labs: <a href="../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Lab03 - Nobel laureates</a></p>
-<section id="à-faire-pour-la-semaine-prochaine-2" class="level4">
-<h4 class="anchored" data-anchor-id="à-faire-pour-la-semaine-prochaine-2">À faire pour la semaine prochaine:</h4>
-<ul class="task-list">
-<li><label><input type="checkbox">Terminer le lab03</label></li>
-<li><label><input type="checkbox">Envoyer le lab03 sur le repo Github classroom à votre nom</label></li>
-<li><label><input type="checkbox">Lire le Chapitre <a href="https://r4ds.hadley.nz/data-transform"><em>Data Transformation</em></a> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
-<li><label><input type="checkbox">Lire le Chapitre <a href="https://r4ds.hadley.nz/data-tidy"><em>Data Tidy</em></a> <span class="citation" data-cites="wickhamDataScience2023">(<a href="#ref-wickhamDataScience2023" role="doc-biblioref">Wickham et al., 2023</a>)</span></label></li>
-</ul>
-<p>Lectures complémentaires:</p>
-<ul class="task-list">
-<li><label><input type="checkbox">Article <a href="../papers/Wickham2014_Tidy-Data.pdf"><em>Tidy Data</em></a> <span class="citation" data-cites="wickhamTidyData2014">(<a href="#ref-wickhamTidyData2014" role="doc-biblioref">Wickham, 2014</a>)</span></label></li>
-</ul>
-</section>
-</section>
-<section id="types-de-données-et-transformation" class="level2">
-<h2 class="anchored" data-anchor-id="types-de-données-et-transformation">04 - Types de données et transformation</h2>
-<p>Slides : <a href="../../slides/04 - Data types/04 - data-types.html" target="_blank">Web</a> <a href="04 - data-types.pdf">PDF</a></p>
-<p>Labs: <a href="../../website/labs/lab04-college-majors/lab04-college-majors.html">Lab04 - College majors</a></p>
-</section>
-<section id="références" class="level1">
-<h1>Références</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
-<div id="ref-cetinkaya-rundelIntroductionModernStatistics2024" class="csl-entry" role="listitem">
-Çetinkaya-Rundel, M. and Hardin, J. (2024). <em>Introduction to <span>Modern Statistics</span></em> (2nd ed.). OpenIntro.
+<section id="chargement-des-packages-et-des-données" class="level3">
+<h3 class="anchored" data-anchor-id="chargement-des-packages-et-des-données">Chargement des packages et des données</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fivethirtyeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="ref-wickhamTidyData2014" class="csl-entry" role="listitem">
-Wickham, H. (2014). Tidy <span>Data</span>. <em>Journal of Statistical Software</em>, <em>59</em>, 1–23. <a href="https://doi.org/10.18637/jss.v059.i10">https://doi.org/10.18637/jss.v059.i10</a>
-</div>
-<div id="ref-wickhamWelcomeTidyverse2019" class="csl-entry" role="listitem">
-Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., Takahashi, K., <em>et al.</em>Yutani, H. (2019). Welcome to the <span>Tidyverse</span>. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
-</div>
-<div id="ref-wickhamDataScience2023" class="csl-entry" role="listitem">
-Wickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). <em>R for <span>Data Science</span></em> (2nd ed.). O’Reilly Media, Inc.
-</div>
-<div id="ref-wickhamGgplot2ElegantGraphics2024" class="csl-entry" role="listitem">
-Wickham, H., Navarro, D. and Pedersen, T. L. (2024). <em>Ggplot2: <span>Elegant Graphics</span> for <span>Data Analysis</span></em> (3rd ed.).
-</div>
-</div>
+</section>
+<section id="exercices" class="level2">
+<h2 class="anchored" data-anchor-id="exercices">Exercices</h2>
+<section id="exercice-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
+<p>Remplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.</p>
+</section>
+<section id="exercice-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-2">Exercice 2</h3>
+<p>Remplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.</p>
+</section>
+<section id="exercice-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-3">Exercice 3</h3>
+<p>Remplacez ce texte par vos réponses aux questions. Ajoutez les blocs de code nécessaires. N’oubliez pas d’étiqueter vos blocs de code.</p>
+</section>
+<section id="exercice-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-4">Exercice 4</h3>
+<p>…</p>
+</section>
+<section id="exercice-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-5">Exercice 5</h3>
+<p>…</p>
+</section>
+<section id="exercice-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-6">Exercice 6</h3>
+<p>…</p>
+</section>
+<section id="exercice-7" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-7">Exercice 7</h3>
+<p>…</p>
+</section>
+<section id="exercice-8" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-8">Exercice 8</h3>
+<p>…</p>
+</section>
+<section id="exercice-9" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-9">Exercice 9</h3>
+<p>…</p>
+</section>
+<section id="exercice-10" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-10">Exercice 10</h3>
+<p>…</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -370,11 +367,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
