@@ -26,7 +26,7 @@ Nous devons également noter qu’il y a de nombreux facteurs à prendre en comp
 
 Go to the course GitHub organization and locate your homework repo, which should be named `hw-04-college-majors-YOUR_GITHUB_USERNAME`.
 Grab the URL of the repo, and clone it in RStudio.
-First, open the R Markdown document `hw-04.Rmd` and Knit it.
+First, open the R Markdown document `lab-04.Rmd` and Knit it.
 Make sure it compiles without errors.
 The output will be in the file markdown `.md` file with the same name.
 

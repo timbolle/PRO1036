@@ -7,12 +7,10 @@ output: github_document
 
 ### Chargement des packages et des données
 
-```{r load-packages, message=FALSE}
-library(tidyverse) 
-```
-
-```{r load-data, message=FALSE}
-nobel <- read_csv("data/nobel.csv")
+```{r load-packages, message = FALSE, eval = TRUE}
+library(tidyverse)
+library(scales)
+library(fivethirtyeight)
 ```
 
 ## Exercices
