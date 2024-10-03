@@ -2951,7 +2951,7 @@
     "href": "slides/04 - Data types/04 - data-types.html#renommer-les-niveaux-fct_recode",
     "title": "04 - Types de données et transformations",
     "section": "Renommer les niveaux : fct_recode()",
-    "text": "Renommer les niveaux : fct_recode()\nSi on veut simplement renommer les niveaux, on peut utiliser fct_recode()\n\ncat_lovers %&gt;%\n  mutate(handedness = fct_recode(handedness, \"Left\" = \"Gaucher\", \"Right\" = \"Droitier\")) %&gt;%\n  mutate(handedness = fct_infreq(handedness)) %&gt;%\n  ggplot(mapping = aes(x = handedness)) +\n  geom_bar()"
+    "text": "Renommer les niveaux : fct_recode()\nSi on veut simplement renommer les niveaux, on peut utiliser fct_recode()\n\ncat_lovers %&gt;%\n  mutate(handedness = fct_recode(handedness, gaucher = \"left\", droitier = \"right\")) %&gt;%\n  mutate(handedness = fct_infreq(handedness)) %&gt;%\n  ggplot(mapping = aes(x = handedness)) +\n  geom_bar()"
   },
   {
     "objectID": "slides/04 - Data types/04 - data-types.html#les-données",
@@ -3070,7 +3070,7 @@
     "href": "website/cours/cours.html#types-de-données-et-transformation",
     "title": "Cours",
     "section": "04 - Types de données et transformation",
-    "text": "04 - Types de données et transformation\nSlides : Web PDF\nDemo: Star Wars - Data preparation\nLabs: Lab04 - College majors"
+    "text": "04 - Types de données et transformation\nSlides : Web PDF\nDemo: Star Wars - Data preparation\nLabs: Lab04 - College majors\n\nÀ faire pour la semaine prochaine:\n\nTerminer le lab04\nEnvoyer le lab04 sur le repo Github classroom à votre nom\nLire le Chapitre Factors (Wickham et al., 2023)\n\nLectures complémentaires:\n\nLire le Chapitre Numbers (Wickham et al., 2023)\nLire le Chapitre Strings (Wickham et al., 2023)\nLire le Chapitre Dates and Time (Wickham et al., 2023)\nLire le Chapitre Missing Values (Wickham et al., 2023)"
   },
   {
     "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html",

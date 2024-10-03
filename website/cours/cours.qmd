@@ -74,6 +74,19 @@ Demo: [Star Wars - Data preparation](https://github.com/PRO1036/star-wars-2)
 
 Labs: [Lab04 - College majors](../labs/lab04-college-majors/lab04-college-majors.qmd)
 
+#### À faire pour la semaine prochaine:
+
+-   [ ] Terminer le lab04
+-   [ ] Envoyer le lab04 sur le repo Github classroom à votre nom
+-   [ ] Lire le Chapitre [*Factors*](https://r4ds.hadley.nz/factors) [@wickhamDataScience2023]
+
+Lectures complémentaires:
+
+-   [ ] Chapitre [*Numbers*](https://r4ds.hadley.nz/numbers) [@wickhamDataScience2023]
+-   [ ] Chapitre [*Strings*](https://r4ds.hadley.nz/strings) [@wickhamDataScience2023]
+-   [ ] Chapitre [*Dates and Time*](https://r4ds.hadley.nz/datetimes) [@wickhamDataScience2023]
+-   [ ] Chapitre [*Missing Values*](https://r4ds.hadley.nz/missing-values) [@wickhamDataScience2023]
+
 # Références
 
 ::: {#refs}

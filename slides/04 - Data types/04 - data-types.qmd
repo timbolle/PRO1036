@@ -677,7 +677,7 @@ Si on veut simplement renommer les niveaux, on peut utiliser `fct_recode()`
 
 ```{r}
 cat_lovers %>%
-  mutate(handedness = fct_recode(handedness, "Left" = "Gaucher", "Right" = "Droitier")) %>%
+  mutate(handedness = fct_recode(handedness, gaucher = "left", droitier = "right")) %>%
   mutate(handedness = fct_infreq(handedness)) %>%
   ggplot(mapping = aes(x = handedness)) +
   geom_bar()
