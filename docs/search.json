@@ -3070,7 +3070,7 @@
     "href": "website/cours/cours.html#types-de-données-et-transformation",
     "title": "Cours",
     "section": "04 - Types de données et transformation",
-    "text": "04 - Types de données et transformation\nSlides : Web PDF\nDemo: Star Wars - Data preparation\nLabs: Lab04 - College majors\n\nÀ faire pour la semaine prochaine:\n\nTerminer le lab04\nEnvoyer le lab04 sur le repo Github classroom à votre nom\nLire le Chapitre Factors (Wickham et al., 2023)\n\nLectures complémentaires:\n\nLire le Chapitre Numbers (Wickham et al., 2023)\nLire le Chapitre Strings (Wickham et al., 2023)\nLire le Chapitre Dates and Time (Wickham et al., 2023)\nLire le Chapitre Missing Values (Wickham et al., 2023)"
+    "text": "04 - Types de données et transformation\nSlides : Web PDF\nDemo: Star Wars - Data preparation\nLabs: Lab04 - College majors\n\nÀ faire pour la semaine prochaine:\n\nTerminer le lab04\nEnvoyer le lab04 sur le repo Github classroom à votre nom\nLire le Chapitre Factors (Wickham et al., 2023)\n\nLectures complémentaires:\n\nChapitre Numbers (Wickham et al., 2023)\nChapitre Strings (Wickham et al., 2023)\nChapitre Dates and Time (Wickham et al., 2023)\nChapitre Missing Values (Wickham et al., 2023)"
   },
   {
     "objectID": "website/labs/lab04-college-majors/hw-04-college-majors.html",
@@ -3345,5 +3345,229 @@
     "title": "Star Wars - Préparation de données",
     "section": "Exercice 7",
     "text": "Exercice 7\nCréez une nouvelle variable bmi (Body Mass Index) en utilisant les colonnes mass et height. Assurez-vous que les valeurs soient correctes et que les valeurs manquantes soient traitées correctement.\nRefaite le boxplot de la question précédente en utilisant le BMI à la place de la masse."
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#présentations",
+    "href": "slides/05 - import-join/05 - import-join.html#présentations",
+    "title": "05 - Importation et jointure de données",
+    "section": "Présentations",
+    "text": "Présentations"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#readr",
+    "href": "slides/05 - import-join/05 - import-join.html#readr",
+    "title": "05 - Importation et jointure de données",
+    "section": "readr",
+    "text": "readr\n\nread_csv() - fichiers CSV\n\nCSV: comma-separated values - valeurs séparées par des virgules\n\nread_csv2() - fichiers CSV mais où le séparateur est un point-virgule\n\nCommun dans les pays où le séparateur décimal est la virgule\n\nread_tsv() - fichiers TSV\n\nTSV: tab-separated values - valeurs séparées par des tabulations\n\nread_delim() - fichiers avec un délimiteur spécifique\n\nOn peut spécifier le délimiteur avec l’argument delim\n\n…"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#readxl",
+    "href": "slides/05 - import-join/05 - import-join.html#readxl",
+    "title": "05 - Importation et jointure de données",
+    "section": "readxl",
+    "text": "readxl\n\nread_excel() - Permet de lire des fichiers Excel"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#lecture-de-fichiers",
+    "href": "slides/05 - import-join/05 - import-join.html#lecture-de-fichiers",
+    "title": "05 - Importation et jointure de données",
+    "section": "Lecture de fichiers",
+    "text": "Lecture de fichiers\n\nnobel &lt;- read_csv(file = \"data/nobel.csv\")\nnobel\n\n# A tibble: 935 × 26\n      id firstname   surname  year category affiliation city  country born_date \n   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;date&gt;    \n 1     1 Wilhelm Co… Röntgen  1901 Physics  Munich Uni… Muni… Germany 1845-03-27\n 2     2 Hendrik A.  Lorentz  1902 Physics  Leiden Uni… Leid… Nether… 1853-07-18\n 3     3 Pieter      Zeeman   1902 Physics  Amsterdam … Amst… Nether… 1865-05-25\n 4     4 Henri       Becque…  1903 Physics  École Poly… Paris France  1852-12-15\n 5     5 Pierre      Curie    1903 Physics  École muni… Paris France  1859-05-15\n 6     6 Marie       Curie    1903 Physics  &lt;NA&gt;        &lt;NA&gt;  &lt;NA&gt;    1867-11-07\n 7     6 Marie       Curie    1911 Chemist… Sorbonne U… Paris France  1867-11-07\n 8     8 Lord        Raylei…  1904 Physics  Royal Inst… Lond… United… 1842-11-12\n 9     9 Philipp     Lenard   1905 Physics  Kiel Unive… Kiel  Germany 1862-06-07\n10    10 J.J.        Thomson  1906 Physics  University… Camb… United… 1856-12-18\n# ℹ 925 more rows\n# ℹ 17 more variables: died_date &lt;date&gt;, gender &lt;chr&gt;, born_city &lt;chr&gt;,\n#   born_country &lt;chr&gt;, born_country_code &lt;chr&gt;, died_city &lt;chr&gt;,\n#   died_country &lt;chr&gt;, died_country_code &lt;chr&gt;, overall_motivation &lt;chr&gt;,\n#   share &lt;dbl&gt;, motivation &lt;chr&gt;, born_country_original &lt;chr&gt;,\n#   born_city_original &lt;chr&gt;, died_country_original &lt;chr&gt;,\n#   died_city_original &lt;chr&gt;, city_original &lt;chr&gt;, country_original &lt;chr&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#noms-des-varaibles",
+    "href": "slides/05 - import-join/05 - import-join.html#noms-des-varaibles",
+    "title": "05 - Importation et jointure de données",
+    "section": "Noms des varaibles",
+    "text": "Noms des varaibles\nLe nom des variables n’est pas toujours optimal.\n\nedibnb_badnames &lt;- read_csv(\"data/edibnb-badnames.csv\")\nnames(edibnb_badnames)\n\n [1] \"ID\"                   \"Price\"                \"neighbourhood\"       \n [4] \"accommodates\"         \"Number of bathrooms\"  \"Number of Bedrooms\"  \n [7] \"n beds\"               \"Review Scores Rating\" \"Number of reviews\"   \n[10] \"listing_url\"         \n\n\nEt R n’aime pas les noms de variables avec des espaces.\n\nggplot(edibnb_badnames, aes(x = Number of bathrooms, y = Price)) +\n  geom_point()\n\nError: &lt;text&gt;:1:40: symbole inattendu\n1: ggplot(edibnb_badnames, aes(x = Number of\n                                           ^"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#option-1-spécifier-les-noms-des-variables",
+    "href": "slides/05 - import-join/05 - import-join.html#option-1-spécifier-les-noms-des-variables",
+    "title": "05 - Importation et jointure de données",
+    "section": "Option 1: Spécifier les noms des variables",
+    "text": "Option 1: Spécifier les noms des variables\n\nedibnb_col_names &lt;- read_csv(\"data/edibnb-badnames.csv\",\n                             col_names = c(\"id\", \"price\", \n                                           \"neighbourhood\", \"accommodates\",\n                                           \"bathroom\", \"bedroom\", \n                                           \"bed\", \"review_scores_rating\", \n                                           \"n_reviews\", \"url\"))\nnames(edibnb_col_names)\n\n [1] \"id\"                   \"price\"                \"neighbourhood\"       \n [4] \"accommodates\"         \"bathroom\"             \"bedroom\"             \n [7] \"bed\"                  \"review_scores_rating\" \"n_reviews\"           \n[10] \"url\""
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#option-2-utiliser-le-format-snake_case",
+    "href": "slides/05 - import-join/05 - import-join.html#option-2-utiliser-le-format-snake_case",
+    "title": "05 - Importation et jointure de données",
+    "section": "Option 2: Utiliser le format snake_case",
+    "text": "Option 2: Utiliser le format snake_case\n\nLes espaces sont remplacés par des underscores\nLes lettres sont en minuscules\n\nNous pouvons utiliser la fonction janitor::clean_names()\n\nedibnb_clean_names &lt;- read_csv(\"data/edibnb-badnames.csv\") %&gt;%\n  janitor::clean_names()\nnames(edibnb_clean_names)\n\n [1] \"id\"                   \"price\"                \"neighbourhood\"       \n [4] \"accommodates\"         \"number_of_bathrooms\"  \"number_of_bedrooms\"  \n [7] \"n_beds\"               \"review_scores_rating\" \"number_of_reviews\"   \n[10] \"listing_url\""
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#gestion-des-types-de-données",
+    "href": "slides/05 - import-join/05 - import-join.html#gestion-des-types-de-données",
+    "title": "05 - Importation et jointure de données",
+    "section": "Gestion des types de données",
+    "text": "Gestion des types de données\n\n\n\n\n\nread_csv(\"data/df-na.csv\")\n\n# A tibble: 9 × 3\n  x     y              z     \n  &lt;chr&gt; &lt;chr&gt;          &lt;chr&gt; \n1 1     a              hi    \n2 &lt;NA&gt;  b              hello \n3 3     Not applicable 9999  \n4 4     d              ola   \n5 5     e              hola  \n6 .     f              whatup\n7 7     g              wassup\n8 8     h              sup   \n9 9     i              &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#option-1-spécifier-les-nas",
+    "href": "slides/05 - import-join/05 - import-join.html#option-1-spécifier-les-nas",
+    "title": "05 - Importation et jointure de données",
+    "section": "Option 1: Spécifier les NAs",
+    "text": "Option 1: Spécifier les NAs\n\nread_csv(\"data/df-na.csv\", \n         na = c(\"\", \"NA\", \".\", \"9999\", \"Not applicable\"))\n\n# A tibble: 9 × 3\n      x y     z     \n  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; \n1     1 a     hi    \n2    NA b     hello \n3     3 &lt;NA&gt;  &lt;NA&gt;  \n4     4 d     ola   \n5     5 e     hola  \n6    NA f     whatup\n7     7 g     wassup\n8     8 h     sup   \n9     9 i     &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#option-2-spécifier-les-types-de-chaque-colonne",
+    "href": "slides/05 - import-join/05 - import-join.html#option-2-spécifier-les-types-de-chaque-colonne",
+    "title": "05 - Importation et jointure de données",
+    "section": "Option 2: Spécifier les types de chaque colonne",
+    "text": "Option 2: Spécifier les types de chaque colonne\n\nread_csv(\"data/df-na.csv\", col_types = list(col_double(), \n                                            col_character(), \n                                            col_character()))\n\n# A tibble: 9 × 3\n      x y              z     \n  &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt; \n1     1 a              hi    \n2    NA b              hello \n3     3 Not applicable 9999  \n4     4 d              ola   \n5     5 e              hola  \n6    NA f              whatup\n7     7 g              wassup\n8     8 h              sup   \n9     9 i              &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#les-types-de-colonnes",
+    "href": "slides/05 - import-join/05 - import-join.html#les-types-de-colonnes",
+    "title": "05 - Importation et jointure de données",
+    "section": "Les types de colonnes",
+    "text": "Les types de colonnes\n\n\n\n\nFonction\nTypes de données\n\n\n\n\ncol_character()\nChaine de caractères\n\n\ncol_date()\nDate\n\n\ncol_datetime()\nPOSIXct (date-time)\n\n\ncol_double()\nDouble (numeric)\n\n\ncol_factor()\nFactor\n\n\ncol_guess()\nLaisse readr deviner ( par défaut)\n\n\ncol_integer()\nEntier\n\n\ncol_logical()\nLogique\n\n\ncol_number()\nNombre et texte mélangés\n\n\ncol_numeric()\nDouble ou entier\n\n\ncol_skip()\nNe pas lire la colonne\n\n\ncol_time()\nTemps"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#références",
+    "href": "slides/05 - import-join/05 - import-join.html#références",
+    "title": "05 - Importation et jointure de données",
+    "section": "Références",
+    "text": "Références\n\n\n\n\n\n\n\nPRO1036 - 04 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#spécification-des-nas",
+    "href": "slides/05 - import-join/05 - import-join.html#spécification-des-nas",
+    "title": "05 - Importation et jointure de données",
+    "section": "Spécification des NAs",
+    "text": "Spécification des NAs\n\nread_csv(\"data/df-na.csv\", \n         na = c(\"\", \"NA\", \".\", \"9999\", \"Not applicable\"))\n\n# A tibble: 9 × 3\n      x y     z     \n  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; \n1     1 a     hi    \n2    NA b     hello \n3     3 &lt;NA&gt;  &lt;NA&gt;  \n4     4 d     ola   \n5     5 e     hola  \n6    NA f     whatup\n7     7 g     wassup\n8     8 h     sup   \n9     9 i     &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#spécification-des-types-de-chaque-colonne",
+    "href": "slides/05 - import-join/05 - import-join.html#spécification-des-types-de-chaque-colonne",
+    "title": "05 - Importation et jointure de données",
+    "section": "Spécification des types de chaque colonne",
+    "text": "Spécification des types de chaque colonne\n\nread_csv(\"data/df-na.csv\", col_types = list(col_double(), \n                                            col_character(), \n                                            col_character()))\n\n# A tibble: 9 × 3\n      x y              z     \n  &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt; \n1     1 a              hi    \n2    NA b              hello \n3     3 Not applicable 9999  \n4     4 d              ola   \n5     5 e              hola  \n6    NA f              whatup\n7     7 g              wassup\n8     8 h              sup   \n9     9 i              &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#kesako",
+    "href": "slides/05 - import-join/05 - import-join.html#kesako",
+    "title": "05 - Importation et jointure de données",
+    "section": "Kesako",
+    "text": "Kesako\nLorsque nous avons des données dans plusieurs fichiers/tables, il est souvent nécessaire de les combiner."
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#données-les-femmes-dans-la-science",
+    "href": "slides/05 - import-join/05 - import-join.html#données-les-femmes-dans-la-science",
+    "title": "05 - Importation et jointure de données",
+    "section": "Données: Les femmes dans la science",
+    "text": "Données: Les femmes dans la science\nNous avons des informations sur 10 femmes qui ont changé le monde. Les informations sont réparties dans trois fichiers:\n\nprofessions.csv: Information sur la profession de chacune\ndates.csv: date de naissance et de décès de chacune\nworks.csv: Ce qu’elles ont fait pour changer le monde\n\n\n\nSource: Meet 10 Women in Science Who Changed the World"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#professions.csv",
+    "href": "slides/05 - import-join/05 - import-join.html#professions.csv",
+    "title": "05 - Importation et jointure de données",
+    "section": "professions.csv",
+    "text": "professions.csv\n\nprofessions &lt;- read_csv(\"data/scientists/professions.csv\")\nprofessions\n\n# A tibble: 10 × 2\n   name               profession                        \n   &lt;chr&gt;              &lt;chr&gt;                             \n 1 Ada Lovelace       Mathematician                     \n 2 Marie Curie        Physicist and Chemist             \n 3 Janaki Ammal       Botanist                          \n 4 Chien-Shiung Wu    Physicist                         \n 5 Katherine Johnson  Mathematician                     \n 6 Rosalind Franklin  Chemist                           \n 7 Vera Rubin         Astronomer                        \n 8 Gladys West        Mathematician                     \n 9 Flossie Wong-Staal Virologist and Molecular Biologist\n10 Jennifer Doudna    Biochemist"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#dates.csv",
+    "href": "slides/05 - import-join/05 - import-join.html#dates.csv",
+    "title": "05 - Importation et jointure de données",
+    "section": "dates.csv",
+    "text": "dates.csv\n\ndates &lt;- read_csv(\"data/scientists/dates.csv\")\ndates\n\n# A tibble: 8 × 3\n  name               birth_year death_year\n  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;\n1 Janaki Ammal             1897       1984\n2 Chien-Shiung Wu          1912       1997\n3 Katherine Johnson        1918       2020\n4 Rosalind Franklin        1920       1958\n5 Vera Rubin               1928       2016\n6 Gladys West              1930         NA\n7 Flossie Wong-Staal       1947         NA\n8 Jennifer Doudna          1964         NA"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#works.csv",
+    "href": "slides/05 - import-join/05 - import-join.html#works.csv",
+    "title": "05 - Importation et jointure de données",
+    "section": "works.csv",
+    "text": "works.csv\n\nworks &lt;- read_csv(\"data/scientists/works.csv\")\nworks\n\n# A tibble: 9 × 2\n  name               known_for                                                  \n  &lt;chr&gt;              &lt;chr&gt;                                                      \n1 Ada Lovelace       first computer algorithm                                   \n2 Marie Curie        theory of radioactivity,  discovery of elements polonium a…\n3 Janaki Ammal       hybrid species, biodiversity protection                    \n4 Chien-Shiung Wu    confim and refine theory of radioactive beta decy, Wu expe…\n5 Katherine Johnson  calculations of orbital mechanics critical to sending the …\n6 Vera Rubin         existence of dark matter                                   \n7 Gladys West        mathematical modeling of the shape of the Earth which serv…\n8 Flossie Wong-Staal first scientist to clone HIV and create a map of its genes…\n9 Jennifer Doudna    one of the primary developers of CRISPR, a ground-breaking…"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#ce-que-nous-voulons-comme-output",
+    "href": "slides/05 - import-join/05 - import-join.html#ce-que-nous-voulons-comme-output",
+    "title": "05 - Importation et jointure de données",
+    "section": "Ce que nous voulons comme output",
+    "text": "Ce que nous voulons comme output\n\n\n# A tibble: 10 × 5\n   name               profession                 birth_year death_year known_for\n   &lt;chr&gt;              &lt;chr&gt;                           &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n 1 Ada Lovelace       Mathematician                      NA         NA first co…\n 2 Marie Curie        Physicist and Chemist              NA         NA theory o…\n 3 Janaki Ammal       Botanist                         1897       1984 hybrid s…\n 4 Chien-Shiung Wu    Physicist                        1912       1997 confim a…\n 5 Katherine Johnson  Mathematician                    1918       2020 calculat…\n 6 Rosalind Franklin  Chemist                          1920       1958 &lt;NA&gt;     \n 7 Vera Rubin         Astronomer                       1928       2016 existenc…\n 8 Gladys West        Mathematician                    1930         NA mathemat…\n 9 Flossie Wong-Staal Virologist and Molecular …       1947         NA first sc…\n10 Jennifer Doudna    Biochemist                       1964         NA one of t…"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#types-de-jointures",
+    "href": "slides/05 - import-join/05 - import-join.html#types-de-jointures",
+    "title": "05 - Importation et jointure de données",
+    "section": "Types de jointures",
+    "text": "Types de jointures\n\nleft_join(): Retourne toutes les lignes de la première table et les lignes correspondantes de la deuxième table\nright_join(): Retourne toutes les lignes de la deuxième table et les lignes correspondantes de la première table\ninner_join(): Retourne les lignes qui ont une correspondance dans les deux tables\nfull_join(): Retourne toutes les lignes des deux tables\nsemi_join(): Retourne toutes les lignes de la première table qui ont une correspondance dans la deuxième table\nanti_join(): Retourne toutes les lignes de la première table qui n’ont pas de correspondance dans la deuxième table"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#pour-lexemple",
+    "href": "slides/05 - import-join/05 - import-join.html#pour-lexemple",
+    "title": "05 - Importation et jointure de données",
+    "section": "Pour l’exemple…",
+    "text": "Pour l’exemple…\n\n\n\nx\n\n# A tibble: 3 × 2\n     id value_x\n  &lt;dbl&gt; &lt;chr&gt;  \n1     1 x1     \n2     2 x2     \n3     3 x3     \n\n\n\n\ny\n\n# A tibble: 3 × 2\n     id value_y\n  &lt;dbl&gt; &lt;chr&gt;  \n1     1 y1     \n2     2 y2     \n3     4 y4"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#left_join",
+    "href": "slides/05 - import-join/05 - import-join.html#left_join",
+    "title": "05 - Importation et jointure de données",
+    "section": "left_join()",
+    "text": "left_join()\n\n\n\n\n\nData Science in a Box\n\n\n\n\nleft_join(x, y)\n\n# A tibble: 3 × 3\n     id value_x value_y\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n1     1 x1      y1     \n2     2 x2      y2     \n3     3 x3      &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#left_join-1",
+    "href": "slides/05 - import-join/05 - import-join.html#left_join-1",
+    "title": "05 - Importation et jointure de données",
+    "section": "left_join()",
+    "text": "left_join()\n\nprofessions %&gt;%\n  left_join(dates)\n\n# A tibble: 10 × 4\n   name               profession                         birth_year death_year\n   &lt;chr&gt;              &lt;chr&gt;                                   &lt;dbl&gt;      &lt;dbl&gt;\n 1 Ada Lovelace       Mathematician                              NA         NA\n 2 Marie Curie        Physicist and Chemist                      NA         NA\n 3 Janaki Ammal       Botanist                                 1897       1984\n 4 Chien-Shiung Wu    Physicist                                1912       1997\n 5 Katherine Johnson  Mathematician                            1918       2020\n 6 Rosalind Franklin  Chemist                                  1920       1958\n 7 Vera Rubin         Astronomer                               1928       2016\n 8 Gladys West        Mathematician                            1930         NA\n 9 Flossie Wong-Staal Virologist and Molecular Biologist       1947         NA\n10 Jennifer Doudna    Biochemist                               1964         NA"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#right_join",
+    "href": "slides/05 - import-join/05 - import-join.html#right_join",
+    "title": "05 - Importation et jointure de données",
+    "section": "right_join()",
+    "text": "right_join()\n\n\n\n\n\nData Science in a Box\n\n\n\n\nright_join(x, y)\n\n# A tibble: 3 × 3\n     id value_x value_y\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n1     1 x1      y1     \n2     2 x2      y2     \n3     4 &lt;NA&gt;    y4"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#right_join-1",
+    "href": "slides/05 - import-join/05 - import-join.html#right_join-1",
+    "title": "05 - Importation et jointure de données",
+    "section": "right_join()",
+    "text": "right_join()\n\nprofessions %&gt;%\n  right_join(dates)\n\n# A tibble: 8 × 4\n  name               profession                         birth_year death_year\n  &lt;chr&gt;              &lt;chr&gt;                                   &lt;dbl&gt;      &lt;dbl&gt;\n1 Janaki Ammal       Botanist                                 1897       1984\n2 Chien-Shiung Wu    Physicist                                1912       1997\n3 Katherine Johnson  Mathematician                            1918       2020\n4 Rosalind Franklin  Chemist                                  1920       1958\n5 Vera Rubin         Astronomer                               1928       2016\n6 Gladys West        Mathematician                            1930         NA\n7 Flossie Wong-Staal Virologist and Molecular Biologist       1947         NA\n8 Jennifer Doudna    Biochemist                               1964         NA"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#full_join",
+    "href": "slides/05 - import-join/05 - import-join.html#full_join",
+    "title": "05 - Importation et jointure de données",
+    "section": "full_join()",
+    "text": "full_join()\n\n\n\n\n\nData Science in a Box\n\n\n\n\nfull_join(x, y)\n\n# A tibble: 4 × 3\n     id value_x value_y\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n1     1 x1      y1     \n2     2 x2      y2     \n3     3 x3      &lt;NA&gt;   \n4     4 &lt;NA&gt;    y4"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#full_join-1",
+    "href": "slides/05 - import-join/05 - import-join.html#full_join-1",
+    "title": "05 - Importation et jointure de données",
+    "section": "full_join()",
+    "text": "full_join()\n\nprofessions %&gt;%\n  full_join(works)\n\n# A tibble: 10 × 3\n   name               profession                         known_for              \n   &lt;chr&gt;              &lt;chr&gt;                              &lt;chr&gt;                  \n 1 Ada Lovelace       Mathematician                      first computer algorit…\n 2 Marie Curie        Physicist and Chemist              theory of radioactivit…\n 3 Janaki Ammal       Botanist                           hybrid species, biodiv…\n 4 Chien-Shiung Wu    Physicist                          confim and refine theo…\n 5 Katherine Johnson  Mathematician                      calculations of orbita…\n 6 Rosalind Franklin  Chemist                            &lt;NA&gt;                   \n 7 Vera Rubin         Astronomer                         existence of dark matt…\n 8 Gladys West        Mathematician                      mathematical modeling …\n 9 Flossie Wong-Staal Virologist and Molecular Biologist first scientist to clo…\n10 Jennifer Doudna    Biochemist                         one of the primary dev…"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#inner_join",
+    "href": "slides/05 - import-join/05 - import-join.html#inner_join",
+    "title": "05 - Importation et jointure de données",
+    "section": "inner_join()",
+    "text": "inner_join()\n\n\n\n\n\nData Science in a Box\n\n\n\n\ninner_join(x, y)\n\n# A tibble: 2 × 3\n     id value_x value_y\n  &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  \n1     1 x1      y1     \n2     2 x2      y2"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#inner_join-1",
+    "href": "slides/05 - import-join/05 - import-join.html#inner_join-1",
+    "title": "05 - Importation et jointure de données",
+    "section": "inner_join()",
+    "text": "inner_join()\n\nprofessions %&gt;%\n  inner_join(dates)\n\n# A tibble: 8 × 4\n  name               profession                         birth_year death_year\n  &lt;chr&gt;              &lt;chr&gt;                                   &lt;dbl&gt;      &lt;dbl&gt;\n1 Janaki Ammal       Botanist                                 1897       1984\n2 Chien-Shiung Wu    Physicist                                1912       1997\n3 Katherine Johnson  Mathematician                            1918       2020\n4 Rosalind Franklin  Chemist                                  1920       1958\n5 Vera Rubin         Astronomer                               1928       2016\n6 Gladys West        Mathematician                            1930         NA\n7 Flossie Wong-Staal Virologist and Molecular Biologist       1947         NA\n8 Jennifer Doudna    Biochemist                               1964         NA"
+  },
+  {
+    "objectID": "slides/05 - import-join/05 - import-join.html#si-on-reprend",
+    "href": "slides/05 - import-join/05 - import-join.html#si-on-reprend",
+    "title": "05 - Importation et jointure de données",
+    "section": "Si on reprend…",
+    "text": "Si on reprend…\n\nprofessions %&gt;%\n  left_join(dates) %&gt;%\n  left_join(works)\n\n# A tibble: 10 × 5\n   name               profession                 birth_year death_year known_for\n   &lt;chr&gt;              &lt;chr&gt;                           &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n 1 Ada Lovelace       Mathematician                      NA         NA first co…\n 2 Marie Curie        Physicist and Chemist              NA         NA theory o…\n 3 Janaki Ammal       Botanist                         1897       1984 hybrid s…\n 4 Chien-Shiung Wu    Physicist                        1912       1997 confim a…\n 5 Katherine Johnson  Mathematician                    1918       2020 calculat…\n 6 Rosalind Franklin  Chemist                          1920       1958 &lt;NA&gt;     \n 7 Vera Rubin         Astronomer                       1928       2016 existenc…\n 8 Gladys West        Mathematician                    1930         NA mathemat…\n 9 Flossie Wong-Staal Virologist and Molecular …       1947         NA first sc…\n10 Jennifer Doudna    Biochemist                       1964         NA one of t…"
+  },
+  {
+    "objectID": "website/cours/cours.html#importation-et-jointure-de-données",
+    "href": "website/cours/cours.html#importation-et-jointure-de-données",
+    "title": "Cours",
+    "section": "05 - Importation et jointure de données",
+    "text": "05 - Importation et jointure de données\nSlides : Web PDF"
   }
 ]
