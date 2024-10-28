@@ -92,7 +92,10 @@ Lectures complémentaires:
 
 Slides : [Web](../../slides/05 - import-join/05 - import-join.qmd){target="_blank"} [PDF](05 - import-join.pdf)
 
+Demo: 
 
+- [Importation : Favorite Foods](https://github.com/PRO1036/favorite-foods)
+- [Jointure : NYC flights](https://github.com/PRO1036/nycflights)
 
 # Références
 
