@@ -14,6 +14,8 @@ website:
         text: "Labs"
       - href: website/exercices/exos.qmd
         text: "Exercices"
+      - href: website/projet/projet.qmd
+        text: "Projet"
 
   sidebar:
     - title: "Home"

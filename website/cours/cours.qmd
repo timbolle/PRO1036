@@ -97,6 +97,14 @@ Demo:
 - [Importation : Favorite Foods](https://github.com/PRO1036/favorite-foods)
 - [Jointure : NYC flights](https://github.com/PRO1036/nycflights)
 
+## 06 - Fonctions, itérations, conditions
+
+Slides : [PDF](06 - Fonctions_iterations_conditions.pdf)
+
+Demo: 
+
+- [Fonction, itération, condition](https://github.com/PRO1036/fonctions-iterations-condition)
+
 # Références
 
 ::: {#refs}
