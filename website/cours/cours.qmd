@@ -105,6 +105,15 @@ Demo:
 
 - [Fonction, itération, condition](https://github.com/PRO1036/fonctions-iterations-condition)
 
+
+## 07 - Régression
+
+Slides : [PDF](07 - Régression.pdf)
+
+Demo: 
+
+- [Régression](https://github.com/PRO1036/paris-painting)
+
 # Références
 
 ::: {#refs}
