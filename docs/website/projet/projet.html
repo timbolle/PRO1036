@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data" class="level2">
 <h2 class="anchored" data-anchor-id="data">Données</h2>
-<p>Pour que vous ayez la meilleure chance de réussir ce projet, il est important que vous choisissiez un ensemble de données adapté Cela signifie que les données doivent être facilement accessibles et suffisamment grandes pour que plusieurs relations puissent être explorées. Ainsi, votre ensemble de données doit comporter au moins 50 observations et entre 10 et 20 variables (des exceptions peuvent être faites, mais vous devez d’abord le valider avec nous). Les variables de l’ensemble de données doivent inclure des variables catégorielles, des variables numériques discrètes et des variables numériques continues.</p>
+<p>Pour que vous ayez la meilleure chance de réussir ce projet, il est important que vous choisissiez un ensemble de données adapté. Cela signifie que les données doivent être facilement accessibles et suffisamment grandes pour que plusieurs relations puissent être explorées. Ainsi, votre ensemble de données doit comporter au moins 50 observations et entre 10 et 20 variables (des exceptions peuvent être faites, mais vous devez d’abord le valider avec nous). Les variables de l’ensemble de données doivent inclure des variables catégorielles, des variables numériques discrètes et des variables numériques continues.</p>
 <p>Si le format des données n’a pas été vu en classe, c’est ok mais attendez vous à devoir fournir un léger effort pour les charger dans R. Si vous avez des difficultés, demandez de l’aide avant qu’il ne soit trop tard.</p>
 <p><strong>Il est interdit d’utiliser des données utilisées pendant le cours, dans des exemples, des examens ou des laboratoires.</strong></p>
 <p>Ci-dessous, vous trouverez une liste de références de jeux de données qui pourraient vous intéresser. Vous n’êtes pas limité à ces ressources, et en fait, vous êtes encouragé à aller au-delà. Mais vous pourriez y trouver quelque chose d’intéressant :</p>
@@ -176,7 +176,17 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://www.icpsr.umich.edu/web/pages/">ICPSR Data Archive Project</a></li>
 <li><a href="https://datasetsearch.research.google.com/">Google Dataset Search</a></li>
 </ul>
-<p>Plusieurs villes, pays et instituions ont également des portails de données ouvertes. Voici quelques exemples : - <a href="https://open.canada.ca/en">Canada Open Data</a> - <a href="https://www.donneesquebec.ca/">Données Québec</a> - <a href="https://donnees.montreal.ca/">Ville de Montreal</a> - <a href="https://chronicdata.cdc.gov/">CDC Datasets</a> - <a href="https://www.opendata.nhs.scot/dataset">NHS Scotland Open Data</a> - <a href="https://opendata.scot/organizations/city_of_edinburgh_council/">Edinburgh Open Data</a> - <a href="https://www.data.gov.uk/">UK Gov Data</a> - …</p>
+<p>Plusieurs villes, pays et instituions ont également des portails de données ouvertes. Voici quelques exemples :</p>
+<ul>
+<li><a href="https://open.canada.ca/en">Canada Open Data</a></li>
+<li><a href="https://www.donneesquebec.ca/">Données Québec</a></li>
+<li><a href="https://donnees.montreal.ca/">Ville de Montreal</a></li>
+<li><a href="https://chronicdata.cdc.gov/">CDC Datasets</a></li>
+<li><a href="https://www.opendata.nhs.scot/dataset">NHS Scotland Open Data</a></li>
+<li><a href="https://opendata.scot/organizations/city_of_edinburgh_council/">Edinburgh Open Data</a></li>
+<li><a href="https://www.data.gov.uk/">UK Gov Data</a></li>
+<li>…</li>
+</ul>
 <p>N’oubliez pas que vous pouvez combiner plusieurs sources de données également.</p>
 </section>
 <section id="consignes" class="level2">
@@ -217,8 +227,66 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="rapport-final-30-pts" class="level3">
 <h3 class="anchored" data-anchor-id="rapport-final-30-pts">Rapport final (30 pts)</h3>
+<p>Votre rapport sera à rendre sous forme de document Markdown (<code>.md</code>). Vous pouvez utiliser RMarkdown pour générer votre rapport. L’ensemble des fichiers que vous avez utilisé pour générer votre rapport (fichier .Rmd, .md, données, images, …) devra être inclus dans votre soumission. Le tout sera rendu sur Github au plus tard le <strong>16 décembre 2024 à 23h00</strong>.</p>
+<p>Votre rapport devra présenter les résultats de votre analyse. Il devra contenir les éléments suivants :</p>
+<ul>
+<li><strong>Introduction</strong>: Présentez brièvement le contexte de votre analyse et les questions de recherche que vous souhaitez explorer.</li>
+<li><strong>Données</strong>: Présentez les données qui vont être utilisez et notamment d’où elles proviennent, combien d’observations et de variables elles contiennent, etc.</li>
+<li><strong>Analyse des données</strong>: Présentez les résultats de votre analyse. Vous devez inclure des visualisations et des statistiques descriptives pour les variables que vous avez choisies, ainsi que toutes les autres analyses que vous avez effectuées (selon ce qui y applicable: test d’hypothèse, regression, classification, ….)</li>
+<li><strong>Discussion</strong>: Discutez des résultats de votre analyse. Quelles sont les conclusions que vous pouvez tirer de vos résultats? Quelles sont les limites de votre analyse? Quelles sont les implications de vos résultats?</li>
+</ul>
+<p>Notez que l’analyse et la discussion peuvent être faites de manière alternées, par question par exemple, mais doivent être clairement identifiées. Les questions de recherche doivent être clairement identifiées et les réponses doivent être clairement présentées. Pour résumer: assurez vous que votre rapport est clair, bien structuré. S’y retrouver devrait être facile.</p>
+<p>Il n’a y pas de longueur minimum ou maximum pour le rapport, mais il doit être suffisamment détaillé pour que nous puissions comprendre votre analyse et vos résultats. Votre rendu devrai comprendre au moins:</p>
+<ul>
+<li><strong>Deux visualisations</strong> différentes, dont une impliquant au moins trois variables</li>
+<li><strong>Une statistique prédictive (régression, classification, …)</strong> ou <strong>un test d’hypothèse</strong></li>
+<li><strong>Des analyses descriptives</strong></li>
+</ul>
+<p>L’objectif est de montrer que vous êtes capable de manipuler des données, de les analyser et de les interpréter. Vous devez également montrer que vous êtes capable de communiquer vos résultats de manière claire et concise.</p>
+<p>Votre rapport doit le plus proposer une histoire à partir des données. Votre rapport doit attiser la curiosité du lecteur et le guider à travers les résultats de votre analyse.</p>
+<section id="critères-dévaluation-1" class="level4">
+<h4 class="anchored" data-anchor-id="critères-dévaluation-1">Critères d’évaluation</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Critères</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structure claire</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>Qualité des analyses</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>Justesse des analyses</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>Qualité de la discussion</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td>Visualisations</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>Reproductibilité et organisation</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>30</strong></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 </section>
 </section>
 
