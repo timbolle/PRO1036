@@ -366,12 +366,12 @@
   {
     "objectID": "website/exercices/exos.html",
     "href": "website/exercices/exos.html",
-    "title": "Labs",
+    "title": "Exerices",
     "section": "",
     "text": "C’est ici que vous trouverez les exercices pour chaque semaine.",
     "crumbs": [
       "Exercices",
-      "Labs"
+      "Exerices"
     ]
   },
   {
@@ -3709,5 +3709,264 @@
     "title": "Régression",
     "section": "",
     "text": "Installer des paquets si vous ne les avez pas\n\npackages &lt;- c(\"openintro\", \"tidyverse\", \"parsnip\" ,\"broom\")\nfor (pkg in packages)\n  if (!pkg %in% installed.packages()) {\n    install.packages(pkg)\n    }\n\nCharger les paquets\n\nfor (pkg in packages) library(pkg, character.only = T)\n\nLe chargement a nécessité le package : airports\n\n\nLe chargement a nécessité le package : cherryblossom\n\n\nLe chargement a nécessité le package : usdata\n\n\nLa base de données avec laquelle nous allons travailler s’appelle « evals »..\n\nevals %&gt;%\n  glimpse()\n\nRows: 463\nColumns: 23\n$ course_id     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…\n$ prof_id       &lt;int&gt; 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5,…\n$ score         &lt;dbl&gt; 4.7, 4.1, 3.9, 4.8, 4.6, 4.3, 2.8, 4.1, 3.4, 4.5, 3.8, 4…\n$ rank          &lt;fct&gt; tenure track, tenure track, tenure track, tenure track, …\n$ ethnicity     &lt;fct&gt; minority, minority, minority, minority, not minority, no…\n$ gender        &lt;fct&gt; female, female, female, female, male, male, male, male, …\n$ language      &lt;fct&gt; english, english, english, english, english, english, en…\n$ age           &lt;int&gt; 36, 36, 36, 36, 59, 59, 59, 51, 51, 40, 40, 40, 40, 40, …\n$ cls_perc_eval &lt;dbl&gt; 55.81395, 68.80000, 60.80000, 62.60163, 85.00000, 87.500…\n$ cls_did_eval  &lt;int&gt; 24, 86, 76, 77, 17, 35, 39, 55, 111, 40, 24, 24, 17, 14,…\n$ cls_students  &lt;int&gt; 43, 125, 125, 123, 20, 40, 44, 55, 195, 46, 27, 25, 20, …\n$ cls_level     &lt;fct&gt; upper, upper, upper, upper, upper, upper, upper, upper, …\n$ cls_profs     &lt;fct&gt; single, single, single, single, multiple, multiple, mult…\n$ cls_credits   &lt;fct&gt; multi credit, multi credit, multi credit, multi credit, …\n$ bty_f1lower   &lt;int&gt; 5, 5, 5, 5, 4, 4, 4, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 7, 7,…\n$ bty_f1upper   &lt;int&gt; 7, 7, 7, 7, 4, 4, 4, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 9, 9,…\n$ bty_f2upper   &lt;int&gt; 6, 6, 6, 6, 2, 2, 2, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 9, 9,…\n$ bty_m1lower   &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 7, 7,…\n$ bty_m1upper   &lt;int&gt; 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 6,…\n$ bty_m2upper   &lt;int&gt; 6, 6, 6, 6, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 6, 6,…\n$ bty_avg       &lt;dbl&gt; 5.000, 5.000, 5.000, 5.000, 3.000, 3.000, 3.000, 3.333, …\n$ pic_outfit    &lt;fct&gt; not formal, not formal, not formal, not formal, not form…\n$ pic_color     &lt;fct&gt; color, color, color, color, color, color, color, color, …\n\n\n\nVisualisez et décrivez la relation entre score et bty_avg. Indice: Voir la page d’aide de la fonction à l’adresse suivante: http://ggplot2.tidyverse.org/reference/index.html.\n\n\n\nRecréer le nuage de points de l’exercice 5, mais cette fois en utilisant geom_jitter().\nQue signifie « jitter » ? Qu’est-ce qui était trompeur dans le nuage de points initial ?\nR:\nRecréer le nuage de points de l’exercice 5, et ajoutez la ligne de régression à ce tracé en couleur orange, l’ombrage pour l’incertitude de la ligne étant désactivé.Interpret the slope of the linear model in context of the data. Interpret the intercept of the linear model in context of the data. Comment on whether or not the intercept makes sense in this context.\nR:\nDéterminez le \\(R^2\\) du modèle et interprétez-le dans le contexte des données.\nAjustez un nouveau modèle linéaire appelé score_gender_fit pour prédire la moyenne d’évaluation du professeur score en fonction du genre du professeur. Sur la base des résultats de la régression, écrivez le modèle linéaire et interprétez la pente et l’ordonnée à l’origine dans le contexte des données.\nQuelle est l’équation de la droite correspondant aux professeurs ? Quelle est-elle pour les professeures ?\nR:\nAjustez un nouveau modèle linéaire appelé score_rank_fit pour prédire la note moyenne d’évaluation du professeur score en fonction du rank du professeur. Sur la base des résultats de la régression, écrivez le modèle linéaire et interprétez les pentes et les ordonnées à l’origine dans le contexte des données.\nR:\n\n🧶 Knit"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#filtres-anti-spam",
+    "href": "slides/08 - classification/08-classification.html#filtres-anti-spam",
+    "title": "08-Classification",
+    "section": "Filtres anti-spam",
+    "text": "Filtres anti-spam\n.pull-left-narrow[ - Données provenant de 3921 courriels et de 21 variables les concernant - Résultat : l’e-mail est-il un spam ou non ? - Prédicteurs : nombre de caractères, présence ou non de ” Re : ” dans l’objet de l’e-mail, heure d’envoi de l’e-mail, nombre de fois où le mot ” inherit ” apparaît dans l’e-mail, etc.] .pull-right-wide[ .small[\n\nlibrary(openintro)\nglimpse(email)\n\nRows: 3,921\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, …\n$ sent_email   &lt;fct&gt; 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, …\n$ time         &lt;dttm&gt; 2012-01-01 01:16:41, 2012-01-01 02:03:59,…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no…\n$ inherit      &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ num_char     &lt;dbl&gt; 11.370, 10.504, 7.773, 13.256, 1.231, 1.09…\n$ line_breaks  &lt;int&gt; 202, 202, 192, 255, 29, 25, 193, 237, 69, …\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, …\n$ re_subj      &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 0, 1, 6, 48, 1, 1, 1, 18, 1, 0, 2, 1, 0, 1…\n$ number       &lt;fct&gt; big, small, small, small, none, none, big,…\n\n\n] ]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#modelling-spam",
+    "href": "slides/08 - classification/08-classification.html#modelling-spam",
+    "title": "08-Classification",
+    "section": "Modelling spam",
+    "text": "Modelling spam\n\nLe nombre de caractères et la présence ou non de « re : » dans l’objet du message peuvent être liés à la question de savoir si l’e-mail est un spam.\n\n\n\n\n\n\n\n- Pour des raisons de simplicité, nous nous concentrerons sur le nombre de caractères (num_char) comme prédicteur, mais le modèle que nous décrivons peut également être étendu pour prendre en compte plusieurs prédicteurs."
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#modelling-spam-1",
+    "href": "slides/08 - classification/08-classification.html#modelling-spam-1",
+    "title": "08-Classification",
+    "section": "Modelling spam",
+    "text": "Modelling spam\nLes modèles linéaires ne peuvent pas décrire ce type de relation, donc nous devons donc utiliser un autre type de modèle."
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#framing-the-problem",
+    "href": "slides/08 - classification/08-classification.html#framing-the-problem",
+    "title": "08-Classification",
+    "section": "Framing the problem",
+    "text": "Framing the problem\n\nNous pouvons considérer chaque résultat (spam ou non) comme un succès ou un échec résultant d’essais de Bernoulli distincts.\nEssai de Bernoulli : expérience aléatoire avec exactement deux résultats possibles, ” success ” et ” failure “, dans laquelle la probabilité de succès est la même à chaque fois que l’expérience est menée.\n\n\n\n\n\n\n\n- Chaque essai de Bernoulli peut avoir une probabilité de succès distincte.\n\n\n\n\n- Nous pouvons ensuite utiliser les variables prédictives pour modéliser cette probabilité de réussite, \\(p_i\\)\n\n\n\n\nNous ne pouvons pas utiliser un modèle linéaire pour \\(p_i\\) (puisque \\(p_i\\) doit être compris entre 0 et 1), mais nous pouvons transformer le modèle linéaire pour obtenir la plage appropriée."
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#modèles-linéaires-généralisés",
+    "href": "slides/08 - classification/08-classification.html#modèles-linéaires-généralisés",
+    "title": "08-Classification",
+    "section": "Modèles linéaires généralisés",
+    "text": "Modèles linéaires généralisés\n\nIl s’agit d’une façon très générale d’aborder de nombreux problèmes de régression et les modèles qui en résultent sont appelés modèles linéaires généralisés (GLM)\n\n\n\n\n\n\n\n- La régression logistique c’est un exemple"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#trois-caractéristiques-des-glm",
+    "href": "slides/08 - classification/08-classification.html#trois-caractéristiques-des-glm",
+    "title": "08-Classification",
+    "section": "Trois caractéristiques des GLM",
+    "text": "Trois caractéristiques des GLM\nTous les GLM présentent les trois caractéristiques suivantes :\n\nUne distribution de probabilité décrivant un modèle génératif pour la variable de résultat.\n\n\n\n\n\n\n\n2. Un modèle linéaire : \\[\\eta = \\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_k X_k\\]\n\n\n\n\n3. Une fonction de liaison qui relie le modèle linéaire au paramètre de la distribution des résultats.\n\n\n\nclass: middle"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#la-régression-logistique-1",
+    "href": "slides/08 - classification/08-classification.html#la-régression-logistique-1",
+    "title": "08-Classification",
+    "section": "La régression logistique",
+    "text": "La régression logistique\n\nLa régression logistique est un GLM utilisé pour modéliser un résultat catégorique binaire à l’aide de prédicteurs numériques et catégoriels.\n\n\n\n\n\n\n\n- Pour finir de spécifier le modèle logistique, il suffit de définir une fonction de lien raisonnable qui relie \\(\\eta_i\\) à \\(p_i\\) : la fonction logit\n\n\n\n\n- la fonction logit : Pour \\(0\\le p \\le 1\\)\n\n\n\\[logit(p) = \\log\\left(\\frac{p}{1-p}\\right)\\]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#visualisée-la-fonction-logit",
+    "href": "slides/08 - classification/08-classification.html#visualisée-la-fonction-logit",
+    "title": "08-Classification",
+    "section": "Visualisée la fonction logit",
+    "text": "Visualisée la fonction logit\n–"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#les-propriétés-du-logit",
+    "href": "slides/08 - classification/08-classification.html#les-propriétés-du-logit",
+    "title": "08-Classification",
+    "section": "Les propriétés du logit",
+    "text": "Les propriétés du logit\n\nLa fonction logit prend une valeur comprise entre 0 et 1 et la fait correspondre à une valeur comprise entre \\(-\\infty\\) et \\(\\infty\\).\n\n\n\n\n\n\n\n- La fonction logit (logistique) inverse : \\[g^{-1}(x) = \\frac{\\exp(x)}{1+\\exp(x)} = \\frac{1}{1+\\exp(-x)}\\]\n\n\n\n\n- La fonction logit inverse prend une valeur comprise entre \\(-\\infty\\) et \\(\\infty\\) et la fait correspondre à une valeur comprise entre 0 et 1.\n\n\n\n\nCette formulation est également utile pour l’interprétation du modèle, puisque le logit peut être interprété comme le logarithme des chances de succès."
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#le-modèle-de-régression-logistique",
+    "href": "slides/08 - classification/08-classification.html#le-modèle-de-régression-logistique",
+    "title": "08-Classification",
+    "section": "Le modèle de régression logistique",
+    "text": "Le modèle de régression logistique\n\nSur la base des trois critères du GLM, nous avons :\n\n\\(y_i \\sim \\text{Bern}(p_i)\\)\n\\(\\eta_i = \\beta_0+\\beta_1 x_{1,i} + \\cdots + \\beta_n x_{n,i}\\)\n\\(\\text{logit}(p_i) = \\eta_i\\)\n\n\n\n\n\n\n\n\n- D’où l’on obtient :\n\n\n\\[p_i = \\frac{\\exp(\\beta_0+\\beta_1 x_{1,i} + \\cdots + \\beta_k x_{k,i})}{1+\\exp(\\beta_0+\\beta_1 x_{1,i} + \\cdots + \\beta_k x_{k,i})}\\]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#modeling-spam",
+    "href": "slides/08 - classification/08-classification.html#modeling-spam",
+    "title": "08-Classification",
+    "section": "Modeling spam",
+    "text": "Modeling spam\nDans R, nous ajustons un GLM de la même manière qu’un modèle linéaire, sauf que nous :\n\nspécifions le modèle avec logistic_reg()\nutilisons « glm » au lieu de « lm » comme moteur\ndéfinissons family = \"binomial\" pour la fonction de lien à utiliser dans le modèle.\n\n–\n\nspam_fit &lt;- logistic_reg() %&gt;%\n  set_engine(\"glm\") %&gt;%\n  fit(spam ~ num_char, data = email, family = \"binomial\")\n\ntidy(spam_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic   p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)  -1.80     0.0716     -25.1  2.04e-139\n2 num_char     -0.0621   0.00801     -7.75 9.50e- 15"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#modèle-de-spam",
+    "href": "slides/08 - classification/08-classification.html#modèle-de-spam",
+    "title": "08-Classification",
+    "section": "Modèle de spam",
+    "text": "Modèle de spam\n\ntidy(spam_fit)\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic   p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)  -1.80     0.0716     -25.1  2.04e-139\n2 num_char     -0.0621   0.00801     -7.75 9.50e- 15\n\n\n–\nModèle : \\[\\log\\left(\\frac{p}{1-p}\\right) = -1.80-0.0621\\times \\text{num_char}\\]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#pspam-pour-un-courriel-de-2000-caractères",
+    "href": "slides/08 - classification/08-classification.html#pspam-pour-un-courriel-de-2000-caractères",
+    "title": "08-Classification",
+    "section": "P(spam) pour un courriel de 2000 caractères",
+    "text": "P(spam) pour un courriel de 2000 caractères"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#logleftfracp1-pright--1.80-0.0621times-2",
+    "href": "slides/08 - classification/08-classification.html#logleftfracp1-pright--1.80-0.0621times-2",
+    "title": "08-Classification",
+    "section": "\\[\\log\\left(\\frac{p}{1-p}\\right) = -1.80-0.0621\\times 2\\]",
+    "text": "\\[\\log\\left(\\frac{p}{1-p}\\right) = -1.80-0.0621\\times 2\\]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#fracp1-p-exp-1.9242-0.15-rightarrow-p-0.15-times-1---p",
+    "href": "slides/08 - classification/08-classification.html#fracp1-p-exp-1.9242-0.15-rightarrow-p-0.15-times-1---p",
+    "title": "08-Classification",
+    "section": "\\[\\frac{p}{1-p} = \\exp(-1.9242) = 0.15 \\rightarrow p = 0.15 \\times (1 - p)\\]",
+    "text": "\\[\\frac{p}{1-p} = \\exp(-1.9242) = 0.15 \\rightarrow p = 0.15 \\times (1 - p)\\]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#p-0.15---0.15p-rightarrow-1.15p-0.15",
+    "href": "slides/08 - classification/08-classification.html#p-0.15---0.15p-rightarrow-1.15p-0.15",
+    "title": "08-Classification",
+    "section": "\\[p = 0.15 - 0.15p \\rightarrow 1.15p = 0.15\\]",
+    "text": "\\[p = 0.15 - 0.15p \\rightarrow 1.15p = 0.15\\]\n\\[p = 0.15 / 1.15 = 0.13\\]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#faux-positifs-et-négatifs",
+    "href": "slides/08 - classification/08-classification.html#faux-positifs-et-négatifs",
+    "title": "08-Classification",
+    "section": "Faux positifs et négatifs",
+    "text": "Faux positifs et négatifs\n\n\n\n\n\n\n\n\n\nL’e-mail est un spam\nl’e-mail n’est pas un spam\n\n\n\n\nEmail labelled spam\nVrai positif\nfaux positif (erreur de type 1)\n\n\nEmail labelled not spam\nFaux négatif (erreur de type 2)\nVrai négatif\n\n\n\n\n\n\n\n\n\n- Taux de faux négatifs = P(étiqueté non spam | Email spam) = FN / (VP + FN)\n\n\n- Taux de faux positifs = P(spam étiqueté | email non spam) = FP / (FP + VN)"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#sensibilité-et-spécificité",
+    "href": "slides/08 - classification/08-classification.html#sensibilité-et-spécificité",
+    "title": "08-Classification",
+    "section": "Sensibilité et spécificité",
+    "text": "Sensibilité et spécificité\n\n\n\n\n\n\n\n\n\nL’e-mail est un spam\nl’e-mail n’est pas un spam\n\n\n\n\nEmail labelled spam\nVrai positif\nfaux positif (erreur de type 1)\n\n\nEmail labelled not spam\nFaux négatif (erreur de type 2)\nVrai négatif\n\n\n\n–\n\nSensibilité = P(spam étiqueté | spam par courriel) = VP / VP + FN)\nSensibilité = 1 - taux de faux négatifs\nSpécificité = P(étiqueté non spam | courriel non spam) = VN / (FP + VN)\nSpécificité = 1 - Taux de faux positifs"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#objectif-construire-un-filtre-anti-spam",
+    "href": "slides/08 - classification/08-classification.html#objectif-construire-un-filtre-anti-spam",
+    "title": "08-Classification",
+    "section": "Objectif : Construire un filtre anti-spam",
+    "text": "Objectif : Construire un filtre anti-spam\n\nDonnées : Ensemble d’e-mails et nous savons si chaque e-mail est un spam ou non et d’autres caractéristiques.\nUtiliser la régression logistique pour prédire la probabilité qu’un email entrant soit un spam\nUtiliser la sélection de modèle pour choisir le modèle ayant la meilleure performance prédictive\n\n\n\n\n\n\n\n- La construction d’un modèle permettant de prédire la probabilité qu’un courriel soit du spam ne représente que la moitié de la bataille ! Nous avons également besoin d’une règle de décision pour déterminer quels courriels sont marqués comme spam (par exemple, quelle probabilité devrions-nous utiliser comme critère d’exclusion ?)\n\n\n\n\n- Une approche simple : choisir un seuil de probabilité unique et tout courriel qui dépasse cette probabilité est considéré comme du spam."
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#une-approche-de-régression-multiple",
+    "href": "slides/08 - classification/08-classification.html#une-approche-de-régression-multiple",
+    "title": "08-Classification",
+    "section": "Une approche de régression multiple",
+    "text": "Une approche de régression multiple\n.panelset[ .panel[.panel-name[Output] .small[\n\n\n# A tibble: 22 × 5\n   term         estimate std.error statistic  p.value\n   &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1 (Intercept)  -9.09e+1   9.80e+3  -0.00928 9.93e- 1\n 2 to_multiple1 -2.68e+0   3.27e-1  -8.21    2.25e-16\n 3 from1        -2.19e+1   9.80e+3  -0.00224 9.98e- 1\n 4 cc            1.88e-2   2.20e-2   0.855   3.93e- 1\n 5 sent_email1  -2.07e+1   3.87e+2  -0.0536  9.57e- 1\n 6 time          8.48e-8   2.85e-8   2.98    2.92e- 3\n 7 image        -1.78e+0   5.95e-1  -3.00    2.73e- 3\n 8 attach        7.35e-1   1.44e-1   5.09    3.61e- 7\n 9 dollar       -6.85e-2   2.64e-2  -2.59    9.64e- 3\n10 winneryes     2.07e+0   3.65e-1   5.67    1.41e- 8\n11 inherit       3.15e-1   1.56e-1   2.02    4.32e- 2\n12 viagra        2.84e+0   2.22e+3   0.00128 9.99e- 1\n13 password     -8.54e-1   2.97e-1  -2.88    4.03e- 3\n14 num_char      5.06e-2   2.38e-2   2.13    3.35e- 2\n15 line_breaks  -5.49e-3   1.35e-3  -4.06    4.91e- 5\n16 format1      -6.14e-1   1.49e-1  -4.14    3.53e- 5\n17 re_subj1     -1.64e+0   3.86e-1  -4.25    2.16e- 5\n18 exclaim_subj  1.42e-1   2.43e-1   0.585   5.58e- 1\n19 urgent_subj1  3.88e+0   1.32e+0   2.95    3.18e- 3\n20 exclaim_mess  1.08e-2   1.81e-3   5.98    2.23e- 9\n21 numbersmall  -1.19e+0   1.54e-1  -7.74    9.62e-15\n22 numberbig    -2.95e-1   2.20e-1  -1.34    1.79e- 1\n\n\n] ] .panel[.panel-name[Code]\n\nlogistic_reg() %&gt;%\n  set_engine(\"glm\") %&gt;%\n  fit(spam ~ ., data = email, family = \"binomial\") %&gt;%\n  tidy() %&gt;%\n  print(n = 22)\n\n] ]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#prédiction-1",
+    "href": "slides/08 - classification/08-classification.html#prédiction-1",
+    "title": "08-Classification",
+    "section": "Prédiction",
+    "text": "Prédiction\n\nLa mécanique de la prédiction est facile :\nInsérer les valeurs des prédicteurs dans l’équation du modèle\nCalculer la valeur prédite de la variable réponse, \\(\\hat{y}\\).\n\n\n\n\n\n\n\n- Il est difficile d’obtenir de bons résultats ! - Il n’y a aucune garantie que les estimations du modèle que vous avez soient correctes - ou que votre modèle fonctionnera aussi bien avec les nouvelles données qu’avec les données de votre échantillon."
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#underfitting-et-overfitting",
+    "href": "slides/08 - classification/08-classification.html#underfitting-et-overfitting",
+    "title": "08-Classification",
+    "section": "Underfitting et overfitting",
+    "text": "Underfitting et overfitting"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#données-de-fractionnement",
+    "href": "slides/08 - classification/08-classification.html#données-de-fractionnement",
+    "title": "08-Classification",
+    "section": "Données de fractionnement",
+    "text": "Données de fractionnement\n\nEnsemble d’entraînement:\nSandbox pour l’élaboration du modèle\nPassez la majeure partie de votre temps à utiliser l’ensemble d’entraînement pour développer le modèle.\nLa majorité des données (généralement 80 %)\nEnsemble de test :\nGardé en réserve pour déterminer l’efficacité d’un ou deux modèles choisis\nIl est essentiel de l’examiner une fois, sinon il devient partie intégrante du processus de modélisation.\nReste des données (généralement 20 %)"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#réalisation-du-fractionnement",
+    "href": "slides/08 - classification/08-classification.html#réalisation-du-fractionnement",
+    "title": "08-Classification",
+    "section": "Réalisation du fractionnement",
+    "text": "Réalisation du fractionnement\n\n# Fix random numbers by setting the seed \n# Enables analysis to be reproducible when random numbers are used \nset.seed(1116)\n\n# Put 80% of the data into the training set \nemail_split &lt;- initial_split(email, prop = 0.80)\n\n# Create data frames for the two sets:\ntrain_data &lt;- training(email_split)\ntest_data  &lt;- testing(email_split)"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#coup-dœil-sur-la-division",
+    "href": "slides/08 - classification/08-classification.html#coup-dœil-sur-la-division",
+    "title": "08-Classification",
+    "section": "Coup d’œil sur la division",
+    "text": "Coup d’œil sur la division\n.small[ .pull-left[\n\nglimpse(train_data)\n\nRows: 3,136\nColumns: 21\n$ spam         &lt;fct&gt; 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35,…\n$ sent_email   &lt;fct&gt; 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ time         &lt;dttm&gt; 2012-01-25 17:46:55, 2012-01-03 00:28:28,…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ dollar       &lt;dbl&gt; 10, 0, 0, 0, 0, 0, 13, 0, 0, 0, 2, 0, 0, 0…\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, yes, no, no, n…\n$ inherit      &lt;dbl&gt; 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ num_char     &lt;dbl&gt; 23.308, 1.162, 4.732, 42.238, 1.228, 25.59…\n$ line_breaks  &lt;int&gt; 477, 2, 127, 712, 30, 674, 367, 226, 98, 6…\n$ format       &lt;fct&gt; 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, …\n$ re_subj      &lt;fct&gt; 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 12, 0, 2, 2, 2, 31, 2, 0, 0, 1, 0, 1, 2, 0…\n$ number       &lt;fct&gt; small, none, big, big, small, small, small…\n\n\n] .pull-right[\n\nglimpse(test_data)\n\nRows: 785\nColumns: 21\n$ spam         &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ to_multiple  &lt;fct&gt; 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, …\n$ from         &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ cc           &lt;int&gt; 0, 1, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ sent_email   &lt;fct&gt; 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ time         &lt;dttm&gt; 2012-01-01 12:55:06, 2012-01-01 14:38:32,…\n$ image        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ attach       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, …\n$ dollar       &lt;dbl&gt; 0, 0, 5, 0, 0, 0, 0, 5, 4, 0, 0, 0, 21, 0,…\n$ winner       &lt;fct&gt; no, no, no, no, no, no, no, no, no, no, no…\n$ inherit      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, …\n$ viagra       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ password     &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, …\n$ num_char     &lt;dbl&gt; 4.837, 15.075, 18.037, 45.842, 11.438, 1.4…\n$ line_breaks  &lt;int&gt; 193, 354, 345, 881, 125, 24, 296, 13, 192,…\n$ format       &lt;fct&gt; 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, …\n$ re_subj      &lt;fct&gt; 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, …\n$ exclaim_subj &lt;dbl&gt; 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ urgent_subj  &lt;fct&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ exclaim_mess &lt;dbl&gt; 1, 10, 20, 5, 2, 0, 0, 0, 6, 0, 0, 1, 3, 0…\n$ number       &lt;fct&gt; big, small, small, big, small, none, small…\n\n\n] ]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#ajuster-un-modèle-à-lensemble-de-données-dentraînement",
+    "href": "slides/08 - classification/08-classification.html#ajuster-un-modèle-à-lensemble-de-données-dentraînement",
+    "title": "08-Classification",
+    "section": "Ajuster un modèle à l’ensemble de données d’entraînement",
+    "text": "Ajuster un modèle à l’ensemble de données d’entraînement\n\nemail_fit &lt;- logistic_reg() %&gt;%\n  set_engine(\"glm\") %&gt;%\n  fit(spam ~ ., data = train_data, family = \"binomial\")"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#prédicteurs-catégoriels",
+    "href": "slides/08 - classification/08-classification.html#prédicteurs-catégoriels",
+    "title": "08-Classification",
+    "section": "Prédicteurs catégoriels",
+    "text": "Prédicteurs catégoriels"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#from-et-sent_email",
+    "href": "slides/08 - classification/08-classification.html#from-et-sent_email",
+    "title": "08-Classification",
+    "section": "from et sent_email",
+    "text": "from et sent_email\n.pull-left[ - from: Si le message a été répertorié comme provenant de quelqu’un d’autre (cette option est généralement définie par défaut pour les courriers électroniques sortants).\n\ntrain_data %&gt;%\n  count(spam, from)\n\n# A tibble: 3 × 3\n  spam  from      n\n  &lt;fct&gt; &lt;fct&gt; &lt;int&gt;\n1 0     1      2837\n2 1     0         3\n3 1     1       296\n\n\n] .pull-right[ - sent_email: Indicateur permettant de savoir si l’expéditeur a reçu un courrier électronique au cours des 30 derniers jours.\n\ntrain_data %&gt;%\n  count(spam, sent_email)\n\n# A tibble: 3 × 3\n  spam  sent_email     n\n  &lt;fct&gt; &lt;fct&gt;      &lt;int&gt;\n1 0     0           1972\n2 0     1            865\n3 1     0            299\n\n\n]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#les-prédicteurs-numériques",
+    "href": "slides/08 - classification/08-classification.html#les-prédicteurs-numériques",
+    "title": "08-Classification",
+    "section": "Les prédicteurs numériques",
+    "text": "Les prédicteurs numériques\n.small[\n\n\n\n── Variable type: numeric ──────────────────────────────────────────────────────────────────────────\n   skim_variable spam n_missing complete_rate      mean       sd    p0    p25     p50    p75  p100\n 1 cc            0            0             1   0.393     2.62   0      0       0       0      68 \n 2 cc            1            0             1   0.388     3.25   0      0       0       0      50 \n 3 image         0            0             1   0.0536    0.503  0      0       0       0      20 \n 4 image         1            0             1   0.00334   0.0578 0      0       0       0       1 \n 5 attach        0            0             1   0.124     0.775  0      0       0       0      21 \n 6 attach        1            0             1   0.227     0.620  0      0       0       0       2 \n 7 dollar        0            0             1   1.56      5.33   0      0       0       0      64 \n 8 dollar        1            0             1   0.779     3.01   0      0       0       0      36 \n 9 inherit       0            0             1   0.0352    0.216  0      0       0       0       6 \n10 inherit       1            0             1   0.0702    0.554  0      0       0       0       9 \n11 viagra        0            0             1   0         0      0      0       0       0       0 \n12 viagra        1            0             1   0.0268    0.463  0      0       0       0       8 \n13 password      0            0             1   0.112     0.938  0      0       0       0      22 \n14 password      1            0             1   0.0201    0.182  0      0       0       0       2 \n15 num_char      0            0             1  11.4      14.9    0.003  1.97    6.83   15.7   190.\n16 num_char      1            0             1   5.63     15.7    0.001  0.468   0.999   3.55  174.\n17 line_breaks   0            0             1 247.      326.     2     42     138     318    4022 \n18 line_breaks   1            0             1 108.      321.     1     14      23      66.5  3729 \n19 exclaim_subj  0            0             1   0.0783    0.269  0      0       0       0       1 \n20 exclaim_subj  1            0             1   0.0769    0.267  0      0       0       0       1 \n21 exclaim_mess  0            0             1   6.68     50.2    0      0       1       5    1236 \n22 exclaim_mess  1            0             1   8.75     88.4    0      0       0       1    1209 \n\n\n]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#ajuster-un-modèle-à-lensemble-de-données-dentraînement-1",
+    "href": "slides/08 - classification/08-classification.html#ajuster-un-modèle-à-lensemble-de-données-dentraînement-1",
+    "title": "08-Classification",
+    "section": "Ajuster un modèle à l’ensemble de données d’entraînement",
+    "text": "Ajuster un modèle à l’ensemble de données d’entraînement\n\nemail_fit &lt;- logistic_reg() %&gt;%\n  set_engine(\"glm\") %&gt;%\n  fit(spam ~ . - from - sent_email - viagra, data = train_data, family = \"binomial\") #&lt;&lt;\n\n.small[\n\nemail_fit\n\nparsnip model object\n\n\nCall:  stats::glm(formula = spam ~ . - from - sent_email - viagra, family = stats::binomial, \n    data = data)\n\nCoefficients:\n (Intercept)  to_multiple1            cc          time         image        attach        dollar  \n  -9.867e+01    -2.505e+00     1.944e-02     7.396e-08    -2.854e+00     5.070e-01    -6.440e-02  \n   winneryes       inherit      password      num_char   line_breaks       format1      re_subj1  \n   2.170e+00     4.499e-01    -7.065e-01     5.870e-02    -5.420e-03    -9.017e-01    -2.995e+00  \nexclaim_subj  urgent_subj1  exclaim_mess   numbersmall     numberbig  \n   1.002e-01     3.572e+00     1.009e-02    -8.518e-01    -1.329e-01  \n\nDegrees of Freedom: 3135 Total (i.e. Null);  3117 Residual\nNull Deviance:      1974 \nResidual Deviance: 1447     AIC: 1485\n\n\n]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#prédire-les-résultats-sur-lensemble-des-données-de-test",
+    "href": "slides/08 - classification/08-classification.html#prédire-les-résultats-sur-lensemble-des-données-de-test",
+    "title": "08-Classification",
+    "section": "Prédire les résultats sur l’ensemble des données de test",
+    "text": "Prédire les résultats sur l’ensemble des données de test\n\npredict(email_fit, test_data)\n\n# A tibble: 785 × 1\n  .pred_class\n  &lt;fct&gt;      \n1 0          \n2 0          \n3 0          \n4 0          \n5 0          \n6 0          \n# ℹ 779 more rows"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#prédire-les-probabilités-sur-lensemble-de-données-de-test",
+    "href": "slides/08 - classification/08-classification.html#prédire-les-probabilités-sur-lensemble-de-données-de-test",
+    "title": "08-Classification",
+    "section": "Prédire les probabilités sur l’ensemble de données de test",
+    "text": "Prédire les probabilités sur l’ensemble de données de test\n\nemail_pred &lt;- predict(email_fit, test_data, type = \"prob\") %&gt;%\n  bind_cols(test_data %&gt;% select(spam, time))\n\nemail_pred\n\n# A tibble: 785 × 4\n  .pred_0 .pred_1 spam  time               \n    &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt; &lt;dttm&gt;             \n1   0.993 0.00709 0     2012-01-01 12:55:06\n2   0.998 0.00181 0     2012-01-01 14:38:32\n3   0.981 0.0191  0     2012-01-02 00:42:16\n4   0.999 0.00124 0     2012-01-02 10:12:51\n5   0.988 0.0121  0     2012-01-02 11:45:36\n6   0.830 0.170   0     2012-01-02 16:55:03\n# ℹ 779 more rows"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#un-examen-plus-approfondi-des-prévisions",
+    "href": "slides/08 - classification/08-classification.html#un-examen-plus-approfondi-des-prévisions",
+    "title": "08-Classification",
+    "section": "Un examen plus approfondi des prévisions",
+    "text": "Un examen plus approfondi des prévisions\n.pull-left-wide[\n\nemail_pred %&gt;%\n  arrange(desc(.pred_1)) %&gt;%\n  print(n = 10)\n\n# A tibble: 785 × 4\n   .pred_0 .pred_1 spam  time               \n     &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt; &lt;dttm&gt;             \n 1  0.0972   0.903 1     2012-02-13 07:15:00\n 2  0.167    0.833 0     2012-01-27 15:05:06\n 3  0.175    0.825 1     2012-03-01 00:40:27\n 4  0.267    0.733 1     2012-03-17 06:13:27\n 5  0.317    0.683 1     2012-03-21 08:33:12\n 6  0.374    0.626 1     2012-02-08 03:00:05\n 7  0.386    0.614 0     2012-01-30 09:20:29\n 8  0.403    0.597 1     2012-01-07 11:11:49\n 9  0.462    0.538 1     2012-03-06 06:46:20\n10  0.463    0.537 0     2012-02-17 17:54:16\n# ℹ 775 more rows\n\n\n]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#évaluer-la-performance",
+    "href": "slides/08 - classification/08-classification.html#évaluer-la-performance",
+    "title": "08-Classification",
+    "section": "Évaluer la performance",
+    "text": "Évaluer la performance\nLa courbe de receiver operating characteristic (ROC)+qui représente le taux de vrais positifs vs. le taux de faux positifs (1 - spécificité)\n.pull-left[\n\nemail_pred %&gt;%\n  roc_curve(\n    truth = spam,\n    .pred_1,\n    event_level = \"second\"\n  ) %&gt;%\n  autoplot()\n\n] .pull-right[\n\n]\n.footnote[ .small[ +Développé à l’origine pour les opérateurs de récepteurs radar militaires, d’où son nom.]]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html#évaluer-la-performance-1",
+    "href": "slides/08 - classification/08-classification.html#évaluer-la-performance-1",
+    "title": "08-Classification",
+    "section": "Évaluer la performance",
+    "text": "Évaluer la performance\nTrouver l’aire sous la courbe :\n.pull-left[\n\nemail_pred %&gt;%\n  roc_auc(\n    truth = spam,\n    .pred_1,\n    event_level = \"second\"\n  )\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.857\n\n\n] .pull-right[\n\n]"
+  },
+  {
+    "objectID": "slides/08 - classification/08-classification.html",
+    "href": "slides/08 - classification/08-classification.html",
+    "title": "08-Classification",
+    "section": "",
+    "text": "layout: true\nclass: middle"
+  },
+  {
+    "objectID": "website/cours/cours.html#classification",
+    "href": "website/cours/cours.html#classification",
+    "title": "Cours",
+    "section": "08 - Classification",
+    "text": "08 - Classification\nSlides : PDF"
   }
 ]
