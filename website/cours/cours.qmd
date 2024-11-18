@@ -114,6 +114,10 @@ Demo:
 
 - [Régression](https://github.com/PRO1036/paris-painting)
 
+## 08 - Classification
+
+Slides : [PDF](08-Classication.html)
+
 # Références
 
 ::: {#refs}
