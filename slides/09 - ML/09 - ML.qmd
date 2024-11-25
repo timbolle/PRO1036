@@ -1,0 +1,659 @@
+---
+title: "09 - Machine Learning"
+subtitle: "PRO1036 - Analyse de données scientifiques en R"
+author: "Tim Bollé"
+date: "2024-11-25"
+date-format: long
+footer: "PRO1036 - 04 | Tim Bollé"
+license: "CC BY-SA"
+bibliography: ../template/references.bib
+csl: ../template/apa-fr.csl
+execute: 
+  eval: true
+  echo: true
+  output: true
+  warning: false
+format: 
+  revealjs:
+    theme: [dark, ../template/uqtr.scss]
+    logo: ../template/h-UQTR-r.png
+    slide-number: true
+    width: 1350
+    height: 900
+---
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidymodels) # for the rsample package, along with the rest of tidymodels
+
+# Helper packages
+library(modeldata)  # for the cells data
+
+set.seed(123)
+```
+
+# Modélisation
+
+## Buts de l'analyse de données
+
+  - Comprendre les données
+  - Extraire des informations
+  - Prédire des valeurs
+  - Prendre des décisions
+
+## Modélisation
+
+Intervient dans le processus d'analyse de données
+
+![](figs/data-science-process.png)
+
+Le machine learning permet notamment de prédire des valeurs et prendre des décisions.
+
+## Types de modèles
+
+  - Modèles descriptifs
+  - Modèles inférentiels
+  - Modèles prédictifs
+
+## Types de modèles
+
+![](figs/ml_map.svg)
+
+## Types de machine learning
+
+  - **Supervised learning**: On a des données étiquetées
+    - Classification
+    - Régression
+  - **Unsupervised learning**: On a des données non étiquetées
+    - Clustering
+    - Réduction de dimension
+  - ...
+
+## Processus de modélisation
+
+  - **Exploratory data analysis (EDA)**: Comprendre les données, se poser des questions
+  - **Feature engineering**: Créer de nouvelles variables à partir des données ou sélectionner les variables les plus pertinentes
+  - **Sélection de modèle et tuning**: Choisir le modèle le plus adapté et ajuster les hyperparamètres
+  - **Évaluation du modèle**: Mesurer la performance du modèle
+
+## Processus de modélisation
+
+![](figs/modeling-process.svg){style="background-color: #FFFFFF"}
+  
+## Modeling et tidyverse
+
+[Tidymodel]{.heavy-red} est un ensemble de packages qui permettent de faire du machine learning avec le tidyverse.
+
+On retrouve les packages:
+
+  - `parsnip`: Interface pour les modèles
+  - `dials`: Sélection d'hyperparamètres
+  - `tune`: Tuning des hyperparamètres
+  - `workflow`: Workflows pour les modèles
+  - `yardstick`: Métriques de performance
+  - `recipes`: Préparation des données
+
+
+# Modélisation - Étapes générales
+
+## Étapes générales
+
+0. **Préparation des données**: Nettoyage, transformation, normalisation
+1. **Séparation des données**: Entraînement et test
+2. **Feature engineering**: Création de nouvelles variables ou sélection des variables les plus pertinentes
+3. **Choix du modèle**: Sélection du modèle le plus adapté
+4. **Entraînement du modèle**: Apprentissage du modèle sur les données d'entraînement
+5. **Évaluation du modèle**: Mesure de la performance du modèle sur les données de test
+
+## Les données
+
+Pour les slides suivantes, nous allons utiliser le jeu de données `cells` du package `modeldata`, publiées par [Hill, LaPan, Li, and Haney (2007)](http://www.biomedcentral.com/1471-2105/8/340).
+
+Le jeu de données concerne des images de cellules cancéreuses et indique si elles sont bien segmentées (`WS`) ou non (`PS`).
+
+```{r}
+glimpse(cells)
+```
+
+# Séparation des données
+
+## Séparation des données
+
+Il est commun de séparer les données en deux partitions:
+
+  - **Données d'entraînement**: Pour estimer les paramètres, comparer les modèles, ajuster les hyperparamètres, etc.
+  - **Données de test**: Pour évaluer la performance finale du modèle. Cette partie est gardée en réserve jusqu'à la fin du projet.
+  
+Il existe différentes façons de créer ces partitions des données. L'approche la plus courante est d'utiliser un échantillon aléatoire. Supposons qu'un quart des données soit réservé pour les données de test. L'échantillonnage aléatoire sélectionnerait aléatoirement 25% pour les données de test et utiliserait le reste pour les données d'entraînement. On peut utiliser le package `rsample` à cet effet.
+
+
+## Séparation des données
+
+Une première approche assez simple serait de séparer les données en deux groupes selon une proportion fixée:
+
+```{r}
+cell_preprossed <- cells %>% 
+  select(-case)
+
+cell_split <- initial_split(cell_preprossed)
+```
+
+
+## Séparation des données
+
+Par défaut, la proportion de données dans le set d'entrainement est de 75%. Ici, nous avons un petit soucis: nos classes ne sont pas équilibrées. 
+
+```{r}
+cells %>% 
+  count(class) %>% 
+  mutate(prop = n/sum(n))
+```
+
+La solution est de préciser que nous voulons une stratification des données.
+
+```{r}
+cell_split <- initial_split(cell_preprossed,
+                            strata = class)
+```
+
+## Séparation des données
+
+Nous pouvons alors séparer nos deux jeux de données.
+
+```{r}
+cell_train <- training(cell_split)
+cell_test  <- testing(cell_split)
+```
+
+Les proportions sont maintenant équilibrées.
+
+:::columns
+:::column
+
+```{r}
+cell_train %>% 
+  count(class) %>% 
+  mutate(prop = n/sum(n))
+```
+:::
+
+:::column
+```{r}
+cell_test %>% 
+  count(class) %>% 
+  mutate(prop = n/sum(n))
+```
+:::
+:::
+
+## Feature engineering
+
+Dans cet exemple, il n'est pas nécessaire de faire une feature engineering. Nous allons utiliser toutes les variables disponibles.
+
+
+# Modélisation
+
+## Choix du modèle
+
+Nous allons utiliser un modèle de régression logistique pour prédire si une cellule est bien segmentée ou non.
+
+```{r}
+logistic_reg <- logistic_reg() %>%
+  set_engine("glm") %>%
+  set_mode("classification")
+```
+
+## Entraînement du modèle
+
+```{r}
+logistic_fit <- logistic_reg %>% 
+  fit(class ~ ., data = cell_train)
+```
+
+## Évaluation du modèle
+
+Commençons par voir les performances du modèle sur les données d'entraînement.
+
+```{r}
+gml_training_pred <- 
+  predict(logistic_fit, cell_train) %>% 
+  bind_cols(predict(logistic_fit, cell_train, type = "prob")) %>% 
+  # Add the true outcome data back in
+  bind_cols(cell_train %>% 
+              select(class))
+```
+
+```{r}
+gml_training_pred %>%                # training set predictions
+  roc_auc(truth = class, .pred_PS)  # truth and predicted probabilities
+```
+
+```{r}
+gml_training_pred %>%                # training set predictions
+  accuracy(truth = class, .pred_class)
+```
+## Prédiction avec le modèle
+
+```{r}
+gml_test_pred <- 
+  predict(logistic_fit, cell_test) %>% 
+  bind_cols(predict(logistic_fit, cell_test, type = "prob")) %>% 
+  # Add the true outcome data back in
+  bind_cols(cell_test %>% 
+              select(class))
+```
+
+```{r}
+gml_test_pred %>%                # training set predictions
+  roc_auc(truth = class, .pred_PS)  # truth and predicted probabilities
+```
+
+```{r}
+gml_test_pred %>%                # training set predictions
+  accuracy(truth = class, .pred_class)
+```
+# Rééchantillonnage
+
+## Rééchantillonnage
+
+Pour obtenir une meilleure estimation de la performance du modèle, on peut utiliser le rééchantillonnage.
+
+![](figs/resampling.svg){style="background-color: #FDFDE1"}
+
+## Rééchantillonnage
+
+Il existe plusieurs méthodes de rééchantillonnage:
+
+  - Validation croisée
+  - Bootstrap
+  - Leave-one-out
+  - ...
+  
+Nous allons utiliser la validation croisée.
+
+```{r}
+folds <- vfold_cv(cell_train, v = 10)
+```
+
+## Validation croisée
+
+![](figs/cv.png)
+
+## Rééchantillonnage
+
+Nous pouvons alors entraîner notre modèle sur les différents _folds_.
+
+```{r}
+gml_res <- logistic_reg %>% 
+  fit_resamples(class ~ ., 
+                resamples = folds)
+
+collect_metrics(gml_res)
+```
+
+Nous voyons que les performances sont assez similaires à celles obtenues avec les données de test !
+
+# Optimisation des hyperparamètres
+
+## `tune()`
+
+Certains modèles possèdent des hyperparamètres qui peuvent être ajustés pour améliorer la performance du modèle.
+
+Nous allons prendre comme exemple le même jeu de données mais cette fois nous allons utiliser un modèle d'arbre de décision.
+
+## Arbre de décisions
+
+:::columns
+:::column
+
+![](figs/iris-decision-tree-1.png)
+
+:::
+:::column
+
+![](figs/iris-decision-tree-2.png)
+
+:::
+:::
+
+
+## Arbre de décisions
+
+Il y a deux hyperparamètres principaux pour les arbres de décisions:
+
+  - `cost_complexity`: Ajoute une pénalité pour la complexité de l'arbre et permet d'éviter l'overfitting
+  - `tree_depth`: Profondeur maximale de l'arbre
+
+```{r}
+#| code-line-numbers: "3,4"
+tune_spec <- 
+  decision_tree(
+    cost_complexity = tune(), # Paramètre à tuner
+    tree_depth = tune()       # Paramètre à tuner
+  ) %>% 
+  set_engine("rpart") %>% 
+  set_mode("classification")
+
+tune_spec
+```
+
+## Recherche des hyperparamètres
+
+Nous allons ensuite lui donner une grille de recherche. Il va tester toutes les combinaisons possibles des hyperparamètres pour trouver la meilleure combinaison.
+
+```{r}
+tree_grid <- grid_regular(cost_complexity(),
+                          tree_depth(),
+                          levels = 5)
+```
+
+## Recherche des hyperparamètres
+
+On commence par séparer nos données en données d'entraînement et de test.
+
+```{r}
+set.seed(42)
+cell_split <- initial_split(cells %>% select(-case), 
+                            strata = class)
+cell_train <- training(cell_split)
+cell_test  <- testing(cell_split)
+
+cell_folds <- vfold_cv(cell_train)
+```
+
+## Recherche des hyperparamètres
+
+On peut maintenant lancer la recherche des hyperparamètres.
+
+```{r}
+tune_res <- tune_grid(tune_spec,
+                      class ~ .,         # On indique la formule
+                      resamples = folds,
+                      grid = tree_grid)
+```
+
+## Analyse des résultats
+
+```{r}
+tune_res %>% 
+  collect_metrics()
+```
+
+## Analyse des résultats
+
+```{r}
+tune_res %>%
+  collect_metrics() %>%
+  mutate(tree_depth = factor(tree_depth)) %>%
+  ggplot(aes(cost_complexity, mean, color = tree_depth)) +
+  geom_line(size = 1.5, alpha = 0.6) +
+  geom_point(size = 2) +
+  facet_wrap(~ .metric, scales = "free", nrow = 2) +
+  scale_x_log10(labels = scales::label_number()) +
+  scale_color_viridis_d(option = "plasma", begin = .9, end = 0)
+```
+
+## Choix des hyperparamètres
+
+```{r}
+tune_res %>%
+  show_best(metric = "accuracy")
+```
+
+On peut maintenant entraîner notre modèle avec les hyperparamètres optimisés. Nous allons 
+
+```{r}
+best_tree <- tune_res %>% 
+  select_best(metric = "accuracy")
+
+final_tree <- finalize_model(tune_spec, best_tree)
+```
+
+## Entraînement du modèle
+
+
+```{r}
+final_fit <- last_fit(final_tree,
+                      class ~ .,
+                      cell_split)
+```
+
+Performances :
+
+:::columns
+:::column
+
+```{r}
+final_fit %>%
+  collect_metrics()
+```
+
+:::
+:::column
+
+```{r}
+final_fit %>%
+  collect_predictions() %>% 
+  roc_curve(class, .pred_PS) %>% 
+  autoplot()
+```
+
+:::
+:::
+
+# Recettes et workflows
+
+## Feitures engineering avec `recipes`
+
+`tidymodels` et son package `recipes` permettent de créer des recettes pour préparer les données. Cela permet de transformer certaines variables, de créer de nouvelles variables, etc.
+
+Nous allons prendre ici comme exemple le jeu de données `nyflights13`.
+
+## Data prerocessing
+
+Commencons par préparer et nettroyer nos données:
+
+```{r}
+set.seed(123)
+library(nycflights13)
+
+flight_data <- 
+  flights %>% 
+  mutate(
+    # On change le retard en facteur
+    arr_delay = ifelse(arr_delay >= 30, "late", "on_time"),
+    arr_delay = factor(arr_delay),
+    # Nous aurons besoin de la date
+    date = lubridate::as_date(time_hour)
+  ) %>% 
+  # On ajoute les données de météo
+  inner_join(weather, by = c("origin", "time_hour")) %>% 
+  # On ne garde que les colonnes utiles
+  select(dep_time, flight, origin, dest, air_time, distance, 
+         carrier, date, arr_delay, time_hour) %>% 
+  # On enlève les lignes avec des données manquantes
+  na.omit() %>% 
+  # Pour faire des modèles, on préfère avoir des facteurs que du texte
+  mutate_if(is.character, as.factor)
+```
+
+Nous allons chercher à prédire le retard en fonction de différentes variables
+
+## Data preprocessing
+
+```{r}
+glimpse(flight_data)
+```
+
+## Séparation des données
+
+```{r}
+data_split <- initial_split(flight_data, prop = 3/4)
+
+train_data <- training(data_split)
+test_data  <- testing(data_split)
+```
+
+
+## Recettes
+
+Une recette de base prend une **formule** et des **données**
+
+```{r}
+flights_rec <- 
+  recipe(arr_delay ~ ., data = train_data) 
+```
+
+Par défaut, toutes les variables sont des `predictors`.
+
+```{r}
+summary(flights_rec)
+```
+
+## Recettes
+
+Nous pouvons maintenant appliquer des transformations sur les colonnes pour créer des variables adaptées à notre modèle.
+
+Il existe de nombreuses recettes dans le package `recipes`. Elles ont toute la forme `step_X()` où `X` sera le nom d'une recette.
+
+Par exemple, la recette `step_date` permet de transformer une date en une autre variable (jour de la semaine, mois, années, ...)
+
+
+```{r}
+flights_rec <- 
+  recipe(arr_delay ~ ., data = train_data) %>%
+  step_date(date, features = c("dow", "month"))
+
+prep(flights_rec) %>% juice() %>% select(starts_with("date")) # Pour voir le résultat
+```
+
+## Recettes
+
+Nous allons transformer les variables de différentes manières:
+
+  - `update_role`: Pour indiquer les variables que l'on veut garder comme identifiant (`ID`)
+  - `step_date`: Pour transformer la date en variables plus utiles
+  - `step_holiday`: Pour indiquer si une date tombe un jour férié
+  - `step_dummy`: Pour transformer les variables catégorielles en variables binaires
+
+```{r}
+flights_rec <- 
+  recipe(arr_delay ~ ., data = train_data) %>% 
+  update_role(flight, time_hour, new_role = "ID") %>%   
+  step_date(date, features = c("dow", "month")) %>%               
+  step_holiday(date, 
+               holidays = timeDate::listHolidays("US"), 
+               keep_original_cols = FALSE) %>% 
+  step_dummy(all_nominal_predictors())
+```
+
+## Faire un `workflow`
+
+Un `workflow` est une combinaison d'une recette et d'un modèle. Il permet d'enchainer différentes opérations.
+
+Commençons par définir un modèle: 
+
+```{r}
+lr_mod <- 
+  logistic_reg() %>% 
+  set_engine("glm")
+```
+
+## `workflow`
+
+Nous pouvons maintenant combiner notre recette et notre modèle pour créer un `workflow`.
+
+```{r}
+flights_wf <- 
+  workflow() %>% 
+  add_recipe(flights_rec) %>% 
+  add_model(lr_mod)
+```
+
+## Entrainer un `workflow`
+  
+Nous pouvons ensuite entraîner notre modèle. Pour cela, nous pouvons directement utiliser la fonction `fit` du `workflow`.
+
+```{r}
+flights_fit <- 
+  flights_wf %>% 
+  fit(data = train_data)
+```
+
+## Rééchantillonnage avec un `workflow`
+
+Nous pouvons également fiter notre modèle avec une validation croisée.
+
+```{r}
+flights_folds <- vfold_cv(train_data, v=10)
+
+flights_res <- 
+  flights_wf %>% 
+  fit_resamples(resamples = flights_folds)
+```
+
+## Évaluation du modèle
+
+Comme précédemment, nous pouvons directement accéder aux résultats du modèle
+
+```{r}
+flights_res %>% 
+  collect_metrics()
+```
+
+## Hyperparamètres et `workflow`
+
+Nous pouvons également utiliser les fonctions pour optimiser les hyperparamètres directement avec un workflow.
+
+Précédemment, nous avions:
+
+```{r, eval=FALSE}
+tune_res <- tune_grid(tune_spec,
+                      class ~ .,         # On indique la formule
+                      resamples = folds,
+                      grid = tree_grid)
+
+best_tree <- tune_res %>% 
+  select_best(metric = "accuracy")
+
+final_tree <- finalize_model(tune_spec, best_tree)
+
+final_fit <- last_fit(final_tree,
+                      class ~ .,
+                      cell_split)
+```
+
+## Hyperparamètres et `workflow`
+
+Avec un `workflow`, cela devient:
+
+```{r, eval=FALSE}
+tree_wf <- workflow() %>%
+  add_model(tune_spec) %>%
+  add_formula(class ~ .) %>%
+
+best_tree <- 
+  tree_wf %>% 
+  tune_grid(
+    resamples = cell_folds,
+    grid = tree_grid
+    ) %>%
+  select_best(metric = "accuracy")
+
+final_wf <- 
+  tree_wf %>% 
+  finalize_workflow(best_tree)
+
+final_fit <- 
+  final_wf %>%
+  last_fit(cell_split) 
+
+final_fit %>%
+  collect_metrics()
+```
+
+
+
+## Références
+:::{#refs}
+:::

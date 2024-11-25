@@ -3709,5 +3709,515 @@
     "title": "Régression",
     "section": "",
     "text": "Installer des paquets si vous ne les avez pas\n\npackages &lt;- c(\"openintro\", \"tidyverse\", \"parsnip\" ,\"broom\")\nfor (pkg in packages)\n  if (!pkg %in% installed.packages()) {\n    install.packages(pkg)\n    }\n\nCharger les paquets\n\nfor (pkg in packages) library(pkg, character.only = T)\n\nLe chargement a nécessité le package : airports\n\n\nLe chargement a nécessité le package : cherryblossom\n\n\nLe chargement a nécessité le package : usdata\n\n\nLa base de données avec laquelle nous allons travailler s’appelle « evals »..\n\nevals %&gt;%\n  glimpse()\n\nRows: 463\nColumns: 23\n$ course_id     &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1…\n$ prof_id       &lt;int&gt; 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5,…\n$ score         &lt;dbl&gt; 4.7, 4.1, 3.9, 4.8, 4.6, 4.3, 2.8, 4.1, 3.4, 4.5, 3.8, 4…\n$ rank          &lt;fct&gt; tenure track, tenure track, tenure track, tenure track, …\n$ ethnicity     &lt;fct&gt; minority, minority, minority, minority, not minority, no…\n$ gender        &lt;fct&gt; female, female, female, female, male, male, male, male, …\n$ language      &lt;fct&gt; english, english, english, english, english, english, en…\n$ age           &lt;int&gt; 36, 36, 36, 36, 59, 59, 59, 51, 51, 40, 40, 40, 40, 40, …\n$ cls_perc_eval &lt;dbl&gt; 55.81395, 68.80000, 60.80000, 62.60163, 85.00000, 87.500…\n$ cls_did_eval  &lt;int&gt; 24, 86, 76, 77, 17, 35, 39, 55, 111, 40, 24, 24, 17, 14,…\n$ cls_students  &lt;int&gt; 43, 125, 125, 123, 20, 40, 44, 55, 195, 46, 27, 25, 20, …\n$ cls_level     &lt;fct&gt; upper, upper, upper, upper, upper, upper, upper, upper, …\n$ cls_profs     &lt;fct&gt; single, single, single, single, multiple, multiple, mult…\n$ cls_credits   &lt;fct&gt; multi credit, multi credit, multi credit, multi credit, …\n$ bty_f1lower   &lt;int&gt; 5, 5, 5, 5, 4, 4, 4, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 7, 7,…\n$ bty_f1upper   &lt;int&gt; 7, 7, 7, 7, 4, 4, 4, 2, 2, 5, 5, 5, 5, 5, 5, 5, 5, 9, 9,…\n$ bty_f2upper   &lt;int&gt; 6, 6, 6, 6, 2, 2, 2, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 9, 9,…\n$ bty_m1lower   &lt;int&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 7, 7,…\n$ bty_m1upper   &lt;int&gt; 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 6, 6,…\n$ bty_m2upper   &lt;int&gt; 6, 6, 6, 6, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 6, 6,…\n$ bty_avg       &lt;dbl&gt; 5.000, 5.000, 5.000, 5.000, 3.000, 3.000, 3.000, 3.333, …\n$ pic_outfit    &lt;fct&gt; not formal, not formal, not formal, not formal, not form…\n$ pic_color     &lt;fct&gt; color, color, color, color, color, color, color, color, …\n\n\n\nVisualisez et décrivez la relation entre score et bty_avg. Indice: Voir la page d’aide de la fonction à l’adresse suivante: http://ggplot2.tidyverse.org/reference/index.html.\n\n\n\nRecréer le nuage de points de l’exercice 5, mais cette fois en utilisant geom_jitter().\nQue signifie « jitter » ? Qu’est-ce qui était trompeur dans le nuage de points initial ?\nR:\nRecréer le nuage de points de l’exercice 5, et ajoutez la ligne de régression à ce tracé en couleur orange, l’ombrage pour l’incertitude de la ligne étant désactivé.Interpret the slope of the linear model in context of the data. Interpret the intercept of the linear model in context of the data. Comment on whether or not the intercept makes sense in this context.\nR:\nDéterminez le \\(R^2\\) du modèle et interprétez-le dans le contexte des données.\nAjustez un nouveau modèle linéaire appelé score_gender_fit pour prédire la moyenne d’évaluation du professeur score en fonction du genre du professeur. Sur la base des résultats de la régression, écrivez le modèle linéaire et interprétez la pente et l’ordonnée à l’origine dans le contexte des données.\nQuelle est l’équation de la droite correspondant aux professeurs ? Quelle est-elle pour les professeures ?\nR:\nAjustez un nouveau modèle linéaire appelé score_rank_fit pour prédire la note moyenne d’évaluation du professeur score en fonction du rank du professeur. Sur la base des résultats de la régression, écrivez le modèle linéaire et interprétez les pentes et les ordonnées à l’origine dans le contexte des données.\nR:\n\n🧶 Knit"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#buts-de-lanalyse-de-données",
+    "href": "slides/09 - ML/09 - ML.html#buts-de-lanalyse-de-données",
+    "title": "09 - Machine Learning",
+    "section": "Buts de l’analyse de données",
+    "text": "Buts de l’analyse de données\n\nComprendre les données\nExtraire des informations\nPrédire des valeurs\nPrendre des décisions"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#modélisation-1",
+    "href": "slides/09 - ML/09 - ML.html#modélisation-1",
+    "title": "09 - Machine Learning",
+    "section": "Modélisation",
+    "text": "Modélisation\nIntervient dans le processus d’analyse de données\n\nLe machine learning permet notamment de prédire des valeurs et prendre des décisions."
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#types-de-modèles",
+    "href": "slides/09 - ML/09 - ML.html#types-de-modèles",
+    "title": "09 - Machine Learning",
+    "section": "Types de modèles",
+    "text": "Types de modèles\n\nModèles descriptifs\nModèles inférentiels\nModèles prédictifs"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#types-de-modèles-1",
+    "href": "slides/09 - ML/09 - ML.html#types-de-modèles-1",
+    "title": "09 - Machine Learning",
+    "section": "Types de modèles",
+    "text": "Types de modèles"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#types-de-machine-learning",
+    "href": "slides/09 - ML/09 - ML.html#types-de-machine-learning",
+    "title": "09 - Machine Learning",
+    "section": "Types de machine learning",
+    "text": "Types de machine learning\n\nSupervised learning: On a des données étiquetées\n\nClassification\nRégression\n\nUnsupervised learning: On a des données non étiquetées\n\nClustering\nRéduction de dimension\n\n…"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#processus-de-modélisation",
+    "href": "slides/09 - ML/09 - ML.html#processus-de-modélisation",
+    "title": "09 - Machine Learning",
+    "section": "Processus de modélisation",
+    "text": "Processus de modélisation\n\nExploratory data analysis (EDA): Comprendre les données, se poser des questions\nFeature engineering: Créer de nouvelles variables à partir des données ou sélectionner les variables les plus pertinentes\nSélection de modèle et tuning: Choisir le modèle le plus adapté et ajuster les hyperparamètres\nÉvaluation du modèle: Mesurer la performance du modèle"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#processus-de-modélisation-1",
+    "href": "slides/09 - ML/09 - ML.html#processus-de-modélisation-1",
+    "title": "09 - Machine Learning",
+    "section": "Processus de modélisation",
+    "text": "Processus de modélisation"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#modeling-et-tidyverse",
+    "href": "slides/09 - ML/09 - ML.html#modeling-et-tidyverse",
+    "title": "09 - Machine Learning",
+    "section": "Modeling et tidyverse",
+    "text": "Modeling et tidyverse\nTidymodel est un ensemble de packages qui permettent de faire du machine learning avec le tidyverse.\nOn retrouve les packages:\n\nparsnip: Interface pour les modèles\ndials: Sélection d’hyperparamètres\ntune: Tuning des hyperparamètres\nworkflow: Workflows pour les modèles\nyardstick: Métriques de performance\nrecipes: Préparation des données"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#étapes-générales",
+    "href": "slides/09 - ML/09 - ML.html#étapes-générales",
+    "title": "09 - Machine Learning",
+    "section": "Étapes générales",
+    "text": "Étapes générales\n\nPréparation des données: Nettoyage, transformation, normalisation\nSéparation des données: Entraînement et test\nFeature engineering: Création de nouvelles variables ou sélection des variables les plus pertinentes\nChoix du modèle: Sélection du modèle le plus adapté\nEntraînement du modèle: Apprentissage du modèle sur les données d’entraînement\nÉvaluation du modèle: Mesure de la performance du modèle sur les données de test"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#les-données",
+    "href": "slides/09 - ML/09 - ML.html#les-données",
+    "title": "09 - Machine Learning",
+    "section": "Les données",
+    "text": "Les données\nPour les slides suivantes, nous allons utiliser le jeu de données cells du package modeldata, publiées par Hill, LaPan, Li, and Haney (2007).\nLe jeu de données concerne des images de cellules cancéreuses et indique si elles sont bien segmentées (WS) ou non (PS).\n\nglimpse(cells)\n\nRows: 2,019\nColumns: 58\n$ case                         &lt;fct&gt; Test, Train, Train, Train, Test, Test, Te…\n$ class                        &lt;fct&gt; PS, PS, WS, PS, PS, WS, WS, PS, WS, WS, W…\n$ angle_ch_1                   &lt;dbl&gt; 143.247705, 133.752037, 106.646387, 69.15…\n$ area_ch_1                    &lt;int&gt; 185, 819, 431, 298, 285, 172, 177, 251, 4…\n$ avg_inten_ch_1               &lt;dbl&gt; 15.71186, 31.92327, 28.03883, 19.45614, 2…\n$ avg_inten_ch_2               &lt;dbl&gt; 4.954802, 206.878517, 116.315534, 102.294…\n$ avg_inten_ch_3               &lt;dbl&gt; 9.548023, 69.916880, 63.941748, 28.217544…\n$ avg_inten_ch_4               &lt;dbl&gt; 2.214689, 164.153453, 106.696602, 31.0280…\n$ convex_hull_area_ratio_ch_1  &lt;dbl&gt; 1.124509, 1.263158, 1.053310, 1.202625, 1…\n$ convex_hull_perim_ratio_ch_1 &lt;dbl&gt; 0.9196827, 0.7970801, 0.9354750, 0.865829…\n$ diff_inten_density_ch_1      &lt;dbl&gt; 29.51923, 31.87500, 32.48771, 26.73228, 3…\n$ diff_inten_density_ch_3      &lt;dbl&gt; 13.77564, 43.12228, 35.98577, 22.91732, 2…\n$ diff_inten_density_ch_4      &lt;dbl&gt; 6.826923, 79.308424, 51.357050, 26.393701…\n$ entropy_inten_ch_1           &lt;dbl&gt; 4.969781, 6.087592, 5.883557, 5.420065, 5…\n$ entropy_inten_ch_3           &lt;dbl&gt; 4.371017, 6.642761, 6.683000, 5.436732, 5…\n$ entropy_inten_ch_4           &lt;dbl&gt; 2.718884, 7.880155, 7.144601, 5.778329, 5…\n$ eq_circ_diam_ch_1            &lt;dbl&gt; 15.36954, 32.30558, 23.44892, 19.50279, 1…\n$ eq_ellipse_lwr_ch_1          &lt;dbl&gt; 3.060676, 1.558394, 1.375386, 3.391220, 2…\n$ eq_ellipse_oblate_vol_ch_1   &lt;dbl&gt; 336.9691, 2232.9055, 802.1945, 724.7143, …\n$ eq_ellipse_prolate_vol_ch_1  &lt;dbl&gt; 110.0963, 1432.8246, 583.2504, 213.7031, …\n$ eq_sphere_area_ch_1          &lt;dbl&gt; 742.1156, 3278.7256, 1727.4104, 1194.9320…\n$ eq_sphere_vol_ch_1           &lt;dbl&gt; 1900.996, 17653.525, 6750.985, 3884.084, …\n$ fiber_align_2_ch_3           &lt;dbl&gt; 1.000000, 1.487935, 1.300522, 1.220424, 1…\n$ fiber_align_2_ch_4           &lt;dbl&gt; 1.000000, 1.352374, 1.522316, 1.733250, 1…\n$ fiber_length_ch_1            &lt;dbl&gt; 26.98132, 64.28230, 21.14115, 43.14112, 3…\n$ fiber_width_ch_1             &lt;dbl&gt; 7.410365, 13.167079, 21.141150, 7.404412,…\n$ inten_cooc_asm_ch_3          &lt;dbl&gt; 0.011183899, 0.028051061, 0.006862315, 0.…\n$ inten_cooc_asm_ch_4          &lt;dbl&gt; 0.050448005, 0.012594975, 0.006141691, 0.…\n$ inten_cooc_contrast_ch_3     &lt;dbl&gt; 40.751777, 8.227953, 14.446074, 7.299457,…\n$ inten_cooc_contrast_ch_4     &lt;dbl&gt; 13.895439, 6.984046, 16.700843, 13.390884…\n$ inten_cooc_entropy_ch_3      &lt;dbl&gt; 7.199458, 6.822138, 7.580100, 6.312641, 6…\n$ inten_cooc_entropy_ch_4      &lt;dbl&gt; 5.249744, 7.098988, 7.671478, 7.197026, 5…\n$ inten_cooc_max_ch_3          &lt;dbl&gt; 0.07741935, 0.15321477, 0.02835052, 0.162…\n$ inten_cooc_max_ch_4          &lt;dbl&gt; 0.17197452, 0.07387141, 0.02319588, 0.077…\n$ kurt_inten_ch_1              &lt;dbl&gt; -0.656744087, -0.248769067, -0.293484630,…\n$ kurt_inten_ch_3              &lt;dbl&gt; -0.608058268, -0.330783900, 1.051281336, …\n$ kurt_inten_ch_4              &lt;dbl&gt; 0.7258145, -0.2652638, 0.1506140, -0.3472…\n$ length_ch_1                  &lt;dbl&gt; 26.20779, 47.21855, 28.14303, 37.85957, 3…\n$ neighbor_avg_dist_ch_1       &lt;dbl&gt; 370.4543, 174.4442, 158.4774, 206.3344, 2…\n$ neighbor_min_dist_ch_1       &lt;dbl&gt; 99.10349, 30.11114, 34.94477, 33.08030, 2…\n$ neighbor_var_dist_ch_1       &lt;dbl&gt; 127.96080, 81.38063, 90.43768, 116.89276,…\n$ perim_ch_1                   &lt;dbl&gt; 68.78338, 154.89876, 84.56460, 101.09107,…\n$ shape_bfr_ch_1               &lt;dbl&gt; 0.6651480, 0.5397584, 0.7243116, 0.589162…\n$ shape_lwr_ch_1               &lt;dbl&gt; 2.462450, 1.468181, 1.328408, 2.826854, 2…\n$ shape_p_2_a_ch_1             &lt;dbl&gt; 1.883006, 2.255810, 1.272193, 2.545840, 2…\n$ skew_inten_ch_1              &lt;dbl&gt; 0.45450484, 0.39870467, 0.47248709, 0.881…\n$ skew_inten_ch_3              &lt;dbl&gt; 0.46039340, 0.61973079, 0.97137879, 0.999…\n$ skew_inten_ch_4              &lt;dbl&gt; 1.2327736, 0.5272631, 0.3247065, 0.604439…\n$ spot_fiber_count_ch_3        &lt;int&gt; 1, 4, 2, 4, 1, 1, 0, 2, 1, 1, 1, 0, 0, 2,…\n$ spot_fiber_count_ch_4        &lt;dbl&gt; 5, 12, 7, 8, 8, 5, 5, 8, 12, 8, 5, 6, 7, …\n$ total_inten_ch_1             &lt;int&gt; 2781, 24964, 11552, 5545, 6603, 53779, 43…\n$ total_inten_ch_2             &lt;dbl&gt; 701, 160998, 47511, 28870, 30306, 107681,…\n$ total_inten_ch_3             &lt;int&gt; 1690, 54675, 26344, 8042, 5569, 21234, 20…\n$ total_inten_ch_4             &lt;int&gt; 392, 128368, 43959, 8843, 11037, 57231, 4…\n$ var_inten_ch_1               &lt;dbl&gt; 12.47468, 18.80923, 17.29564, 13.81897, 1…\n$ var_inten_ch_3               &lt;dbl&gt; 7.609035, 56.715352, 37.671053, 30.005643…\n$ var_inten_ch_4               &lt;dbl&gt; 2.714100, 118.388139, 49.470524, 24.74953…\n$ width_ch_1                   &lt;dbl&gt; 10.64297, 32.16126, 21.18553, 13.39283, 1…"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#séparation-des-données-1",
+    "href": "slides/09 - ML/09 - ML.html#séparation-des-données-1",
+    "title": "09 - Machine Learning",
+    "section": "Séparation des données",
+    "text": "Séparation des données\nIl est commun de séparer les données en deux partitions:\n\nDonnées d’entraînement: Pour estimer les paramètres, comparer les modèles, ajuster les hyperparamètres, etc.\nDonnées de test: Pour évaluer la performance finale du modèle. Cette partie est gardée en réserve jusqu’à la fin du projet.\n\nIl existe différentes façons de créer ces partitions des données. L’approche la plus courante est d’utiliser un échantillon aléatoire. Supposons qu’un quart des données soit réservé pour les données de test. L’échantillonnage aléatoire sélectionnerait aléatoirement 25% pour les données de test et utiliserait le reste pour les données d’entraînement. On peut utiliser le package rsample à cet effet."
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#séparation-des-données-2",
+    "href": "slides/09 - ML/09 - ML.html#séparation-des-données-2",
+    "title": "09 - Machine Learning",
+    "section": "Séparation des données",
+    "text": "Séparation des données\nUne première approche assez simple serait de séparer les données en deux groupes selon une proportion fixée:\n\ncell_preprossed &lt;- cells %&gt;% \n  select(-case)\n\ncell_split &lt;- initial_split(cell_preprossed)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#séparation-des-données-3",
+    "href": "slides/09 - ML/09 - ML.html#séparation-des-données-3",
+    "title": "09 - Machine Learning",
+    "section": "Séparation des données",
+    "text": "Séparation des données\nPar défaut, la proportion de données dans le set d’entrainement est de 75%. Ici, nous avons un petit soucis: nos classes ne sont pas équilibrées.\n\ncells %&gt;% \n  count(class) %&gt;% \n  mutate(prop = n/sum(n))\n\n# A tibble: 2 × 3\n  class     n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 PS     1300 0.644\n2 WS      719 0.356\n\n\nLa solution est de préciser que nous voulons une stratification des données.\n\ncell_split &lt;- initial_split(cell_preprossed,\n                            strata = class)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#séparation-des-données-4",
+    "href": "slides/09 - ML/09 - ML.html#séparation-des-données-4",
+    "title": "09 - Machine Learning",
+    "section": "Séparation des données",
+    "text": "Séparation des données\nNous pouvons alors séparer nos deux jeux de données.\n\ncell_train &lt;- training(cell_split)\ncell_test  &lt;- testing(cell_split)\n\nLes proportions sont maintenant équilibrées.\n\n\n\ncell_train %&gt;% \n  count(class) %&gt;% \n  mutate(prop = n/sum(n))\n\n# A tibble: 2 × 3\n  class     n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 PS      975 0.644\n2 WS      539 0.356\n\n\n\n\ncell_test %&gt;% \n  count(class) %&gt;% \n  mutate(prop = n/sum(n))\n\n# A tibble: 2 × 3\n  class     n  prop\n  &lt;fct&gt; &lt;int&gt; &lt;dbl&gt;\n1 PS      325 0.644\n2 WS      180 0.356"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#feature-engineering",
+    "href": "slides/09 - ML/09 - ML.html#feature-engineering",
+    "title": "09 - Machine Learning",
+    "section": "Feature engineering",
+    "text": "Feature engineering\nDans cet exemple, il n’est pas nécessaire de faire une feature engineering. Nous allons utiliser toutes les variables disponibles."
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#choix-du-modèle",
+    "href": "slides/09 - ML/09 - ML.html#choix-du-modèle",
+    "title": "09 - Machine Learning",
+    "section": "Choix du modèle",
+    "text": "Choix du modèle\nNous allons utiliser un modèle de régression logistique pour prédire si une cellule est bien segmentée ou non.\n\nlogistic_reg &lt;- logistic_reg() %&gt;%\n  set_engine(\"glm\") %&gt;%\n  set_mode(\"classification\")"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#entraînement-du-modèle",
+    "href": "slides/09 - ML/09 - ML.html#entraînement-du-modèle",
+    "title": "09 - Machine Learning",
+    "section": "Entraînement du modèle",
+    "text": "Entraînement du modèle\n\nlogistic_fit &lt;- logistic_reg %&gt;% \n  fit(class ~ ., data = cell_train)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#évaluation-du-modèle",
+    "href": "slides/09 - ML/09 - ML.html#évaluation-du-modèle",
+    "title": "09 - Machine Learning",
+    "section": "Évaluation du modèle",
+    "text": "Évaluation du modèle\nCommençons par voir les performances du modèle sur les données d’entraînement.\n\ngml_training_pred &lt;- \n  predict(logistic_fit, cell_train) %&gt;% \n  bind_cols(predict(logistic_fit, cell_train, type = \"prob\")) %&gt;% \n  # Add the true outcome data back in\n  bind_cols(cell_train %&gt;% \n              select(class))\n\n\ngml_training_pred %&gt;%                # training set predictions\n  roc_auc(truth = class, .pred_PS)  # truth and predicted probabilities\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.896\n\n\n\ngml_training_pred %&gt;%                # training set predictions\n  accuracy(truth = class, .pred_class)\n\n# A tibble: 1 × 3\n  .metric  .estimator .estimate\n  &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;\n1 accuracy binary         0.822"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#préduction-avec-le-modèle",
+    "href": "slides/09 - ML/09 - ML.html#préduction-avec-le-modèle",
+    "title": "09 - Machine Learning",
+    "section": "Préduction avec le modèle",
+    "text": "Préduction avec le modèle\n\ngml_test_pred &lt;- \n  predict(logistic_fit, cell_test) %&gt;% \n  bind_cols(predict(logistic_fit, cell_test, type = \"prob\")) %&gt;% \n  # Add the true outcome data back in\n  bind_cols(cell_test %&gt;% \n              select(class))\n\n\ngml_test_pred %&gt;%                # training set predictions\n  roc_auc(truth = class, .pred_PS)  # truth and predicted probabilities\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.893\n\n\n\ngml_test_pred %&gt;%                # training set predictions\n  accuracy(truth = class, .pred_class)\n\n# A tibble: 1 × 3\n  .metric  .estimator .estimate\n  &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;\n1 accuracy binary         0.808"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#rééchantillonnage-1",
+    "href": "slides/09 - ML/09 - ML.html#rééchantillonnage-1",
+    "title": "09 - Machine Learning",
+    "section": "Rééchantillonnage",
+    "text": "Rééchantillonnage\nPour obtenir une meilleure estimation de la performance du modèle, on peut utiliser le rééchantillonnage."
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#rééchantillonnage-2",
+    "href": "slides/09 - ML/09 - ML.html#rééchantillonnage-2",
+    "title": "09 - Machine Learning",
+    "section": "Rééchantillonnage",
+    "text": "Rééchantillonnage\nIl existe plusieurs méthodes de rééchantillonnage:\n\nValidation croisée\nBootstrap\nLeave-one-out\n…\n\nNous allons utiliser la validation croisée.\n\nfolds &lt;- vfold_cv(cell_train, v = 10)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#rééchantillonnage-3",
+    "href": "slides/09 - ML/09 - ML.html#rééchantillonnage-3",
+    "title": "09 - Machine Learning",
+    "section": "Rééchantillonnage",
+    "text": "Rééchantillonnage\nNous pouvons alors entraîner notre modèle sur les différents folds.\n\ngml_res &lt;- logistic_reg %&gt;% \n  fit_resamples(class ~ ., \n                resamples = folds)\n\ncollect_metrics(gml_res)\n\n# A tibble: 3 × 6\n  .metric     .estimator  mean     n std_err .config             \n  &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               \n1 accuracy    binary     0.797    10 0.00904 Preprocessor1_Model1\n2 brier_class binary     0.139    10 0.00511 Preprocessor1_Model1\n3 roc_auc     binary     0.871    10 0.00875 Preprocessor1_Model1\n\n\nNous voyons que les performances sont assez similaires à celles obtenues avec les données de test !"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#tune",
+    "href": "slides/09 - ML/09 - ML.html#tune",
+    "title": "09 - Machine Learning",
+    "section": "tune()",
+    "text": "tune()\nCertains modèles possèdent des hyperparamètres qui peuvent être ajustés pour améliorer la performance du modèle.\nNous allons prendre comme exemple le même jeu de données mais cette fois nous allons utiliser un modèle d’arbre de décision."
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#arbre-de-décisions",
+    "href": "slides/09 - ML/09 - ML.html#arbre-de-décisions",
+    "title": "09 - Machine Learning",
+    "section": "Arbre de décisions",
+    "text": "Arbre de décisions"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#arbre-de-décisions-1",
+    "href": "slides/09 - ML/09 - ML.html#arbre-de-décisions-1",
+    "title": "09 - Machine Learning",
+    "section": "Arbre de décisions",
+    "text": "Arbre de décisions\nIl y a deux hyperparamètres principaux pour les arbres de décisions:\n\ncost_complexity: Ajoute une pénalité pour la complexité de l’arbre et permet d’éviter l’overfitting\ntree_depth: Profondeur maximale de l’arbre\n\n\ntune_spec &lt;- \n  decision_tree(\n    cost_complexity = tune(), # Paramètre à tuner\n    tree_depth = tune()       # Paramètre à tuner\n  ) %&gt;% \n  set_engine(\"rpart\") %&gt;% \n  set_mode(\"classification\")\n\ntune_spec\n\nDecision Tree Model Specification (classification)\n\nMain Arguments:\n  cost_complexity = tune()\n  tree_depth = tune()\n\nComputational engine: rpart"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#recherche-des-hyperparamètres",
+    "href": "slides/09 - ML/09 - ML.html#recherche-des-hyperparamètres",
+    "title": "09 - Machine Learning",
+    "section": "Recherche des hyperparamètres",
+    "text": "Recherche des hyperparamètres\nNous allons ensuite lui donner une grille de recherche. Il va tester toutes les combinaisons possibles des hyperparamètres pour trouver la meilleure combinaison.\n\ntree_grid &lt;- grid_regular(cost_complexity(),\n                          tree_depth(),\n                          levels = 5)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#recherche-des-hyperparamètres-1",
+    "href": "slides/09 - ML/09 - ML.html#recherche-des-hyperparamètres-1",
+    "title": "09 - Machine Learning",
+    "section": "Recherche des hyperparamètres",
+    "text": "Recherche des hyperparamètres\nOn commence par séparer nos données en données d’entraînement et de test.\n\nset.seed(42)\ncell_split &lt;- initial_split(cells %&gt;% select(-case), \n                            strata = class)\ncell_train &lt;- training(cell_split)\ncell_test  &lt;- testing(cell_split)\n\ncell_folds &lt;- vfold_cv(cell_train)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#recherche-des-hyperparamètres-2",
+    "href": "slides/09 - ML/09 - ML.html#recherche-des-hyperparamètres-2",
+    "title": "09 - Machine Learning",
+    "section": "Recherche des hyperparamètres",
+    "text": "Recherche des hyperparamètres\nOn peut maintenant lancer la recherche des hyperparamètres.\n\ntune_res &lt;- tune_grid(tune_spec,\n                      class ~ .,         # On indique la formule\n                      resamples = folds,\n                      grid = tree_grid)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#analyse-des-résultats",
+    "href": "slides/09 - ML/09 - ML.html#analyse-des-résultats",
+    "title": "09 - Machine Learning",
+    "section": "Analyse des résultats",
+    "text": "Analyse des résultats\n\ntune_res %&gt;% \n  collect_metrics()\n\n# A tibble: 75 × 8\n   cost_complexity tree_depth .metric     .estimator  mean     n std_err .config\n             &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;  \n 1    0.0000000001          1 accuracy    binary     0.731    10 0.0121  Prepro…\n 2    0.0000000001          1 brier_class binary     0.170    10 0.00294 Prepro…\n 3    0.0000000001          1 roc_auc     binary     0.764    10 0.00790 Prepro…\n 4    0.0000000178          1 accuracy    binary     0.731    10 0.0121  Prepro…\n 5    0.0000000178          1 brier_class binary     0.170    10 0.00294 Prepro…\n 6    0.0000000178          1 roc_auc     binary     0.764    10 0.00790 Prepro…\n 7    0.00000316            1 accuracy    binary     0.731    10 0.0121  Prepro…\n 8    0.00000316            1 brier_class binary     0.170    10 0.00294 Prepro…\n 9    0.00000316            1 roc_auc     binary     0.764    10 0.00790 Prepro…\n10    0.000562              1 accuracy    binary     0.731    10 0.0121  Prepro…\n# ℹ 65 more rows"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#analyse-des-résultats-1",
+    "href": "slides/09 - ML/09 - ML.html#analyse-des-résultats-1",
+    "title": "09 - Machine Learning",
+    "section": "Analyse des résultats",
+    "text": "Analyse des résultats\n\ntune_res %&gt;%\n  collect_metrics() %&gt;%\n  mutate(tree_depth = factor(tree_depth)) %&gt;%\n  ggplot(aes(cost_complexity, mean, color = tree_depth)) +\n  geom_line(size = 1.5, alpha = 0.6) +\n  geom_point(size = 2) +\n  facet_wrap(~ .metric, scales = \"free\", nrow = 2) +\n  scale_x_log10(labels = scales::label_number()) +\n  scale_color_viridis_d(option = \"plasma\", begin = .9, end = 0)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#choix-des-hyperparamètres",
+    "href": "slides/09 - ML/09 - ML.html#choix-des-hyperparamètres",
+    "title": "09 - Machine Learning",
+    "section": "Choix des hyperparamètres",
+    "text": "Choix des hyperparamètres\n\ntune_res %&gt;%\n  show_best(metric = \"accuracy\")\n\n# A tibble: 5 × 8\n  cost_complexity tree_depth .metric  .estimator  mean     n std_err .config    \n            &lt;dbl&gt;      &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;      \n1    0.0000000001          4 accuracy binary     0.801    10 0.00792 Preprocess…\n2    0.0000000178          4 accuracy binary     0.801    10 0.00792 Preprocess…\n3    0.00000316            4 accuracy binary     0.801    10 0.00792 Preprocess…\n4    0.000562              4 accuracy binary     0.801    10 0.00792 Preprocess…\n5    0.0000000001          8 accuracy binary     0.781    10 0.00853 Preprocess…\n\n\nOn peut maintenant entraîner notre modèle avec les hyperparamètres optimisés. Nous allons\n\nbest_tree &lt;- tune_res %&gt;% \n  select_best(metric = \"accuracy\")\n\nfinal_tree &lt;- finalize_model(tune_spec, best_tree)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#entraînement-du-modèle-1",
+    "href": "slides/09 - ML/09 - ML.html#entraînement-du-modèle-1",
+    "title": "09 - Machine Learning",
+    "section": "Entraînement du modèle",
+    "text": "Entraînement du modèle\n\nfinal_fit &lt;- last_fit(final_tree,\n                      class ~ .,\n                      cell_split)\n\nPerformances :\n\n\n\nfinal_fit %&gt;%\n  collect_metrics()\n\n# A tibble: 3 × 4\n  .metric     .estimator .estimate .config             \n  &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;               \n1 accuracy    binary         0.824 Preprocessor1_Model1\n2 roc_auc     binary         0.848 Preprocessor1_Model1\n3 brier_class binary         0.141 Preprocessor1_Model1\n\n\n\n\nfinal_fit %&gt;%\n  collect_predictions() %&gt;% \n  roc_curve(class, .pred_PS) %&gt;% \n  autoplot()"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#références",
+    "href": "slides/09 - ML/09 - ML.html#références",
+    "title": "09 - Machine Learning",
+    "section": "Références",
+    "text": "Références\n\n\n\n\n\n\n\nPRO1036 - 04 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#prédiction-avec-le-modèle",
+    "href": "slides/09 - ML/09 - ML.html#prédiction-avec-le-modèle",
+    "title": "09 - Machine Learning",
+    "section": "Prédiction avec le modèle",
+    "text": "Prédiction avec le modèle\n\ngml_test_pred &lt;- \n  predict(logistic_fit, cell_test) %&gt;% \n  bind_cols(predict(logistic_fit, cell_test, type = \"prob\")) %&gt;% \n  # Add the true outcome data back in\n  bind_cols(cell_test %&gt;% \n              select(class))\n\n\ngml_test_pred %&gt;%                # training set predictions\n  roc_auc(truth = class, .pred_PS)  # truth and predicted probabilities\n\n# A tibble: 1 × 3\n  .metric .estimator .estimate\n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;\n1 roc_auc binary         0.894\n\n\n\ngml_test_pred %&gt;%                # training set predictions\n  accuracy(truth = class, .pred_class)\n\n# A tibble: 1 × 3\n  .metric  .estimator .estimate\n  &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;\n1 accuracy binary         0.814"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#validation-croisée",
+    "href": "slides/09 - ML/09 - ML.html#validation-croisée",
+    "title": "09 - Machine Learning",
+    "section": "Validation croisée",
+    "text": "Validation croisée"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#feitures-engineering-avec-recipes",
+    "href": "slides/09 - ML/09 - ML.html#feitures-engineering-avec-recipes",
+    "title": "09 - Machine Learning",
+    "section": "Feitures engineering avec recipes",
+    "text": "Feitures engineering avec recipes\ntidymodels et son package recipes permettent de créer des recettes pour préparer les données. Cela permet de transformer certaines variables, de créer de nouvelles variables, etc.\nNous allons prendre ici comme exemple le jeu de données nyflights13."
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#data-prerocessing",
+    "href": "slides/09 - ML/09 - ML.html#data-prerocessing",
+    "title": "09 - Machine Learning",
+    "section": "Data prerocessing",
+    "text": "Data prerocessing\nCommencons par préparer et nettroyer nos données:\n\nset.seed(123)\nlibrary(nycflights13)\n\nflight_data &lt;- \n  flights %&gt;% \n  mutate(\n    # On change le retard en facteur\n    arr_delay = ifelse(arr_delay &gt;= 30, \"late\", \"on_time\"),\n    arr_delay = factor(arr_delay),\n    # Nous aurons besoin de la date\n    date = lubridate::as_date(time_hour)\n  ) %&gt;% \n  # On ajoute les données de météo\n  inner_join(weather, by = c(\"origin\", \"time_hour\")) %&gt;% \n  # On ne garde que les colonnes utiles\n  select(dep_time, flight, origin, dest, air_time, distance, \n         carrier, date, arr_delay, time_hour) %&gt;% \n  # On enlève les lignes avec des données manquantes\n  na.omit() %&gt;% \n  # Pour faire des modèles, on préfère avoir des facteurs que du texte\n  mutate_if(is.character, as.factor)\n\nNous allons chercher à prédire le retard en fonction de différentes variables"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#data-preprocessing",
+    "href": "slides/09 - ML/09 - ML.html#data-preprocessing",
+    "title": "09 - Machine Learning",
+    "section": "Data preprocessing",
+    "text": "Data preprocessing\n\nglimpse(flight_data)\n\nRows: 325,819\nColumns: 10\n$ dep_time  &lt;int&gt; 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 558, 558, …\n$ flight    &lt;int&gt; 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301, 49, 71…\n$ origin    &lt;fct&gt; EWR, LGA, JFK, JFK, LGA, EWR, EWR, LGA, JFK, LGA, JFK, JFK, …\n$ dest      &lt;fct&gt; IAH, IAH, MIA, BQN, ATL, ORD, FLL, IAD, MCO, ORD, PBI, TPA, …\n$ air_time  &lt;dbl&gt; 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149, 158, 3…\n$ distance  &lt;dbl&gt; 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 733, 1028,…\n$ carrier   &lt;fct&gt; UA, UA, AA, B6, DL, UA, B6, EV, B6, AA, B6, B6, UA, UA, AA, …\n$ date      &lt;date&gt; 2013-01-01, 2013-01-01, 2013-01-01, 2013-01-01, 2013-01-01,…\n$ arr_delay &lt;fct&gt; on_time, on_time, late, on_time, on_time, on_time, on_time, …\n$ time_hour &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-01 05:00:…"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#séparation-des-données-5",
+    "href": "slides/09 - ML/09 - ML.html#séparation-des-données-5",
+    "title": "09 - Machine Learning",
+    "section": "Séparation des données",
+    "text": "Séparation des données\n\ndata_split &lt;- initial_split(flight_data, prop = 3/4)\n\ntrain_data &lt;- training(data_split)\ntest_data  &lt;- testing(data_split)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#recettes",
+    "href": "slides/09 - ML/09 - ML.html#recettes",
+    "title": "09 - Machine Learning",
+    "section": "Recettes",
+    "text": "Recettes\nUne recette de base prend une formule et des données\n\nflights_rec &lt;- \n  recipe(arr_delay ~ ., data = train_data) \n\nPar défaut, toutes les variables sont des predictors.\n\nsummary(flights_rec)\n\n# A tibble: 10 × 4\n   variable  type      role      source  \n   &lt;chr&gt;     &lt;list&gt;    &lt;chr&gt;     &lt;chr&gt;   \n 1 dep_time  &lt;chr [2]&gt; predictor original\n 2 flight    &lt;chr [2]&gt; predictor original\n 3 origin    &lt;chr [3]&gt; predictor original\n 4 dest      &lt;chr [3]&gt; predictor original\n 5 air_time  &lt;chr [2]&gt; predictor original\n 6 distance  &lt;chr [2]&gt; predictor original\n 7 carrier   &lt;chr [3]&gt; predictor original\n 8 date      &lt;chr [1]&gt; predictor original\n 9 time_hour &lt;chr [1]&gt; predictor original\n10 arr_delay &lt;chr [3]&gt; outcome   original"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#recettes-1",
+    "href": "slides/09 - ML/09 - ML.html#recettes-1",
+    "title": "09 - Machine Learning",
+    "section": "Recettes",
+    "text": "Recettes\nNous pouvons maintenant appliquer des transformations sur les colonnes pour créer des variables adaptées à notre modèle.\nIl existe de nombreuses recettes dans le package recipes. Elles ont toute la forme step_X() où X sera le nom d’une recette.\nPar exemple, la recette step_date permet de transformer une date en une autre variable (jour de la semaine, mois, années, …)\n\nflights_rec &lt;- \n  recipe(arr_delay ~ ., data = train_data) %&gt;%\n  step_date(date, features = c(\"dow\", \"month\"))\n\nprep(flights_rec) %&gt;% juice() %&gt;% select(starts_with(\"date\")) # Pour voir le résultat\n\n# A tibble: 244,364 × 3\n   date       date_dow date_month\n   &lt;date&gt;     &lt;fct&gt;    &lt;fct&gt;     \n 1 2013-05-03 Fri      May       \n 2 2013-03-04 Mon      Mar       \n 3 2013-02-20 Wed      Feb       \n 4 2013-04-02 Tue      Apr       \n 5 2013-06-13 Thu      Jun       \n 6 2013-02-21 Thu      Feb       \n 7 2013-05-08 Wed      May       \n 8 2013-10-21 Mon      Oct       \n 9 2013-11-12 Tue      Nov       \n10 2013-09-11 Wed      Sep       \n# ℹ 244,354 more rows"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#recettes-2",
+    "href": "slides/09 - ML/09 - ML.html#recettes-2",
+    "title": "09 - Machine Learning",
+    "section": "Recettes",
+    "text": "Recettes\nNous allons transformer les variables de différentes manières:\n\nupdate_role: Pour indiquer les variables que l’on veut garder comme identifiant (ID)\nstep_date: Pour transformer la date en variables plus utiles\nstep_holiday: Pour indiquer si une date tombe un jour férié\nstep_dummy: Pour transformer les variables catégorielles en variables binaires\n\n\nflights_rec &lt;- \n  recipe(arr_delay ~ ., data = train_data) %&gt;% \n  update_role(flight, time_hour, new_role = \"ID\") %&gt;%   \n  step_date(date, features = c(\"dow\", \"month\")) %&gt;%               \n  step_holiday(date, \n               holidays = timeDate::listHolidays(\"US\"), \n               keep_original_cols = FALSE) %&gt;% \n  step_dummy(all_nominal_predictors())"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#faire-un-workflow",
+    "href": "slides/09 - ML/09 - ML.html#faire-un-workflow",
+    "title": "09 - Machine Learning",
+    "section": "Faire un workflow",
+    "text": "Faire un workflow\nUn workflow est une combinaison d’une recette et d’un modèle. Il permet d’enchainer différentes opérations.\nCommençons par définir un modèle:\n\nlr_mod &lt;- \n  logistic_reg() %&gt;% \n  set_engine(\"glm\")"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#workflow",
+    "href": "slides/09 - ML/09 - ML.html#workflow",
+    "title": "09 - Machine Learning",
+    "section": "workflow",
+    "text": "workflow\nNous pouvons maintenant combiner notre recette et notre modèle pour créer un workflow.\n\nflights_wf &lt;- \n  workflow() %&gt;% \n  add_recipe(flights_rec) %&gt;% \n  add_model(lr_mod)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#entrainer-un-workflow",
+    "href": "slides/09 - ML/09 - ML.html#entrainer-un-workflow",
+    "title": "09 - Machine Learning",
+    "section": "Entrainer un workflow",
+    "text": "Entrainer un workflow\nNous pouvons ensuite entraîner notre modèle. Pour cela, nous pouvons directement utiliser la fonction fit du workflow.\n\nflights_fit &lt;- \n  flights_wf %&gt;% \n  fit(data = train_data)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#rééchantillonnage-avec-un-workflow",
+    "href": "slides/09 - ML/09 - ML.html#rééchantillonnage-avec-un-workflow",
+    "title": "09 - Machine Learning",
+    "section": "Rééchantillonnage avec un workflow",
+    "text": "Rééchantillonnage avec un workflow\nNous pouvons également fiter notre modèle avec une validation croisée.\n\nflights_folds &lt;- vfold_cv(train_data, v=10)\n\nflights_res &lt;- \n  flights_wf %&gt;% \n  fit_resamples(resamples = flights_folds)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#évaluation-du-modèle-1",
+    "href": "slides/09 - ML/09 - ML.html#évaluation-du-modèle-1",
+    "title": "09 - Machine Learning",
+    "section": "Évaluation du modèle",
+    "text": "Évaluation du modèle\nComme précédemment, nous pouvons directement accéder aux résultats du modèle\n\nflights_res %&gt;% \n  collect_metrics()\n\n# A tibble: 3 × 6\n  .metric     .estimator  mean     n  std_err .config             \n  &lt;chr&gt;       &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;    &lt;dbl&gt; &lt;chr&gt;               \n1 accuracy    binary     0.849    10 0.000521 Preprocessor1_Model1\n2 brier_class binary     0.114    10 0.000359 Preprocessor1_Model1\n3 roc_auc     binary     0.766    10 0.00111  Preprocessor1_Model1"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#hyperparamètres-et-workflow",
+    "href": "slides/09 - ML/09 - ML.html#hyperparamètres-et-workflow",
+    "title": "09 - Machine Learning",
+    "section": "Hyperparamètres et workflow",
+    "text": "Hyperparamètres et workflow\nNous pouvons également utiliser les fonctions pour optimiser les hyperparamètres directement avec un workflow.\nPrécédemment, nous avions:\n\ntune_res &lt;- tune_grid(tune_spec,\n                      class ~ .,         # On indique la formule\n                      resamples = folds,\n                      grid = tree_grid)\n\nbest_tree &lt;- tune_res %&gt;% \n  select_best(metric = \"accuracy\")\n\nfinal_tree &lt;- finalize_model(tune_spec, best_tree)\n\nfinal_fit &lt;- last_fit(final_tree,\n                      class ~ .,\n                      cell_split)"
+  },
+  {
+    "objectID": "slides/09 - ML/09 - ML.html#hyperparamètres-et-workflow-1",
+    "href": "slides/09 - ML/09 - ML.html#hyperparamètres-et-workflow-1",
+    "title": "09 - Machine Learning",
+    "section": "Hyperparamètres et workflow",
+    "text": "Hyperparamètres et workflow\nAvec un workflow, cela devient:\n\ntree_wf &lt;- workflow() %&gt;%\n  add_model(tune_spec) %&gt;%\n  add_formula(class ~ .) %&gt;%\n\nbest_tree &lt;- \n  tree_wf %&gt;% \n  tune_grid(\n    resamples = cell_folds,\n    grid = tree_grid\n    ) %&gt;%\n  select_best(metric = \"accuracy\")\n\nfinal_wf &lt;- \n  tree_wf %&gt;% \n  finalize_workflow(best_tree)\n\nfinal_fit &lt;- \n  final_wf %&gt;%\n  last_fit(cell_split) \n\nfinal_fit %&gt;%\n  collect_metrics()"
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "",
+    "text": "Dans ce lab, nous allons travailler sur un jeu de données qui contient des informations sur des réservations d’hôtels. Nous allons essayer de prédire si une réservation avait des enfants. Pour cela, nous allons utiliser des méthodes de classification.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#chargement-des-données",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#chargement-des-données",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Chargement des données",
+    "text": "Chargement des données\n\nlibrary(tidymodels)\nlibrary(readr)\n\nhotels &lt;- \n  read_csv(\"https://tidymodels.org/start/case-study/hotels.csv\") %&gt;%\n  mutate(across(where(is.character), as.factor))\n\ndim(hotels)\n\n[1] 50000    23\n\n\nNous pouvons jeter un coup d’oeil aux données:\n\nglimpse(hotels)\n\nRows: 50,000\nColumns: 23\n$ hotel                          &lt;fct&gt; City_Hotel, City_Hotel, Resort_Hotel, R…\n$ lead_time                      &lt;dbl&gt; 217, 2, 95, 143, 136, 67, 47, 56, 80, 6…\n$ stays_in_weekend_nights        &lt;dbl&gt; 1, 0, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 1, …\n$ stays_in_week_nights           &lt;dbl&gt; 3, 1, 5, 6, 4, 2, 2, 3, 4, 2, 2, 1, 2, …\n$ adults                         &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 1, 2, …\n$ children                       &lt;fct&gt; none, none, none, none, none, none, chi…\n$ meal                           &lt;fct&gt; BB, BB, BB, HB, HB, SC, BB, BB, BB, BB,…\n$ country                        &lt;fct&gt; DEU, PRT, GBR, ROU, PRT, GBR, ESP, ESP,…\n$ market_segment                 &lt;fct&gt; Offline_TA/TO, Direct, Online_TA, Onlin…\n$ distribution_channel           &lt;fct&gt; TA/TO, Direct, TA/TO, TA/TO, Direct, TA…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;fct&gt; A, D, A, A, F, A, C, B, D, A, A, D, A, …\n$ assigned_room_type             &lt;fct&gt; A, K, A, A, F, A, C, A, D, A, D, D, A, …\n$ booking_changes                &lt;dbl&gt; 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;fct&gt; No_Deposit, No_Deposit, No_Deposit, No_…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;fct&gt; Transient-Party, Transient, Transient, …\n$ average_daily_rate             &lt;dbl&gt; 80.75, 170.00, 8.00, 81.00, 157.60, 49.…\n$ required_car_parking_spaces    &lt;fct&gt; none, none, none, none, none, none, non…\n$ total_of_special_requests      &lt;dbl&gt; 1, 3, 2, 1, 4, 1, 1, 1, 1, 1, 0, 1, 0, …\n$ arrival_date                   &lt;date&gt; 2016-09-01, 2017-08-25, 2016-11-19, 20…\n\n\nQuestion 1: Déterminez la proportio de réservations qui ont des enfants.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Construction du modèle",
+    "text": "Construction du modèle\nConfigurez un modèle de regression logistique en utilisant la fonction logistic_reg(). Utilisez la fonction set_engine() pour spécifier que vous voulez utiliser la fonction glm().",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Création d’une recette",
+    "text": "Création d’une recette\nCréez une recette pour le modèle en utilisant la fonction recipe().\nNous allons utiliser les recettes suivantes:\n\nstep_date(): pour créer les variable de l’année, du mois et du jour de la semaine\nstep_holiday(): pour créer une variable qui indique si la réservation a été faite pendant une période de vacances. Nous vous avons fourni une liste de vacances dans le fichier de réponse (voir ci-dessous). Vous pouvez indiquer d’utiliser cette liste avec step_holiday(arrival_date, holidays = holidays)\nstep_rm(): pour supprimer les variables arrival_date\n\nNous allons également transformer les variables catégorielles en dummy variables et les variables numériques en variables centrées et réduites.\n\nstep_dummy() pour convertir les variables catégorielles (all_nominal_predictors()) en variables binaires\nstep_zv() permet d’enlever les variables qui ne contiennent qu’une unique valeur (all_predictors())\nstep_normalize() pour centrer et réduire les variables numériques (all_numeric_predictors())\n\n\nholidays &lt;- c(\"AllSouls\", \"AshWednesday\", \"ChristmasEve\", \"Easter\", \n              \"ChristmasDay\", \"GoodFriday\", \"NewYearsDay\", \"PalmSunday\")\n\nlr_recipe &lt;- \n  recipe(________, data = hotel_train) %&gt;% \n  step_date(____) %&gt;% \n  step_XXXXX(______, _______) %&gt;% \n  step_XXXXX(_____) %&gt;% \n  _____",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-du-workflow",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-du-workflow",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Création du workflow",
+    "text": "Création du workflow\nCréez un workflow en utilisant la fonction workflow(). Ajoutez-y la recette et le modèle.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#entrainement-du-modèle",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#entrainement-du-modèle",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Entrainement du modèle",
+    "text": "Entrainement du modèle\nEntraînez le modèle en utilisant la fonction fit().\n\n\nWarning: glm.fit: des probabilités ont été ajustées numériquement à 0 ou 1",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#évaluation-du-modèle",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#évaluation-du-modèle",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Évaluation du modèle",
+    "text": "Évaluation du modèle\nUtilisez la fonction predict() pour obtenir les prédictions du modèle sur l’ensemble de validation.\n\nlr_pred &lt;- predict(lr_fit, hotel_test) %&gt;%\n  bind_cols(predict(lr_fit, hotel_test, type = \"prob\")) %&gt;%\n  bind_cols(hotel_test %&gt;% select(children))\n\nGénérez une courbe ROC pour évaluer le modèle.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle-1",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle-1",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Construction du modèle",
+    "text": "Construction du modèle\nNous allons utiliser le modèle suivant:\n\ncores &lt;- parallel::detectCores() # Nombre de coeur à disposition pour le calcul\n\nrf_mod &lt;- \n  rand_forest(mtry = tune(), min_n = tune(), trees = 1000) %&gt;% \n  set_engine(\"ranger\", num.threads = cores) %&gt;% \n  set_mode(\"classification\")\n\nNous avons deux paramètre à otpimiser: mtry et min_n. Nous allons utiliser la fonction tune_grid() pour optimiser ces paramètres.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette-1",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette-1",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Création d’une recette",
+    "text": "Création d’une recette\nLa recette pour ce modèle est un peu plus simple que pour la régression logistique. Vous pouvez utiliser la recette suivante:\n\nrf_recipe &lt;- \n  recipe(children ~ ., data = hotel_train) %&gt;% \n  step_date(arrival_date) %&gt;% \n  step_holiday(arrival_date) %&gt;% \n  step_rm(arrival_date) \n\nCréez un workflow pour ce modèle, qui contient la recette et le modèle.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#optimisation-des-paramètres",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#optimisation-des-paramètres",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Optimisation des paramètres",
+    "text": "Optimisation des paramètres\nLe paramètre mtry est le nombre de variables à considérer à chaque division d’un noeud. il est donc compris entre 1 et le nombre de variable. Le paramètre min_n est le nombre minimum d’observations dans un noeud terminal.\nCréez une grille de recherche pour ces paramètres. Faites en sorte que mtry prenne 5 valeurs différentes et que min_n prenne 5 valeurs différentes également, pour un total de 25 combinaisons. Comme le paramètre mtrydépend du nombre de variables, il faut lui préciser les bornes manuellement. Le nombre de colonne peut être obtenu à l’aide de la fonction suivante:\n\nn_col &lt;- prep(rf_recipe) %&gt;% juice() %&gt;% ncol()\n\nIl est ensuite possible de préciser la range avec mtry(range = c(1, n_col - 1)).\nNous pouvons maintenant faire une recherche de grille pour trouver les meilleurs paramètres. Nous allons utiliser la fonction tune_grid() pour cela. Le set de validation est utiliser pour trouver la meilleure combinaison.\n\nrf_res &lt;- \n  rf_workflow %&gt;% \n  tune_grid(val_set,\n            grid =  rf_grid,\n            control = control_grid(save_pred = TRUE),\n            metrics = metric_set(roc_auc))\n\nWarning: le package 'ranger' a été compilé avec la version R 4.4.2",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#choix-des-paramètres-et-évaluation-de-la-performance",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#choix-des-paramètres-et-évaluation-de-la-performance",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Choix des paramètres et Évaluation de la performance",
+    "text": "Choix des paramètres et Évaluation de la performance\nOn peut maintenant voir quelle est la meilleure combinaison de paramètres.\n\nrf_res %&gt;% \n  show_best(metric = \"roc_auc\")\n\n# A tibble: 5 × 8\n   mtry min_n .metric .estimator  mean     n std_err .config             \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               \n1    14     2 roc_auc binary     0.918     1      NA Preprocessor1_Model2\n2    14    21 roc_auc binary     0.916     1      NA Preprocessor1_Model5\n3    14    40 roc_auc binary     0.915     1      NA Preprocessor1_Model8\n4    27     2 roc_auc binary     0.913     1      NA Preprocessor1_Model3\n5    27    21 roc_auc binary     0.912     1      NA Preprocessor1_Model6\n\n\nLa fonction autoplot() permet de visualiser les résultats de la recherche de grille.\n\nrf_res %&gt;% \n  autoplot()\n\n\n\n\n\n\n\n\nNous pouvons garder les meilleures paramètres:\n\nrf_best &lt;- \n  rf_res %&gt;% \n  select_best(metric = \"roc_auc\")\n\nNous pouvons maintenant générer une courbe ROC et la comparer à celle obtenue précédemment.\n\nrf_auc &lt;- \n  rf_res %&gt;% \n  collect_predictions(parameters = rf_best) %&gt;% \n  roc_curve(children, .pred_children) %&gt;% \n  mutate(model = \"Random Forest\")\n\n\nbind_rows(rf_auc, lr_auc) %&gt;% \n  ggplot(aes(x = 1 - specificity, y = sensitivity, col = model)) + \n  geom_path(lwd = 1.5, alpha = 0.8) +\n  geom_abline(lty = 3) + \n  coord_equal() + \n  scale_color_viridis_d(option = \"plasma\", end = .6)",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "classroom/demo/classification/Demo-08.html",
+    "href": "classroom/demo/classification/Demo-08.html",
+    "title": "Demo-08",
+    "section": "",
+    "text": "Installer des paquets si vous ne les avez pas\n\npackages &lt;- c(\"tidyverse\", \"tidymodels\", \"openintro\", \"ggridges\")\nfor (pkg in packages)\n  if (!pkg %in% installed.packages()) {\n    install.packages(pkg)\n    }\n\nCharger les paquets\n\nfor (pkg in packages) library(pkg, character.only = T)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWarning: le package 'tidymodels' a été compilé avec la version R 4.4.2\n\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n\n\nWarning: le package 'dials' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'infer' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'modeldata' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'parsnip' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'recipes' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'rsample' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'tune' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflows' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflowsets' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'yardstick' a été compilé avec la version R 4.4.2\n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Use tidymodels_prefer() to resolve common conflicts.\nLe chargement a nécessité le package : airports\nLe chargement a nécessité le package : cherryblossom\nLe chargement a nécessité le package : usdata\n\nAttachement du package : 'openintro'\n\nL'objet suivant est masqué depuis 'package:modeldata':\n\n    ames\n\n\nChargez la base de données de CV du paquet openintro, elle contient des informations sur 4 870 personnes. Pour évaluer les facteurs importants, des offres d’emploi ont été identifiées à Boston et à Chicago pour l’étude, et les chercheurs ont créé de nombreux faux CV à envoyer à ces emplois pour voir lesquels susciteraient un rappel.\n\ndata &lt;- resume\n\n\nFaites un “glimpse” de la base de données et sélectionnez une variable catégorielle avec une distribution binomiale (0 ou 1) pour construire une régression logistique.\n\n\nTracez la distribution de « received_callback » en fonction de la variable que vous avez choisie à l’aide de geom_jitter(alpha = 0.2) + geom_line().\n\n\nLa relation peut-elle être décrite par un modèle linéaire ?\n\nR:\n\nAjustons un GLM au données.\n\n\nQuelle est l’équation du modèle ? Effectuez une prédiction par substitution de la variable catégorielle pour prédire la probabilité de recevoir un rappel, sur la base de la valeur des variables descriptives.\n\nR :"
+  },
+  {
+    "objectID": "classroom/demo/classification/Demo-08.html#prémière-partie-du-cours",
+    "href": "classroom/demo/classification/Demo-08.html#prémière-partie-du-cours",
+    "title": "Demo-08",
+    "section": "",
+    "text": "Installer des paquets si vous ne les avez pas\n\npackages &lt;- c(\"tidyverse\", \"tidymodels\", \"openintro\", \"ggridges\")\nfor (pkg in packages)\n  if (!pkg %in% installed.packages()) {\n    install.packages(pkg)\n    }\n\nCharger les paquets\n\nfor (pkg in packages) library(pkg, character.only = T)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWarning: le package 'tidymodels' a été compilé avec la version R 4.4.2\n\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n\n\nWarning: le package 'dials' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'infer' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'modeldata' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'parsnip' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'recipes' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'rsample' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'tune' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflows' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflowsets' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'yardstick' a été compilé avec la version R 4.4.2\n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Use tidymodels_prefer() to resolve common conflicts.\nLe chargement a nécessité le package : airports\nLe chargement a nécessité le package : cherryblossom\nLe chargement a nécessité le package : usdata\n\nAttachement du package : 'openintro'\n\nL'objet suivant est masqué depuis 'package:modeldata':\n\n    ames\n\n\nChargez la base de données de CV du paquet openintro, elle contient des informations sur 4 870 personnes. Pour évaluer les facteurs importants, des offres d’emploi ont été identifiées à Boston et à Chicago pour l’étude, et les chercheurs ont créé de nombreux faux CV à envoyer à ces emplois pour voir lesquels susciteraient un rappel.\n\ndata &lt;- resume\n\n\nFaites un “glimpse” de la base de données et sélectionnez une variable catégorielle avec une distribution binomiale (0 ou 1) pour construire une régression logistique.\n\n\nTracez la distribution de « received_callback » en fonction de la variable que vous avez choisie à l’aide de geom_jitter(alpha = 0.2) + geom_line().\n\n\nLa relation peut-elle être décrite par un modèle linéaire ?\n\nR:\n\nAjustons un GLM au données.\n\n\nQuelle est l’équation du modèle ? Effectuez une prédiction par substitution de la variable catégorielle pour prédire la probabilité de recevoir un rappel, sur la base de la valeur des variables descriptives.\n\nR :"
+  },
+  {
+    "objectID": "classroom/demo/classification/Demo-08-partie2.html",
+    "href": "classroom/demo/classification/Demo-08-partie2.html",
+    "title": "Demo_08_partie2",
+    "section": "",
+    "text": "Installer des paquets si vous ne les avez pas\n\npackages &lt;- c(\"tidyverse\", \"tidymodels\", \"openintro\", \"ggridges\", \"patchwork\",\n              \"skimr\")\nfor (pkg in packages)\n  if (!pkg %in% installed.packages()) {\n    install.packages(pkg)\n    }\n\nCharger les paquets\n\nfor (pkg in packages) library(pkg, character.only = T)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nWarning: le package 'tidymodels' a été compilé avec la version R 4.4.2\n\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n\n\nWarning: le package 'dials' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'infer' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'modeldata' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'parsnip' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'recipes' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'rsample' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'tune' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflows' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflowsets' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'yardstick' a été compilé avec la version R 4.4.2\n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Use suppressPackageStartupMessages() to eliminate package startup messages\nLe chargement a nécessité le package : airports\nLe chargement a nécessité le package : cherryblossom\nLe chargement a nécessité le package : usdata\n\nAttachement du package : 'openintro'\n\nL'objet suivant est masqué depuis 'package:modeldata':\n\n    ames\n\n\nWarning: le package 'patchwork' a été compilé avec la version R 4.4.2\n\n\n\nDivisez la base des données (fractionnement) en entrainement et test.\n\n\nFaites des barplot pour évalué lesquelles variables explicatives vous voulez utiliser pour votre GLM.\n\n\nFaites une modèle avec toutes les variables binaire de la base de données “resume” qui est dans le package “openintro”.\n\n\nFaites des prédictions en utilisant les données de test.\n\n\nEvaluez la performance de votre modèle en utilisant une ROC. C’est quoi la valeur du l’aire sous la courbe ?"
+  },
+  {
+    "objectID": "website/cours/cours.html#classification",
+    "href": "website/cours/cours.html#classification",
+    "title": "Cours",
+    "section": "08 - Classification",
+    "text": "08 - Classification\nSlides : PDF\nDemo:\n\nClassification"
+  },
+  {
+    "objectID": "website/cours/cours.html#modeling-in-r",
+    "href": "website/cours/cours.html#modeling-in-r",
+    "title": "Cours",
+    "section": "09 - Modeling in R",
+    "text": "09 - Modeling in R\nSlides : Web PDF\nLabs: Lab09 - Hotel bookings"
   }
 ]

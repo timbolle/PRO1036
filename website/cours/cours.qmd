@@ -114,6 +114,20 @@ Demo:
 
 - [Régression](https://github.com/PRO1036/paris-painting)
 
+## 08 - Classification
+
+Slides : [PDF](08 - Classification.pdf)
+
+Demo:
+
+- [Classification](https://github.com/PRO1036/Demo-classification)
+
+## 09 - Modeling in R
+
+Slides : [Web](../../slides/09 - ML/09 - ML.qmd){target="_blank"} [PDF](09 - Modeling.pdf)
+
+Labs: [Lab09 - Hotel bookings](../labs/lab09-hotel-bookings/lab09-hotel-booking.qmd)
+
 # Références
 
 ::: {#refs}

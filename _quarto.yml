@@ -38,6 +38,9 @@ website:
         - section: "Semaine 4"
           contents:
             - website/labs/lab04-college-majors/lab04-college-majors.qmd
+        - section: "Semaine 9"
+          contents:
+            - website/labs/lab09-hotel-bookings/lab09-hotel-booking.qmd
       
     - title: "Exercices"
       contents:
