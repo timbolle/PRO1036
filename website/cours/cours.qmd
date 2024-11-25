@@ -116,13 +116,13 @@ Demo:
 
 ## 08 - Classification
 
-Slides : [PDF](08 - Classification.pdf)
+Slides : [Web](08-Classication.html){target="_blank"} [PDF](08 - Classification.pdf)
 
 Demo:
 
 - [Classification](https://github.com/PRO1036/Demo-classification)
 
-## 09 - Modeling in R
+## 09 - Modélisation avec R et le Tidyverse
 
 Slides : [Web](../../slides/09 - ML/09 - ML.qmd){target="_blank"} [PDF](09 - Modeling.pdf)
 

@@ -366,12 +366,12 @@
   {
     "objectID": "website/exercices/exos.html",
     "href": "website/exercices/exos.html",
-    "title": "Labs",
+    "title": "Exerices",
     "section": "",
     "text": "C’est ici que vous trouverez les exercices pour chaque semaine.",
     "crumbs": [
       "Exercices",
-      "Labs"
+      "Exerices"
     ]
   },
   {
@@ -4211,7 +4211,7 @@
     "href": "website/cours/cours.html#classification",
     "title": "Cours",
     "section": "08 - Classification",
-    "text": "08 - Classification\nSlides : PDF\nDemo:\n\nClassification"
+    "text": "08 - Classification\nSlides : Web PDF\nDemo:\n\nClassification"
   },
   {
     "objectID": "website/cours/cours.html#modeling-in-r",
@@ -4219,5 +4219,12 @@
     "title": "Cours",
     "section": "09 - Modeling in R",
     "text": "09 - Modeling in R\nSlides : Web PDF\nLabs: Lab09 - Hotel bookings"
+  },
+  {
+    "objectID": "website/cours/cours.html#modélisation-avec-r-et-le-tidyverse",
+    "href": "website/cours/cours.html#modélisation-avec-r-et-le-tidyverse",
+    "title": "Cours",
+    "section": "09 - Modélisation avec R et le Tidyverse",
+    "text": "09 - Modélisation avec R et le Tidyverse\nSlides : Web PDF\nLabs: Lab09 - Hotel bookings"
   }
 ]
