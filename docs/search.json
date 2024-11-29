@@ -786,14 +786,14 @@
     "href": "website/cours/cours.html",
     "title": "Cours",
     "section": "",
-    "text": "Slide: Web PDF"
+    "text": "Transformation de données PDF\nVisualisation de données PDF\nRmarkdown PDF\nTidyr PDF"
   },
   {
     "objectID": "website/cours/cours.html#introduction",
     "href": "website/cours/cours.html#introduction",
     "title": "Cours",
-    "section": "",
-    "text": "Slide: Web PDF"
+    "section": "00 - Introduction",
+    "text": "00 - Introduction\nSlide: Web PDF"
   },
   {
     "objectID": "slides/01 - Toolbox/01 - toolbox.html",
@@ -4226,5 +4226,12 @@
     "title": "Cours",
     "section": "09 - Modélisation avec R et le Tidyverse",
     "text": "09 - Modélisation avec R et le Tidyverse\nSlides : Web PDF\nLabs: Lab09 - Hotel bookings"
+  },
+  {
+    "objectID": "website/cours/cours.html#cheat-sheets-pour-travailler-avec-tidyverse",
+    "href": "website/cours/cours.html#cheat-sheets-pour-travailler-avec-tidyverse",
+    "title": "Cours",
+    "section": "",
+    "text": "Transformation de données PDF\nVisualisation de données PDF\nRmarkdown PDF\nTidyr PDF"
   }
 ]

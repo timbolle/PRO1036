@@ -2,6 +2,15 @@
 title: "Cours"
 link-external-newwindow: true
 ---
+## "Cheat sheets" pour travailler avec tidyverse
+
+Transformation de données [PDF](data-transformation-cs.pdf)
+
+Visualisation de données [PDF](data-visualization-cs.pdf)
+
+Rmarkdown [PDF](rmarkdown-cs.pdf)
+
+Tidyr [PDF](tidyr-cs.pdf)
 
 ## 00 - Introduction
 
