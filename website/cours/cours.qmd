@@ -116,7 +116,7 @@ Demo:
 
 ## 08 - Classification
 
-Slides : [Web](08-Classication.html){target="_blank"} [PDF](08 - Classification.pdf)
+Slides : [Web](08-Classication.html){target="_blank"} [PDF](08-Classification.pdf)
 
 Demo:
 
