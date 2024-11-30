@@ -4118,7 +4118,7 @@
     "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#entrainement-du-modèle",
     "title": "Lab 09 - Hotel Bookings ?",
     "section": "Entrainement du modèle",
-    "text": "Entrainement du modèle\nEntraînez le modèle en utilisant la fonction fit().\n\n\nWarning: glm.fit: des probabilités ont été ajustées numériquement à 0 ou 1",
+    "text": "Entrainement du modèle\nEntraînez le modèle en utilisant la fonction fit().\n\n\nWarning: glm.fit: fitted probabilities numerically 0 or 1 occurred",
     "crumbs": [
       "Labs",
       "Semaine 9",
@@ -4166,7 +4166,7 @@
     "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#optimisation-des-paramètres",
     "title": "Lab 09 - Hotel Bookings ?",
     "section": "Optimisation des paramètres",
-    "text": "Optimisation des paramètres\nLe paramètre mtry est le nombre de variables à considérer à chaque division d’un noeud. il est donc compris entre 1 et le nombre de variable. Le paramètre min_n est le nombre minimum d’observations dans un noeud terminal.\nCréez une grille de recherche pour ces paramètres. Faites en sorte que mtry prenne 5 valeurs différentes et que min_n prenne 5 valeurs différentes également, pour un total de 25 combinaisons. Comme le paramètre mtrydépend du nombre de variables, il faut lui préciser les bornes manuellement. Le nombre de colonne peut être obtenu à l’aide de la fonction suivante:\n\nn_col &lt;- prep(rf_recipe) %&gt;% juice() %&gt;% ncol()\n\nIl est ensuite possible de préciser la range avec mtry(range = c(1, n_col - 1)).\nNous pouvons maintenant faire une recherche de grille pour trouver les meilleurs paramètres. Nous allons utiliser la fonction tune_grid() pour cela. Le set de validation est utiliser pour trouver la meilleure combinaison.\n\nrf_res &lt;- \n  rf_workflow %&gt;% \n  tune_grid(val_set,\n            grid =  rf_grid,\n            control = control_grid(save_pred = TRUE),\n            metrics = metric_set(roc_auc))\n\nWarning: le package 'ranger' a été compilé avec la version R 4.4.2",
+    "text": "Optimisation des paramètres\nLe paramètre mtry est le nombre de variables à considérer à chaque division d’un noeud. il est donc compris entre 1 et le nombre de variable. Le paramètre min_n est le nombre minimum d’observations dans un noeud terminal.\nCréez une grille de recherche pour ces paramètres. Faites en sorte que mtry prenne 5 valeurs différentes et que min_n prenne 5 valeurs différentes également, pour un total de 25 combinaisons. Comme le paramètre mtrydépend du nombre de variables, il faut lui préciser les bornes manuellement. Le nombre de colonne peut être obtenu à l’aide de la fonction suivante:\n\nn_col &lt;- prep(rf_recipe) %&gt;% juice() %&gt;% ncol()\n\nIl est ensuite possible de préciser la range avec mtry(range = c(1, n_col - 1)).\nNous pouvons maintenant faire une recherche de grille pour trouver les meilleurs paramètres. Nous allons utiliser la fonction tune_grid() pour cela. Le set de validation est utiliser pour trouver la meilleure combinaison.\n\nrf_res &lt;- \n  rf_workflow %&gt;% \n  tune_grid(val_set,\n            grid =  rf_grid,\n            control = control_grid(save_pred = TRUE),\n            metrics = metric_set(roc_auc))",
     "crumbs": [
       "Labs",
       "Semaine 9",
