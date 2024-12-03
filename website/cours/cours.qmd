@@ -137,6 +137,12 @@ Slides : [Web](../../slides/09 - ML/09 - ML.qmd){target="_blank"} [PDF](09 - Mod
 
 Labs: [Lab09 - Hotel bookings](../labs/lab09-hotel-bookings/lab09-hotel-booking.qmd)
 
+## 10 - Exercices
+
+Labs de la semaine passée: [Lab09 - Hotel bookings](../labs/lab09-hotel-bookings/lab09-hotel-booking.qmd)
+
+Exercice de regression: [Exercice Régression](https://github.com/PRO1036/exo_ML)
+
 # Références
 
 ::: {#refs}

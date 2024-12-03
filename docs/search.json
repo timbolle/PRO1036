@@ -4233,5 +4233,61 @@
     "title": "Cours",
     "section": "",
     "text": "Transformation de données PDF\nVisualisation de données PDF\nRmarkdown PDF\nTidyr PDF"
+  },
+  {
+    "objectID": "website/cours/cours.html#exercices",
+    "href": "website/cours/cours.html#exercices",
+    "title": "Cours",
+    "section": "10 - Exercices",
+    "text": "10 - Exercices\nLabs de la semaine passée: Lab09 - Hotel bookings\nExercice de regression: Exercice Régression"
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html",
+    "href": "classroom/exo_ML/exo_regression.html",
+    "title": "Exercice - Regression",
+    "section": "",
+    "text": "L’objectif de cet exercice est de mettre en pratique les notions de régression linéaire simple et multiple. Pour cela, nous allons utiliser un jeu de données qui contient des informations sur différentes voitures.\nNous allons essayer de prédire le prix d’une voiture en fonction de ses caractéristiques.\nNous allons utiliser les packages suivants :\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(tidymodels)\n\nWarning: le package 'tidymodels' a été compilé avec la version R 4.4.2\n\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n✔ broom        1.0.6     ✔ rsample      1.2.1\n✔ dials        1.3.0     ✔ tune         1.2.1\n✔ infer        1.0.7     ✔ workflows    1.1.4\n✔ modeldata    1.4.0     ✔ workflowsets 1.1.0\n✔ parsnip      1.2.1     ✔ yardstick    1.3.1\n✔ recipes      1.1.0     \n\n\nWarning: le package 'dials' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'infer' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'modeldata' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'parsnip' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'recipes' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'rsample' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'tune' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflows' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'workflowsets' a été compilé avec la version R 4.4.2\n\n\nWarning: le package 'yardstick' a été compilé avec la version R 4.4.2\n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ scales::discard() masks purrr::discard()\n✖ dplyr::filter()   masks stats::filter()\n✖ recipes::fixed()  masks stringr::fixed()\n✖ dplyr::lag()      masks stats::lag()\n✖ yardstick::spec() masks readr::spec()\n✖ recipes::step()   masks stats::step()\n• Learn how to get started at https://www.tidymodels.org/start/"
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html#importation-des-données",
+    "href": "classroom/exo_ML/exo_regression.html#importation-des-données",
+    "title": "Exercice - Regression",
+    "section": "Importation des données",
+    "text": "Importation des données\nCommencez par importer les données du fichier cars.csv. Faites attention que le délimiteur est un point-virgule ;. Il faut donc utiliser la fonction read_delim() du package readr.\n\n# Votre code ici"
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html#analyse-exploratoire",
+    "href": "classroom/exo_ML/exo_regression.html#analyse-exploratoire",
+    "title": "Exercice - Regression",
+    "section": "Analyse exploratoire",
+    "text": "Analyse exploratoire\nAffichez un résumé des données pour mieux comprendre leur structure.\nVous pouvez également visualiser le prix en fonction de différents paramètres."
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html#régression-linéaire-simple",
+    "href": "classroom/exo_ML/exo_regression.html#régression-linéaire-simple",
+    "title": "Exercice - Regression",
+    "section": "Régression linéaire simple",
+    "text": "Régression linéaire simple\nEntraînez un modèle de régression linéaire simple pour prédire le prix en fonction de la puissance (horsepower) de la voiture.\nCréez une variable cars_fit qui contient le modèle entraîné.\n\n# Votre code ici"
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html#évaluation-du-modèle",
+    "href": "classroom/exo_ML/exo_regression.html#évaluation-du-modèle",
+    "title": "Exercice - Regression",
+    "section": "Évaluation du modèle",
+    "text": "Évaluation du modèle\nNous allons commencer par visualiser notre regression linéaire simple. Représentez le prix en fonction de la puissance par un nuage de points avec la droite de régression.\n\n# Votre code ici\n\nAffichez maintenant un résumé des coefficients du modèle à l’aide de la fonction tidy().\nComment les interprétez-vous ?\nNous pouvons également estimer la qualité de la prédiction en calculant le coefficient de détermination \\(R^2\\). Pour cela, nous pouvons utiliser glance() sur notre modèle.\nComment jugez-vous la qualité de la prédiction ?"
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html#prédiction-sur-des-données-de-test",
+    "href": "classroom/exo_ML/exo_regression.html#prédiction-sur-des-données-de-test",
+    "title": "Exercice - Regression",
+    "section": "Prédiction sur des données de test",
+    "text": "Prédiction sur des données de test\nImportez le fichier cars_test.csv et utilisez votre modèle pour prédire le prix des voitures.\nPour cela, vous pouvez utiliser la fonction predict(). Cela devrait ressembler à ceci :\n\ncars_fit %&gt;%\n  predict(new_data = cars_test) %&gt;%\n  bind_cols(cars_test) # On joint le tableau complet avec les prédictions\n\nDans ce bloc de code, nous avons utilisé notre modèle entrainé pour prédire les prix des voitures dans le jeu de données cars_test. Nous avons ensuite joint les données prédites avec les données originales pour les comparer. Vous pouvez essayer de rouler le code en enlevant la dernière ligne pour voir ce que cela donne.\nNous voulons comparer les prix prédits avec les prix réels. Pour cela, nous allons calculer l’erreur quadratique moyenne (RMSE) entre les deux et le \\(R^2\\) de la prédiction. Pour cela, stockez le résultat du bloc précédent dans une variable cars_pred et utilisez la fonction metrics. Aidez vous de l’aide ?metrics pour comprendre comment l’utiliser.\nNous voulons également visuliser les prédictions. Pour cela, plottez le prix prédit en fonction du prix réel."
+  },
+  {
+    "objectID": "classroom/exo_ML/exo_regression.html#regression-multiple",
+    "href": "classroom/exo_ML/exo_regression.html#regression-multiple",
+    "title": "Exercice - Regression",
+    "section": "Regression multiple",
+    "text": "Regression multiple\nNous allons maintenant essayer de prédire le prix en fonction de plusieurs variables. Entraînez un modèle de régression linéaire multiple pour prédire le prix en fonction de la puissance (horsepower) et de la cylindrée (enginesize) de la voiture.\nCréez une variable cars_fit_multi qui contient le modèle entraîné. Adaptez la formule de regression pour tenir compte des deux variables.\nReproduisez les étapes précédentes pour évaluer ce modèle. Affichez un résumé des coefficients, le \\(R^2\\) et les prédictions sur les données de test."
   }
 ]
