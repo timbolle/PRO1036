@@ -143,6 +143,11 @@ Labs de la semaine passée: [Lab09 - Hotel bookings](../labs/lab09-hotel-booking
 
 Exercice de regression: [Exercice Régression](https://github.com/PRO1036/exo_ML)
 
+## 11 - Tests d'hypothèses
+
+"Cours" et Lab: [Lab11 - Statistiques inférentielles](../labs/lab10-inferences/lab10-inferences.qmd)
+
+
 # Références
 
 ::: {#refs}

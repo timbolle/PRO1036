@@ -41,6 +41,9 @@ website:
         - section: "Semaine 9"
           contents:
             - website/labs/lab09-hotel-bookings/lab09-hotel-booking.qmd
+        - section: "Semaine 11"
+          contents:
+            - website/labs/lab10-inferences/lab10-inferences.qmd
       
     - title: "Exercices"
       contents:
