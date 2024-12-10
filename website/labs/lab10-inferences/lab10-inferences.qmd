@@ -47,7 +47,7 @@ Nous allons commencer par spécifier la variable que nous voulons étudier. Pour
 
 ```{r}
 gss %>%
-  specify(response = age)
+  specify(response = hours)
 ```
 
 Nous allons ensuite déclarer notre hypothèse nulle, qui est que le temps de travail hebdomadaire est égal à 40 heures en moyenne. Pour cela, nous utilisons la fonction `hypothesize()`. Le paramètre `null` permet de spécifier le type d'hypothèse nulle que nous voulons tester. Dans notre cas, nous allons tester une hypothèse nulle de type "point" avec une moyenne de 40 heures.
@@ -328,9 +328,9 @@ Testez si le nombre d'heures travaillées est différent selon le revenu moyen d
 
 ## Les données
 
-Dans cet exercice, nous allons étudier l'effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données `ncbirth` du package `openintro`. Ce jeu de données contient des données sur les grossesses de l'état de Caroline du Nord.
+Dans cet exercice, nous allons étudier l'effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données `ncbirths` du package `openintro`. Ce jeu de données contient des données sur les grossesses de l'état de Caroline du Nord.
 
-Chargez le package `openintro` et affichez un aperçu des premières lignes du jeu de données `ncbirth`.
+Chargez le package `openintro` et affichez un aperçu des premières lignes du jeu de données `ncbirths`.
 
 ## Le poids des bébés
 

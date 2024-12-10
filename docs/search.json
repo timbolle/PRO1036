@@ -4355,7 +4355,7 @@
     "href": "website/labs/lab10-inferences/lab10-inferences.html#les-données",
     "title": "Lab11 - Statistiques inférentielles",
     "section": "Les données",
-    "text": "Les données\nDans cet exercice, nous allons étudier l’effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données ncbirth du package openintro. Ce jeu de données contient des données sur les grossesses de l’état de Caroline du Nord.\nChargez le package openintro et affichez un aperçu des premières lignes du jeu de données ncbirth.",
+    "text": "Les données\nDans cet exercice, nous allons étudier l’effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données ncbirths du package openintro. Ce jeu de données contient des données sur les grossesses de l’état de Caroline du Nord.\nChargez le package openintro et affichez un aperçu des premières lignes du jeu de données ncbirths.",
     "crumbs": [
       "Labs",
       "Semaine 11",

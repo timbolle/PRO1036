@@ -411,22 +411,22 @@ $ weight  &lt;dbl&gt; 0.8960034, 1.0825000, 0.5501000, 1.0864000, 1.0825000, 1.0
 <p>Nous allons commencer par spécifier la variable que nous voulons étudier. Pour cela nous pouvons utiliser la fonction <code>specify()</code>. Nous allons spécifier la variable <code>hours</code> qui représente le temps de travail hebdomadaire.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gss <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">specify</span>(<span class="at">response =</span> hours)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Response: age (numeric)
+<pre><code>Response: hours (numeric)
 # A tibble: 500 × 1
-     age
+   hours
    &lt;dbl&gt;
- 1    36
- 2    34
- 3    24
- 4    42
- 5    31
- 6    32
- 7    48
- 8    36
- 9    30
-10    33
+ 1    50
+ 2    31
+ 3    40
+ 4    40
+ 5    40
+ 6    53
+ 7    32
+ 8    20
+ 9    40
+10    40
 # ℹ 490 more rows</code></pre>
 </div>
 </div>
@@ -468,16 +468,16 @@ Null Hypothesis: point
 # Groups:   replicate [1,000]
    replicate hours
        &lt;int&gt; &lt;dbl&gt;
- 1         1  87.6
- 2         1  46.6
- 3         1  38.6
- 4         1  48.6
- 5         1  48.6
- 6         1  70.6
- 7         1  38.6
- 8         1  42.6
- 9         1  58.6
-10         1  48.6
+ 1         1  38.6
+ 2         1  70.6
+ 3         1  28.6
+ 4         1  38.6
+ 5         1  38.6
+ 6         1  38.6
+ 7         1  23.6
+ 8         1  38.6
+ 9         1  36.6
+10         1  70.6
 # ℹ 499,990 more rows</code></pre>
 </div>
 </div>
@@ -495,16 +495,16 @@ Null Hypothesis: point
 # A tibble: 1,000 × 2
    replicate  stat
        &lt;int&gt; &lt;dbl&gt;
- 1         1  41.1
- 2         2  40.9
- 3         3  41.0
- 4         4  40.7
- 5         5  40.2
- 6         6  40.4
- 7         7  39.6
- 8         8  40.2
- 9         9  39.0
-10        10  40.6
+ 1         1  40.4
+ 2         2  39.8
+ 3         3  39.1
+ 4         4  40.3
+ 5         5  40.1
+ 6         6  40.0
+ 7         7  40.1
+ 8         8  40.3
+ 9         9  39.8
+10        10  41.1
 # ℹ 990 more rows</code></pre>
 </div>
 </div>
@@ -558,7 +558,7 @@ Null Hypothesis: point
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.034</code></pre>
+1   0.044</code></pre>
 </div>
 </div>
 <p>Avant de faire ce test, nous aurions du définir un niveau de signification <span class="math inline">\(\alpha\)</span>. Si la valeur p est inférieure à <span class="math inline">\(\alpha\)</span>, nous pouvons rejeter l’hypothèse nulle. En fixant <span class="math inline">\(\alpha = 0.05\)</span>, nous rejetons l’hypothèse nulle. En fixant <span class="math inline">\(\alpha = 0.01\)</span>, nous ne rejetons pas l’hypothèse nulle.</p>
@@ -585,7 +585,7 @@ Null Hypothesis: point
 <pre><code># A tibble: 1 × 2
   lower_ci upper_ci
      &lt;dbl&gt;    &lt;dbl&gt;
-1     40.1     42.7</code></pre>
+1     40.0     42.8</code></pre>
 </div>
 </div>
 <p>Ici, notez que dans la définition de <code>boot_dist</code>, nous n’avons pas défini d’hypothèse nulle. Cela signifie que nous générons une distribution de statistiques à partir de nos données sans hypothèse nulle. Nous utilisons ensuite cette distribution pour calculer l’intervalle de confiance.</p>
@@ -697,7 +697,7 @@ Explanatory: college (factor)
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.262</code></pre>
+1   0.302</code></pre>
 </div>
 </div>
 <section id="exercice-1" class="level2">
@@ -806,7 +806,7 @@ Explanatory: partyid (factor)
 <pre><code># A tibble: 1 × 1
   p_value
     &lt;dbl&gt;
-1   0.053</code></pre>
+1   0.063</code></pre>
 </div>
 </div>
 <section id="exercice-2" class="level2">
@@ -818,8 +818,8 @@ Explanatory: partyid (factor)
 <h1>Exercice - Effet de la cigarette sur la grossesse</h1>
 <section id="les-données" class="level2">
 <h2 class="anchored" data-anchor-id="les-données">Les données</h2>
-<p>Dans cet exercice, nous allons étudier l’effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données <code>ncbirth</code> du package <code>openintro</code>. Ce jeu de données contient des données sur les grossesses de l’état de Caroline du Nord.</p>
-<p>Chargez le package <code>openintro</code> et affichez un aperçu des premières lignes du jeu de données <code>ncbirth</code>.</p>
+<p>Dans cet exercice, nous allons étudier l’effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données <code>ncbirths</code> du package <code>openintro</code>. Ce jeu de données contient des données sur les grossesses de l’état de Caroline du Nord.</p>
+<p>Chargez le package <code>openintro</code> et affichez un aperçu des premières lignes du jeu de données <code>ncbirths</code>.</p>
 </section>
 <section id="le-poids-des-bébés" class="level2">
 <h2 class="anchored" data-anchor-id="le-poids-des-bébés">Le poids des bébés</h2>
