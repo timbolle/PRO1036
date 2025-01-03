@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tim Bollé">
 
-<title>Exercice 01 - Pet names – PRO1036</title>
+<title>Lab 03 - Nobel laureates – PRO1036</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,35 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -161,11 +131,11 @@ window.Quarto = {
 <span class="menu-text">Cours</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../website/labs/labs.html"> 
+    <a class="nav-link active" href="../../../website/labs/labs.html" aria-current="page"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../website/exercices/exos.html" aria-current="page"> 
+    <a class="nav-link" href="../../../website/exercices/exos.html"> 
 <span class="menu-text">Exercices</span></a>
   </li>  
   <li class="nav-item">
@@ -183,7 +153,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exercice 01 - Pet names</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Semaine 3</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Lab 03 - Nobel laureates</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -197,8 +167,8 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/exercices/exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exerices</span></a>
+  <a href="../../../website/labs/labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -212,8 +182,93 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Exercice 01 - Pet names</span></a>
+  <a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 01 - Hello World</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 02 - Déchets plastiques</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 03 - Nobel laureates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 04 - Quel grade choisir ?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 9</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab09-hotel-bookings/lab09-hotel-booking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 09 - Hotel Bookings ?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 11</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab10-inferences/lab10-inferences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab11 - Statistiques inférentielles</span></a>
   </div>
 </li>
       </ul>
@@ -228,49 +283,52 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#préparation" id="toc-préparation" class="nav-link active" data-scroll-target="#préparation">Préparation</a>
+  <li><a href="#objectifs-dapprentissage" id="toc-objectifs-dapprentissage" class="nav-link active" data-scroll-target="#objectifs-dapprentissage">Objectifs d’apprentissage</a></li>
+  <li><a href="#préparation" id="toc-préparation" class="nav-link" data-scroll-target="#préparation">Préparation</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
-  <li><a href="#terminologie" id="toc-terminologie" class="nav-link" data-scroll-target="#terminologie">Terminologie</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
-  </ul></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm up</a>
-  <ul class="collapse">
-  <li><a href="#étape-1-mise-à-jour-du-yaml" id="toc-étape-1-mise-à-jour-du-yaml" class="nav-link" data-scroll-target="#étape-1-mise-à-jour-du-yaml">Étape 1: Mise à jour du YAML</a></li>
-  <li><a href="#étape-2-commit" id="toc-étape-2-commit" class="nav-link" data-scroll-target="#étape-2-commit">Étape 2: Commit</a></li>
-  <li><a href="#étape-3-push" id="toc-étape-3-push" class="nav-link" data-scroll-target="#étape-3-push">Étape 3: Push</a></li>
-  </ul></li>
+  <li><a href="#échauffement" id="toc-échauffement" class="nav-link" data-scroll-target="#échauffement">Échauffement</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
+  </ul></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#exerice-1" id="toc-exerice-1" class="nav-link" data-scroll-target="#exerice-1">Exerice 1</a></li>
+  <li><a href="#faites-connaissance-avec-les-données" id="toc-faites-connaissance-avec-les-données" class="nav-link" data-scroll-target="#faites-connaissance-avec-les-données">Faites connaissance avec les données</a>
+  <ul class="collapse">
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
   <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
+  </ul></li>
+  <li><a href="#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" id="toc-la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="nav-link" data-scroll-target="#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</a>
+  <ul class="collapse">
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
   <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
-  <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
   </ul></li>
+  <li><a href="#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" id="toc-mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="nav-link" data-scroll-target="#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</a>
+  <ul class="collapse">
+  <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
+  <li><a href="#exercice-6" id="toc-exercice-6" class="nav-link" data-scroll-target="#exercice-6">Exercice 6</a></li>
+  </ul></li>
+  <li><a href="#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" id="toc-doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="nav-link" data-scroll-target="#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</a>
+  <ul class="collapse">
+  <li><a href="#exercice-7" id="toc-exercice-7" class="nav-link" data-scroll-target="#exercice-7">Exercice 7</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" id="toc-intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="nav-link" data-scroll-target="#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations">Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exercice 01 - Pet names</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Semaine 3</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html">Lab 03 - Nobel laureates</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercice 01 - Pet names</h1>
+<h1 class="title">Lab 03 - Nobel laureates</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Tim Bollé </p>
-          </div>
-  </div>
     
   
     
@@ -281,302 +339,168 @@ window.Quarto = {
 </header>
 
 
-<div class="cell" data-fig.margin="true">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/Original_Doge_meme.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Photo by <a href="https://kabosu112.exblog.jp/iv/detail/?s=9944144&amp;i=201002%2F12%2F90%2Fa0126590_22301391.jpg">Atsuko Sato</a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Le but de cet exercice est de pratiquer les premiers éléments vus concernant R et Git/Github.</p>
+<p>En janvier 2017, Buzzfeed a publié un article sur pourquoi les lauréats du prix Nobel montrent que l’immigration est si importante pour la science américaine.</p>
+<p>Vous pouvez lire l’article <a href="https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science">ici</a>. Dans l’article, ils montrent que bien que la plupart des lauréats vivants du prix Nobel en sciences soient basés aux États-Unis, beaucoup d’entre eux sont nés dans d’autres pays. C’est une des raisons pour lesquelles le monde scientifique dit que l’immigration est vitale pour le progrès. Dans ce lab, nous travaillerons avec les données de cet article pour recréer certaines de leurs visualisations ainsi qu’explorer de nouvelles questions.</p>
+<section id="objectifs-dapprentissage" class="level1">
+<h1>Objectifs d’apprentissage</h1>
+<ul>
+<li>utiliser GitHub et R</li>
+<li>Répliquer des résultats publiés</li>
+<li>Manipulation et visualisation de données</li>
+</ul>
+</section>
 <section id="préparation" class="level1">
 <h1>Préparation</h1>
-<section id="terminologie" class="level2">
-<h2 class="anchored" data-anchor-id="terminologie">Terminologie</h2>
-<p>Nous en avons déjà parler mais répéter ne fait pas de mal:</p>
+<p>Lire l’article de Buzzfeed intitulé <a href="https://www.buzzfeednews.com/article/peteraldhous/immigration-and-science"><em>These Nobel Prize Winners Show Why Immigration Is So Important For American Science</em></a><em>.</em> Nous répliquerons cette analyse lors de l’atelier, il est donc crucial que vous en soyez familier à l’avance.</p>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<p>Sur le portail de cours, vous trouverez le lien d’invitation pour ce lab. Cela vous donnera accès à un répo, qui devrait être nommé <code>lab-03-nobel-laureates-VOTRE_GITHUB_USERNAME</code>. Une fois que vous avez accepté l’invitation, vous aurez accès à un répo privé sur GitHub avec le matériel pour ce lab. Récupérez le lien du repo et clonez le sur RStudio. Vérifiez qu’il compile sans erreur. Dans le <em>YAML</em>, le <code>output</code> est réglé sur <code>"github_document"</code>. Cela permet d’obtenir un format adapté à GitHub. Notamment, votre fichier final sera un fichier Markdown (<code>.md</code>).</p>
+<section id="échauffement" class="level2">
+<h2 class="anchored" data-anchor-id="échauffement">Échauffement</h2>
+<p>Avant d’introduire les données, commençons par quelques exercices simples.</p>
 <ul>
-<li><p><strong>R:</strong> Le language de prorgammation qui sera utilisé dans ce cours.</p></li>
-<li><p><strong>RStudio:</strong> Un environnement de développement intégré (IDE) pour R. En d’autres termes, une interface pour travailler efficacement avec R.</p></li>
-<li><p><strong>Git:</strong> Un logiciel de gestion de versions</p></li>
-<li><p><strong>GitHub:</strong> Une plateforme web pour accueillir des fichiers versionnés et faciliter la collaboration entre utilisateurs.</p></li>
-<li><p><strong>Repository:</strong> Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions.</p></li>
+<li>Mettez à jour le YAML, en changeant le nom de l’auteur par le vôtre, et <strong>knit</strong> le document.</li>
+<li>Committez vos modifications avec un message de commit. Assurez vous que les fichiers .Rmd et .md sont bien ajoutés au commit.</li>
+<li>Pushez vos modifications sur GitHub.</li>
+<li>Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md.</li>
 </ul>
 </section>
-<section id="github" class="level2">
-<h2 class="anchored" data-anchor-id="github">Github</h2>
-<p>Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non</p>
-<section id="git-est-correctement-installé" class="level4">
-<h4 class="anchored" data-anchor-id="git-est-correctement-installé">Git est correctement installé</h4>
-<p>Dans RStudio:</p>
-<ul>
-<li>Fichier &gt; Nouveau Projet</li>
-<li>Version Control &gt; Git</li>
-<li>Dans <em>Repository URL</em> : indiquez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names.git" class="uri">https://github.com/PRO1036/exo1-pet-names.git</a></li>
-<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
-<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
-</ul>
-<p>Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à <a href="#suite">l’étape suivante</a></p>
-</section>
-<section id="git-nest-pas-installé" class="level4">
-<h4 class="anchored" data-anchor-id="git-nest-pas-installé">Git n’est pas installé</h4>
-<p>Dans Rstudio:</p>
-<ul>
-<li>Fichier &gt; Nouveau Projet</li>
-<li>New Directory &gt; New Project</li>
-<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
-<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
-</ul>
-<p>Nous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:</p>
-<ul>
-<li>Visitez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names" class="uri">https://github.com/PRO1036/exo1-pet-names</a></li>
-<li>Cliquez sur le bouton vert: <img src="figs/github-bouton.png" class="inline-image img-fluid"></li>
-<li>Cliquez ensuite sur <em>Download ZIP</em></li>
-<li>Ouvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R</li>
-</ul>
-<p>⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé <code>lab01-master</code>). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.</p>
-</section>
-<section id="suite" class="level4">
-<h4 class="anchored" data-anchor-id="suite">Dans les deux cas</h4>
-<p>Dans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:</p>
-<p><img src="figs/rstudio-files.png" class="img-fluid"></p>
-<p>Si vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.</p>
-<p>Veuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.</p>
-</section>
-</section>
-</section>
-<section id="rstudio" class="level1">
-<h1>RStudio</h1>
-<p>RStudio est organisé en 4 panneaux.</p>
-<div class="cell" data-fig.fullwidth="true">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="figs/rstudio-anatomy.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>En bas à gauche se trouve la console. C’est ici que vous pouvez écrire du code qui sera directement interprété. Essayez par exemple <code>2 + 2</code>.</li>
-<li>En bas à droite se trouve le panneau de fichiers, ainsi que d’autres que nous verrons plus tard lors d’analyses.</li>
-<li>Si vous cliquez sur un fichier, il sera ouvert dans l’éditeur, panneau en haut à gauche.</li>
-<li>Dans le panneau en haut à droite, on retrouve l’environnement de travail. Si vous définissez une variable, elle apparaitra ici. Essayez par exemple de taper <code>x &lt;- 2</code> dans la console. Observez ce qu’il se passe dans l’environnement.</li>
-<li>C’est également ici que l’on retrouve le panneau <em>Git</em> où vous pourrez gérer les versions de vos fichiers.</li>
-</ul>
-</section>
-<section id="warm-up" class="level1">
-<h1>Warm up</h1>
-<p>Un peu d’échaffement:</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-YAML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La partie du haut de votre fichier R Markdown, entre les lignes traitillées, est appelée <strong>YAML</strong>, accronyme pour “YAML Ain’t Markup Language”. C’est une manière human friendly de fournir des informations sur des documents et des code, et qui peut être comprise par de nombreux langages de programmation.</p>
-</div>
-</div>
-<section id="étape-1-mise-à-jour-du-yaml" class="level2">
-<h2 class="anchored" data-anchor-id="étape-1-mise-à-jour-du-yaml">Étape 1: Mise à jour du YAML</h2>
-<p>Ouvrez le fichier R Markdown (Rmd) dans le projet que vous avez cloné. Changez l’auteur, la date et knittez le document.</p>
-<p>Open the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document.</p>
-</section>
-<section id="étape-2-commit" class="level2">
-<h2 class="anchored" data-anchor-id="étape-2-commit">Étape 2: Commit</h2>
-<p>Ouvrez le panneau <strong>Git</strong> en haut à droite.</p>
-<p>Vous devriez voir votre fichier Rmd et son output listés comme recemment modifiés.</p>
-<p>En cliquant sur <strong>diff</strong>, vous verrez les différence entre le dernier commit et l’état actuel du document. Si cela vous convient, vous pouvez sélectionner les fichiers à commit, ajouter un message dans le <strong>Commit message</strong>, par exemple <em>“Mise à jour de l’auteur et de la date”</em>. Cliquez ensuite sur <strong>Commit</strong>.</p>
-<p>Il n’est pas nécessaire de faire un commit après chaque changement. Faites le plutôt après avoir ajouté une <em>fonctionnalité</em> à votre code. Faite le quand cela vous semble pertinent, afin de pouvoir vérifier, comparer ou restorer.</p>
-</section>
-<section id="étape-3-push" class="level2">
-<h2 class="anchored" data-anchor-id="étape-3-push">Étape 3: Push</h2>
-<p>Maintenant que vous avez fait vos modifications, vous allez pusher vos changements sur le web, c’est-à-dire sur votre repo sur Github. Cela permettra aux autres (les profs) de voir vos changements. Appuyez simplement sur <strong>Push</strong>.</p>
-<p>Cela devrait faire apparaitre une fenêtre. Entrez vos informations de connexion pour Github.</p>
-<p><strong>Grosse question:</strong> Laquelle des étapes précédentes (changement du YAML, committing, et pushing) a besoin de communiquer avec Github?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</section>
-</section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>R est un langage open-source, et les développeurs ajoutent des fonctionnalité à travers des packages. Nous allons utiliser les packages suivants:</p>
-<ul>
-<li><strong>tidyverse</strong>: Une collection de packages pour faire de l’analyse de données de manière “tidy”</li>
-<li><strong>openintro</strong>: un package qui contient les datasets de la ressource OpenIntro.</li>
-</ul>
-<p>Nous utilisons la fonction <code>library()</code> pour charger les packages. Dans votre document R Markdown, vous allez voir un bloc de code R nommé <code>load-packages</code> qui contient les lignes nécessaires à charger les packages. Vous pouvez également les charger dans la console en cliquant sur la petite flèche vert <strong>Run Current Chunk</strong>.</p>
-<p>Avant de pouvoir faire ça, il faudra peut-être installer les packages. Cela vous sera proposé en haut de votre éditeur.</p>
-<p>Quand vous knittez le document, les lignes dans les blocs de code R sont également exécutées. Les packages seront donc chargés.</p>
-</section>
-<section id="données" class="level1">
-<h1>Données</h1>
-<p>La ville de <a href="https://en.wikipedia.org/wiki/Seattle">Seattle, WA</a> a un portail de données en source ouverte, qui inclut les animaux de compagnie. Pour chaque animal enregistré, nous avons accès à son nom et son espèce. Les données utilisées dans cet exercice se trouvent dans le package <strong>openintro</strong> et s’appelle <code>seattlepets</code>. Il n’est donc pas nécessaire de le charger séparemment.</p>
-<p>Vous pouvez voir le contenu du jeu de données sous forme taulaire avec la fonction <code>View()</code>. À noter que cette fonction n’est pas utile dans votre document R markdown, mais sert plutôt dans la console pour explorer les données. Une nouvelle fenêtre va s’ouvrir avec les données (ce qui n’est pas compatible avec l’idée d’un document static type html).</p>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Nous utiliserons le package <strong>tidyverse</strong> pour une grande partie de la manipulation des données. Vous pouvez le charger en exécutant ce qui suit dans votre Console :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(seattlepets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-layout-align="left">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="figs/view-data.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%"></p>
-</figure>
+</section>
+<section id="données" class="level2">
+<h2 class="anchored" data-anchor-id="données">Données</h2>
+<p>Le jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nobel <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/nobel.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
-<p>Vous pouvez en apprendre plus sur le jeu de données en appelant la fonction d’aide <code>?seattlepets</code>.</p>
+<p>Les descriptions des variables sont les suivantes :</p>
+<ul>
+<li><code>id</code>: Numéro d’identification</li>
+<li><code>firstname</code>: Prénom du lauréat</li>
+<li><code>surname</code>: Nom de famille</li>
+<li><code>year</code>: Année de remise du prix</li>
+<li><code>category</code>: Catégorie du prix</li>
+<li><code>affiliation</code>: Affiliation du lauréat</li>
+<li><code>city</code>: Ville du lauréat l’année du prix</li>
+<li><code>country</code>: Pays du lauréat l’année du prix</li>
+<li><code>born_date</code>: Date de naissance du lauréat</li>
+<li><code>died_date</code>: Date de décès du lauréat</li>
+<li><code>gender</code>: Sexe du lauréat</li>
+<li><code>born_city</code>: Ville de naissance du lauréat</li>
+<li><code>born_country</code>: Pays de naissance du lauréat</li>
+<li><code>born_country_code</code>: Code du pays de naissance du lauréat</li>
+<li><code>died_city</code>: Ville de décès du lauréat</li>
+<li><code>died_country</code>: Pays de décès du lauréat</li>
+<li><code>died_country_code</code>: Code du pays de décès du lauréat</li>
+<li><code>overall_motivation</code>: Motivation générale pour la reconnaissance</li>
+<li><code>share</code>: Nombre d’autres lauréats avec lesquels le prix est partagé</li>
+<li><code>motivation</code>: Motivation pour la reconnaissance</li>
+</ul>
+<p>Dans quelques cas, le nom de la ville/pays a changé après la réception du prix par le lauréat (par exemple, en 1975, la Bosnie-Herzégovine s’appelait la République fédérative socialiste de Yougoslavie). Dans ces cas, les variables ci-dessous reflètent un nom différent de leurs homologues sans le suffixe `_original`.</p>
+<ul>
+<li><code>born_country_original</code></li>
+<li><code>born_city_original</code></li>
+<li><code>died_country_original</code></li>
+<li><code>died_city_original</code></li>
+<li><code>city_original</code></li>
+<li><code>country_original</code></li>
+</ul>
+</section>
 </section>
 <section id="exercices" class="level1">
 <h1>Exercices</h1>
-<section id="exerice-1" class="level2">
-<h2 class="anchored" data-anchor-id="exerice-1">Exerice 1</h2>
-<p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 1. Knit, et commit avec un message !</em></p>
+<section id="faites-connaissance-avec-les-données" class="level2">
+<h2 class="anchored" data-anchor-id="faites-connaissance-avec-les-données">Faites connaissance avec les données</h2>
+<section id="exercice-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
+<p>Combien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?</p>
+<p>Il y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.</p>
 </section>
-<section id="exercice-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-2">Exercice 2</h2>
-<p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ <em>Écrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !</em></p>
-</section>
-<section id="exercice-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-3">Exercice 3</h2>
-<p>Quels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Le code suivant peut être lu comme “Prend le dataset <code>seattlepets</code>, puis compte le nombre de ligne avec le même <code>animal_name</code>, et affiche le résultat en ordre décroissant”. le <em>puis</em> dans la phrase précédente correspond à l’opérateur de pipe <code>%&gt;%</code>, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.</p>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit et commit avec un message !</em></p>
-</section>
-<section id="exercice-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-4">Exercice 4</h2>
-<p>Nous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord <code>group_by()</code> par l’<code>species</code>, puis faire le count.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16,823 × 3
-# Groups:   species [4]
-   species animal_name     n
-   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;
- 1 Cat     &lt;NA&gt;          406
- 2 Dog     Lucy          337
- 3 Dog     Charlie       306
- 4 Dog     Bella         249
- 5 Dog     Luna          244
- 6 Dog     Daisy         221
- 7 Dog     Cooper        189
- 8 Dog     Lola          187
- 9 Dog     Max           186
-10 Dog     Molly         186
-# ℹ 16,813 more rows</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>On observe beaucoup de NA pour les chats… pauvres chatons sans noms…</p>
-</div>
-</div>
-<p>Cet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 2
-  species     n
-  &lt;chr&gt;   &lt;int&gt;
-1 Dog     35181
-2 Cat     17294
-3 Goat       38
-4 Pig         6</code></pre>
-</div>
-</div>
-<p>Cherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction <code>slice_max()</code>. Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas <code>n</code>. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas <code>n=5</code>. Ici, les deux arguments mentionnent un <code>n</code>. Dans le premier cas, il y a un variable appelé <code>n</code> dans le dataframe résultant du <code>count</code>, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans <code>slice_max()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(n, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 53 × 3
-# Groups:   species [4]
-   species animal_name     n
-   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;
- 1 Cat     &lt;NA&gt;          406
- 2 Cat     Luna          111
- 3 Cat     Lucy          102
- 4 Cat     Lily           86
- 5 Cat     Max            83
- 6 Dog     Lucy          337
- 7 Dog     Charlie       306
- 8 Dog     Bella         249
- 9 Dog     Luna          244
-10 Dog     Daisy         221
-# ℹ 43 more rows</code></pre>
-</div>
-</div>
-<p>À partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon <code>n</code> (la fréquence) et non par rapport à l’<code>species</code>. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par <code>n</code>. Pour cela, vous pouvez vous servir de la fonction <code>arrange</code>. Vous pourrez indiquer ce par quoi vous voulez tier: <code>arrange(variable 1, variable 2)</code>. À vous d’essayer et de voir quel résultat est le bon !</p>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit et commit avec un message !</em></p>
-</section>
-<section id="exercice-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-5">Exercice 5</h2>
-<p>La visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne <span class="math inline">\(x = y\)</span>; si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.</p>
-<div class="cell" data-fig.fullwidth="true">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="exo01-pet-names_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="exercice-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-2">Exercice 2</h3>
+<p>Créez un nouveau data frame appelé <code>nobel_living</code> qui filtre pour</p>
 <ul>
-<li>Quels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?</li>
-<li>Est ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?</li>
+<li>les lauréats pour lesquels <code>country</code> est disponible</li>
+<li>les lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par <code>org</code> dans la variable <code>gender</code>)</li>
+<li>les lauréats qui sont encore en vie (leur <code>died_date</code> vaut <code>NA</code>)</li>
 </ul>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message !</em></p>
+<p>Vérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
+</section>
+</section>
+<section id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="level2">
+<h2 class="anchored" data-anchor-id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</h2>
+<p>… dit l’article de Buzzfeed. Voyons si c’est vrai.</p>
+<p>Tout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction <code>mutate()</code>. Le pipeline suivant modifie le data frame <code>nobel_living</code> en ajoutant une nouvelle variable appelée <code>country_us</code>. Nous utilisons une instruction Si-Sinon pour créer cette variable. Le premier argument dans la fonction <code>if_else()</code> est la condition que nous testons. <em>Si</em> <code>country</code> est égal à <code>"USA"</code>, nous définissons <code>country_us</code> à <code>"USA"</code>. <em>Sinon</em>, nous définissons <code>country_us</code> à <code>"Other"</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nobel_living <span class="ot">&lt;-</span> nobel_living <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">country_us =</span> <span class="fu">if_else</span>(country <span class="sc">==</span> <span class="st">"USA"</span>, <span class="st">"USA"</span>, <span class="st">"Other"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ensuite, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.</p>
+<section id="exercice-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-3">Exercice 3</h3>
+<p>Créez un nouveau data frame appelé <code>nobel_living_science</code> qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.</p>
+<p>Pour cela, vous pouvez si <code>category</code> est dans le vecteur <code>c("Physics", "Medicine", "Chemistry", "Economics")</code>.</p>
+</section>
+<section id="exercice-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-4">Exercice 4</h3>
+<p>Pour le prochain exercice, travaillez avec le data frame <code>nobel_living_science</code> que nous avons créé ci-dessus.</p>
+<p>Créez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.</p>
+<p>Interprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.</p>
+<ul>
+<li>Votre visualisation doit être facettée par catégorie.</li>
+<li>Pour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.</li>
+<li>Inversez les coordonnées pour que les barres soient horizontales, pas verticales.</li>
+</ul>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
+</section>
+</section>
+<section id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="level2">
+<h2 class="anchored" data-anchor-id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</h2>
+<section id="exercice-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-5">Exercice 5</h3>
+<p>Créez une nouvelle variable appelée <code>born_country_us</code> qui a la valeur <code>"USA"</code> si le lauréat est né aux États-Unis, et <code>"Other"</code> sinon. Combien de gagnants sont nés aux États-Unis ?</p>
+</section>
+<section id="exercice-6" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-6">Exercice 6</h3>
+<p>Ajoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.</p>
+<ul>
+<li>Votre visualisation finale doit contenir une facette pour chaque catégorie.</li>
+<li>Dans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.</li>
+<li>Chaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.</li>
+</ul>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
+</section>
+</section>
+<section id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="level2">
+<h2 class="anchored" data-anchor-id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</h2>
+<div class="callout-info">
+<p>Note that your bar plot won’t exactly match the one from the Buzzfeed article. This is likely because the data has been updated since the article was published.</p>
+</div>
+<section id="exercice-7" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-7">Exercice 7</h3>
+<p>Dans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction <code>count()</code>) pour leur pays de naissance (<code>born_country</code>) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
+<p>Maintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés.</p>
+</section>
+</section>
+</section>
+<section id="intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="level1">
+<h1>Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</h1>
+<p>Les graphiques dans l’article de Buzzfeed sont appelés des graphiques en gaufre (<em>waffle plots</em>). Vous pouvez trouver le code utilisé pour réaliser ces graphiques dans le dépôt GitHub de Buzzfeed (oui, ils en ont un !) <a href="https://buzzfeednews.github.io/2017-01-immigration-and-science/">ici</a>. Vous pouvez essayer de recréer ces graphiques pour le plaisir, mais ce n’est pas une exigence pour ce lab.</p>
 
 
 </section>
-</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Seulement l’étape du push à besoin de communiquer avec Gihub, c’est pour cela que vos informations sont demandées.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

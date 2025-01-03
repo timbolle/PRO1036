@@ -973,6 +973,246 @@
     "text": "Références\n\n\n\n\n\n\n\nPRO1036 - 04 | Tim Bollé"
   },
   {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "",
+    "text": "Les exemples présentés dans ce lab sont basés la documentation du package infer.\nL’objectif de ce lab est de vous familiariser avec les concepts de base des statistiques inférentielles en R. Pour cela, nous allons apprendre à utiliser le package infer pour effectuer des tests d’hypothèses et des intervalles de confiance. infer est intégré dans le tidyverse et permet de faire des inférences statistiques de manière simple et intuitive. Il est automatiquement chargé lorsque vous chargez tidymodels.\ninfer utilise une grammaire expressive pour effectuer des inférences statistiques qui s’intègre dans le tidyverse. Au lieu de fournir des méthodes pour des tests statistiques spécifiques, ce package consolide les principes partagés entre les tests d’hypothèses courants en un ensemble de 4 verbes principaux (fonctions), complétés par de nombreuses utilités pour visualiser et extraire les valeurs pertinentes.\nPeu importe l’hypothèse que nous testons, nous posons toujours la même question : l’effet/la différence dans nos données observées est-il réel ou dû au hasard ? Pour répondre à cette question, nous commençons par supposer que les données observées proviennent d’un monde où “rien ne se passe” (c’est-à-dire que l’effet observé est simplement dû au hasard), et appelons cette hypothèse notre hypothèse nulle (En réalité, nous pourrions ne pas croire en l’hypothèse nulle du tout - l’hypothèse nulle s’oppose à l’hypothèse alternative, qui suppose que l’effet présent dans les données observées est en fait dû au fait que “quelque chose se passe”). Nous calculons ensuite une statistique de test à partir de nos données qui décrit l’effet observé. Nous pouvons utiliser cette statistique de test pour calculer une valeur \\(p\\), donnant la probabilité que nos données observées puissent se produire si l’hypothèse nulle était vraie. Si cette probabilité est inférieure à un niveau de signification \\(\\alpha\\) prédéfini, alors nous pouvons rejeter notre hypothèse nulle.\nLe package fonctionne autour de 4 verbes principaux :\n\nspecify() : permet de spécifier la variable ou la relation entre les variables que vous souhaitez étudier.\nhypothesize() : permet de déclarer l’hypothèse nulle.\ngenerate() : permet de générer des données reflétant l’hypothèse nulle.\ncalculate() : permet de calculer une distribution de statistiques à partir des données générées pour former la distribution nulle.\n\n\n\nNous aurons besoin des packages suivants pour ce lab :\n\nlibrary(tidyverse)\nlibrary(infer) # ou library(tidymodels)",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#packages",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#packages",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "",
+    "text": "Nous aurons besoin des packages suivants pour ce lab :\n\nlibrary(tidyverse)\nlibrary(infer) # ou library(tidymodels)",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#exercice",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#exercice",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Exercice",
+    "text": "Exercice\nTestez si l’âge moyen des répondants est égal à 40 ans. Utilisez un niveau de signification de 0.05.",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#exercice-1",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#exercice-1",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Exercice",
+    "text": "Exercice\nTestez si le nombre d’heures travaillées est différent selon le sexe des participants. Utilisez un niveau de signification de 0.05.",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#exercice-2",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#exercice-2",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Exercice",
+    "text": "Exercice\nTestez si le nombre d’heures travaillées est différent selon le revenu moyen du foyer des participants. Utilisez un niveau de signification de 0.05. Quelle conclusion en tirez-vous ?",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#les-données",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#les-données",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Les données",
+    "text": "Les données\nDans cet exercice, nous allons étudier l’effet de la cigarette sur la grossesse. Pour cela, nous allons utiliser le jeu de données ncbirths du package openintro. Ce jeu de données contient des données sur les grossesses de l’état de Caroline du Nord.\nChargez le package openintro et affichez un aperçu des premières lignes du jeu de données ncbirths.",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#le-poids-des-bébés",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#le-poids-des-bébés",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Le poids des bébés",
+    "text": "Le poids des bébés\nUne étude de 19951 suggère que les bébés caucasiens nés aux États-Unis ont un poids moyen de 3,369g. Ici, nous avons que les informations sur l’origine de la mère donc nous allons assumer que les bébés caucasiens sont ceux dont la mère est caucasienne (whitemom = white).\nNous voulons évaluer si le poids moyen des bébés caucasiens à changer entre 1995 et 2004.\nQuelle est l’hypothèse nulle ? Quelle est l’hypothèse alternative ? Quel test d’hypothèses devons-nous utiliser ?\nCréez un nouveau tableau de données dans lequel seulement les bébés caucasiens sont inclus. Devons nous modifier la colonne des poids des bébés ? Si oui, faites le en conséquence.\nCalculez la statistique observée à partir de vos données.\nGénérez ensuite des données reflétant l’hypothèse nulle et calculez la distribution de statistiques à partir de ces données.\nVisualisez la distribution obtenue des données générées et la statistique observée.\nCalculez la p-value avec un niveau de signification de 0.05. Quelle conclusion en tirez-vous ?",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#consommation-de-cigarette",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#consommation-de-cigarette",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Consommation de cigarette",
+    "text": "Consommation de cigarette\nNous allons maintenant nous intéresser à la consommation de cigarette pendant la grossesse. Nous allons comparer le poids des bébés en fonction des habitudes de consommation (habit).\nCommencez par représenter le problème visuellement sous forme de boxpolot.\nCréez un nouveau jeu de données dans lequel il n’y a pas de valeurs manquantes pour la variable habit.\nCalculez, à l’aide de la fontion summarize, la moyenne et l’écart-type du poids des bébés en fonction des habitudes de consommation.\nNous voulons maintenant savoir si ce que nous observons visuellement est statistiquement significatif. Quelle est l’hypothèse nulle ? Quelle est l’hypothèse alternative ? Quel test d’hypothèses devons-nous utiliser ?\nCalculez la statistique observée à partir de vos données. Générez ensuite des données reflétant l’hypothèse nulle et calculez la distribution de statistiques à partir de ces données. Calculez la p-value avec un niveau de signification de 0.05. Quelle conclusion en tirez-vous ?\nDéterminez un intervalle de confiance à 95% pour la différence de poids des bébés en fonction des habitudes de consommation.",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#poids-du-bébé-en-fonction-du-poids-de-la-mère",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#poids-du-bébé-en-fonction-du-poids-de-la-mère",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Poids du bébé en fonction du poids de la mère",
+    "text": "Poids du bébé en fonction du poids de la mère\nNous allons nous intéresser aux variables mature et lowbirthweight.\nPour commencez, à l’aide de la variable mage, qui correspond à l’âge de la mère, déterminez, par la méthode de votre choix (statistique descriptive ou visualisation), l’âge limite pour être considérée dans la catégorie mature.\nNous allons maintenant vouloir déterminer si la proportion de bébés de faible poids à la naissance est différente entre les mères matures et les mères non matures.\nNous n’avons pas vu le cas de figure pour comparer deux proportions. Vous trouvez de la documentation ici\nQuelle est l’hypothèse nulle ? Quelle est l’hypothèse alternative ?\nTestez l’hypothèse nulle avec un niveau de signification de 0.05. Quelle conclusion en tirez-vous ?",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab10-inferences/lab10-inferences.html#footnotes",
+    "href": "website/labs/lab10-inferences/lab10-inferences.html#footnotes",
+    "title": "Lab11 - Statistiques inférentielles",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nWen, Shi Wu, Michael S. Kramer, and Robert H. Usher. “Comparison of birth weight distributions between Chinese and Caucasian infants.” American Journal of Epidemiology 141.12 (1995): 1177-1187.↩︎",
+    "crumbs": [
+      "Labs",
+      "Semaine 11",
+      "Lab11 - Statistiques inférentielles"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "",
+    "text": "Photo by Marleena Garris on Unsplash\nLa première étape du processus de transformation de l’information en connaissance est de résumer et de décrire les informations brutes - les données. Dans cet exercice, nous explorons les données sur les grades universitaires et les revenus, en particulier les données derrière l’article de FiveThirtyEight “Le guide économique pour choisir une majeure universitaire”.\nLes données proviennent initialement de l’American Community Survey (ACS) 2010-2012 Public Use Microdata Series. Bien que cela soit hors du cadre de cet exercice, si vous êtes curieux de savoir comment les données brutes de l’ACS ont été nettoyées et préparées, consultez le code utilisé par les auteurs de FiveThirtyEight.\nNous devons également noter qu’il y a de nombreux facteurs à prendre en compte pour choisir un grade. Le potentiel de revenus et les perspectives d’emploi en sont deux, et ils sont importants, mais ils ne racontent pas toute l’histoire. Gardez cela à l’esprit en analysant les données.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#warm-up",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#warm-up",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Warm up",
+    "text": "Warm up\nAvant de présenter les données, réchauffons-nous avec quelques exercices simples. - Mettez à jour le YAML, en changeant le nom de l’auteur pour votre nom, et knit le document. - Faites un commit de vos modifications avec un message de commit. - Poussez vos modifications sur GitHub. - Allez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md. Si quelque chose manque, faites un commit et poussez à nouveau.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#packages",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#packages",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Packages",
+    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation et de la visualisation des données, le package scales pour un meilleur formatage des étiquettes sur les visualisations, et le package fivethirtyeight pour les données. Installez-les si ce n’est pas déjà fait.\n\nlibrary(tidyverse)\nlibrary(scales)\nlibrary(fivethirtyeight)",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#données",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#données",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Données",
+    "text": "Données\nLes données se trouvent dans le package fivethirtyeight, et le dataframe s’appelle college_recent_grads. Comme le jeu de données est distribué avec le package, nous n’avons pas besoin de le charger séparément ; il devient disponible lorsque nous chargeons le package. Vous pouvez en savoir plus sur le jeu de données en inspectant sa documentation, ?college_recent_grads. Vous pouvez également trouver cette information ici.\nVous pouvez également jeter un coup d’œil rapide à votre data frame et voir ses dimensions avec la fonction glimpse.\n\nglimpse(college_recent_grads)\n\nLe data frame college_recent_grads est une mine d’informations. Réfléchissons à quelques questions auxquelles nous pourrions vouloir répondre avec ces données :\n\nQuel grade a le taux de chômage le plus bas ?\nQuel grade a le pourcentage de femmes le plus élevé ?\nComment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?\nLes femmes ont-elles tendance à choisir des grades avec des revenus plus bas ou plus élevés ?\n\nDans la section suivante, nous visons à répondre à ces questions.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-taux-de-chômage-le-plus-bas",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-taux-de-chômage-le-plus-bas",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quel grade a le taux de chômage le plus bas ?",
+    "text": "Quel grade a le taux de chômage le plus bas ?\nPour répondre à cette question, tout ce que nous avons à faire est de trier les données. Nous utilisons la fonction arrange pour cela, et les trions par la variable unemployment_rate. Par défaut, arrange trie par ordre croissant, ce qui est ce que nous voulons ici - nous sommes intéressés par le grade avec le taux de chômage le plus bas.\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate)\n\nCela nous donne ce que nous voulions, mais pas sous une forme idéale. Premièrement, le nom du grade tient à peine sur la page. Deuxièmement, certaines des variables ne sont pas si utiles (par exemple, major_code, major_category) et certaines importantes ne sont pas facilement visibles (par exemple, unemployment_rate).\nNous pouvons utiliser la fonction select pour choisir quelles variables afficher, et dans quel ordre :\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate) %&gt;%\n  select(rank, major, unemployment_rate)\n\nOk, c’est mieux, mais avons-nous vraiment besoin d’afficher toutes ces décimales dans la variable de chômage ? Pas vraiment !\nNous pouvons utiliser la fonction percent() pour nettoyer un peu l’affichage.\n\ncollege_recent_grads %&gt;%\n  arrange(unemployment_rate) %&gt;%\n  select(rank, major, unemployment_rate) %&gt;%\n  mutate(unemployment_rate = percent(unemployment_rate))",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#quel-grade-a-le-pourcentage-de-femmes-le-plus-élevé",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quel grade a le pourcentage de femmes le plus élevé ?",
+    "text": "Quel grade a le pourcentage de femmes le plus élevé ?\n\nExercice 1\nPour répondre à une telle question, nous devons organiser les données dans l’ordre décroissant.\nEn utilisant ce que vous avez appris jusqu’à présent, organisez les données dans l’ordre décroissant par rapport au pourcentage de femmes dans un grade, et affichez uniquement le grade, le nombre total de personnes avec ce grade, et le pourcentage de femmes. Affichez uniquement les trois premiers grades en ajoutant top_n(3) à la fin du pipeline.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#comment-les-distributions-des-revenus-médians-se-comparent-elles-à-travers-les-catégories-de-grades",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?",
+    "text": "Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?\n\nExercice 2\n\n\n\n\n\n\nNote\n\n\n\nUne percentile est une mesure utilisée en statistiques indiquant la valeur en dessous de laquelle un pourcentage donné d’observations dans un groupe d’observations se situe. Par exemple, le 20e percentile est la valeur en dessous de laquelle 20 % des observations peuvent être trouvées. (Source : Wikipedia)\n\n\nIl y a trois types de revenus rapportés dans ce data frame : p25th, median, et p75th. Ceux-ci correspondent aux 25e, 50e, et 75e percentiles de la distribution des revenus des individus échantillonnés pour un grade donné.\nPourquoi choisissons-nous souvent le médian, plutôt que la moyenne, pour décrire le revenu typique d’un groupe de personnes ?\n\n\nExercice 3\nLa question à laquelle nous voulons répondre est “Comment les distributions des revenus médians se comparent-elles à travers les catégories de grades ?”.\nPour cela, nous devons : d’abord, regrouper les données par major_category. Ensuite, trouver un moyen de résumer les distributions des revenus médians dans ces groupes. Cette décision dépendra des formes de ces distributions. Donc d’abord, nous devons visualiser les données.\nNous utilisons la fonction ggplot() pour cela. Le premier argument est le data frame, et l’argument suivant donne la correspondance des variables des données aux éléments aesthétiques du graphique.\nCommençons simplement et regardons la distribution de tous les revenus médians, sans considérer les catégories majeures. Utilisez la fonction geom_histogram() pour faire un premier graphe tout simple des revenus médians.\nEn plus du graphique, vous devriez obtenir un message d’avertissement, si vous n’avez pas indiqué une taille de bin :\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\nCela nous indique que nous pourrions vouloir reconsidérer la largeur de la classe que nous avons choisie pour notre histogramme - ou plus précisément, la largeur de la classe que nous n’avons pas spécifiée. C’est une bonne pratique de toujours penser dans le contexte des données et d’essayer quelques largeurs de classe. Vous pourriez vous demander : “Quelle serait une différence significative dans les revenus médians ?” 1 $ est évidemment trop peu, 10 000 $ pourrait être trop élevé.\nEssayez des largeurs de classe de 1000 $ et 5000 $ et choisissez-en une. Expliquez votre choix. Notez que la largeur de la classe est un argument pour la fonction geom_histogram.\n\n\nExercice 4\nNous pouvons également calculer des statistiques sommaires pour cette distribution en utilisant la fonction summarise :\n\ncollege_recent_grads %&gt;%\n  summarise(min = min(median), max = max(median),\n            mean = mean(median), med = median(median),\n            sd = sd(median), \n            q1 = quantile(median, probs = 0.25),\n            q3 = quantile(median, probs = 0.75))\n\nEn vous basant sur la forme de l’histogramme que vous avez créé dans l’exercice précédent, déterminez laquelle de ces statistiques sommaires est utile pour décrire la distribution. Rédigez votre description (n’oubliez pas la forme, le centre, la dispersion, les observations inhabituelles) et incluez le résultat de la statistique sommaire également.\n\n\nExercice 5\nPlottez la distribution du revenu médian en utilisant un histogramme, facetted par major_category. Utilisez la binwidth que vous avez choisie dans l’exercice précédent.\n\n\nExercice 6\nMaintenant que nous avons vu les formes des distributions des revenus médians pour chaque catégorie majeure, nous devrions avoir une meilleure idée de la statistique sommaire à utiliser pour quantifier le revenu médian typique.\nQuelle catégorie majeure a le revenu médian typique le plus élevé ? Constuisez un bloc de code qui groupe selon la major_category, summarize en utulisant la statistique retenue et triant dans la bonne direction (nous cherchons la plus élevée).\n\n\nExercice 7\nQuelle catégorie majeure est la moins populaire dans cet échantillon ? Vous pouvez vous aider de la foncton count pour cela.\n🧶 ✅ ⬆️ Knit, commit, et push ! Assurez vous de mettre un message à votre commit !",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#tous-les-domaines-stem-ne-sont-pas-les-mêmes",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#tous-les-domaines-stem-ne-sont-pas-les-mêmes",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Tous les domaines STEM ne sont pas les mêmes",
+    "text": "Tous les domaines STEM ne sont pas les mêmes\nUne des sections de l’article de FiveThirtyEight est “Tous les domaines STEM ne sont pas les mêmes”. Voyons si c’est vrai.\nPour commencer, nous devons déterminer quelles catégories majeures sont considérées comme des domaines STEM. Une approche serait de créer un vecteur de catégories majeures qui sont généralement considérées comme des domaines STEM, puis de créer une nouvelle variable dans notre data frame qui indique si une majeure est un domaine STEM ou non.\nPour cela, nous devons d’abord créer un vecteur appelé stem_categories qui liste les catégories majeures qui sont considérées comme des domaines STEM.\n\nstem_categories &lt;- c(\"Biology & Life Science\",\n                     \"Computers & Mathematics\",\n                     \"Engineering\",\n                     \"Physical Sciences\")\n\nEnsuite, nous pouvons utiliser ceci pour créer une nouvelle variable dans notre data frame indiquant si une majeure est un domaine STEM ou non. À l’aide la fonction ifelse et de l’opérateur %in%, créez une nouvelle variable appelée major_type qui est \"stem\" si la major_category est dans le vecteur stem_categories, et \"not stem\" sinon.\n\nExercice 8\nNous pouvons utiliser les opérateurs logiques pour également filter nos données pour les majeures STEM dont le revenu médian est inférieur au revenu médian de toutes les majeures, que nous avons trouvé être de 36 000 $ plus tôt.\nQuels domaines STEM ont des salaires médians égaux ou inférieurs au salaire médian de toutes les majeures ? Votre sortie ne doit montrer que le nom de la majeure et le revenu médian, le 25e percentile, et le 75e percentile pour cette majeure, et doit être triée de telle sorte que la majeure avec le revenu médian le plus élevé soit en haut.\n🧶 ✅ ⬆️ Knit, commit, et push ! Assurez vous de mettre un message à votre commit !",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#quels-types-de-grades-les-femmes-ont-elles-tendance-à-choisir",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Quels types de grades les femmes ont-elles tendance à choisir ?",
+    "text": "Quels types de grades les femmes ont-elles tendance à choisir ?\n\nExercice 9\nCréez un nuage de points du revenu médian par rapport à la proportion de femmes dans cette majeure, coloré par le fait que la majeure est un domaine STEM ou non. Décrivez l’association entre ces trois variables.",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab04-college-majors/lab04-college-majors.html#pour-aller-plus-loin",
+    "href": "website/labs/lab04-college-majors/lab04-college-majors.html#pour-aller-plus-loin",
+    "title": "Lab 04 - Quel grade choisir ?",
+    "section": "Pour aller plus loin",
+    "text": "Pour aller plus loin\n\nExercice 10\nPosez une question qui vous intéresse, et répondez-y en utilisant des statistiques sommaires et/ou des visualisations.\n🧶 ✅ ⬆️ Knit, commit, et push ! C’est le dernier commit donc assurez vous que votre rapport soit complet et propre avant de commiter ou pousser !",
+    "crumbs": [
+      "Labs",
+      "Semaine 4",
+      "Lab 04 - Quel grade choisir ?"
+    ]
+  },
+  {
     "objectID": "website/exercices/exo01-pet-names/exo01-pet-names.html",
     "href": "website/exercices/exo01-pet-names/exo01-pet-names.html",
     "title": "Exercice 01 - Pet names",
@@ -1117,11 +1357,193 @@
     ]
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "website/demo/unvotes/unvotes.html",
+    "href": "website/demo/unvotes/unvotes.html",
+    "title": "UN Votes",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Comment les différents pays votent-ils à l’Assemblée Générale des Nations Unies, comment leurs votent ont-ils évolué à travers le temps, et quels sont leurs différences d’opinion sur les différents sujet ? Cette analyse vise à proposer des pistes de réponses.\n\n\nNous allons utiliser les packages tidyverse, lubridate, et scales pour la manipulation de données et la visualisation, le package DT pour l’interactivité des tableaux et le package unvotes pour les données.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\n\n\n\n\nLes donnnées que nous utilisons proviennent du package unvotes. Dans le block suivant, nous transformons les données pour joindre différents tableaux fournis avec le package et ainsi faciliter l’analyse.\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nWarning in inner_join(., un_roll_call_issues, by = \"rcid\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 382 of `x` matches multiple rows in `y`.\nℹ Row 3009 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning."
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#introduction",
+    "href": "website/demo/unvotes/unvotes.html#introduction",
+    "title": "UN Votes",
+    "section": "",
+    "text": "Comment les différents pays votent-ils à l’Assemblée Générale des Nations Unies, comment leurs votent ont-ils évolué à travers le temps, et quels sont leurs différences d’opinion sur les différents sujet ? Cette analyse vise à proposer des pistes de réponses.\n\n\nNous allons utiliser les packages tidyverse, lubridate, et scales pour la manipulation de données et la visualisation, le package DT pour l’interactivité des tableaux et le package unvotes pour les données.\n\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(DT)\nlibrary(unvotes)\n\n\n\n\nLes donnnées que nous utilisons proviennent du package unvotes. Dans le block suivant, nous transformons les données pour joindre différents tableaux fournis avec le package et ainsi faciliter l’analyse.\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nWarning in inner_join(., un_roll_call_issues, by = \"rcid\"): Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 382 of `x` matches multiple rows in `y`.\nℹ Row 3009 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning."
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#les-patterns-de-vote-aux-nations-unies",
+    "href": "website/demo/unvotes/unvotes.html#les-patterns-de-vote-aux-nations-unies",
+    "title": "UN Votes",
+    "section": "Les patterns de vote aux Nations Unies",
+    "text": "Les patterns de vote aux Nations Unies\nNous allons créer une visualisation qui affiche l’évolution des votes pour différents pays sur une certaine période.\nNous pouvons facilement changer les pays qui sont affichés en changeant les noms passés dans la fonction filter. Notez que le nom du pays dont commencer par une majuscule et avoir exactement la même orthographe que dans les données. La liste complète est présentée en Annexe.\n\nunvotes %&gt;%\n  filter(country %in% c(\"United Kingdom\", \"United States\", \"Turkey\")) %&gt;%\n  mutate(year = year(date)) %&gt;%\n  group_by(country, year, issue) %&gt;%\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#références",
+    "href": "website/demo/unvotes/unvotes.html#références",
+    "title": "UN Votes",
+    "section": "Références",
+    "text": "Références\n\nDavid Robinson (2017). unvotes: United Nations General Assembly Voting Data. R package version 0.2.0.\nErik Voeten “Data and Analyses of Voting in the UN General Assembly” Routledge Handbook of International Organization, edited by Bob Reinalda (published May 27, 2013).\nMuch of the analysis has been modeled on the examples presented in the unvotes package vignette."
+  },
+  {
+    "objectID": "website/demo/unvotes/unvotes.html#appendix",
+    "href": "website/demo/unvotes/unvotes.html#appendix",
+    "title": "UN Votes",
+    "section": "Appendix",
+    "text": "Appendix\nLa liste des pays dans le jeu de données est présenté ci-dessous:"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#les-outils",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#les-outils",
+    "title": "01 - Boite à outils",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#objectif-du-cours",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#objectif-du-cours",
+    "title": "01 - Boite à outils",
+    "section": "Objectif du cours",
+    "text": "Objectif du cours\nÀ la fin de ce cours, vous pourrez:\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#répétabilité",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#répétabilité",
+    "title": "01 - Boite à outils",
+    "section": "Répétabilité",
+    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#les-outils-de-la-répérabilité",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#les-outils-de-la-répérabilité",
+    "title": "01 - Boite à outils",
+    "section": "Les outils de la répérabilité",
+    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-et-rstudio",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#r-et-rstudio",
+    "title": "01 - Boite à outils",
+    "section": "R et RStudio",
+    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-packages",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#r-packages",
+    "title": "01 - Boite à outils",
+    "section": "R packages",
+    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#rstudio-tour",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#rstudio-tour",
+    "title": "01 - Boite à outils",
+    "section": "RStudio tour",
+    "text": "RStudio tour"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-101",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#r-101",
+    "title": "01 - Boite à outils",
+    "section": "R 101",
+    "text": "R 101\n\nLes fonctions sont souvent des verbes, suivi de parenthèses, contenant des arguments:\n\nfait_ca(avec_ca)\nfait_ca(avec_ca, et_ca, et_encore_ca)\n\n\n\nLes packages peuvent être installés avec install.package et chargés avec library:\n\ninstall.packages(\"package_name\")\nlibrary(package_name)\n\n\n\n$ permet d’accéder aux colonnes des tableaux\n\ndataframe$var_name\n\n\n\n? permet d’accéder à l’aide sur les fonctions\n\n?mean"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#tidyverse",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#tidyverse",
+    "title": "01 - Boite à outils",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-markdown",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#r-markdown",
+    "title": "01 - Boite à outils",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-markdown-1",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#r-markdown-1",
+    "title": "01 - Boite à outils",
+    "section": "R Markdown",
+    "text": "R Markdown"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-markdown---aide",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#r-markdown---aide",
+    "title": "01 - Boite à outils",
+    "section": "R Markdown - Aide",
+    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#les-outils-1",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#les-outils-1",
+    "title": "01 - Boite à outils",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#git-et-github",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#git-et-github",
+    "title": "01 - Boite à outils",
+    "section": "Git et GitHub",
+    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#pourquoi-la-gestion-de-version",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#pourquoi-la-gestion-de-version",
+    "title": "01 - Boite à outils",
+    "section": "Pourquoi la gestion de version ?",
+    "text": "Pourquoi la gestion de version ?\n\nPhD Comics"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#fonctionnement",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#fonctionnement",
+    "title": "01 - Boite à outils",
+    "section": "Fonctionnement",
+    "text": "Fonctionnement"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#mise-en-place",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#mise-en-place",
+    "title": "01 - Boite à outils",
+    "section": "Mise en place",
+    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
+  },
+  {
+    "objectID": "slides/01 - Toolbox/01 - toolbox.html#références",
+    "href": "slides/01 - Toolbox/01 - toolbox.html#références",
+    "title": "01 - Boite à outils",
+    "section": "Références",
+    "text": "Références\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\n\n\n\n\nPRO1036 - 01 | Tim Bollé"
+  },
+  {
+    "objectID": "website/projet/projet.html",
+    "href": "website/projet/projet.html",
+    "title": "Projet",
+    "section": "",
+    "text": "Le projet pour ce cours consistera en une analyse d’un ensemble de données de votre choix. De nombreux jeux de données en accès libre sont à disposition sur Internet. La section Données contient des liens vers des sites qui proposent des jeux de données. Vous pouvez choisir des données en fonction de vos intérêts. Le but de ce projet est de démontrer votre maîtrise des techniques que nous avons abordées dans ce cours (et au-delà, si vous le souhaitez) et de les appliquer de manière significative à un ensemble de données original.\nLe but n’est pas de faire une analyse exhaustive des données, c’est-à-dire de ne pas calculer chaque statistique et procédure que vous avez apprises pour chaque variable, mais plutôt de me montrer que vous êtes compétent pour poser des questions significatives et y répondre avec les résultats de l’analyse des données, que vous êtes compétent pour utiliser R, et que vous êtes compétent pour interpréter et présenter les résultats. Concentrez-vous sur les méthodes qui vous aident à commencer à répondre à vos questions de recherche. Vous n’êtes pas obligé d’appliquer toutes les procédures statistiques que nous avons apprises (et vous pouvez utiliser des techniques que nous n’avons pas officiellement abordées en classe, si vous êtes aventureux). Critiquez également vos propres méthodes et fournissez des suggestions pour améliorer votre analyse.\nLe projet est très ouvert. Vous devriez créer une sorte de visualisation(s) convaincante(s) de ces données en R. Il n’y a pas de limite sur les outils ou les packages que vous pouvez utiliser, mais il est nécessaire d’utiliser les packages que nous avons appris en classe (tidyverse). Vous n’avez pas besoin de visualiser toutes les données en une seule fois. Une seule visualisation de haute qualité recevra une meilleure note qu’un grand nombre de visualisations de mauvaise qualité. Faites également attention à votre présentation. La netteté, la cohérence et la clarté compteront. Toutes les analyses doivent être effectuées dans RStudio, en utilisant R."
+  },
+  {
+    "objectID": "website/projet/projet.html#introduction",
+    "href": "website/projet/projet.html#introduction",
+    "title": "Projet",
+    "section": "",
+    "text": "Le projet pour ce cours consistera en une analyse d’un ensemble de données de votre choix. De nombreux jeux de données en accès libre sont à disposition sur Internet. La section Données contient des liens vers des sites qui proposent des jeux de données. Vous pouvez choisir des données en fonction de vos intérêts. Le but de ce projet est de démontrer votre maîtrise des techniques que nous avons abordées dans ce cours (et au-delà, si vous le souhaitez) et de les appliquer de manière significative à un ensemble de données original.\nLe but n’est pas de faire une analyse exhaustive des données, c’est-à-dire de ne pas calculer chaque statistique et procédure que vous avez apprises pour chaque variable, mais plutôt de me montrer que vous êtes compétent pour poser des questions significatives et y répondre avec les résultats de l’analyse des données, que vous êtes compétent pour utiliser R, et que vous êtes compétent pour interpréter et présenter les résultats. Concentrez-vous sur les méthodes qui vous aident à commencer à répondre à vos questions de recherche. Vous n’êtes pas obligé d’appliquer toutes les procédures statistiques que nous avons apprises (et vous pouvez utiliser des techniques que nous n’avons pas officiellement abordées en classe, si vous êtes aventureux). Critiquez également vos propres méthodes et fournissez des suggestions pour améliorer votre analyse.\nLe projet est très ouvert. Vous devriez créer une sorte de visualisation(s) convaincante(s) de ces données en R. Il n’y a pas de limite sur les outils ou les packages que vous pouvez utiliser, mais il est nécessaire d’utiliser les packages que nous avons appris en classe (tidyverse). Vous n’avez pas besoin de visualiser toutes les données en une seule fois. Une seule visualisation de haute qualité recevra une meilleure note qu’un grand nombre de visualisations de mauvaise qualité. Faites également attention à votre présentation. La netteté, la cohérence et la clarté compteront. Toutes les analyses doivent être effectuées dans RStudio, en utilisant R."
+  },
+  {
+    "objectID": "website/projet/projet.html#data",
+    "href": "website/projet/projet.html#data",
+    "title": "Projet",
+    "section": "Données",
+    "text": "Données\nPour que vous ayez la meilleure chance de réussir ce projet, il est important que vous choisissiez un ensemble de données adapté. Cela signifie que les données doivent être facilement accessibles et suffisamment grandes pour que plusieurs relations puissent être explorées. Ainsi, votre ensemble de données doit comporter au moins 50 observations et entre 10 et 20 variables (des exceptions peuvent être faites, mais vous devez d’abord le valider avec nous). Les variables de l’ensemble de données doivent inclure des variables catégorielles, des variables numériques discrètes et des variables numériques continues.\nSi le format des données n’a pas été vu en classe, c’est ok mais attendez vous à devoir fournir un léger effort pour les charger dans R. Si vous avez des difficultés, demandez de l’aide avant qu’il ne soit trop tard.\nIl est interdit d’utiliser des données utilisées pendant le cours, dans des exemples, des examens ou des laboratoires.\nCi-dessous, vous trouverez une liste de références de jeux de données qui pourraient vous intéresser. Vous n’êtes pas limité à ces ressources, et en fait, vous êtes encouragé à aller au-delà. Mais vous pourriez y trouver quelque chose d’intéressant :\n\nTidyTuesday\nKaggle datasets\nHarvard Dataverse\nAwesome public datasets\nICPSR Data Archive Project\nGoogle Dataset Search\n\nPlusieurs villes, pays et instituions ont également des portails de données ouvertes. Voici quelques exemples :\n\nCanada Open Data\nDonnées Québec\nVille de Montreal\nCDC Datasets\nNHS Scotland Open Data\nEdinburgh Open Data\nUK Gov Data\n…\n\nN’oubliez pas que vous pouvez combiner plusieurs sources de données également."
+  },
+  {
+    "objectID": "website/projet/projet.html#consignes",
+    "href": "website/projet/projet.html#consignes",
+    "title": "Projet",
+    "section": "Consignes",
+    "text": "Consignes\n\nProposal (10 pts)\nPour commencez, vous devez soumettre un proposal de projet. Il s’agit d’un court document de maximum 1 page indiquant :\n\nIntroduction: L’introduction doit présenter brièvement votre question de recherche et de l’ensemble de données que vous avez choisi.\nDonnées: Une présentation plus détaillées des données choisies. Quelles sont les variables que vous allez utiliser? Combien d’observations y a-t-il? Quel est le format des données? Quand les données ont-elles été collectées? etc.\nAnalyse de données: Quelles sont les questions que vous souhaitez explorer? Quelles sont les hypothèses que vous souhaitez tester? Quelles sont les méthodes que vous envisagez d’utiliser pour répondre à ces questions?\n\n\nCritères d’évaluation\n\n\n\nCritère\nPoints\n\n\n\n\nChoix des données\n4\n\n\nQuestions de recherche\n4\n\n\nPrésentation, Qualité\n2\n\n\n\n\n\n\nRapport final (30 pts)\nVotre rapport sera à rendre sous forme de document Markdown (.md). Vous pouvez utiliser RMarkdown pour générer votre rapport. L’ensemble des fichiers que vous avez utilisé pour générer votre rapport (fichier .Rmd, .md, données, images, …) devra être inclus dans votre soumission. Le tout sera rendu sur Github au plus tard le 16 décembre 2024 à 23h00.\nVotre rapport devra présenter les résultats de votre analyse. Il devra contenir les éléments suivants :\n\nIntroduction: Présentez brièvement le contexte de votre analyse et les questions de recherche que vous souhaitez explorer.\nDonnées: Présentez les données qui vont être utilisez et notamment d’où elles proviennent, combien d’observations et de variables elles contiennent, etc.\nAnalyse des données: Présentez les résultats de votre analyse. Vous devez inclure des visualisations et des statistiques descriptives pour les variables que vous avez choisies, ainsi que toutes les autres analyses que vous avez effectuées (selon ce qui y applicable: test d’hypothèse, regression, classification, ….)\nDiscussion: Discutez des résultats de votre analyse. Quelles sont les conclusions que vous pouvez tirer de vos résultats? Quelles sont les limites de votre analyse? Quelles sont les implications de vos résultats?\n\nNotez que l’analyse et la discussion peuvent être faites de manière alternées, par question par exemple, mais doivent être clairement identifiées. Les questions de recherche doivent être clairement identifiées et les réponses doivent être clairement présentées. Pour résumer: assurez vous que votre rapport est clair, bien structuré. S’y retrouver devrait être facile.\nIl n’a y pas de longueur minimum ou maximum pour le rapport, mais il doit être suffisamment détaillé pour que nous puissions comprendre votre analyse et vos résultats. Votre rendu devrai comprendre au moins:\n\nDeux visualisations différentes, dont une impliquant au moins trois variables\nUne statistique prédictive (régression, classification, …) ou un test d’hypothèse\nDes analyses descriptives\n\nL’objectif est de montrer que vous êtes capable de manipuler des données, de les analyser et de les interpréter. Vous devez également montrer que vous êtes capable de communiquer vos résultats de manière claire et concise.\nVotre rapport doit le plus proposer une histoire à partir des données. Votre rapport doit attiser la curiosité du lecteur et le guider à travers les résultats de votre analyse.\n\nCritères d’évaluation\n\n\n\nCritères\nPoints\n\n\n\n\nStructure claire\n5\n\n\nQualité des analyses\n5\n\n\nJustesse des analyses\n5\n\n\nQualité de la discussion\n5\n\n\nVisualisations\n5\n\n\nReproductibilité et organisation\n5\n\n\nTotal\n30"
   },
   {
     "objectID": "website/exercices/exos.html",
@@ -1336,158 +1758,405 @@
     "text": "11 - Tests d’hypothèses\n“Cours” et Lab: Lab11 - Statistiques inférentielles"
   },
   {
-    "objectID": "website/projet/projet.html",
-    "href": "website/projet/projet.html",
-    "title": "Projet",
+    "objectID": "website/labs/labs.html",
+    "href": "website/labs/labs.html",
+    "title": "Labs",
     "section": "",
-    "text": "Le projet pour ce cours consistera en une analyse d’un ensemble de données de votre choix. De nombreux jeux de données en accès libre sont à disposition sur Internet. La section Données contient des liens vers des sites qui proposent des jeux de données. Vous pouvez choisir des données en fonction de vos intérêts. Le but de ce projet est de démontrer votre maîtrise des techniques que nous avons abordées dans ce cours (et au-delà, si vous le souhaitez) et de les appliquer de manière significative à un ensemble de données original.\nLe but n’est pas de faire une analyse exhaustive des données, c’est-à-dire de ne pas calculer chaque statistique et procédure que vous avez apprises pour chaque variable, mais plutôt de me montrer que vous êtes compétent pour poser des questions significatives et y répondre avec les résultats de l’analyse des données, que vous êtes compétent pour utiliser R, et que vous êtes compétent pour interpréter et présenter les résultats. Concentrez-vous sur les méthodes qui vous aident à commencer à répondre à vos questions de recherche. Vous n’êtes pas obligé d’appliquer toutes les procédures statistiques que nous avons apprises (et vous pouvez utiliser des techniques que nous n’avons pas officiellement abordées en classe, si vous êtes aventureux). Critiquez également vos propres méthodes et fournissez des suggestions pour améliorer votre analyse.\nLe projet est très ouvert. Vous devriez créer une sorte de visualisation(s) convaincante(s) de ces données en R. Il n’y a pas de limite sur les outils ou les packages que vous pouvez utiliser, mais il est nécessaire d’utiliser les packages que nous avons appris en classe (tidyverse). Vous n’avez pas besoin de visualiser toutes les données en une seule fois. Une seule visualisation de haute qualité recevra une meilleure note qu’un grand nombre de visualisations de mauvaise qualité. Faites également attention à votre présentation. La netteté, la cohérence et la clarté compteront. Toutes les analyses doivent être effectuées dans RStudio, en utilisant R."
+    "text": "C’est ici que vous trouverez les labs pour chaque semaine.",
+    "crumbs": [
+      "Labs"
+    ]
   },
   {
-    "objectID": "website/projet/projet.html#introduction",
-    "href": "website/projet/projet.html#introduction",
-    "title": "Projet",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Le projet pour ce cours consistera en une analyse d’un ensemble de données de votre choix. De nombreux jeux de données en accès libre sont à disposition sur Internet. La section Données contient des liens vers des sites qui proposent des jeux de données. Vous pouvez choisir des données en fonction de vos intérêts. Le but de ce projet est de démontrer votre maîtrise des techniques que nous avons abordées dans ce cours (et au-delà, si vous le souhaitez) et de les appliquer de manière significative à un ensemble de données original.\nLe but n’est pas de faire une analyse exhaustive des données, c’est-à-dire de ne pas calculer chaque statistique et procédure que vous avez apprises pour chaque variable, mais plutôt de me montrer que vous êtes compétent pour poser des questions significatives et y répondre avec les résultats de l’analyse des données, que vous êtes compétent pour utiliser R, et que vous êtes compétent pour interpréter et présenter les résultats. Concentrez-vous sur les méthodes qui vous aident à commencer à répondre à vos questions de recherche. Vous n’êtes pas obligé d’appliquer toutes les procédures statistiques que nous avons apprises (et vous pouvez utiliser des techniques que nous n’avons pas officiellement abordées en classe, si vous êtes aventureux). Critiquez également vos propres méthodes et fournissez des suggestions pour améliorer votre analyse.\nLe projet est très ouvert. Vous devriez créer une sorte de visualisation(s) convaincante(s) de ces données en R. Il n’y a pas de limite sur les outils ou les packages que vous pouvez utiliser, mais il est nécessaire d’utiliser les packages que nous avons appris en classe (tidyverse). Vous n’avez pas besoin de visualiser toutes les données en une seule fois. Une seule visualisation de haute qualité recevra une meilleure note qu’un grand nombre de visualisations de mauvaise qualité. Faites également attention à votre présentation. La netteté, la cohérence et la clarté compteront. Toutes les analyses doivent être effectuées dans RStudio, en utilisant R."
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "website/projet/projet.html#data",
-    "href": "website/projet/projet.html#data",
-    "title": "Projet",
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "",
+    "text": "En janvier 2017, Buzzfeed a publié un article sur pourquoi les lauréats du prix Nobel montrent que l’immigration est si importante pour la science américaine.\nVous pouvez lire l’article ici. Dans l’article, ils montrent que bien que la plupart des lauréats vivants du prix Nobel en sciences soient basés aux États-Unis, beaucoup d’entre eux sont nés dans d’autres pays. C’est une des raisons pour lesquelles le monde scientifique dit que l’immigration est vitale pour le progrès. Dans ce lab, nous travaillerons avec les données de cet article pour recréer certaines de leurs visualisations ainsi qu’explorer de nouvelles questions.",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#échauffement",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#échauffement",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "Échauffement",
+    "text": "Échauffement\nAvant d’introduire les données, commençons par quelques exercices simples.\n\nMettez à jour le YAML, en changeant le nom de l’auteur par le vôtre, et knit le document.\nCommittez vos modifications avec un message de commit. Assurez vous que les fichiers .Rmd et .md sont bien ajoutés au commit.\nPushez vos modifications sur GitHub.\nAllez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md.",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#packages",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#packages",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "Packages",
+    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation des données. Vous pouvez le charger en exécutant ce qui suit dans votre Console :\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#données",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#données",
+    "title": "Lab 03 - Nobel laureates",
     "section": "Données",
-    "text": "Données\nPour que vous ayez la meilleure chance de réussir ce projet, il est important que vous choisissiez un ensemble de données adapté. Cela signifie que les données doivent être facilement accessibles et suffisamment grandes pour que plusieurs relations puissent être explorées. Ainsi, votre ensemble de données doit comporter au moins 50 observations et entre 10 et 20 variables (des exceptions peuvent être faites, mais vous devez d’abord le valider avec nous). Les variables de l’ensemble de données doivent inclure des variables catégorielles, des variables numériques discrètes et des variables numériques continues.\nSi le format des données n’a pas été vu en classe, c’est ok mais attendez vous à devoir fournir un léger effort pour les charger dans R. Si vous avez des difficultés, demandez de l’aide avant qu’il ne soit trop tard.\nIl est interdit d’utiliser des données utilisées pendant le cours, dans des exemples, des examens ou des laboratoires.\nCi-dessous, vous trouverez une liste de références de jeux de données qui pourraient vous intéresser. Vous n’êtes pas limité à ces ressources, et en fait, vous êtes encouragé à aller au-delà. Mais vous pourriez y trouver quelque chose d’intéressant :\n\nTidyTuesday\nKaggle datasets\nHarvard Dataverse\nAwesome public datasets\nICPSR Data Archive Project\nGoogle Dataset Search\n\nPlusieurs villes, pays et instituions ont également des portails de données ouvertes. Voici quelques exemples :\n\nCanada Open Data\nDonnées Québec\nVille de Montreal\nCDC Datasets\nNHS Scotland Open Data\nEdinburgh Open Data\nUK Gov Data\n…\n\nN’oubliez pas que vous pouvez combiner plusieurs sources de données également."
+    "text": "Données\nLe jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec :\n\nnobel &lt;- read_csv(\"data/nobel.csv\")\n\nLes descriptions des variables sont les suivantes :\n\nid: Numéro d’identification\nfirstname: Prénom du lauréat\nsurname: Nom de famille\nyear: Année de remise du prix\ncategory: Catégorie du prix\naffiliation: Affiliation du lauréat\ncity: Ville du lauréat l’année du prix\ncountry: Pays du lauréat l’année du prix\nborn_date: Date de naissance du lauréat\ndied_date: Date de décès du lauréat\ngender: Sexe du lauréat\nborn_city: Ville de naissance du lauréat\nborn_country: Pays de naissance du lauréat\nborn_country_code: Code du pays de naissance du lauréat\ndied_city: Ville de décès du lauréat\ndied_country: Pays de décès du lauréat\ndied_country_code: Code du pays de décès du lauréat\noverall_motivation: Motivation générale pour la reconnaissance\nshare: Nombre d’autres lauréats avec lesquels le prix est partagé\nmotivation: Motivation pour la reconnaissance\n\nDans quelques cas, le nom de la ville/pays a changé après la réception du prix par le lauréat (par exemple, en 1975, la Bosnie-Herzégovine s’appelait la République fédérative socialiste de Yougoslavie). Dans ces cas, les variables ci-dessous reflètent un nom différent de leurs homologues sans le suffixe `_original`.\n\nborn_country_original\nborn_city_original\ndied_country_original\ndied_city_original\ncity_original\ncountry_original",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
   },
   {
-    "objectID": "website/projet/projet.html#consignes",
-    "href": "website/projet/projet.html#consignes",
-    "title": "Projet",
-    "section": "Consignes",
-    "text": "Consignes\n\nProposal (10 pts)\nPour commencez, vous devez soumettre un proposal de projet. Il s’agit d’un court document de maximum 1 page indiquant :\n\nIntroduction: L’introduction doit présenter brièvement votre question de recherche et de l’ensemble de données que vous avez choisi.\nDonnées: Une présentation plus détaillées des données choisies. Quelles sont les variables que vous allez utiliser? Combien d’observations y a-t-il? Quel est le format des données? Quand les données ont-elles été collectées? etc.\nAnalyse de données: Quelles sont les questions que vous souhaitez explorer? Quelles sont les hypothèses que vous souhaitez tester? Quelles sont les méthodes que vous envisagez d’utiliser pour répondre à ces questions?\n\n\nCritères d’évaluation\n\n\n\nCritère\nPoints\n\n\n\n\nChoix des données\n4\n\n\nQuestions de recherche\n4\n\n\nPrésentation, Qualité\n2\n\n\n\n\n\n\nRapport final (30 pts)\nVotre rapport sera à rendre sous forme de document Markdown (.md). Vous pouvez utiliser RMarkdown pour générer votre rapport. L’ensemble des fichiers que vous avez utilisé pour générer votre rapport (fichier .Rmd, .md, données, images, …) devra être inclus dans votre soumission. Le tout sera rendu sur Github au plus tard le 16 décembre 2024 à 23h00.\nVotre rapport devra présenter les résultats de votre analyse. Il devra contenir les éléments suivants :\n\nIntroduction: Présentez brièvement le contexte de votre analyse et les questions de recherche que vous souhaitez explorer.\nDonnées: Présentez les données qui vont être utilisez et notamment d’où elles proviennent, combien d’observations et de variables elles contiennent, etc.\nAnalyse des données: Présentez les résultats de votre analyse. Vous devez inclure des visualisations et des statistiques descriptives pour les variables que vous avez choisies, ainsi que toutes les autres analyses que vous avez effectuées (selon ce qui y applicable: test d’hypothèse, regression, classification, ….)\nDiscussion: Discutez des résultats de votre analyse. Quelles sont les conclusions que vous pouvez tirer de vos résultats? Quelles sont les limites de votre analyse? Quelles sont les implications de vos résultats?\n\nNotez que l’analyse et la discussion peuvent être faites de manière alternées, par question par exemple, mais doivent être clairement identifiées. Les questions de recherche doivent être clairement identifiées et les réponses doivent être clairement présentées. Pour résumer: assurez vous que votre rapport est clair, bien structuré. S’y retrouver devrait être facile.\nIl n’a y pas de longueur minimum ou maximum pour le rapport, mais il doit être suffisamment détaillé pour que nous puissions comprendre votre analyse et vos résultats. Votre rendu devrai comprendre au moins:\n\nDeux visualisations différentes, dont une impliquant au moins trois variables\nUne statistique prédictive (régression, classification, …) ou un test d’hypothèse\nDes analyses descriptives\n\nL’objectif est de montrer que vous êtes capable de manipuler des données, de les analyser et de les interpréter. Vous devez également montrer que vous êtes capable de communiquer vos résultats de manière claire et concise.\nVotre rapport doit le plus proposer une histoire à partir des données. Votre rapport doit attiser la curiosité du lecteur et le guider à travers les résultats de votre analyse.\n\nCritères d’évaluation\n\n\n\nCritères\nPoints\n\n\n\n\nStructure claire\n5\n\n\nQualité des analyses\n5\n\n\nJustesse des analyses\n5\n\n\nQualité de la discussion\n5\n\n\nVisualisations\n5\n\n\nReproductibilité et organisation\n5\n\n\nTotal\n30"
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#faites-connaissance-avec-les-données",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#faites-connaissance-avec-les-données",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "Faites connaissance avec les données",
+    "text": "Faites connaissance avec les données\n\nExercice 1\nCombien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?\nIl y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.\n\n\nExercice 2\nCréez un nouveau data frame appelé nobel_living qui filtre pour\n\nles lauréats pour lesquels country est disponible\nles lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par org dans la variable gender)\nles lauréats qui sont encore en vie (leur died_date vaut NA)\n\nVérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#les-outils",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#les-outils",
-    "title": "01 - Boite à outils",
-    "section": "Les outils",
-    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”",
+    "text": "“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”\n… dit l’article de Buzzfeed. Voyons si c’est vrai.\nTout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction mutate(). Le pipeline suivant modifie le data frame nobel_living en ajoutant une nouvelle variable appelée country_us. Nous utilisons une instruction Si-Sinon pour créer cette variable. Le premier argument dans la fonction if_else() est la condition que nous testons. Si country est égal à \"USA\", nous définissons country_us à \"USA\". Sinon, nous définissons country_us à \"Other\"\n\nnobel_living &lt;- nobel_living %&gt;%\n  mutate(\n    country_us = if_else(country == \"USA\", \"USA\", \"Other\")\n  )\n\nEnsuite, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.\n\nExercice 3\nCréez un nouveau data frame appelé nobel_living_science qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.\nPour cela, vous pouvez si category est dans le vecteur c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\").\n\n\nExercice 4\nPour le prochain exercice, travaillez avec le data frame nobel_living_science que nous avons créé ci-dessus.\nCréez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.\nInterprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.\n\nVotre visualisation doit être facettée par catégorie.\nPour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.\nInversez les coordonnées pour que les barres soient horizontales, pas verticales.\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#objectif-du-cours",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#objectif-du-cours",
-    "title": "01 - Boite à outils",
-    "section": "Objectif du cours",
-    "text": "Objectif du cours\nÀ la fin de ce cours, vous pourrez:\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”",
+    "text": "“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”\n\nExercice 5\nCréez une nouvelle variable appelée born_country_us qui a la valeur \"USA\" si le lauréat est né aux États-Unis, et \"Other\" sinon. Combien de gagnants sont nés aux États-Unis ?\n\n\nExercice 6\nAjoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.\n\nVotre visualisation finale doit contenir une facette pour chaque catégorie.\nDans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.\nChaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#répétabilité",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#répétabilité",
-    "title": "01 - Boite à outils",
-    "section": "Répétabilité",
-    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
+    "objectID": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis",
+    "href": "website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis",
+    "title": "Lab 03 - Nobel laureates",
+    "section": "D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?",
+    "text": "D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?\n\nNote that your bar plot won’t exactly match the one from the Buzzfeed article. This is likely because the data has been updated since the article was published.\n\n\nExercice 7\nDans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction count()) pour leur pays de naissance (born_country) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\nMaintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés.",
+    "crumbs": [
+      "Labs",
+      "Semaine 3",
+      "Lab 03 - Nobel laureates"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#les-outils-de-la-répérabilité",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#les-outils-de-la-répérabilité",
-    "title": "01 - Boite à outils",
-    "section": "Les outils de la répérabilité",
-    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non\n\n\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse: https://github.com/PRO1036/lab01.git\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à l’étape suivante\n\n\n\nDans Rstudio:\n\nFichier &gt; Nouveau Projet\nNew Directory &gt; New Project\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nNous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:\n\nVisitez l’adresse: https://github.com/PRO1036/lab01\nCliquez sur le bouton vert: \nCliquez ensuite sur Download ZIP\nOuvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R\n\n⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé lab01-master). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.\n\n\n\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:\n\nSi vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.\n\n\n\n\nNous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown. Si vous voulez utiliser la console, il faudra également les taper.\n\n\n\nNous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-et-rstudio",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#r-et-rstudio",
-    "title": "01 - Boite à outils",
-    "section": "R et RStudio",
-    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#github",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#github",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non\n\n\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse: https://github.com/PRO1036/lab01.git\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à l’étape suivante\n\n\n\nDans Rstudio:\n\nFichier &gt; Nouveau Projet\nNew Directory &gt; New Project\nChoisissez un nom pour le dossier qui sera créé, par exemple “Lab01”\nChoisissez où vous voulez créer le projet dans votre ordinateur.\n\nNous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:\n\nVisitez l’adresse: https://github.com/PRO1036/lab01\nCliquez sur le bouton vert: \nCliquez ensuite sur Download ZIP\nOuvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R\n\n⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé lab01-master). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.\n\n\n\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:\n\nSi vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-packages",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#r-packages",
-    "title": "01 - Boite à outils",
-    "section": "R packages",
-    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#installation-des-packages",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#installation-des-packages",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons travailler avec deux packages: datasauRus qui contient le jeu de données que nous allons utiliser et tidyverse qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:\n\n\n\n\n\n\n\n\n\nPour charger les packages dans l’espace de travail, nous devons l’indiquer:\n\nlibrary(tidyverse) \nlibrary(datasauRus)\n\nCes deux lignes se retrouvent également dans votre fichier Rmarkdown. Si vous voulez utiliser la console, il faudra également les taper.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#rstudio-tour",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#rstudio-tour",
-    "title": "01 - Boite à outils",
-    "section": "RStudio tour",
-    "text": "RStudio tour"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#données",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#données",
+    "title": "Lab 01 - Hello World",
+    "section": "",
+    "text": "Nous allons travailler avec le jeu de données appelé datasaurus_dozen, faisant partie du package datasaurus. Ce jeu de données contient en réalité 131 jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.\nPour en savoir plus sur le jeu de données, vous pouvez taper ?datasaurus dans la console. En ajoutant un ? devant le nom d’un objet vous affichera l’aide associée à cet objet.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-101",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#r-101",
-    "title": "01 - Boite à outils",
-    "section": "R 101",
-    "text": "R 101\n\nLes fonctions sont souvent des verbes, suivi de parenthèses, contenant des arguments:\n\nfait_ca(avec_ca)\nfait_ca(avec_ca, et_ca, et_encore_ca)\n\n\n\nLes packages peuvent être installés avec install.package et chargés avec library:\n\ninstall.packages(\"package_name\")\nlibrary(package_name)\n\n\n\n$ permet d’accéder aux colonnes des tableaux\n\ndataframe$var_name\n\n\n\n? permet d’accéder à l’aide sur les fonctions\n\n?mean"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-1",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-1",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 1",
+    "text": "Exercice 1\nEn utilisant l’aide, combien de lignes et de colonnes possède le datasaurus_dozen ? Quelles sont les variables présentes dans le tableau ? Vous pouvez ajouter vos réponse dans votre fichier .Rmd.\nLa colonne dataset permet d’indiquer le jeu de données. Nous pouvons compter le nombre d’éléments pour chaque jeu de données:\n\ndatasaurus_dozen %&gt;%\n  count(dataset)\n\n# A tibble: 13 × 2\n   dataset        n\n   &lt;chr&gt;      &lt;int&gt;\n 1 away         142\n 2 bullseye     142\n 3 circle       142\n 4 dino         142\n 5 dots         142\n 6 h_lines      142\n 7 high_lines   142\n 8 slant_down   142\n 9 slant_up     142\n10 star         142\n11 v_lines      142\n12 wide_lines   142\n13 x_shape      142\n\n\nLe dataset Datasaurus original (dino) a été créé par Aberto Cairo. Les autres datasets ont été générés par Matejka et Fitzmaurice Matejka and Fitzmaurice (2017). Dans cet article, ils présentent des données très différentes qui ont les mêmes descriptions statistiques.\n🧶 ✅ ⬆️ Knit, commit, and push ! Envoyez vos résutlats sur Github en indiquant un message du type “Ajout des réponses à l’exercice 1”.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#tidyverse",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#tidyverse",
-    "title": "01 - Boite à outils",
-    "section": "Tidyverse",
-    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-2",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-2",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 2",
+    "text": "Exercice 2\nReprésentez y en fonction de x pour le dino dataset. Calculez ensuite le coefficient de correlation. Vous ne comprenez pas tout ? Pas grave !\nCi-dessous se trouve le code dont vous aurez besoin pour compléter l’exercice. Prenez seulement ce dont vous avez besoin, knittez et observez le résultat !\nNous allons commencer par prendre le datasaurus_dozen et le piper dans la fonction filter pour filtrer selon dataset == \"dino\". Le résutlat est stocké dans un nouveau tableau appelé dino_data.\n\ndino_data &lt;- datasaurus_dozen %&gt;%\n  filter(dataset == \"dino\")\n\nDécomposons un peu tout cela !\nPour commencer, l’opérateur pipe: %&gt;%, prend ce qui vient avant (à gauche) et l’envoie comme premier argument de ce qui vient après (à droite ou en dessous). Concrètement, nous pouvons lire filter le datasaurus_dozen pour ne garder seulement les lignes où dataset == \"dino\".\nEnsuite, l’opérateur d’assignation &lt;- permet de définir le nom dino_data et d’y stocker le résultat de l’opération de filtration.\nNous devons ensuite visualiser les données. Pour cela nous allons utiliser la fonction ggplot. Le première chose à indiquer sont les données à visualiser. Ensuite nous allons définir un l’aesthétisme du graphique. Par exemple, nous allons envoyer la variable x du tableau sur l’axe x du graphe, et la variable y du tableau sur l’axe x. Nous allons ensuite définir la geométrie du graphe. Dans ce cas, nous voulons que chaque point soit représenté par un point, d’où le geom_point.\n\nggplot(data = dino_data, mapping = aes(x = x, y = y)) +\n  geom_point()\n\n\n\n\n\n\n\n\nNe vous inquiétez pas si cela parait encore compliqué, nous verrons tout cela plus en détail plus tard.\nPour la deuxième partie de l’exercice, nous voulons calculer quelques statistiques sur notre jeu de données. Le coéfficient de corrélation, souvent appelé \\(r\\) en statistique, mesure la relation linéaire entre deux variables. Vous verrez que certaines paires de variables n’ont pas de relation linéaire. C’est pour cela qu’il est important de les visualiser. Il n’est pas toujours nécessaire de calculer le \\(r\\) dans ces cas là. Dans notre cas, la relation n’est clairement pas linéaire, mais plutôt dinosaire.\nFaisons le quand même pour le plaisir !\nBut, for illustrative purposes, let’s calculate the correlation coefficient between x and y.\n\ndino_data %&gt;%\n  summarize(r = cor(x, y))\n\n# A tibble: 1 × 1\n        r\n    &lt;dbl&gt;\n1 -0.0645\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! Vous pouvez mettre un message indiquant que vous avez ajouté les réponses à l’exercice 2.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-markdown",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#r-markdown",
-    "title": "01 - Boite à outils",
-    "section": "R Markdown",
-    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-3",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-3",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 3",
+    "text": "Exercice 3\nReprésentez y en fonction de x pour le star dataset. Pour cela, réutilisez le code de l’exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour le dino dataset.\n🧶 ✅ ⬆️ Knit, commit, and push !",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-markdown-1",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#r-markdown-1",
-    "title": "01 - Boite à outils",
-    "section": "R Markdown",
-    "text": "R Markdown"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-4",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-4",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 4",
+    "text": "Exercice 4\nReprésentez y en fonction de x pour le circle dataset. Pour cela, réutilisez le code de l’exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour les dino et star dataset.\n🧶 ✅ ⬆️ Knit, commit, and push !",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#r-markdown---aide",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#r-markdown---aide",
-    "title": "01 - Boite à outils",
-    "section": "R Markdown - Aide",
-    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-5",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#exercice-5",
+    "title": "Lab 01 - Hello World",
+    "section": "Exercice 5",
+    "text": "Exercice 5\nNous allons maintenant représenter tous les jeux de données d’un coup ! Pour cela, nous allons utilisé quelque chose appelé le faceting\n\nggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+\n  geom_point()+\n  facet_wrap(~ dataset, ncol = 3) +\n  theme(legend.position = \"none\")\n\nNous pouvons également utiliser la fonction group_bypour calculer des statistiques directement sur chaque jeu de données.\n\ndatasaurus_dozen %&gt;%\n  group_by(dataset) %&gt;%\n  summarize(r = cor(x, y)) %&gt;%\n  print(13)\n\nNous en avons fini avec notre première analyse de données !\n🧶 ✅ ⬆️ Bien joué! knit, commit and push ! Vous pouvez dire que vous avez terminer le lab 01 dans votre message ! Vous pouvez allez voir sur Github si tout est en ordre.",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#les-outils-1",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#les-outils-1",
-    "title": "01 - Boite à outils",
-    "section": "Les outils",
-    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+    "objectID": "website/labs/lab01-hello-world/lab01-hello-world.html#footnotes",
+    "href": "website/labs/lab01-hello-world/lab01-hello-world.html#footnotes",
+    "title": "Lab 01 - Hello World",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nSi vous vous demandez pourquoi il y a 13 jeux de données dans cette “douzaine de datasaurus”: Baker’s dozen↩︎",
+    "crumbs": [
+      "Labs",
+      "Semaine 1",
+      "Lab 01 - Hello World"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#git-et-github",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#git-et-github",
-    "title": "01 - Boite à outils",
-    "section": "Git et GitHub",
-    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
+    "objectID": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html",
+    "href": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "",
+    "text": "La pollution plastique est un problème majeur, avec des impacts négatifs sur les océans et ses habitants Our World in Data possède de nombreux jeux de données à différents niveaux (globaux, par pays et sur le temps). Pour ce laboratoire, nous allons travailler avec les données de 2010.\nNational Geographic a lancé un concours de communication par visualisation de données sur le thème des déchets plastiques : lien.",
+    "crumbs": [
+      "Labs",
+      "Semaine 2",
+      "Lab 02 - Déchets plastiques"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#pourquoi-la-gestion-de-version",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#pourquoi-la-gestion-de-version",
-    "title": "01 - Boite à outils",
-    "section": "Pourquoi la gestion de version ?",
-    "text": "Pourquoi la gestion de version ?\n\nPhD Comics"
+    "objectID": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#packages",
+    "href": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#packages",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "Packages",
+    "text": "Packages\nComme d’habitude, nous allons utiliser le tidyverse pour cette analyse.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Labs",
+      "Semaine 2",
+      "Lab 02 - Déchets plastiques"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#fonctionnement",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#fonctionnement",
-    "title": "01 - Boite à outils",
-    "section": "Fonctionnement",
-    "text": "Fonctionnement"
+    "objectID": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#données",
+    "href": "website/labs/lab02-plastic-waste/lab02-plastic-waste.html#données",
+    "title": "Lab 02 - Déchets plastiques",
+    "section": "Données",
+    "text": "Données\nLe jeu de données pour ce lab peut être trouvé dans le dossier data présent dans le repo. Nous reparlerons du chargement de données locales plus tard mais pour l’instant il suffit de lancer cette ligne:\n\nplastic_waste &lt;- read_csv(\"data/plastic-waste.csv\")\n\nLes variables présentes dans le jeu de données sont:\n\ncode: 3 lettres pour le code pays\nentity: nom du pays\ncontinent: nom du continent\nyear: année\ngdp_per_cap: PID par habitant en $ (2011)\nplastic_waste_per_cap: quantité de déchets plastiques par habitant en kg/jour\nmismanaged_plastic_waste_per_cap: quantité de déchets plastiques non gérés par habitant en kg/jour\nmismanaged_plastic_waste: quantité de déchets plastiques non gérés en tonnes\ncoastal_pop: Nombres de personnes vivant sur des côtes\ntotal_pop: Population totale selon Gapminder",
+    "crumbs": [
+      "Labs",
+      "Semaine 2",
+      "Lab 02 - Déchets plastiques"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#mise-en-place",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#mise-en-place",
-    "title": "01 - Boite à outils",
-    "section": "Mise en place",
-    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "",
+    "text": "Dans ce lab, nous allons travailler sur un jeu de données qui contient des informations sur des réservations d’hôtels. Nous allons essayer de prédire si une réservation avait des enfants. Pour cela, nous allons utiliser des méthodes de classification.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
   },
   {
-    "objectID": "slides/01 - Toolbox/01 - toolbox.html#références",
-    "href": "slides/01 - Toolbox/01 - toolbox.html#références",
-    "title": "01 - Boite à outils",
-    "section": "Références",
-    "text": "Références\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\n\n\n\n\nPRO1036 - 01 | Tim Bollé"
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#chargement-des-données",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#chargement-des-données",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Chargement des données",
+    "text": "Chargement des données\n\nlibrary(tidymodels)\nlibrary(readr)\n\nhotels &lt;- \n  read_csv(\"https://tidymodels.org/start/case-study/hotels.csv\") %&gt;%\n  mutate(across(where(is.character), as.factor))\n\ndim(hotels)\n\n[1] 50000    23\n\n\nNous pouvons jeter un coup d’oeil aux données:\n\nglimpse(hotels)\n\nRows: 50,000\nColumns: 23\n$ hotel                          &lt;fct&gt; City_Hotel, City_Hotel, Resort_Hotel, R…\n$ lead_time                      &lt;dbl&gt; 217, 2, 95, 143, 136, 67, 47, 56, 80, 6…\n$ stays_in_weekend_nights        &lt;dbl&gt; 1, 0, 2, 2, 1, 2, 0, 0, 0, 2, 1, 0, 1, …\n$ stays_in_week_nights           &lt;dbl&gt; 3, 1, 5, 6, 4, 2, 2, 3, 4, 2, 2, 1, 2, …\n$ adults                         &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 1, 2, …\n$ children                       &lt;fct&gt; none, none, none, none, none, none, chi…\n$ meal                           &lt;fct&gt; BB, BB, BB, HB, HB, SC, BB, BB, BB, BB,…\n$ country                        &lt;fct&gt; DEU, PRT, GBR, ROU, PRT, GBR, ESP, ESP,…\n$ market_segment                 &lt;fct&gt; Offline_TA/TO, Direct, Online_TA, Onlin…\n$ distribution_channel           &lt;fct&gt; TA/TO, Direct, TA/TO, TA/TO, Direct, TA…\n$ is_repeated_guest              &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_cancellations         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ previous_bookings_not_canceled &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ reserved_room_type             &lt;fct&gt; A, D, A, A, F, A, C, B, D, A, A, D, A, …\n$ assigned_room_type             &lt;fct&gt; A, K, A, A, F, A, C, A, D, A, D, D, A, …\n$ booking_changes                &lt;dbl&gt; 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ deposit_type                   &lt;fct&gt; No_Deposit, No_Deposit, No_Deposit, No_…\n$ days_in_waiting_list           &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ customer_type                  &lt;fct&gt; Transient-Party, Transient, Transient, …\n$ average_daily_rate             &lt;dbl&gt; 80.75, 170.00, 8.00, 81.00, 157.60, 49.…\n$ required_car_parking_spaces    &lt;fct&gt; none, none, none, none, none, none, non…\n$ total_of_special_requests      &lt;dbl&gt; 1, 3, 2, 1, 4, 1, 1, 1, 1, 1, 0, 1, 0, …\n$ arrival_date                   &lt;date&gt; 2016-09-01, 2017-08-25, 2016-11-19, 20…\n\n\nQuestion 1: Déterminez la proportio de réservations qui ont des enfants.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Construction du modèle",
+    "text": "Construction du modèle\nConfigurez un modèle de regression logistique en utilisant la fonction logistic_reg(). Utilisez la fonction set_engine() pour spécifier que vous voulez utiliser la fonction glm().",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Création d’une recette",
+    "text": "Création d’une recette\nCréez une recette pour le modèle en utilisant la fonction recipe().\nNous allons utiliser les recettes suivantes:\n\nstep_date(): pour créer les variable de l’année, du mois et du jour de la semaine\nstep_holiday(): pour créer une variable qui indique si la réservation a été faite pendant une période de vacances. Nous vous avons fourni une liste de vacances dans le fichier de réponse (voir ci-dessous). Vous pouvez indiquer d’utiliser cette liste avec step_holiday(arrival_date, holidays = holidays)\nstep_rm(): pour supprimer les variables arrival_date\n\nNous allons également transformer les variables catégorielles en dummy variables et les variables numériques en variables centrées et réduites.\n\nstep_dummy() pour convertir les variables catégorielles (all_nominal_predictors()) en variables binaires\nstep_zv() permet d’enlever les variables qui ne contiennent qu’une unique valeur (all_predictors())\nstep_normalize() pour centrer et réduire les variables numériques (all_numeric_predictors())\n\n\nholidays &lt;- c(\"AllSouls\", \"AshWednesday\", \"ChristmasEve\", \"Easter\", \n              \"ChristmasDay\", \"GoodFriday\", \"NewYearsDay\", \"PalmSunday\")\n\nlr_recipe &lt;- \n  recipe(________, data = hotel_train) %&gt;% \n  step_date(____) %&gt;% \n  step_XXXXX(______, _______) %&gt;% \n  step_XXXXX(_____) %&gt;% \n  _____",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-du-workflow",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-du-workflow",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Création du workflow",
+    "text": "Création du workflow\nCréez un workflow en utilisant la fonction workflow(). Ajoutez-y la recette et le modèle.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#entrainement-du-modèle",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#entrainement-du-modèle",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Entrainement du modèle",
+    "text": "Entrainement du modèle\nEntraînez le modèle en utilisant la fonction fit().\n\n\nWarning: glm.fit: des probabilités ont été ajustées numériquement à 0 ou 1",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#évaluation-du-modèle",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#évaluation-du-modèle",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Évaluation du modèle",
+    "text": "Évaluation du modèle\nUtilisez la fonction predict() pour obtenir les prédictions du modèle sur l’ensemble de validation.\n\nlr_pred &lt;- predict(lr_fit, hotel_test) %&gt;%\n  bind_cols(predict(lr_fit, hotel_test, type = \"prob\")) %&gt;%\n  bind_cols(hotel_test %&gt;% select(children))\n\nGénérez une courbe ROC pour évaluer le modèle.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle-1",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#construction-du-modèle-1",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Construction du modèle",
+    "text": "Construction du modèle\nNous allons utiliser le modèle suivant:\n\ncores &lt;- parallel::detectCores() # Nombre de coeur à disposition pour le calcul\n\nrf_mod &lt;- \n  rand_forest(mtry = tune(), min_n = tune(), trees = 1000) %&gt;% \n  set_engine(\"ranger\", num.threads = cores) %&gt;% \n  set_mode(\"classification\")\n\nNous avons deux paramètre à otpimiser: mtry et min_n. Nous allons utiliser la fonction tune_grid() pour optimiser ces paramètres.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette-1",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#création-dune-recette-1",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Création d’une recette",
+    "text": "Création d’une recette\nLa recette pour ce modèle est un peu plus simple que pour la régression logistique. Vous pouvez utiliser la recette suivante:\n\nrf_recipe &lt;- \n  recipe(children ~ ., data = hotel_train) %&gt;% \n  step_date(arrival_date) %&gt;% \n  step_holiday(arrival_date) %&gt;% \n  step_rm(arrival_date) \n\nCréez un workflow pour ce modèle, qui contient la recette et le modèle.",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#optimisation-des-paramètres",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#optimisation-des-paramètres",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Optimisation des paramètres",
+    "text": "Optimisation des paramètres\nLe paramètre mtry est le nombre de variables à considérer à chaque division d’un noeud. il est donc compris entre 1 et le nombre de variable. Le paramètre min_n est le nombre minimum d’observations dans un noeud terminal.\nCréez une grille de recherche pour ces paramètres. Faites en sorte que mtry prenne 5 valeurs différentes et que min_n prenne 5 valeurs différentes également, pour un total de 25 combinaisons. Comme le paramètre mtrydépend du nombre de variables, il faut lui préciser les bornes manuellement. Le nombre de colonne peut être obtenu à l’aide de la fonction suivante:\n\nn_col &lt;- prep(rf_recipe) %&gt;% juice() %&gt;% ncol()\n\nIl est ensuite possible de préciser la range avec mtry(range = c(1, n_col - 1)).\nNous pouvons maintenant faire une recherche de grille pour trouver les meilleurs paramètres. Nous allons utiliser la fonction tune_grid() pour cela. Le set de validation est utiliser pour trouver la meilleure combinaison.\n\nrf_res &lt;- \n  rf_workflow %&gt;% \n  tune_grid(val_set,\n            grid =  rf_grid,\n            control = control_grid(save_pred = TRUE),\n            metrics = metric_set(roc_auc))\n\nWarning: le package 'ranger' a été compilé avec la version R 4.4.2",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
+  },
+  {
+    "objectID": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#choix-des-paramètres-et-évaluation-de-la-performance",
+    "href": "website/labs/lab09-hotel-bookings/lab09-hotel-booking.html#choix-des-paramètres-et-évaluation-de-la-performance",
+    "title": "Lab 09 - Hotel Bookings ?",
+    "section": "Choix des paramètres et Évaluation de la performance",
+    "text": "Choix des paramètres et Évaluation de la performance\nOn peut maintenant voir quelle est la meilleure combinaison de paramètres.\n\nrf_res %&gt;% \n  show_best(metric = \"roc_auc\")\n\n# A tibble: 5 × 8\n   mtry min_n .metric .estimator  mean     n std_err .config             \n  &lt;int&gt; &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;               \n1    14     2 roc_auc binary     0.918     1      NA Preprocessor1_Model2\n2    14    21 roc_auc binary     0.916     1      NA Preprocessor1_Model5\n3    14    40 roc_auc binary     0.915     1      NA Preprocessor1_Model8\n4    27     2 roc_auc binary     0.913     1      NA Preprocessor1_Model3\n5    27    21 roc_auc binary     0.912     1      NA Preprocessor1_Model6\n\n\nLa fonction autoplot() permet de visualiser les résultats de la recherche de grille.\n\nrf_res %&gt;% \n  autoplot()\n\n\n\n\n\n\n\n\nNous pouvons garder les meilleures paramètres:\n\nrf_best &lt;- \n  rf_res %&gt;% \n  select_best(metric = \"roc_auc\")\n\nNous pouvons maintenant générer une courbe ROC et la comparer à celle obtenue précédemment.\n\nrf_auc &lt;- \n  rf_res %&gt;% \n  collect_predictions(parameters = rf_best) %&gt;% \n  roc_curve(children, .pred_children) %&gt;% \n  mutate(model = \"Random Forest\")\n\n\nbind_rows(rf_auc, lr_auc) %&gt;% \n  ggplot(aes(x = 1 - specificity, y = sensitivity, col = model)) + \n  geom_path(lwd = 1.5, alpha = 0.8) +\n  geom_abline(lty = 3) + \n  coord_equal() + \n  scale_color_viridis_d(option = \"plasma\", end = .6)",
+    "crumbs": [
+      "Labs",
+      "Semaine 9",
+      "Lab 09 - Hotel Bookings ?"
+    ]
   },
   {
     "objectID": "slides/05 - import-join/05 - import-join.html#présentations",

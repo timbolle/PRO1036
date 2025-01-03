@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tim Bollé">
 
-<title>Exercice 01 - Pet names – PRO1036</title>
+<title>Lab 02 - Déchets plastiques – PRO1036</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -102,35 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -161,11 +131,11 @@ window.Quarto = {
 <span class="menu-text">Cours</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../website/labs/labs.html"> 
+    <a class="nav-link active" href="../../../website/labs/labs.html" aria-current="page"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../website/exercices/exos.html" aria-current="page"> 
+    <a class="nav-link" href="../../../website/exercices/exos.html"> 
 <span class="menu-text">Exercices</span></a>
   </li>  
   <li class="nav-item">
@@ -183,7 +153,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exercice 01 - Pet names</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html">Semaine 2</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html">Lab 02 - Déchets plastiques</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -197,8 +167,8 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/exercices/exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exerices</span></a>
+  <a href="../../../website/labs/labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -212,8 +182,93 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Exercice 01 - Pet names</span></a>
+  <a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 01 - Hello World</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 02 - Déchets plastiques</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 03 - Nobel laureates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 04 - Quel grade choisir ?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 9</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab09-hotel-bookings/lab09-hotel-booking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 09 - Hotel Bookings ?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 11</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab10-inferences/lab10-inferences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab11 - Statistiques inférentielles</span></a>
   </div>
 </li>
       </ul>
@@ -228,49 +283,39 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#préparation" id="toc-préparation" class="nav-link active" data-scroll-target="#préparation">Préparation</a>
+  <li><a href="#objectifs" id="toc-objectifs" class="nav-link active" data-scroll-target="#objectifs">Objectifs</a></li>
+  <li><a href="#pour-commencer" id="toc-pour-commencer" class="nav-link" data-scroll-target="#pour-commencer">Pour commencer</a>
   <ul class="collapse">
-  <li><a href="#terminologie" id="toc-terminologie" class="nav-link" data-scroll-target="#terminologie">Terminologie</a></li>
-  <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
-  </ul></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm up</a>
-  <ul class="collapse">
-  <li><a href="#étape-1-mise-à-jour-du-yaml" id="toc-étape-1-mise-à-jour-du-yaml" class="nav-link" data-scroll-target="#étape-1-mise-à-jour-du-yaml">Étape 1: Mise à jour du YAML</a></li>
-  <li><a href="#étape-2-commit" id="toc-étape-2-commit" class="nav-link" data-scroll-target="#étape-2-commit">Étape 2: Commit</a></li>
-  <li><a href="#étape-3-push" id="toc-étape-3-push" class="nav-link" data-scroll-target="#étape-3-push">Étape 3: Push</a></li>
-  </ul></li>
+  <li><a href="#pour-commit-vos-résultats" id="toc-pour-commit-vos-résultats" class="nav-link" data-scroll-target="#pour-commit-vos-résultats">Pour commit vos résultats</a></li>
+  <li><a href="#pour-envoyer-vos-résultats-sur-github" id="toc-pour-envoyer-vos-résultats-sur-github" class="nav-link" data-scroll-target="#pour-envoyer-vos-résultats-sur-github">Pour envoyer vos résultats sur Github</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
+  </ul></li>
+  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm up</a></li>
   <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
   <ul class="collapse">
-  <li><a href="#exerice-1" id="toc-exerice-1" class="nav-link" data-scroll-target="#exerice-1">Exerice 1</a></li>
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
   <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
   <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
   <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
   </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exercice 01 - Pet names</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html">Semaine 2</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html">Lab 02 - Déchets plastiques</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercice 01 - Pet names</h1>
+<h1 class="title">Lab 02 - Déchets plastiques</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Tim Bollé </p>
-          </div>
-  </div>
     
   
     
@@ -281,171 +326,102 @@ window.Quarto = {
 </header>
 
 
-<div class="cell" data-fig.margin="true">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/Original_Doge_meme.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Photo by <a href="https://kabosu112.exblog.jp/iv/detail/?s=9944144&amp;i=201002%2F12%2F90%2Fa0126590_22301391.jpg">Atsuko Sato</a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Le but de cet exercice est de pratiquer les premiers éléments vus concernant R et Git/Github.</p>
-<section id="préparation" class="level1">
-<h1>Préparation</h1>
-<section id="terminologie" class="level2">
-<h2 class="anchored" data-anchor-id="terminologie">Terminologie</h2>
-<p>Nous en avons déjà parler mais répéter ne fait pas de mal:</p>
+<p>La pollution plastique est un problème majeur, avec des impacts négatifs sur les océans et ses habitants <a href="https://ourworldindata.org/plastic-pollution">Our World in Data</a> possède de nombreux jeux de données à différents niveaux (globaux, par pays et sur le temps). Pour ce laboratoire, nous allons travailler avec les données de 2010.</p>
+<p>National Geographic a lancé un concours de communication par visualisation de données sur le thème des déchets plastiques : <a href="https://www.nationalgeographic.org/funding-opportunities/innovation-challenges/plastic/dataviz/">lien</a>.</p>
+<section id="objectifs" class="level1">
+<h1>Objectifs</h1>
 <ul>
-<li><p><strong>R:</strong> Le language de prorgammation qui sera utilisé dans ce cours.</p></li>
-<li><p><strong>RStudio:</strong> Un environnement de développement intégré (IDE) pour R. En d’autres termes, une interface pour travailler efficacement avec R.</p></li>
-<li><p><strong>Git:</strong> Un logiciel de gestion de versions</p></li>
-<li><p><strong>GitHub:</strong> Une plateforme web pour accueillir des fichiers versionnés et faciliter la collaboration entre utilisateurs.</p></li>
-<li><p><strong>Repository:</strong> Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions.</p></li>
+<li>Visualisation de données quantitatives et qualitatives.</li>
+<li>Interprétation de visualisations</li>
+<li>Recréer des visualisations</li>
+<li>Se pratiquer à utiliser R, RStudio, Git, and GitHub</li>
 </ul>
 </section>
-<section id="github" class="level2">
-<h2 class="anchored" data-anchor-id="github">Github</h2>
-<p>Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non</p>
-<section id="git-est-correctement-installé" class="level4">
-<h4 class="anchored" data-anchor-id="git-est-correctement-installé">Git est correctement installé</h4>
+<section id="pour-commencer" class="level1">
+<h1>Pour commencer</h1>
+<p>Nous allons utiliser GitHub Classroom pour que vous puissiez rendre vos réponses. Sur le portail de cours, vous trouverez un lien vers un assignment.</p>
+<ul>
+<li>Cliquez sur le lien</li>
+<li>Connectez vous avec votre compte Github si ce n’est pas fait</li>
+<li>Acceptez l’assignment</li>
+<li>Liez votre compte avec votre nom d’étudiant</li>
+</ul>
+<p>Vous devriez maintenant voir un repository appelé <code>Lab02-plastic-waste-###</code> où devrait être votre nom d’utilisateur GitHub.</p>
+<p>Sur la page du repository:</p>
+<ul>
+<li>Cliquez sur le bouton vert: <img src="../figs/github-bouton.png" class="inline-image img-fluid"></li>
+<li>Copiez le lien terminant en <code>.git</code>
+<ul>
+<li>Quelque chose ressemblant à <code>https://github.com/PRO1036/#######.git</code></li>
+</ul></li>
+</ul>
 <p>Dans RStudio:</p>
 <ul>
 <li>Fichier &gt; Nouveau Projet</li>
 <li>Version Control &gt; Git</li>
-<li>Dans <em>Repository URL</em> : indiquez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names.git" class="uri">https://github.com/PRO1036/exo1-pet-names.git</a></li>
+<li>Dans <em>Repository URL</em> : indiquez l’adresse copiée à l’étape précédente</li>
 <li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
 <li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
 </ul>
-<p>Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié. Vous pouvez passer à <a href="#suite">l’étape suivante</a></p>
+<p>Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié.</p>
+<section id="pour-commit-vos-résultats" class="level3">
+<h3 class="anchored" data-anchor-id="pour-commit-vos-résultats">Pour commit vos résultats</h3>
+<p>Dans RStudio, ouvrez le panneau <code>Git</code> sur la droite. Sélectionnez les fichier que vous souhaitez commiter en cliquant sur la petite boite blanche. Un petit <em>A</em> vert devrait apparaitre dans la colonne <em>Status</em>.</p>
+<p>Cliquez ensuite sur <em>Commit</em>. Entrez un message décrivant l’étape que vous avez complétée.</p>
 </section>
-<section id="git-nest-pas-installé" class="level4">
-<h4 class="anchored" data-anchor-id="git-nest-pas-installé">Git n’est pas installé</h4>
-<p>Dans Rstudio:</p>
-<ul>
-<li>Fichier &gt; Nouveau Projet</li>
-<li>New Directory &gt; New Project</li>
-<li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
-<li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
-</ul>
-<p>Nous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:</p>
-<ul>
-<li>Visitez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names" class="uri">https://github.com/PRO1036/exo1-pet-names</a></li>
-<li>Cliquez sur le bouton vert: <img src="figs/github-bouton.png" class="inline-image img-fluid"></li>
-<li>Cliquez ensuite sur <em>Download ZIP</em></li>
-<li>Ouvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R</li>
-</ul>
-<p>⚠️ Dans le fichier zip, vous devriez avoir un dossier (nommé <code>lab01-master</code>). Ne copiez pas ce dossier dans votre projet RStudio mais plutôt son contenu.</p>
+<section id="pour-envoyer-vos-résultats-sur-github" class="level3">
+<h3 class="anchored" data-anchor-id="pour-envoyer-vos-résultats-sur-github">Pour envoyer vos résultats sur Github</h3>
+<p>Cliquez sur la flèche verte <em>Push</em>. Il est possible que vous deviez vous connecter à votre compte Github avant que l’envoie soit complet.</p>
+<p>Sur Github, vous pouvez aller voir les modifications que vous avez apportées.</p>
 </section>
-<section id="suite" class="level4">
-<h4 class="anchored" data-anchor-id="suite">Dans les deux cas</h4>
-<p>Dans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier:</p>
-<p><img src="figs/rstudio-files.png" class="img-fluid"></p>
-<p>Si vous cliquez maintenant sur le fichier .rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.</p>
-<p>Veuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.</p>
-</section>
-</section>
-</section>
-<section id="rstudio" class="level1">
-<h1>RStudio</h1>
-<p>RStudio est organisé en 4 panneaux.</p>
-<div class="cell" data-fig.fullwidth="true">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="figs/rstudio-anatomy.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Comme d’habitude, nous allons utiliser le <strong>tidyverse</strong> pour cette analyse.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="données" class="level2">
+<h2 class="anchored" data-anchor-id="données">Données</h2>
+<p>Le jeu de données pour ce lab peut être trouvé dans le dossier <code>data</code> présent dans le repo. Nous reparlerons du chargement de données locales plus tard mais pour l’instant il suffit de lancer cette ligne:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plastic_waste <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/plastic-waste.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>Les variables présentes dans le jeu de données sont:</p>
 <ul>
-<li>En bas à gauche se trouve la console. C’est ici que vous pouvez écrire du code qui sera directement interprété. Essayez par exemple <code>2 + 2</code>.</li>
-<li>En bas à droite se trouve le panneau de fichiers, ainsi que d’autres que nous verrons plus tard lors d’analyses.</li>
-<li>Si vous cliquez sur un fichier, il sera ouvert dans l’éditeur, panneau en haut à gauche.</li>
-<li>Dans le panneau en haut à droite, on retrouve l’environnement de travail. Si vous définissez une variable, elle apparaitra ici. Essayez par exemple de taper <code>x &lt;- 2</code> dans la console. Observez ce qu’il se passe dans l’environnement.</li>
-<li>C’est également ici que l’on retrouve le panneau <em>Git</em> où vous pourrez gérer les versions de vos fichiers.</li>
+<li><code>code</code>: 3 lettres pour le code pays</li>
+<li><code>entity</code>: nom du pays</li>
+<li><code>continent</code>: nom du continent</li>
+<li><code>year</code>: année</li>
+<li><code>gdp_per_cap</code>: PID par habitant en $ (2011)</li>
+<li><code>plastic_waste_per_cap</code>: quantité de déchets plastiques par habitant en kg/jour</li>
+<li><code>mismanaged_plastic_waste_per_cap</code>: quantité de déchets plastiques non gérés par habitant en kg/jour</li>
+<li><code>mismanaged_plastic_waste</code>: quantité de déchets plastiques non gérés en tonnes</li>
+<li><code>coastal_pop</code>: Nombres de personnes vivant sur des côtes</li>
+<li><code>total_pop</code>: Population totale selon Gapminder</li>
 </ul>
+</section>
 </section>
 <section id="warm-up" class="level1">
 <h1>Warm up</h1>
-<p>Un peu d’échaffement:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-YAML
+Rappel
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La partie du haut de votre fichier R Markdown, entre les lignes traitillées, est appelée <strong>YAML</strong>, accronyme pour “YAML Ain’t Markup Language”. C’est une manière human friendly de fournir des informations sur des documents et des code, et qui peut être comprise par de nombreux langages de programmation.</p>
+<p>Ce que vous écrivez dans votre fichier Rmd n’est pas exécuté dans la console et vice-versa. Les lignes dans le Rmd seront exécutées au moment du knit. Vous pouvez aussi les copier dans la console mais n’oubliez pas qu’il faut copier les lignes précédentes également !</p>
 </div>
 </div>
-<section id="étape-1-mise-à-jour-du-yaml" class="level2">
-<h2 class="anchored" data-anchor-id="étape-1-mise-à-jour-du-yaml">Étape 1: Mise à jour du YAML</h2>
-<p>Ouvrez le fichier R Markdown (Rmd) dans le projet que vous avez cloné. Changez l’auteur, la date et knittez le document.</p>
-<p>Open the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document.</p>
-</section>
-<section id="étape-2-commit" class="level2">
-<h2 class="anchored" data-anchor-id="étape-2-commit">Étape 2: Commit</h2>
-<p>Ouvrez le panneau <strong>Git</strong> en haut à droite.</p>
-<p>Vous devriez voir votre fichier Rmd et son output listés comme recemment modifiés.</p>
-<p>En cliquant sur <strong>diff</strong>, vous verrez les différence entre le dernier commit et l’état actuel du document. Si cela vous convient, vous pouvez sélectionner les fichiers à commit, ajouter un message dans le <strong>Commit message</strong>, par exemple <em>“Mise à jour de l’auteur et de la date”</em>. Cliquez ensuite sur <strong>Commit</strong>.</p>
-<p>Il n’est pas nécessaire de faire un commit après chaque changement. Faites le plutôt après avoir ajouté une <em>fonctionnalité</em> à votre code. Faite le quand cela vous semble pertinent, afin de pouvoir vérifier, comparer ou restorer.</p>
-</section>
-<section id="étape-3-push" class="level2">
-<h2 class="anchored" data-anchor-id="étape-3-push">Étape 3: Push</h2>
-<p>Maintenant que vous avez fait vos modifications, vous allez pusher vos changements sur le web, c’est-à-dire sur votre repo sur Github. Cela permettra aux autres (les profs) de voir vos changements. Appuyez simplement sur <strong>Push</strong>.</p>
-<p>Cela devrait faire apparaitre une fenêtre. Entrez vos informations de connexion pour Github.</p>
-<p><strong>Grosse question:</strong> Laquelle des étapes précédentes (changement du YAML, committing, et pushing) a besoin de communiquer avec Github?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</section>
-</section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>R est un langage open-source, et les développeurs ajoutent des fonctionnalité à travers des packages. Nous allons utiliser les packages suivants:</p>
 <ul>
-<li><strong>tidyverse</strong>: Une collection de packages pour faire de l’analyse de données de manière “tidy”</li>
-<li><strong>openintro</strong>: un package qui contient les datasets de la ressource OpenIntro.</li>
+<li>Quelles sont les quatre zones présentes sur RStudio ?</li>
+<li>Combien y a-t-il d’observations dans le jeu de données ? Vous pouvez également vous aider des fonction <code>nrows</code>, <code>ncols</code> et <code>dim</code>. Si vous avez chargé les données dans la console, elles apparaitrons dans l’environnement. Depuis la console, vous pouvez également utiliser <code>View(plastic_waste</code> pour voir le tableau.</li>
+<li>En regardant les données, vous voyez que certaines cellules ont comme valeurs <code>NA</code>. Que cela signifie-t-il ?</li>
 </ul>
-<p>Nous utilisons la fonction <code>library()</code> pour charger les packages. Dans votre document R Markdown, vous allez voir un bloc de code R nommé <code>load-packages</code> qui contient les lignes nécessaires à charger les packages. Vous pouvez également les charger dans la console en cliquant sur la petite flèche vert <strong>Run Current Chunk</strong>.</p>
-<p>Avant de pouvoir faire ça, il faudra peut-être installer les packages. Cela vous sera proposé en haut de votre éditeur.</p>
-<p>Quand vous knittez le document, les lignes dans les blocs de code R sont également exécutées. Les packages seront donc chargés.</p>
-</section>
-<section id="données" class="level1">
-<h1>Données</h1>
-<p>La ville de <a href="https://en.wikipedia.org/wiki/Seattle">Seattle, WA</a> a un portail de données en source ouverte, qui inclut les animaux de compagnie. Pour chaque animal enregistré, nous avons accès à son nom et son espèce. Les données utilisées dans cet exercice se trouvent dans le package <strong>openintro</strong> et s’appelle <code>seattlepets</code>. Il n’est donc pas nécessaire de le charger séparemment.</p>
-<p>Vous pouvez voir le contenu du jeu de données sous forme taulaire avec la fonction <code>View()</code>. À noter que cette fonction n’est pas utile dans votre document R markdown, mais sert plutôt dans la console pour explorer les données. Une nouvelle fenêtre va s’ouvrir avec les données (ce qui n’est pas compatible avec l’idée d’un document static type html).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(seattlepets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-layout-align="left">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="figs/view-data.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Vous pouvez en apprendre plus sur le jeu de données en appelant la fonction d’aide <code>?seattlepets</code>.</p>
-</section>
-<section id="exercices" class="level1">
-<h1>Exercices</h1>
-<section id="exerice-1" class="level2">
-<h2 class="anchored" data-anchor-id="exerice-1">Exerice 1</h2>
-<p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 1. Knit, et commit avec un message !</em></p>
-</section>
-<section id="exercice-2" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-2">Exercice 2</h2>
-<p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ <em>Écrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !</em></p>
-</section>
-<section id="exercice-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-3">Exercice 3</h2>
-<p>Quels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -456,39 +432,186 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Le code suivant peut être lu comme “Prend le dataset <code>seattlepets</code>, puis compte le nombre de ligne avec le même <code>animal_name</code>, et affiche le résultat en ordre décroissant”. le <em>puis</em> dans la phrase précédente correspond à l’opérateur de pipe <code>%&gt;%</code>, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.</p>
+<p>Vous pouvez utiliser l’aide depuis la console en utilisant <code>?NA</code></p>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit et commit avec un message !</em></p>
 </section>
-<section id="exercice-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-4">Exercice 4</h2>
-<p>Nous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord <code>group_by()</code> par l’<code>species</code>, puis faire le count.</p>
+<section id="exercices" class="level1">
+<h1>Exercices</h1>
+<p>Commençons par regarder la distribution générale des déchets plastiques par habitant en 2010</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16,823 × 3
-# Groups:   species [4]
-   species animal_name     n
-   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;
- 1 Cat     &lt;NA&gt;          406
- 2 Dog     Lucy          337
- 3 Dog     Charlie       306
- 4 Dog     Bella         249
- 5 Dog     Luna          244
- 6 Dog     Daisy         221
- 7 Dog     Cooper        189
- 8 Dog     Lola          187
- 9 Dog     Max           186
-10 Dog     Molly         186
-# ℹ 16,813 more rows</code></pre>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> plastic_waste, <span class="fu">aes</span>(<span class="at">x =</span> plastic_waste_per_cap)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 51 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
 </div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/plastic_waste_per_cap-hist-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Sur la droite, il semble qu’un pays sorte du lot et présente une importante quantité de déchets. Une manière d’identifier ce pays consiste à filtrer les données pour afficher les valeurs supérieures à 3.5 kg/personne.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plastic_waste <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plastic_waste_per_cap <span class="sc">&gt;</span> <span class="fl">3.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 10
+  code  entity              continent     year gdp_per_cap plastic_waste_per_cap
+  &lt;chr&gt; &lt;chr&gt;               &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt;                 &lt;dbl&gt;
+1 TTO   Trinidad and Tobago North Ameri…  2010      31261.                   3.6
+# ℹ 4 more variables: mismanaged_plastic_waste_per_cap &lt;dbl&gt;,
+#   mismanaged_plastic_waste &lt;dbl&gt;, coastal_pop &lt;dbl&gt;, total_pop &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Aviez-vous anticipé ce résultat ?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous pourriez faire une rapide recherche sur Trinité-et-Tobago pour essayer de comprendre pourquoi le chiffre est haut, ou bien s’il s’agit d’une erreur de saisie dans les données.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>À partir d’ici, vous allez devoir recréer ou créer des visualisations !</p>
+</div>
+</div>
+<section id="exercice-1" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-1">Exercice 1</h3>
+<p>À l’aide d’un histogramme, affichez la distribution des quantité de déchets par habitant, en ajoutant une facette par continent. Que pouvez-vous dire de la comparaison des continents, en terme de déchets plastiques ?</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 51 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercice-2" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-2">Exercice 2</h3>
+<p>Une autre manière consiste à utiliser des graphes de densité.Recréez le graphe suivant.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 51 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/plastic_waste_per_cap-dens-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Colorez les courbes de densité par continent</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 51 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/plastic_waste_per_cap-dens-color-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The resulting plot may be a little difficult to read, so let’s also fill the curves in with colours as well.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> plastic_waste, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> plastic_waste_per_cap, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">color =</span> continent, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La superposition des couleurs n’aide pas à la lecture du graphe. Nous pouvons changer la transparence de la couleur des courbes. Changez le <code>alpha</code> pour améliorer la qualité du graphe. Essayez plusieurs valeurs pour trouver quelque chose de convenable.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 51 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/plastic_waste_per_cap-dens-color-fill-alpha-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Décrivez pourquoi le reglage de la couleur (<code>color</code> et <code>fill</code>) et le réglage de la transparence (<code>alpha</code>) ne se trouvent pas au même endroit ? L’un étant réglé dans <code>aes</code> et l’autre dans <code>geom_density()</code></p>
+<p>🧶 ✅ ⬆️ <em>C’est le bon moment pour knitt, commit et push !</em></p>
+</section>
+<section id="exercice-3" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-3">Exercice 3</h3>
+<p>Les boxplot sont aussi une bonne manière de visualiser des relations. Reproduisez le graphe suivant.</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 51 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/plastic_waste_per_cap-box-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Faites un grpahe similaire en utilisant les violin plots. Qu’est ce que les violin plots permettent de voir sur les données que les boxplot ne permettent pas ?</p>
+</section>
+<section id="exercice-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-4">Exercice 4</h3>
+<p>Visualisez la relation entre la quantité de déchet et la quantité de déchets non gérés en utilisant un graphe de dispersion (scatter plot). Décrivez la relation.</p>
+<p>Colorez les point selon le continent. Voyez-vous une tendance ?</p>
+</section>
+<section id="exercice-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercice-5">Exercice 5</h3>
+<p>Visualisez la relation entre la quantité de déchets plastiques par habitant et le nombre total d’habitants, et dans un second graphe, la relation entre la quantité de déchets plastiques et le nombre total d’habitants vivant près d’une côte. Est-ce qu’il semble y avoir une relation plus forte pour l’une des paires de variables ?</p>
+<p>🧶 ✅ ⬆️ <em>C’est le moment de knitt, commit et push ! N’oubliez pas d’ajouter un message à votre push</em></p>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Pour finir, essayer de refaire le graphe suivant:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lab02-plastic-waste_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Pour cela, nous devons manipuler les données légèrement pour calculer la proportion de population côtière. Nous verrons dans les prochaines semaine comment faire cela mais vous pouvez pour le moment utiliser les données suivantes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plastic_waste_coastal <span class="ot">&lt;-</span> plastic_waste <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">coastal_pop_prop =</span> coastal_pop <span class="sc">/</span> total_pop) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(plastic_waste_per_cap <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -500,83 +623,17 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>On observe beaucoup de NA pour les chats… pauvres chatons sans noms…</p>
+<p>Nous avons calculé une nouvelle variable, la proportion de population côtière, appelée <code>coastal_pop_prop</code>, à partir du nombre d’habitants vivant sur une côte et du nombre d’habitants total. Nous avons également fitré le pays avec une quantité de déchets par habitant supérieure à 3 kg/jour.</p>
 </div>
 </div>
-<p>Cet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 2
-  species     n
-  &lt;chr&gt;   &lt;int&gt;
-1 Dog     35181
-2 Cat     17294
-3 Goat       38
-4 Pig         6</code></pre>
-</div>
-</div>
-<p>Cherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction <code>slice_max()</code>. Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas <code>n</code>. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas <code>n=5</code>. Ici, les deux arguments mentionnent un <code>n</code>. Dans le premier cas, il y a un variable appelé <code>n</code> dans le dataframe résultant du <code>count</code>, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans <code>slice_max()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(n, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 53 × 3
-# Groups:   species [4]
-   species animal_name     n
-   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;
- 1 Cat     &lt;NA&gt;          406
- 2 Cat     Luna          111
- 3 Cat     Lucy          102
- 4 Cat     Lily           86
- 5 Cat     Max            83
- 6 Dog     Lucy          337
- 7 Dog     Charlie       306
- 8 Dog     Bella         249
- 9 Dog     Luna          244
-10 Dog     Daisy         221
-# ℹ 43 more rows</code></pre>
-</div>
-</div>
-<p>À partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon <code>n</code> (la fréquence) et non par rapport à l’<code>species</code>. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par <code>n</code>. Pour cela, vous pouvez vous servir de la fonction <code>arrange</code>. Vous pourrez indiquer ce par quoi vous voulez tier: <code>arrange(variable 1, variable 2)</code>. À vous d’essayer et de voir quel résultat est le bon !</p>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit et commit avec un message !</em></p>
-</section>
-<section id="exercice-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-5">Exercice 5</h2>
-<p>La visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne <span class="math inline">\(x = y\)</span>; si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.</p>
-<div class="cell" data-fig.fullwidth="true">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="exo01-pet-names_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Quels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?</li>
-<li>Est ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?</li>
-</ul>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message !</em></p>
+<p>Vous voyez que le graphe ne comporte pas seulement les points de données mais également une courbe de tendance. Pour ajouter cela, vous pouvez aller lire comment utiliser la fonction <em>smooth</em> : <a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">Documentation</a></p>
+<p>Pour terminer, interprétez ce que vous observez !</p>
+<p>🧶 ✅ ⬆️ <em>C’est la dernière étape ! Assurez que votre document final soit complet et propre. Notamment, certains graphes ne sont pas légendés ni nécessairement très beaux. N’hésitez pas à les modifier pour les compléter. Quand tout est bon: knitt, commit et push !</em></p>
 
 
 </section>
-</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>Seulement l’étape du push à besoin de communiquer avec Gihub, c’est pour cela que vos informations sont demandées.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

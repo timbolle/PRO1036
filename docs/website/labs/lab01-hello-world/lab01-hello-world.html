@@ -8,7 +8,7 @@
 
 <meta name="author" content="Tim Bollé">
 
-<title>Exercice 01 - Pet names – PRO1036</title>
+<title>Lab 01 - Hello World – PRO1036</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -161,11 +181,11 @@ window.Quarto = {
 <span class="menu-text">Cours</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../website/labs/labs.html"> 
+    <a class="nav-link active" href="../../../website/labs/labs.html" aria-current="page"> 
 <span class="menu-text">Labs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../website/exercices/exos.html" aria-current="page"> 
+    <a class="nav-link" href="../../../website/exercices/exos.html"> 
 <span class="menu-text">Exercices</span></a>
   </li>  
   <li class="nav-item">
@@ -183,7 +203,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exercice 01 - Pet names</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html">Lab 01 - Hello World</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -197,8 +217,8 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/exercices/exos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exerices</span></a>
+  <a href="../../../website/labs/labs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Labs</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -212,8 +232,93 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Exercice 01 - Pet names</span></a>
+  <a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 01 - Hello World</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab02-plastic-waste/lab02-plastic-waste.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 02 - Déchets plastiques</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab03-nobel-laureates/lab03-nobel-laureates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 03 - Nobel laureates</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 4</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab04-college-majors/lab04-college-majors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 04 - Quel grade choisir ?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 9</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab09-hotel-bookings/lab09-hotel-booking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 09 - Hotel Bookings ?</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Semaine 11</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../website/labs/lab10-inferences/lab10-inferences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab11 - Statistiques inférentielles</span></a>
   </div>
 </li>
       </ul>
@@ -228,23 +333,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#préparation" id="toc-préparation" class="nav-link active" data-scroll-target="#préparation">Préparation</a>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
   <ul class="collapse">
-  <li><a href="#terminologie" id="toc-terminologie" class="nav-link" data-scroll-target="#terminologie">Terminologie</a></li>
   <li><a href="#github" id="toc-github" class="nav-link" data-scroll-target="#github">Github</a></li>
-  </ul></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
-  <li><a href="#warm-up" id="toc-warm-up" class="nav-link" data-scroll-target="#warm-up">Warm up</a>
-  <ul class="collapse">
-  <li><a href="#étape-1-mise-à-jour-du-yaml" id="toc-étape-1-mise-à-jour-du-yaml" class="nav-link" data-scroll-target="#étape-1-mise-à-jour-du-yaml">Étape 1: Mise à jour du YAML</a></li>
-  <li><a href="#étape-2-commit" id="toc-étape-2-commit" class="nav-link" data-scroll-target="#étape-2-commit">Étape 2: Commit</a></li>
-  <li><a href="#étape-3-push" id="toc-étape-3-push" class="nav-link" data-scroll-target="#étape-3-push">Étape 3: Push</a></li>
-  </ul></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#installation-des-packages" id="toc-installation-des-packages" class="nav-link" data-scroll-target="#installation-des-packages">Installation des packages</a></li>
   <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
-  <li><a href="#exercices" id="toc-exercices" class="nav-link" data-scroll-target="#exercices">Exercices</a>
+  </ul></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#exerice-1" id="toc-exerice-1" class="nav-link" data-scroll-target="#exerice-1">Exerice 1</a></li>
+  <li><a href="#exercice-1" id="toc-exercice-1" class="nav-link" data-scroll-target="#exercice-1">Exercice 1</a></li>
   <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
   <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
@@ -256,9 +353,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/exercices/exo01-pet-names/exo01-pet-names.html">Exercice 01 - Pet names</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html">Semaine 1</a></li><li class="breadcrumb-item"><a href="../../../website/labs/lab01-hello-world/lab01-hello-world.html">Lab 01 - Hello World</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Exercice 01 - Pet names</h1>
+<h1 class="title">Lab 01 - Hello World</h1>
 </div>
 
 
@@ -281,30 +378,8 @@ window.Quarto = {
 </header>
 
 
-<div class="cell" data-fig.margin="true">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figs/Original_Doge_meme.jpg" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Photo by <a href="https://kabosu112.exblog.jp/iv/detail/?s=9944144&amp;i=201002%2F12%2F90%2Fa0126590_22301391.jpg">Atsuko Sato</a></figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Le but de cet exercice est de pratiquer les premiers éléments vus concernant R et Git/Github.</p>
-<section id="préparation" class="level1">
-<h1>Préparation</h1>
-<section id="terminologie" class="level2">
-<h2 class="anchored" data-anchor-id="terminologie">Terminologie</h2>
-<p>Nous en avons déjà parler mais répéter ne fait pas de mal:</p>
-<ul>
-<li><p><strong>R:</strong> Le language de prorgammation qui sera utilisé dans ce cours.</p></li>
-<li><p><strong>RStudio:</strong> Un environnement de développement intégré (IDE) pour R. En d’autres termes, une interface pour travailler efficacement avec R.</p></li>
-<li><p><strong>Git:</strong> Un logiciel de gestion de versions</p></li>
-<li><p><strong>GitHub:</strong> Une plateforme web pour accueillir des fichiers versionnés et faciliter la collaboration entre utilisateurs.</p></li>
-<li><p><strong>Repository:</strong> Un repository Git (ou repo) contient tous les fichier du projet ainsi que ces versions.</p></li>
-</ul>
-</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
 <section id="github" class="level2">
 <h2 class="anchored" data-anchor-id="github">Github</h2>
 <p>Nous allons commencer par récupérer le fichier Rmd dans lequel vous allez enregistrer vos réponses. Pour cela, deux possibilités, selon que git soit installé sur votre machine ou non</p>
@@ -314,7 +389,7 @@ window.Quarto = {
 <ul>
 <li>Fichier &gt; Nouveau Projet</li>
 <li>Version Control &gt; Git</li>
-<li>Dans <em>Repository URL</em> : indiquez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names.git" class="uri">https://github.com/PRO1036/exo1-pet-names.git</a></li>
+<li>Dans <em>Repository URL</em> : indiquez l’adresse: <a href="https://github.com/PRO1036/lab01.git" class="uri">https://github.com/PRO1036/lab01.git</a></li>
 <li>Choisissez un nom pour le dossier qui sera créé, par exemple “Lab01”</li>
 <li>Choisissez où vous voulez créer le projet dans votre ordinateur.</li>
 </ul>
@@ -331,7 +406,7 @@ window.Quarto = {
 </ul>
 <p>Nous avons créer un projet vide. Il faut maintenant aller chercher les fichiers su GitHub. Sur GitHub:</p>
 <ul>
-<li>Visitez l’adresse: <a href="https://github.com/PRO1036/exo1-pet-names" class="uri">https://github.com/PRO1036/exo1-pet-names</a></li>
+<li>Visitez l’adresse: <a href="https://github.com/PRO1036/lab01" class="uri">https://github.com/PRO1036/lab01</a></li>
 <li>Cliquez sur le bouton vert: <img src="figs/github-bouton.png" class="inline-image img-fluid"></li>
 <li>Cliquez ensuite sur <em>Download ZIP</em></li>
 <li>Ouvrez le fichier ZIP et copiez le contenu du dossier ZIP (fichier .Rmd) dans le dossier de votre projet R</li>
@@ -346,235 +421,145 @@ window.Quarto = {
 <p>Veuillez noter que ce que vous écriver dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes.</p>
 </section>
 </section>
-</section>
-<section id="rstudio" class="level1">
-<h1>RStudio</h1>
-<p>RStudio est organisé en 4 panneaux.</p>
-<div class="cell" data-fig.fullwidth="true">
+<section id="installation-des-packages" class="level2">
+<h2 class="anchored" data-anchor-id="installation-des-packages">Installation des packages</h2>
+<p>Nous allons travailler avec deux packages: <strong>datasauRus</strong> qui contient le jeu de données que nous allons utiliser et <strong>tidyverse</strong> qui est une collection de packages pour l’analyse de données (nous allons beaucoup en parler). Normalement, RStudio devrait vous proposer de les installer automatiquement, comme montré sur l’image ci-dessous:</p>
+<div class="cell" data-fig.margin="true">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="figs/rstudio-anatomy.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="figs/install_packages.png" class="img-fluid figure-img" width="520"></p>
 </figure>
 </div>
 </div>
 </div>
-<ul>
-<li>En bas à gauche se trouve la console. C’est ici que vous pouvez écrire du code qui sera directement interprété. Essayez par exemple <code>2 + 2</code>.</li>
-<li>En bas à droite se trouve le panneau de fichiers, ainsi que d’autres que nous verrons plus tard lors d’analyses.</li>
-<li>Si vous cliquez sur un fichier, il sera ouvert dans l’éditeur, panneau en haut à gauche.</li>
-<li>Dans le panneau en haut à droite, on retrouve l’environnement de travail. Si vous définissez une variable, elle apparaitra ici. Essayez par exemple de taper <code>x &lt;- 2</code> dans la console. Observez ce qu’il se passe dans l’environnement.</li>
-<li>C’est également ici que l’on retrouve le panneau <em>Git</em> où vous pourrez gérer les versions de vos fichiers.</li>
-</ul>
-</section>
-<section id="warm-up" class="level1">
-<h1>Warm up</h1>
-<p>Un peu d’échaffement:</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-YAML
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La partie du haut de votre fichier R Markdown, entre les lignes traitillées, est appelée <strong>YAML</strong>, accronyme pour “YAML Ain’t Markup Language”. C’est une manière human friendly de fournir des informations sur des documents et des code, et qui peut être comprise par de nombreux langages de programmation.</p>
-</div>
-</div>
-<section id="étape-1-mise-à-jour-du-yaml" class="level2">
-<h2 class="anchored" data-anchor-id="étape-1-mise-à-jour-du-yaml">Étape 1: Mise à jour du YAML</h2>
-<p>Ouvrez le fichier R Markdown (Rmd) dans le projet que vous avez cloné. Changez l’auteur, la date et knittez le document.</p>
-<p>Open the R Markdown (Rmd) file in your project, change the author name to your name, and knit the document.</p>
-</section>
-<section id="étape-2-commit" class="level2">
-<h2 class="anchored" data-anchor-id="étape-2-commit">Étape 2: Commit</h2>
-<p>Ouvrez le panneau <strong>Git</strong> en haut à droite.</p>
-<p>Vous devriez voir votre fichier Rmd et son output listés comme recemment modifiés.</p>
-<p>En cliquant sur <strong>diff</strong>, vous verrez les différence entre le dernier commit et l’état actuel du document. Si cela vous convient, vous pouvez sélectionner les fichiers à commit, ajouter un message dans le <strong>Commit message</strong>, par exemple <em>“Mise à jour de l’auteur et de la date”</em>. Cliquez ensuite sur <strong>Commit</strong>.</p>
-<p>Il n’est pas nécessaire de faire un commit après chaque changement. Faites le plutôt après avoir ajouté une <em>fonctionnalité</em> à votre code. Faite le quand cela vous semble pertinent, afin de pouvoir vérifier, comparer ou restorer.</p>
-</section>
-<section id="étape-3-push" class="level2">
-<h2 class="anchored" data-anchor-id="étape-3-push">Étape 3: Push</h2>
-<p>Maintenant que vous avez fait vos modifications, vous allez pusher vos changements sur le web, c’est-à-dire sur votre repo sur Github. Cela permettra aux autres (les profs) de voir vos changements. Appuyez simplement sur <strong>Push</strong>.</p>
-<p>Cela devrait faire apparaitre une fenêtre. Entrez vos informations de connexion pour Github.</p>
-<p><strong>Grosse question:</strong> Laquelle des étapes précédentes (changement du YAML, committing, et pushing) a besoin de communiquer avec Github?<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</section>
-</section>
-<section id="packages" class="level1">
-<h1>Packages</h1>
-<p>R est un langage open-source, et les développeurs ajoutent des fonctionnalité à travers des packages. Nous allons utiliser les packages suivants:</p>
-<ul>
-<li><strong>tidyverse</strong>: Une collection de packages pour faire de l’analyse de données de manière “tidy”</li>
-<li><strong>openintro</strong>: un package qui contient les datasets de la ressource OpenIntro.</li>
-</ul>
-<p>Nous utilisons la fonction <code>library()</code> pour charger les packages. Dans votre document R Markdown, vous allez voir un bloc de code R nommé <code>load-packages</code> qui contient les lignes nécessaires à charger les packages. Vous pouvez également les charger dans la console en cliquant sur la petite flèche vert <strong>Run Current Chunk</strong>.</p>
-<p>Avant de pouvoir faire ça, il faudra peut-être installer les packages. Cela vous sera proposé en haut de votre éditeur.</p>
-<p>Quand vous knittez le document, les lignes dans les blocs de code R sont également exécutées. Les packages seront donc chargés.</p>
-</section>
-<section id="données" class="level1">
-<h1>Données</h1>
-<p>La ville de <a href="https://en.wikipedia.org/wiki/Seattle">Seattle, WA</a> a un portail de données en source ouverte, qui inclut les animaux de compagnie. Pour chaque animal enregistré, nous avons accès à son nom et son espèce. Les données utilisées dans cet exercice se trouvent dans le package <strong>openintro</strong> et s’appelle <code>seattlepets</code>. Il n’est donc pas nécessaire de le charger séparemment.</p>
-<p>Vous pouvez voir le contenu du jeu de données sous forme taulaire avec la fonction <code>View()</code>. À noter que cette fonction n’est pas utile dans votre document R markdown, mais sert plutôt dans la console pour explorer les données. Une nouvelle fenêtre va s’ouvrir avec les données (ce qui n’est pas compatible avec l’idée d’un document static type html).</p>
+<p>Pour charger les packages dans l’espace de travail, nous devons l’indiquer:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(seattlepets)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(datasauRus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-layout-align="left">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="figs/view-data.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Vous pouvez en apprendre plus sur le jeu de données en appelant la fonction d’aide <code>?seattlepets</code>.</p>
+<p>Ces deux lignes se retrouvent également dans votre fichier Rmarkdown. Si vous voulez utiliser la console, il faudra également les taper.</p>
 </section>
-<section id="exercices" class="level1">
-<h1>Exercices</h1>
-<section id="exerice-1" class="level2">
-<h2 class="anchored" data-anchor-id="exerice-1">Exerice 1</h2>
-<p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 1. Knit, et commit avec un message !</em></p>
+<section id="données" class="level2">
+<h2 class="anchored" data-anchor-id="données">Données</h2>
+<p>Nous allons travailler avec le jeu de données appelé <code>datasaurus_dozen</code>, faisant partie du package <code>datasaurus</code>. Ce jeu de données contient en réalité 13<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> jeux de données, dont le but est de nous montrer l’importance de la visualisation de données, et pourquoi elle doit accompagner les statistiques descriptives.</p>
+<p>Pour en savoir plus sur le jeu de données, vous pouvez taper <code>?datasaurus</code> dans la console. En ajoutant un <code>?</code> devant le nom d’un objet vous affichera l’aide associée à cet objet.</p>
+</section>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<section id="exercice-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-1">Exercice 1</h2>
+<p>En utilisant l’aide, combien de lignes et de colonnes possède le <code>datasaurus_dozen</code> ? Quelles sont les variables présentes dans le tableau ? Vous pouvez ajouter vos réponse dans votre fichier .Rmd.</p>
+<p>La colonne <code>dataset</code> permet d’indiquer le jeu de données. Nous pouvons compter le nombre d’éléments pour chaque jeu de données:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 2
+   dataset        n
+   &lt;chr&gt;      &lt;int&gt;
+ 1 away         142
+ 2 bullseye     142
+ 3 circle       142
+ 4 dino         142
+ 5 dots         142
+ 6 h_lines      142
+ 7 high_lines   142
+ 8 slant_down   142
+ 9 slant_up     142
+10 star         142
+11 v_lines      142
+12 wide_lines   142
+13 x_shape      142</code></pre>
+</div>
+</div>
+<p>Le dataset Datasaurus original (<code>dino</code>) a été créé par Aberto Cairo. Les autres datasets ont été générés par Matejka et Fitzmaurice <span class="citation" data-cites="matejkaSameStatsDifferent2017">Matejka and Fitzmaurice (<a href="#ref-matejkaSameStatsDifferent2017" role="doc-biblioref">2017</a>)</span>. Dans cet article, ils présentent des données très différentes qui ont les mêmes descriptions statistiques.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! Envoyez vos résutlats sur Github en indiquant un message du type “Ajout des réponses à l’exercice 1”.</em></p>
 </section>
 <section id="exercice-2" class="level2">
 <h2 class="anchored" data-anchor-id="exercice-2">Exercice 2</h2>
-<p>Selon l’aide, combien d’animaux sont présents dans le dataset ?</p>
-<p>🧶 ✅ <em>Écrivez votre réponse dans le document, sous Exercice 2. Knit, commit avec un message et pushez !</em></p>
-</section>
-<section id="exercice-3" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-3">Exercice 3</h2>
-<p>Quels sont les trois nom d’animaux les plus commun à Seattle ? Pour répondre à cette question, you devez compter la fréquence d’apparition de chaque nom, et afficher les résultats en ordre décroissant. Utilisez le code suivant.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Le code suivant peut être lu comme “Prend le dataset <code>seattlepets</code>, puis compte le nombre de ligne avec le même <code>animal_name</code>, et affiche le résultat en ordre décroissant”. le <em>puis</em> dans la phrase précédente correspond à l’opérateur de pipe <code>%&gt;%</code>, qui prend ce qui se trouve avant et l’envoi comme premier argumet de ce qui vient après.</p>
-</div>
-</div>
+<p>Représentez <code>y</code> en fonction de <code>x</code> pour le <code>dino</code> dataset. Calculez ensuite le coefficient de correlation. Vous ne comprenez pas tout ? Pas grave !</p>
+<p>Ci-dessous se trouve le code dont vous aurez besoin pour compléter l’exercice. Prenez seulement ce dont vous avez besoin, knittez et observez le résultat !</p>
+<p>Nous allons commencer par prendre le <code>datasaurus_dozen</code> et le <em>piper</em> dans la fonction <code>filter</code> pour filtrer selon <code>dataset == "dino"</code>. Le résutlat est stocké dans un nouveau tableau appelé <code>dino_data</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dino_data <span class="ot">&lt;-</span> datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dataset <span class="sc">==</span> <span class="st">"dino"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 3. Cette fois, votre réponse va également inclure un morceau de code. Utilisez le block de code mis à votre disposition pour ça. Knit et commit avec un message !</em></p>
-</section>
-<section id="exercice-4" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-4">Exercice 4</h2>
-<p>Nous pouvons également voir les noms les plus communs pour chaque espèce. Pour cela, nous devons d’abord <code>group_by()</code> par l’<code>species</code>, puis faire le count.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 16,823 × 3
-# Groups:   species [4]
-   species animal_name     n
-   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;
- 1 Cat     &lt;NA&gt;          406
- 2 Dog     Lucy          337
- 3 Dog     Charlie       306
- 4 Dog     Bella         249
- 5 Dog     Luna          244
- 6 Dog     Daisy         221
- 7 Dog     Cooper        189
- 8 Dog     Lola          187
- 9 Dog     Max           186
-10 Dog     Molly         186
-# ℹ 16,813 more rows</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>On observe beaucoup de NA pour les chats… pauvres chatons sans noms…</p>
-</div>
-</div>
-<p>Cet affichage n’est pas optimal. Nous voulons connaitre le nom le plus commun pour les chats et les chiens mais il n’y a quasiment aucun chat d’affiché ! C’est parce qu’il y a bien plus de chiens que de chats dans le dataset. On peut le vérifier en comptant le nombre d’animaux par espèce.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(species, <span class="at">sort =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 2
-  species     n
-  &lt;chr&gt;   &lt;int&gt;
-1 Dog     35181
-2 Cat     17294
-3 Goat       38
-4 Pig         6</code></pre>
-</div>
-</div>
-<p>Cherchons le top 5 de chaque espèce. Pour cela, nous pouvons utiliser la fonction <code>slice_max()</code>. Le premier argument de la fonction est la variable dont nous voulons garder le plus grand nombre, dans notre cas <code>n</code>. Le deuxième argument est le nombre de lignes que nous voulons afficher, dans notre cas <code>n=5</code>. Ici, les deux arguments mentionnent un <code>n</code>. Dans le premier cas, il y a un variable appelé <code>n</code> dans le dataframe résultant du <code>count</code>, alors que dans le deuxième, il s’agit du nom de l’argument, définit dans <code>slice_max()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>seattlepets <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(animal_name, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(n, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 53 × 3
-# Groups:   species [4]
-   species animal_name     n
-   &lt;chr&gt;   &lt;chr&gt;       &lt;int&gt;
- 1 Cat     &lt;NA&gt;          406
- 2 Cat     Luna          111
- 3 Cat     Lucy          102
- 4 Cat     Lily           86
- 5 Cat     Max            83
- 6 Dog     Lucy          337
- 7 Dog     Charlie       306
- 8 Dog     Bella         249
- 9 Dog     Luna          244
-10 Dog     Daisy         221
-# ℹ 43 more rows</code></pre>
-</div>
-</div>
-<p>À partir de ce résultat, nous pouvons facilement identifier les noms les plus communs pour les chats et les chiens, mais le résutlat est trié selon <code>n</code> (la fréquence) et non par rapport à l’<code>species</code>. En ajoutant une nouvelle ligne au pipe précédent, faite en sorte que les résultats soient triés selon l’espèce d’abord, puis par <code>n</code>. Pour cela, vous pouvez vous servir de la fonction <code>arrange</code>. Vous pourrez indiquer ce par quoi vous voulez tier: <code>arrange(variable 1, variable 2)</code>. À vous d’essayer et de voir quel résultat est le bon !</p>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 4, en incluant les blocks de code nécessaires. Knit et commit avec un message !</em></p>
-</section>
-<section id="exercice-5" class="level2">
-<h2 class="anchored" data-anchor-id="exercice-5">Exercice 5</h2>
-<p>La visualisation suivante affiche la proportion de chiens et de chats avec le même nom. Les 20 noms les plus courrants pour chaque espèce sont affichés. La ligne diagonale correspond à la ligne <span class="math inline">\(x = y\)</span>; si un nom apparaît sur cette ligne, cela signifie qu’il a le même succès pour les chiens que pour les chats.</p>
+<p>Décomposons un peu tout cela !</p>
+<p>Pour commencer, l’opérateur <em>pipe</em>: <code>%&gt;%</code>, prend ce qui vient avant (à gauche) et l’envoie comme premier argument de ce qui vient après (à droite ou en dessous). Concrètement, nous pouvons lire <code>filter</code> le <code>datasaurus_dozen</code> pour ne garder seulement les lignes où <code>dataset == "dino"</code>.</p>
+<p>Ensuite, l’opérateur d’assignation <code>&lt;-</code> permet de définir le nom <code>dino_data</code> et d’y stocker le résultat de l’opération de filtration.</p>
+<p>Nous devons ensuite visualiser les données. Pour cela nous allons utiliser la fonction <code>ggplot</code>. Le première chose à indiquer sont les données à visualiser. Ensuite nous allons définir un l’<code>aes</code>thétisme du graphique. Par exemple, nous allons envoyer la variable <code>x</code> du tableau sur l’axe x du graphe, et la variable <code>y</code> du tableau sur l’axe x. Nous allons ensuite définir la <code>geom</code>étrie du graphe. Dans ce cas, nous voulons que chaque point soit représenté par un point, d’où le <code>geom_point</code>.</p>
 <div class="cell" data-fig.fullwidth="true">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> dino_data, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="exo01-pet-names_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p><img src="lab01-hello-world_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<ul>
-<li>Quels noms sont plus commun pour des chats que pour des chiens ? Ceux au dessus de la ligne ou bien en dessous ?</li>
-<li>Est ce que la relation entre les deux variables (proportion de chats avec un nom donné et proportion de chiens avec un nom donné) est positive ou bien négative ? Que cela signifie-t-il dans le contexte de notre jeu de données ?</li>
-</ul>
-<p>🧶 ✅ <em>Ecrivez votre réponse dans le document, sous Exercice 5, en incluant les blocks de code nécessaires. C’est le dernier donc assurez que tout soit propre ! Knit, commit avec un message !</em></p>
+<p>Ne vous inquiétez pas si cela parait encore compliqué, nous verrons tout cela plus en détail plus tard.</p>
+<p>Pour la deuxième partie de l’exercice, nous voulons calculer quelques statistiques sur notre jeu de données. Le coéfficient de corrélation, souvent appelé <span class="math inline">\(r\)</span> en statistique, mesure la relation linéaire entre deux variables. Vous verrez que certaines paires de variables n’ont pas de relation linéaire. C’est pour cela qu’il est important de les visualiser. Il n’est pas toujours nécessaire de calculer le <span class="math inline">\(r\)</span> dans ces cas là. Dans notre cas, la relation n’est clairement pas linéaire, mais plutôt <em>dinosaire</em>.</p>
+<p>Faisons le quand même pour le plaisir !</p>
+<p>But, for illustrative purposes, let’s calculate the correlation coefficient between <code>x</code> and <code>y</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dino_data <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">r =</span> <span class="fu">cor</span>(x, y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+        r
+    &lt;dbl&gt;
+1 -0.0645</code></pre>
+</div>
+</div>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! Vous pouvez mettre un message indiquant que vous avez ajouté les réponses à l’exercice 2.</em></p>
+</section>
+<section id="exercice-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-3">Exercice 3</h2>
+<p>Représentez <code>y</code> en fonction de <code>x</code> pour le <code>star</code> dataset. Pour cela, réutilisez le code de l’exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour le <code>dino</code> dataset.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push !</em></p>
+</section>
+<section id="exercice-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-4">Exercice 4</h2>
+<p>Représentez <code>y</code> en fonction de <code>x</code> pour le <code>circle</code> dataset. Pour cela, réutilisez le code de l’exercice précédent ! Calculez également le coefficient de corrélation. Comparez avec celle obtenu pour les <code>dino</code> et <code>star</code> dataset.</p>
+<p>🧶 ✅ ⬆️ <em>Knit, commit, and push !</em></p>
+</section>
+<section id="exercice-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercice-5">Exercice 5</h2>
+<p>Nous allons maintenant représenter tous les jeux de données d’un coup ! Pour cela, nous allons utilisé quelque chose appelé le <em>faceting</em></p>
+<div class="cell" data-fig.fullwidth="true">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datasaurus_dozen, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">color =</span> dataset))<span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> dataset, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Nous pouvons également utiliser la fonction <code>group_by</code>pour calculer des statistiques directement sur chaque jeu de données.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>datasaurus_dozen <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(dataset) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">r =</span> <span class="fu">cor</span>(x, y)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="dv">13</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Nous en avons fini avec notre première analyse de données !</p>
+<p>🧶 ✅ ⬆️ <em>Bien joué! knit, commit and push ! Vous pouvez dire que vous avez terminer le lab 01 dans votre message ! Vous pouvez allez voir sur Github si tout est en ordre.</em></p>
+
 
 
 </section>
 </section>
 
 
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-matejkaSameStatsDifferent2017" class="csl-entry" role="listitem">
+Matejka, J. and Fitzmaurice, G. (2017, May). <em>Same <span>Stats</span>, <span>Different Graphs</span>: <span>Generating Datasets</span> with <span>Varied Appearance</span> and <span>Identical Statistics</span> through <span>Simulated Annealing</span></em>. Denver Colorado USA (p. 1290–1294). <a href="https://doi.org/10.1145/3025453.3025912">https://doi.org/10.1145/3025453.3025912</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Seulement l’étape du push à besoin de communiquer avec Gihub, c’est pour cela que vos informations sont demandées.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Si vous vous demandez pourquoi il y a 13 jeux de données dans cette “douzaine de datasaurus”: <a href="https://en.wikipedia.org/wiki/Dozen#Baker's_dozen">Baker’s dozen</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

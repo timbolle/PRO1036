@@ -3,10 +3,6 @@ project:
   output-dir: docs # For github
   render:
     - "*.qmd"
-    - "!classroom/"
-    - "!demo/"
-    - "!exercise/"
-    - "!labs/"
 
 website:
   title: "PRO1036"
