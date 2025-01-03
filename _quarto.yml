@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: docs # For github
+  render:
+    - "*.qmd"
+    - "!classroom/"
+    - "!demo/"
+    - "!exercise/"
+    - "!labs/"
 
 website:
   title: "PRO1036"
@@ -51,6 +57,7 @@ website:
         - section: "Semaine 1"
           contents:
             - website/exercices/exo01-pet-names/exo01-pet-names.qmd
+
 
 
 format:
